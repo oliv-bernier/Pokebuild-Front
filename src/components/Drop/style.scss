@@ -1,0 +1,29 @@
+@use '../../styles/vars';
+
+.home--selection {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-title {
+        font-size: 1rem;
+    }
+
+    &-drops {
+        margin: 0.5rem 3rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 300px;
+    }
+
+    &-drop {
+        margin: 0.5rem;
+        background-color: vars.$color1;
+        height: 70px;
+        width: 70px;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+}

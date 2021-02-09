@@ -1,0 +1,17 @@
+@use '../../styles/vars';
+
+.tab {
+
+    display: flex;
+    flex-direction: row;
+
+    &-head--tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-type {
+        border: 1px solid black;
+        padding: (vars.$gutter / 2);
+    }
+}

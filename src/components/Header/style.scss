@@ -1,0 +1,13 @@
+@use '../../styles/vars';
+
+.header {
+
+    &-title {
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        border-bottom: 1px solid black;
+        padding: vars.$gutter 0;
+        margin-bottom: vars.$gutter;
+    }
+}

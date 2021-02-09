@@ -1,0 +1,27 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: 1px solid black;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+
+    &--links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    &--links p {
+        padding: 0 0.5rem;
+    }
+
+    &--copyright {
+        text-align: center;
+        margin: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+
+}
