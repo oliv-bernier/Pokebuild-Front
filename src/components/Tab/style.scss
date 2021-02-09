@@ -5,13 +5,30 @@
     display: flex;
     flex-direction: row;
 
-    &-head--tr {
-        display: flex;
-        flex-direction: column;
-    }
+    &-head {
 
-    &-type {
-        border: 1px solid black;
-        padding: (vars.$gutter / 2);
+        &--tr {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &--type {
+            text-align: center;
+            border-top: 1px solid black;
+            border-right: 1px solid black;
+            border-left: 1px solid black;
+            padding: (vars.$gutter / 2);
+
+            &:last-child{
+                border-bottom: 1px solid black;
+            }
+        }
+
+        &--def {
+            text-align: center;
+            border-top: 1px solid black;
+            border-right: 1px solid black;
+            padding: (vars.$gutter / 2);
+        }
     }
 }

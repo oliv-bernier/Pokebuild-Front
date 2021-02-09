@@ -6,6 +6,7 @@ const Tab = () => (
   (<table className="tab">
     <thead className="tab-head">
         <tr className="tab-head--tr">
+            <td className="tab-head--type">-</td>
             <td className="tab-head--type">Acier</td>
             <td className="tab-head--type">Combat</td>
             <td className="tab-head--type">Dragon</td>
@@ -28,13 +29,13 @@ const Tab = () => (
     </thead>
     <tbody>
         <tr>
-            <td>eze</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td className="tab-head--def">Test</td>
+            <td className="tab-head--def">Test</td>
+            <td className="tab-head--def">Test</td>
+            <td className="tab-head--def">Test</td>
+            <td className="tab-head--def">Test</td>
+            <td className="tab-head--def">Test</td>
+            <td className="tab-head--def">Score</td>
         </tr>
     </tbody>
   </table>)
