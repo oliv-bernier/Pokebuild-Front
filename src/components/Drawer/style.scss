@@ -1,0 +1,36 @@
+@use '../../styles/vars';
+
+.drawer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: vars.$color-background;
+    position: relative;
+
+    &-button {
+        height: 20px;
+        width: 100px;
+        position: absolute;
+    }
+
+    &-search {
+        margin: 2rem 1rem 1rem 1rem;
+    }
+
+    &-select {
+        margin-left: 1rem;
+    }
+
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &-list--pokemon {
+        height: 50px;
+        width: 50px;
+        background-color: vars.$color-background-scaled;
+        border-radius: 5px;
+    }
+}
+

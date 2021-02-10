@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
 import Home from '../Home';
+import Drawer from '../Drawer';
 
 
 import './style.scss';
@@ -13,7 +14,7 @@ const App = () => (
     <Header />
     <div className="container">
       <Home />
-      <div>Drawer</div>
+      <Drawer />
     </div>
     <Footer />
   </div>

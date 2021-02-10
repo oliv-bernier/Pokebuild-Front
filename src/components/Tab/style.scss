@@ -2,14 +2,26 @@
 
 .tab {
 
-    display: flex;
-    flex-direction: row;
+    // @media (max-width: 767px) {
+        display: flex;
+        flex-direction: row;
+        max-width: 100%;
+        justify-content: center;
+    // }
+
+    &-title {
+        text-align: center;
+        margin-bottom: vars.$gutter;
+        // font-size: 1rem;
+    }
 
     &-head {
 
         &--tr {
-            display: flex;
-            flex-direction: column;
+            // @media (max-width: 767px) {
+                display: flex;
+                flex-direction: column;
+            // }
         }
 
         &--type {
@@ -24,11 +36,28 @@
             }
         }
 
-        &--def {
+        &--sprites {
             text-align: center;
             border-top: 1px solid black;
             border-right: 1px solid black;
             padding: (vars.$gutter / 2);
+        }
+
+        
+
+        &--def {
+
+            text-align: center;
+            border-top: 1px solid black;
+            border-right: 1px solid black;
+            padding: (vars.$gutter / 2);
+            
+            @media (max-width: 767px) {
+                display: flex;
+                flex-direction: row;
+                max-width: 100%;
+                // justify-content: center;
+            }
         }
     }
 }

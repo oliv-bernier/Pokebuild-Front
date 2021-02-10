@@ -2,12 +2,30 @@
 
 .header {
 
+    background-color: vars.$color-header;
+    color: vars.$color-light;
+    width: 100%;
+    height: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: vars.$gutter;
+    position: fixed;
+    top: 0;
+
+    @media (min-width: 767px) {
+        height: 3rem;
+    }
+
     &-title {
-        font-size: 2rem;
+        font-size: 0.7rem;
+        margin: 0;
         font-weight: bold;
         text-align: center;
-        border-bottom: 1px solid black;
-        padding: vars.$gutter 0;
-        margin-bottom: vars.$gutter;
+        // padding: vars.$gutter 0;
+        // margin-bottom: vars.$gutter;
+        @media (min-width: 768px) {
+            font-size: 1.5rem;
+        }
     }
 }

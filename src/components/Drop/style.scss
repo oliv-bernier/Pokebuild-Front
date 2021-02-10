@@ -7,23 +7,24 @@
     align-items: center;
 
     &-title {
-        font-size: 1rem;
+        margin-top: 1rem;
+        // font-size: 1rem;
     }
 
     &-drops {
         margin: 0.5rem 3rem;
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
+        justify-content: center;
         width: 300px;
     }
 
     &-drop {
         margin: 0.5rem;
-        background-color: vars.$color1;
+        background-color: vars.$color-background-scaled-drop;
         height: 70px;
         width: 70px;
-        border: 1px solid black;
+        // border: 1px solid black;
         border-radius: 5px;
     }
 }
