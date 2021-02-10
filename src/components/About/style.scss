@@ -1,0 +1,49 @@
+@use '../../styles/vars';
+
+.about {
+    margin: auto;
+    width: 90%;
+
+    @media (min-width: 1400px) {
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.cards {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.techno {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    margin-top: 0.5rem;
+    color: vars.$color-background-scaled;
+    background-color: vars.$color-background;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    padding: vars.$gutter;
+    width: 100%;
+
+    @media (min-width: 768px) {
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    &-title {
+        font-weight: bold;
+    }
+
+    &-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: (vars.$gutter / 2);
+    }
+}

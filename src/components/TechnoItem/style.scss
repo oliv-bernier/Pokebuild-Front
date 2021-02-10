@@ -1,0 +1,25 @@
+@use '../../styles/vars';
+
+.techno-list--item {
+
+    margin: 0.5rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 768px) {
+        margin: 1.5rem;
+    }
+
+    &_image {
+        margin-bottom: 0.2rem;
+        width: 2rem;
+        height: 2rem;
+
+        @media (min-width: 768px) {
+            margin-bottom: 0.4rem;
+            width: 5rem;
+            height: 5rem;
+        }
+    }
+}
