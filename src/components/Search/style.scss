@@ -1,4 +1,10 @@
 
 .search {
-    margin: 0.5rem 0 0.5rem 0;
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem 0;
+
+    @media (min-width: 768px) {
+        margin: 0;
+    }
 }

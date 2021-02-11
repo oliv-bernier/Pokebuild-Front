@@ -3,18 +3,17 @@
 .container {
     margin-top: 1.2rem;
     margin-bottom: 2rem;
-    overflow-y: auto;
+    // overflow-y: auto;
     background-color: vars.$color-background-scaled;
-    // max-height: 100vh;
-    height: 100%;
-    margin-bottom: 0;
-    padding-bottom: 0;
     position: relative;
+    height: calc(100vh - 3.2rem);
+
 
     @media (min-width: 768px) {
         margin-top: 3rem;
         margin-bottom: 3rem;
-        overflow-y: auto;
+        height: calc(100vh - 6rem);
+        // overflow-y: auto;
         display: flex;
         flex-direction: row;
     }

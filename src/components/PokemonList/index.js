@@ -1,7 +1,28 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const PokemonList = () => (
-  <li>Test</li>
+import './style.scss';
+
+const PokemonList = ({
+  name,
+  image,
+  id,
+  apiTypes
+}) => (
+  <li className="pokemonlist">
+    <img className="pokemonlist-image" src={image} alt={name}/>
+    <p className="pokemonlist-text">#{id} {name}</p>
+  </li>
 );
+
+PokemonList.propTypes = {
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  apiTypes: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired
+  }))
+};
 
 export default PokemonList;

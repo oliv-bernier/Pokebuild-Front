@@ -5,59 +5,116 @@
     flex-direction: column;
     align-items: center;
     background-color: vars.$color-background;
-    height: 50vh;
+    height: calc(50vh - 3.2rem);
     position: fixed;
     width: 100%;
-    bottom: 2rem;
+    top: calc(100vh - 2.9rem);
     padding: 0;
-    z-index: 99;
+    transition: transform 0.5s;
 
-    overflow-y: auto;
+    &--open {
+        transform: translateY(calc(-50vh + 70px));
+        transition: transform 0.5s;
+    }
 
     @media (min-width: 768px) {
-        position: absolute;
-        height: 100%;
+        flex-direction: row;
+        height: calc(100vh - 2.9rem);
+        position: fixed;
         top: 0;
-        right: 0;
+        right: calc(-50vw + 2rem);
         width: 50vw;
+        transition: transform 0.5s;
+
+        &--open {
+            transform: translateX(calc(-50vw + 2rem));
+            transition: transform 0.5s;
+        }
     }
 
     &-button {
-        position: absolute;
-        top: -7.5px;
-        transition-duration: 0.5s;
-        z-index: 999;
-
-        &:hover {
-            transform: rotate(45deg);
-            transition-duration: 0.5s;
-        }
+        background-color: vars.$color-background-scaled;
 
         &-image {
+            position: absolute;
+            right: 50%;
+            top: -7px;
             width: 15px;
+            transition-duration: 0.5s;
+
+            &:hover {
+                transform: rotate(45deg);
+                transition-duration: 0.5s;
+            }
 
             @media (min-width: 768px) {
                 width: 30px;
-                top: -15px;
+                top: 50%;
+                left: -15px;
+                transform: rotate(-90deg);
+
+                &:hover {
+                    transform: rotate(-45deg);
+                    transition-duration: 0.5s;
+                }
             }
 
             @media (min-width: 1400px) {
                 width: 50px;
-                top: -15px;
+                top: 50%;
+                left: -24px;
+                transform: rotate(-90deg);
+
+                &:hover {
+                    transform: rotate(-45deg);
+                    transition-duration: 0.5s;
+                }
             }
         }
     }
 
     &-list {
-        display: flex;
-        flex-wrap: wrap;
+        // display: flex;
+        // flex-wrap: wrap;
+        // width: 100%;
+
+        // adapter la soustraction si besoin pour le nombre de résultats
+        height: calc(50vh - 100px);
+        position: relative;
+        overflow-y: auto;
+
+        @media (min-width: 768px) {
+            margin-top: 2rem;
+            height: calc(100vh - 230px);
+        }
+
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        // &::-webkit-scrollbar-track {
+        //     background-color: vars.$color-background-scaled;        /* color of the tracking area */
+        // }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: vars.$color-background-pokemon;    /* color of the scroll thumb */
+            border-radius: 20px;       /* roundness of the scroll thumb */
+            // border: 2px solid vars.$color-background-scaled;  /* creates padding around scroll thumb */
+        }
     }
 
     &-list--pokemon {
-        height: 3rem;
-        width: 3rem;
-        background-color: vars.$color-background-scaled;
-        border-radius: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+
+    &-pokedex {
+
+        @media (min-width: 768px) {
+            margin-left: 2rem;
+        }
     }
 }
 
@@ -65,7 +122,7 @@
 
 
 // transform: translateX(calc(100% - #{vars.$gutter}));
-// transition: transform 0.3s vars.$easeBack;
+// transition: transform 0.3s vars.$easeDrawer;
 
 // &--open {
 //   transform: translateX(0);

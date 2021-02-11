@@ -41,11 +41,11 @@ const pokemon = [
         specialDefense: 100,
         apiTypes: [
             {
-                name: 'Poison',
+                name: 'Feu',
                 image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
             },
             {
-                name: 'Plante',
+                name: 'Vol',
                 image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
             },
         ],
@@ -67,13 +67,10 @@ const pokemon = [
         specialDefense: 100,
         apiTypes: [
             {
-                name: 'Poison',
+                name: 'Electrick',
                 image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
             },
-            {
-                name: 'Plante',
-                image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
-            },
+
         ],
         apiGeneration: 1,
     },
