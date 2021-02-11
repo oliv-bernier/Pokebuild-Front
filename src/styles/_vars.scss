@@ -16,3 +16,4 @@ $color-background2: #FEEAEA;
 $color-background-scaled: color.scale($color-background, $lightness: 80%);
 $color-background-scaled-drop: color.scale($color-background, $lightness: 50%);
 
+$easeDrawer: cubic-bezier(.34,1.71,.83,1.02);

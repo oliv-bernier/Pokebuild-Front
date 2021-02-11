@@ -9,7 +9,7 @@ import './style.scss';
 const Home = () => (
   <div className="home">
     <Drop />
-    <Tab />
+    {/* <Tab /> */}
   </div>
   );
 

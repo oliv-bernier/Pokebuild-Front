@@ -1,11 +1,13 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import Header from '../Header';
 import Footer from '../Footer';
 import Home from '../Home';
 import Drawer from '../Drawer';
 import About from '../About';
+import NotFound from '../NotFound';
+
 
 
 
@@ -16,13 +18,18 @@ const App = () => (
   <div className="app">
     <Header />
     <div className="container">
-      <Route path="/" exact>
-        <Home />
-        {/* <Drawer /> */}
-      </Route>
-      <Route path="/about" exact>
-        <About />
-      </Route>
+      <Switch>
+        <Route path="/" exact>
+            <Home />
+            <Drawer />
+        </Route>
+        <Route path="/about" exact>
+          <About />
+        </Route>
+        <Route path="*">
+          <NotFound />
+        </Route>
+      </Switch>
     </div>
     <Footer />
   </div>

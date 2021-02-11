@@ -1,10 +1,17 @@
 import React from 'react';
 
+import { NavLink } from 'react-router-dom';
+
 import './style.scss';
 
 const Header = () => (
   <div className="header">
-    <h1 className="header-title">Pokemon Team Builder</h1>
+    <NavLink
+      to="/"
+      exact
+    >
+      <h1 className="header-title">Pokemon Team Builder</h1>
+    </NavLink>
   </div>
 );
 

@@ -3,6 +3,7 @@
 .header {
 
     background-color: vars.$color-header;
+    font-family: Pokemon-Hollow;
     color: vars.$color-light;
     width: 100%;
     height: 1.2rem;
@@ -13,7 +14,7 @@
     position: fixed;
     top: 0;
 
-    @media (min-width: 767px) {
+    @media (min-width: 768px) {
         height: 3rem;
     }
 
@@ -22,8 +23,7 @@
         margin: 0;
         font-weight: bold;
         text-align: center;
-        // padding: vars.$gutter 0;
-        // margin-bottom: vars.$gutter;
+
         @media (min-width: 768px) {
             font-size: 1.5rem;
         }

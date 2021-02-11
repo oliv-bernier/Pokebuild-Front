@@ -5,20 +5,47 @@
     flex-direction: column;
     align-items: center;
     background-color: vars.$color-background;
-    position: relative;
+    height: 50vh;
+    position: fixed;
+    width: 100%;
+    bottom: 2rem;
+    padding: 0;
+    z-index: 99;
+
+    overflow-y: auto;
+
+    @media (min-width: 768px) {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        right: 0;
+        width: 50vw;
+    }
 
     &-button {
-        height: 20px;
-        width: 100px;
         position: absolute;
-    }
+        top: -7.5px;
+        transition-duration: 0.5s;
+        z-index: 999;
 
-    &-search {
-        margin: 2rem 1rem 1rem 1rem;
-    }
+        &:hover {
+            transform: rotate(45deg);
+            transition-duration: 0.5s;
+        }
 
-    &-select {
-        margin-left: 1rem;
+        &-image {
+            width: 15px;
+
+            @media (min-width: 768px) {
+                width: 30px;
+                top: -15px;
+            }
+
+            @media (min-width: 1400px) {
+                width: 50px;
+                top: -15px;
+            }
+        }
     }
 
     &-list {
@@ -27,10 +54,19 @@
     }
 
     &-list--pokemon {
-        height: 50px;
-        width: 50px;
+        height: 3rem;
+        width: 3rem;
         background-color: vars.$color-background-scaled;
         border-radius: 5px;
     }
 }
 
+
+
+
+// transform: translateX(calc(100% - #{vars.$gutter}));
+// transition: transform 0.3s vars.$easeBack;
+
+// &--open {
+//   transform: translateX(0);
+// }

@@ -1,27 +1,27 @@
 import React from 'react';
 
+import Search from '../Search';
+import PokemonList from '../PokemonList';
+
+
+import pokeball from '../../assets/pokeball-big.svg'
+
+import pokemon from '../../data/pokemon';
+
 import './style.scss';
 
 const Drawer = () => (
     <section className="drawer">
-        <button className="drawer-button"></button>
-        <div className="drawer-search">
-            <input 
-                className="drawer-input" 
-                type="text" 
-                id="name" 
-                placeholder="Chercher un Pokémon"
-            />
-            <select className="drawer-select" id="drawer-selectr">
-                <option value="">----</option>
-                <option value="dog">Par nom</option>
-                <option value="cat">Par type</option>
-            </select>
+        <div className="drawer-button">
+            <img className="drawer-button-image" src={pokeball} alt="bouton tiroir"/>
         </div>
+        <Search />
         <div className="drawer-list">
-            <div className="drawer-list--pokemon">
-            
-            </div>
+            <ul className="drawer-list--pokemon">
+                {pokemon.map((pokemon) => (
+                    <PokemonList />
+                ))}
+            </ul>
         </div>
     </section>
 );
