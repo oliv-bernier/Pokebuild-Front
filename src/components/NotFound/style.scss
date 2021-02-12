@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 3rem;
+  margin: auto;
 
   &-image {
     width: 90%;
@@ -13,7 +14,7 @@
     }
 
     @media (min-width: 1400px) {
-      width: 30%;
+      width: 60%;
     }
   }
 
