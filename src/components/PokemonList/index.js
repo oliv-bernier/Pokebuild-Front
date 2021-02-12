@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -7,10 +9,10 @@ const PokemonList = ({
   name,
   image,
   id,
-  apiTypes
+  apiTypes,
 }) => (
   <li className="pokemonlist">
-    <img className="pokemonlist-image" src={image} alt={name}/>
+    <img className="pokemonlist-image" src={image} alt={name} />
     <p className="pokemonlist-text">#{id} {name}</p>
   </li>
 );
@@ -21,8 +23,8 @@ PokemonList.propTypes = {
   id: PropTypes.number.isRequired,
   apiTypes: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired
-  }))
+    image: PropTypes.string.isRequired,
+  })).isRequired,
 };
 
 export default PokemonList;

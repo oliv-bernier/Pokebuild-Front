@@ -10,7 +10,7 @@ const Header = () => (
       to="/"
       exact
     >
-      <h1 className="header-title">Pokemon Team Builder</h1>
+      <h1 className="header-title">Pokébuild</h1>
     </NavLink>
   </div>
 );

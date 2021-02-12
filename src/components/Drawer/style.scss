@@ -11,6 +11,7 @@
     top: calc(100vh - 2.9rem);
     padding: 0;
     transition: transform 0.5s;
+    box-shadow: 0px 0px 3px black;
 
     &--open {
         transform: translateY(calc(-50vh + 70px));
@@ -25,6 +26,7 @@
         right: calc(-50vw + 2rem);
         width: 50vw;
         transition: transform 0.5s;
+        box-shadow: 0px 0px 7px black; 
 
         &--open {
             transform: translateX(calc(-50vw + 2rem));
@@ -74,27 +76,19 @@
     }
 
     &-list {
-        // display: flex;
-        // flex-wrap: wrap;
-        // width: 100%;
-
         // adapter la soustraction si besoin pour le nombre de résultats
         height: calc(50vh - 100px);
         position: relative;
         overflow-y: auto;
 
         @media (min-width: 768px) {
-            margin-top: 2rem;
+            margin-top: 1rem;
             height: calc(100vh - 230px);
         }
 
         &::-webkit-scrollbar {
             width: 8px;
         }
-
-        // &::-webkit-scrollbar-track {
-        //     background-color: vars.$color-background-scaled;        /* color of the tracking area */
-        // }
 
         &::-webkit-scrollbar-thumb {
             background-color: vars.$color-background-pokemon;    /* color of the scroll thumb */
@@ -114,6 +108,7 @@
 
         @media (min-width: 768px) {
             margin-left: 2rem;
+            // padding: 0;
         }
     }
 }

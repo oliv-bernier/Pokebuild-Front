@@ -1,0 +1,71 @@
+@use '../../styles/vars';
+
+// .test {
+//     position: relative;
+//     top: 10rem;
+//     filter: blur(1px);
+
+// }
+
+.pokestat {
+    display: flex;
+    background-color: rgba(0, 0, 0, .25);
+    width: 100vw;
+    height: calc(100vh - 6rem);
+    position: absolute;
+    top: 0;
+
+    &-container {
+        color: vars.$color-background-scaled;
+        display: flex;
+        flex-direction: column;
+        background-color: vars.$color-background-pokemon;
+        height: 70vh;
+        width: 45vw;
+        align-items: center;
+        border-radius: 10px;
+        margin: auto;
+        position: absolute;
+        left: 3rem;
+        top: 3rem;
+    }
+
+    &-image {
+        height: 12rem;
+        width: 12rem;
+    }
+
+    &-infos {
+        background-color: vars.$color-background-stat;
+        height: fit-content;
+        border-radius: 10px;
+        padding: vars.$gutter;
+        width: 80%;
+
+    }
+
+    &-details {
+
+        &-unique {
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+
+            &--barre-container {
+                height: 1.5rem;
+                width: 60%;
+                border-radius: 0.5rem;
+                margin-bottom: 0.5rem;
+                position: relative;
+                background-color: vars.$color-background-barre;
+            }
+
+            &--barre__progress {
+                background-color: vars.$color-background-scaled;
+                height: 1.5rem;
+                border-top-left-radius: 0.5rem;
+                border-bottom-left-radius: 0.5rem;
+              }
+        }
+    }
+}
