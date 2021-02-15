@@ -1,17 +1,24 @@
 import React from 'react';
 
-import pokemons from '../../data/pokemon';
+import PropTypes from 'prop-types';
 
+import pokemons from '../../data/pokemon';
+// @ts-ignore
 import translation from '../../utils/translation.tsx';
+// @ts-ignore
+import { PokestatProps } from '../../type/index.tsx';
 
 import './style.scss';
 
-const Pokestat = () => {
+const Pokestat = ({ toggleDetails }: PokestatProps) => {
   const pokemon = pokemons[0];
+  const handleClose = () => {
+    toggleDetails();
+  };
   return (
     <div className="pokestat">
       <div className="pokestat-container">
-        <button type="button" className="pokestat-container--button">X</button>
+        <button type="button" className="pokestat-container--button" onClick={handleClose}>X</button>
         <div className="pokestat-container--image">
           <h2 className="pokestat-name">{`#${pokemon.id} ${pokemon.name}`}</h2>
           <img className="pokestat-image" src={pokemon.image} alt={`${pokemon.name}.png`} />
@@ -42,6 +49,10 @@ const Pokestat = () => {
       </div>
     </div>
   );
+};
+
+Pokestat.propTypes = {
+  toggleDetails: PropTypes.func.isRequired,
 };
 
 export default Pokestat;

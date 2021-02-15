@@ -12,6 +12,10 @@
     border-radius: 5px;
     color: vars.$color-background-scaled;
 
+    &-text {
+        font-weight: bold;
+    }
+
     &-image {
         width: 100%;
     }
@@ -24,6 +28,11 @@
         font-size: 1rem;
         width: 20%;
     }
+}
+
+.pokemonlist:hover {
+    background-color: vars.$color-background-scaled;
+    color: vars.$color-background-pokemon;
 }
 
 

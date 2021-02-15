@@ -4,18 +4,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './style.scss';
+// @ts-ignore
+import { PokemonListProps } from '../../type/index.tsx';
 
 const PokemonList = ({
   name,
   image,
   id,
   apiTypes,
-}) => (
-  <li className="pokemonlist">
-    <img className="pokemonlist-image" src={image} alt={name} />
-    <p className="pokemonlist-text">#{id} {name}</p>
-  </li>
-);
+  toggleDetails,
+}: PokemonListProps) => {
+  const handleDetails = (): void => {
+    toggleDetails();
+  };
+
+  return (
+    <li className="pokemonlist" onClick={handleDetails}>
+      <img className="pokemonlist-image" src={image} alt={name} />
+      <p className="pokemonlist-text">#{id} {name}</p>
+    </li>
+  );
+};
 
 PokemonList.propTypes = {
   name: PropTypes.string.isRequired,
@@ -25,6 +34,7 @@ PokemonList.propTypes = {
     name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
   })).isRequired,
+  toggleDetails: PropTypes.func.isRequired,
 };
 
 export default PokemonList;

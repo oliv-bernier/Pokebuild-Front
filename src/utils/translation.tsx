@@ -7,9 +7,9 @@ const translationStat = (stat: string) => {
     case 'defense':
       return 'Défense';
     case 'special_attack':
-      return 'Attaque Spécial';
+      return 'Attaque Spéciale';
     case 'special_defense':
-      return 'Defense Spécial';
+      return 'Défense Spéciale';
     case 'speed':
       return 'Vitesse';
     default:

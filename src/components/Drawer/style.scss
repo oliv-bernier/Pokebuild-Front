@@ -12,6 +12,7 @@
     padding: 0;
     transition: transform 0.5s;
     box-shadow: 0px 0px 3px black;
+    // z-index: 1;
 
     &--open {
         transform: translateY(calc(-50vh + 70px));
