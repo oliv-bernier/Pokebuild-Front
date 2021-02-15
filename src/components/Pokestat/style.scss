@@ -11,28 +11,80 @@
     display: flex;
     background-color: rgba(0, 0, 0, .25);
     width: 100vw;
-    height: calc(100vh - 6rem);
+    height: calc(100vh - 3rem);
     position: absolute;
     top: 0;
+
+    @media (min-width: 1000px) {
+        height: calc(100vh - 6rem);
+    }
 
     &-container {
         color: vars.$color-background-scaled;
         display: flex;
         flex-direction: column;
         background-color: vars.$color-background-pokemon;
-        height: 70vh;
-        width: 45vw;
+        height: 45vh;
+        width: 90vw;
         align-items: center;
+        justify-content: space-around;
         border-radius: 10px;
         margin: auto;
         position: absolute;
-        left: 3rem;
-        top: 3rem;
+        left: 5vw;
+        top: 2vh;
+
+        @media (min-width: 768px) {
+            width: 40vw;
+            margin-top: 20vh;
+        }
+
+        @media (min-width: 1000px) {
+            margin-top: 15vh;
+            height: 50vh;
+            width: 43vw;
+        }
+
+        &--image {
+            display: flex;
+            align-items: center;
+        }
+
+        &--button {
+            position: absolute;
+            top: 7px;
+            right: 7px;
+            height: 1.5rem;
+            width: 1.5rem;
+            border-radius: 10rem;
+            background-color: vars.$color-background;
+            color: vars.$color-background-scaled;
+            border: 1px solid vars.$color-background-scaled;
+        }
+
+        &--button:hover {
+            height: 1.5rem;
+            width: 1.5rem;
+            border-radius: 50%;
+            background-color: vars.$color-background-scaled;
+            border: 1px solid vars.$color-background;
+            color: vars.$color-background-pokemon;
+        }
+    }
+
+    &-name {
+        font-weight: bold;
     }
 
     &-image {
-        height: 12rem;
-        width: 12rem;
+        height: 6rem;
+        width: 6rem;
+        margin-left: 2rem;
+
+        @media (min-width: 1000px) {
+            height: 12rem;
+            width: 12rem;
+        }
     }
 
     &-infos {
@@ -41,31 +93,59 @@
         border-radius: 10px;
         padding: vars.$gutter;
         width: 80%;
+        padding: 0.7rem 1rem;
 
     }
 
     &-details {
+
+        &--right {
+            width: 40%;
+            display: flex;
+            flex-direction: row;
+        }
 
         &-unique {
             display: flex;
             justify-content:space-between;
             align-items: center;
 
+            &--value {
+                width: 1.5rem;
+
+                @media (min-width:768px) {
+                    width: 2rem;
+                }
+            }
+
             &--barre-container {
-                height: 1.5rem;
-                width: 60%;
+                height: 0.8rem;
+                width: 100%;
                 border-radius: 0.5rem;
                 margin-bottom: 0.5rem;
+                margin-left: 0.5rem;
                 position: relative;
                 background-color: vars.$color-background-barre;
+
+                @media (min-width:768px) {
+                    width: 70%;
+                }
+
+                @media (min-width: 1000px) {
+                    height: 1.5rem;
+                }
             }
 
             &--barre__progress {
                 background-color: vars.$color-background-scaled;
-                height: 1.5rem;
+                height: 0.8rem;
                 border-top-left-radius: 0.5rem;
                 border-bottom-left-radius: 0.5rem;
-              }
+
+                @media (min-width: 1000px) {
+                    height: 1.5rem;
+                }
+            }
         }
     }
 }

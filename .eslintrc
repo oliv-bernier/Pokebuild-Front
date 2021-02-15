@@ -31,12 +31,13 @@
       "react/destructuring-assignment": "warn",
       "react/no-unescaped-entities": "off",
       "react/jsx-props-no-spreading": "off",
-      "react/state-in-constructor": "off"
+      "react/state-in-constructor": "off",
+      "linebreak-style": ["error", "windows"]
     },
     "settings": {
       "import/resolver": {
         "alias": {
-          "extensions": [".js"],
+          "extensions": [".js", ".tsx"],
           "map": [
             ["src", "./src"],
             ["app", "./src"]
