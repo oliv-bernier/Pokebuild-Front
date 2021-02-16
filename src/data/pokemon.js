@@ -4,6 +4,80 @@ const pokemon = [
     name: 'Bulbizzare',
     image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
     sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
+    resistances: {
+      Normal: {
+        damage_multiplier: 1,
+        damage_relation: 'neutral',
+      },
+      Combat: {
+        damage_multiplier: 1,
+        damage_relation: 'neutral',
+      },
+      Vol: {
+        damage_multiplier: 1,
+        damage_relation: 'neutral',
+      },
+      Poison: {
+        damage_multiplier: 1,
+        damage_relation: 'neutral',
+      },
+      Sol: {
+        damage_multiplier: 2,
+        damage_relation: 'vulnerable',
+      },
+      Roche: {
+        damage_multiplier: 2,
+        damage_relation: 'vulnerable',
+      },
+      Insecte: {
+        damage_multiplier: 0.5,
+        damage_relation: 'resistant',
+      },
+      Spectre: {
+        damage_multiplier: 1,
+        damage_relation: 'neutral',
+      },
+      Acier: {
+        damage_multiplier: 0.5,
+        damage_relation: 'resistant',
+      },
+      Feu: {
+        damage_multiplier: 0.5,
+        damage_relation: 'resistant',
+      },
+      Eau: {
+        damage_multiplier: 2,
+        damage_relation: 'vulnerable',
+      },
+      Plante: {
+        damage_multiplier: 0.5,
+        damage_relation: 'resistant',
+      },
+      Électrik: {
+        damage_multiplier: 1,
+        damage_relation: 'neutral',
+      },
+      Psy: {
+        damage_multiplier: 1,
+        damage_relation: 'neutral',
+      },
+      Glace: {
+        damage_multiplier: 0.5,
+        damage_relation: 'resistant',
+      },
+      Dragon: {
+        damage_multiplier: 1,
+        damage_relation: 'neutral',
+      },
+      Ténèbres: {
+        damage_multiplier: 1,
+        damage_relation: 'neutral',
+      },
+      Fée: {
+        damage_multiplier: 0.5,
+        damage_relation: 'resistant',
+      },
+    },
     stats: {
       HP: 80,
       attack: 82,

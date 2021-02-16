@@ -1,11 +1,24 @@
 @use '../../styles/vars';
 
-// .test {
-//     position: relative;
-//     top: 10rem;
-//     filter: blur(1px);
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
 
-// }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
 
 .pokestat {
     display: flex;
@@ -14,9 +27,14 @@
     height: calc(100vh - 3rem);
     position: absolute;
     top: 0;
+    animation: fadeIn 0.5s 1;
 
     @media (min-width: 1000px) {
         height: calc(100vh - 6rem);
+    }
+
+    &--animation {
+        animation: fadeOut 0.5s 1;
     }
 
     &-container {
@@ -48,6 +66,19 @@
         &--image {
             display: flex;
             align-items: center;
+
+            &_type {
+                margin: 0.3rem 0.2rem 0 0.2rem;
+                width: 1.5rem;
+
+                @media (min-width: 768px) {
+                    width: 2rem;
+                }
+
+                @media (min-width: 1400px) {
+                    width: 2.7rem;
+                }
+            }
         }
 
         &--button {

@@ -1,3 +1,5 @@
+import { POKEMON_DETAILS } from '../actions/pokemon';
+
 const initialState = {
   pokemonList: [
     {
@@ -16,14 +18,88 @@ const initialState = {
       apiTypes: [
         {
           name: 'Poison',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/21/00/pokemon-3416765_1280.png',
         },
         {
           name: 'Plante',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/01/41/pokemon-3414810_1280.png',
         },
       ],
       apiGeneration: 1,
+      resistances: {
+        Normal: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Combat: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Vol: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Poison: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Sol: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Roche: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Insecte: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Spectre: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Acier: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Feu: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Eau: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Plante: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Électrik: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Psy: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Glace: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Dragon: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Ténèbres: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Fée: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+      },
     },
     {
       id: 2,
@@ -41,14 +117,88 @@ const initialState = {
       apiTypes: [
         {
           name: 'Poison',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/21/00/pokemon-3416765_1280.png',
         },
         {
           name: 'Plante',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/01/41/pokemon-3414810_1280.png',
         },
       ],
       apiGeneration: 1,
+      resistances: {
+        Normal: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Combat: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Vol: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Poison: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Sol: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Roche: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Insecte: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Spectre: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Acier: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Feu: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Eau: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Plante: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Électrik: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Psy: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Glace: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Dragon: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Ténèbres: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Fée: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+      },
     },
     {
       id: 3,
@@ -66,14 +216,88 @@ const initialState = {
       apiTypes: [
         {
           name: 'Poison',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/21/00/pokemon-3416765_1280.png',
         },
         {
           name: 'Plante',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/01/41/pokemon-3414810_1280.png',
         },
       ],
       apiGeneration: 1,
+      resistances: {
+        Normal: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Combat: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Vol: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Poison: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Sol: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Roche: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Insecte: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Spectre: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Acier: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Feu: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Eau: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Plante: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Électrik: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Psy: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Glace: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Dragon: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Ténèbres: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Fée: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+      },
     },
     {
       id: 4,
@@ -99,6 +323,80 @@ const initialState = {
         },
       ],
       apiGeneration: 1,
+      resistances: {
+        Normal: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Combat: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Vol: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Poison: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Sol: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Roche: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Insecte: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Spectre: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Acier: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Feu: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Eau: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Plante: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Électrik: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Psy: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Glace: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Dragon: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Ténèbres: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Fée: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+      },
     },
     {
       id: 5,
@@ -124,6 +422,80 @@ const initialState = {
         },
       ],
       apiGeneration: 1,
+      resistances: {
+        Normal: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Combat: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Vol: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Poison: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Sol: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Roche: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Insecte: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Spectre: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Acier: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Feu: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Eau: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Plante: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Électrik: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Psy: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Glace: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Dragon: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Ténèbres: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Fée: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+      },
     },
     {
       id: 6,
@@ -141,14 +513,88 @@ const initialState = {
       apiTypes: [
         {
           name: 'Poison',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/21/00/pokemon-3416765_1280.png',
         },
         {
           name: 'Plante',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/01/41/pokemon-3414810_1280.png',
         },
       ],
       apiGeneration: 1,
+      resistances: {
+        Normal: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Combat: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Vol: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Poison: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Sol: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Roche: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Insecte: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Spectre: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Acier: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Feu: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Eau: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Plante: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Électrik: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Psy: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Glace: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Dragon: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Ténèbres: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Fée: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+      },
     },
     {
       id: 7,
@@ -166,11 +612,11 @@ const initialState = {
       apiTypes: [
         {
           name: 'Poison',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/21/00/pokemon-3416765_1280.png',
         },
         {
           name: 'Plante',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/01/41/pokemon-3414810_1280.png',
         },
       ],
       apiGeneration: 1,
@@ -191,11 +637,11 @@ const initialState = {
       apiTypes: [
         {
           name: 'Poison',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/21/00/pokemon-3416765_1280.png',
         },
         {
           name: 'Plante',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/01/41/pokemon-3414810_1280.png',
         },
       ],
       apiGeneration: 1,
@@ -216,11 +662,11 @@ const initialState = {
       apiTypes: [
         {
           name: 'Poison',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/21/00/pokemon-3416765_1280.png',
         },
         {
           name: 'Plante',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/01/41/pokemon-3414810_1280.png',
         },
       ],
       apiGeneration: 1,
@@ -241,11 +687,11 @@ const initialState = {
       apiTypes: [
         {
           name: 'Poison',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/21/00/pokemon-3416765_1280.png',
         },
         {
           name: 'Plante',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/01/41/pokemon-3414810_1280.png',
         },
       ],
       apiGeneration: 1,
@@ -266,11 +712,11 @@ const initialState = {
       apiTypes: [
         {
           name: 'Poison',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/21/00/pokemon-3416765_1280.png',
         },
         {
           name: 'Plante',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/01/41/pokemon-3414810_1280.png',
         },
       ],
       apiGeneration: 1,
@@ -291,11 +737,11 @@ const initialState = {
       apiTypes: [
         {
           name: 'Poison',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/21/00/pokemon-3416765_1280.png',
         },
         {
           name: 'Plante',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/01/41/pokemon-3414810_1280.png',
         },
       ],
       apiGeneration: 1,
@@ -316,11 +762,11 @@ const initialState = {
       apiTypes: [
         {
           name: 'Poison',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/21/00/pokemon-3416765_1280.png',
         },
         {
           name: 'Plante',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/01/41/pokemon-3414810_1280.png',
         },
       ],
       apiGeneration: 1,
@@ -341,11 +787,11 @@ const initialState = {
       apiTypes: [
         {
           name: 'Poison',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/21/00/pokemon-3416765_1280.png',
         },
         {
           name: 'Plante',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/01/41/pokemon-3414810_1280.png',
         },
       ],
       apiGeneration: 1,
@@ -366,11 +812,11 @@ const initialState = {
       apiTypes: [
         {
           name: 'Poison',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/21/00/pokemon-3416765_1280.png',
         },
         {
           name: 'Plante',
-          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/01/41/pokemon-3414810_1280.png',
         },
       ],
       apiGeneration: 1,
@@ -741,6 +1187,33 @@ const initialState = {
       apiTypes: [
         {
           name: 'Poison',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/21/00/pokemon-3416765_1280.png',
+        },
+        {
+          name: 'Plante',
+          image: 'https://cdn.pixabay.com/photo/2018/05/20/01/41/pokemon-3414810_1280.png',
+        },
+      ],
+      apiGeneration: 1,
+    },
+  ],
+  pokemonSelected: [
+    {
+      id: 1,
+      name: 'Bulbizzare',
+      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+      sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
+      stats: {
+        HP: 80,
+        attack: 82,
+        defense: 83,
+        special_attack: 100,
+        special_defense: 100,
+        speed: 80,
+      },
+      apiTypes: [
+        {
+          name: 'Poison',
           image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
         },
         {
@@ -749,16 +1222,591 @@ const initialState = {
         },
       ],
       apiGeneration: 1,
+      resistances: {
+        Normal: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Combat: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Vol: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Poison: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Sol: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Roche: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Insecte: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Spectre: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Acier: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Feu: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Eau: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Plante: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Électrik: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Psy: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Glace: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Dragon: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Ténèbres: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Fée: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+      },
+    },
+    {
+      id: 2,
+      name: 'Bulbizzare',
+      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+      sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
+      stats: {
+        HP: 80,
+        attack: 82,
+        defense: 83,
+        special_attack: 100,
+        special_defense: 100,
+        speed: 80,
+      },
+      apiTypes: [
+        {
+          name: 'Poison',
+          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+        },
+        {
+          name: 'Plante',
+          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+        },
+      ],
+      apiGeneration: 1,
+      resistances: {
+        Normal: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Combat: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Vol: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Poison: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Sol: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Roche: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Insecte: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Spectre: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Acier: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Feu: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Eau: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Plante: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Électrik: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Psy: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Glace: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Dragon: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Ténèbres: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Fée: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+      },
+    },
+    {
+      id: 3,
+      name: 'Bulbizzare',
+      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+      sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
+      stats: {
+        HP: 80,
+        attack: 82,
+        defense: 83,
+        special_attack: 100,
+        special_defense: 100,
+        speed: 80,
+      },
+      apiTypes: [
+        {
+          name: 'Poison',
+          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+        },
+        {
+          name: 'Plante',
+          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+        },
+      ],
+      apiGeneration: 1,
+      resistances: {
+        Normal: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Combat: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Vol: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Poison: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Sol: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Roche: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Insecte: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Spectre: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Acier: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Feu: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Eau: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Plante: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Électrik: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Psy: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Glace: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Dragon: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Ténèbres: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Fée: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+      },
+    },
+    {
+      id: 4,
+      name: 'Bulbizzare',
+      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+      sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
+      stats: {
+        HP: 80,
+        attack: 82,
+        defense: 83,
+        special_attack: 100,
+        special_defense: 100,
+        speed: 80,
+      },
+      apiTypes: [
+        {
+          name: 'Poison',
+          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+        },
+        {
+          name: 'Plante',
+          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+        },
+      ],
+      apiGeneration: 1,
+      resistances: {
+        Normal: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Combat: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Vol: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Poison: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Sol: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Roche: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Insecte: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Spectre: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Acier: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Feu: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Eau: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Plante: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Électrik: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Psy: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Glace: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Dragon: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Ténèbres: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Fée: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+      },
+    },
+    {
+      id: 5,
+      name: 'Bulbizzare',
+      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+      sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
+      stats: {
+        HP: 80,
+        attack: 82,
+        defense: 83,
+        special_attack: 100,
+        special_defense: 100,
+        speed: 80,
+      },
+      apiTypes: [
+        {
+          name: 'Poison',
+          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+        },
+        {
+          name: 'Plante',
+          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+        },
+      ],
+      apiGeneration: 1,
+      resistances: {
+        Normal: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Combat: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Vol: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Poison: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Sol: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Roche: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Insecte: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Spectre: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Acier: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Feu: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Eau: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Plante: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Électrik: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Psy: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Glace: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Dragon: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Ténèbres: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Fée: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+      },
+    },
+    {
+      id: 6,
+      name: 'Bulbizzare',
+      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+      sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
+      stats: {
+        HP: 80,
+        attack: 82,
+        defense: 83,
+        special_attack: 100,
+        special_defense: 100,
+        speed: 80,
+      },
+      apiTypes: [
+        {
+          name: 'Poison',
+          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+        },
+        {
+          name: 'Plante',
+          image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+        },
+      ],
+      apiGeneration: 1,
+      resistances: {
+        Normal: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Combat: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Vol: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Poison: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Sol: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Roche: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Insecte: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Spectre: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Acier: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Feu: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Eau: {
+          damage_multiplier: 2,
+          damage_relation: 'vulnerable',
+        },
+        Plante: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Électrik: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Psy: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Glace: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+        Dragon: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Ténèbres: {
+          damage_multiplier: 1,
+          damage_relation: 'neutral',
+        },
+        Fée: {
+          damage_multiplier: 0.5,
+          damage_relation: 'resistant',
+        },
+      },
     },
   ],
-  pokemonSelected: [],
   pokedetails: {},
   favorites: [],
 };
 
-// eslint-disable-next-line no-unused-vars
-const reducer = (state = initialState, action = {}) => (
-  state
-);
+const reducer = (state = initialState, action = {}) => {
+  switch (action.type) {
+    case POKEMON_DETAILS:
+      return {
+        ...state,
+        pokedetails: action.pokeDetails,
+      };
+    default:
+      return state;
+  }
+};
 
 export default reducer;

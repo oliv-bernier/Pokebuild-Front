@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 import './style.scss';
 // @ts-ignore
 import { PokemonListProps } from '../../type/index.tsx';
+// @ts-ignore
+import { findPokemonDetails } from '../../selectors/pokemon.tsx';
 
 const PokemonList = ({
   name,
@@ -13,8 +15,11 @@ const PokemonList = ({
   id,
   apiTypes,
   toggleDetails,
+  state,
+  pokemonDetails,
 }: PokemonListProps) => {
   const handleDetails = (): void => {
+    pokemonDetails(findPokemonDetails(state, id));
     toggleDetails();
   };
 
@@ -35,6 +40,8 @@ PokemonList.propTypes = {
     image: PropTypes.string.isRequired,
   })).isRequired,
   toggleDetails: PropTypes.func.isRequired,
+  state: PropTypes.object.isRequired,
+  pokemonDetails: PropTypes.func.isRequired,
 };
 
 export default PokemonList;

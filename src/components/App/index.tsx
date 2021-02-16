@@ -1,15 +1,16 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-// eslint-disable-next-line import/extensions
-import { AppProps } from '../../type/index';
+// @ts-ignore
+import { AppProps } from '../../type/index.tsx';
 import Header from '../Header';
 import Footer from '../Footer';
-import Home from '../Home';
+// @ts-ignore
+import Home from '../Home/index.tsx';
 import Drawer from '../../containers/Drawer';
 import About from '../About';
 import NotFound from '../NotFound';
-// @ts-ignore
+
 import Pokestat from '../../containers/Pokestat';
 
 import './style.scss';
@@ -20,7 +21,7 @@ const App = ({ isDetails }: AppProps) => (
     <div className="container">
       <Switch>
         <Route path="/" exact>
-          <Home />
+          <Home isDetails={isDetails} />
           <Drawer />
           {isDetails && <Pokestat />}
         </Route>
