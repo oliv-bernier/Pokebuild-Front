@@ -1,4 +1,10 @@
-import { POKEMON_DETAILS } from '../actions/pokemon';
+import {
+  POKEMON_DETAILS,
+  INPUT_SEARCH,
+  DELETE_SEARCH_INPUT,
+  ADD_FILTER_TYPES,
+  DELETE_FILTER_TYPES,
+} from '../actions/pokemon';
 
 const initialState = {
   pokemonList: [
@@ -1795,6 +1801,82 @@ const initialState = {
   ],
   pokedetails: {},
   favorites: [],
+  types: [
+    {
+      name: 'Normal',
+      image: 'https://cdn.pixabay.com/photo/2018/05/20/21/00/pokemon-3416764_1280.png',
+    },
+    {
+      name: 'Combat',
+      image: 'https://cdn.pixabay.com/photo/2018/05/20/01/40/pokemon-3414806_1280.png',
+    },
+    {
+      name: 'Vol',
+      image: 'https://cdn.pixabay.com/photo/2018/05/20/01/40/pokemon-3414808_1280.png',
+    },
+    {
+      name: 'Normal',
+      image: 'https://cdn.pixabay.com/photo/2018/05/20/01/40/pokemon-3414806_1280.png',
+    },
+    {
+      name: 'Normal',
+      image: 'https://cdn.pixabay.com/photo/2018/05/20/01/40/pokemon-3414806_1280.png',
+    },
+    {
+      name: 'Normal',
+      image: 'https://cdn.pixabay.com/photo/2018/05/20/01/40/pokemon-3414806_1280.png',
+    },
+    {
+      name: 'Normal',
+      image: 'https://cdn.pixabay.com/photo/2018/05/20/01/40/pokemon-3414806_1280.png',
+    },
+    {
+      name: 'Normal',
+      image: 'https://cdn.pixabay.com/photo/2018/05/20/01/40/pokemon-3414806_1280.png',
+    },
+    {
+      name: 'Normal',
+      image: 'https://cdn.pixabay.com/photo/2018/05/20/01/40/pokemon-3414806_1280.png',
+    },
+    {
+      name: 'Normal',
+      image: 'https://cdn.pixabay.com/photo/2018/05/20/01/40/pokemon-3414806_1280.png',
+    },
+    {
+      name: 'Normal',
+      image: 'https://cdn.pixabay.com/photo/2018/05/20/01/40/pokemon-3414806_1280.png',
+    },
+    {
+      name: 'Normal',
+      image: 'https://cdn.pixabay.com/photo/2018/05/20/01/40/pokemon-3414806_1280.png',
+    },
+    {
+      name: 'Normal',
+      image: 'https://cdn.pixabay.com/photo/2018/05/20/01/40/pokemon-3414806_1280.png',
+    },
+    {
+      name: 'Normal',
+      image: 'https://cdn.pixabay.com/photo/2018/05/20/01/40/pokemon-3414806_1280.png',
+    },
+    {
+      name: 'Normal',
+      image: 'https://cdn.pixabay.com/photo/2018/05/20/01/40/pokemon-3414806_1280.png',
+    },
+    {
+      name: 'Normal',
+      image: 'https://cdn.pixabay.com/photo/2018/05/20/01/40/pokemon-3414806_1280.png',
+    },
+    {
+      name: 'Normal',
+      image: 'https://cdn.pixabay.com/photo/2018/05/20/01/40/pokemon-3414806_1280.png',
+    },
+    {
+      name: 'Normal',
+      image: 'https://cdn.pixabay.com/photo/2018/05/20/01/40/pokemon-3414806_1280.png',
+    },
+  ],
+  searchInput: 'test',
+  filterTypes: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -1803,6 +1885,26 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         pokedetails: action.pokeDetails,
+      };
+    case INPUT_SEARCH:
+      return {
+        ...state,
+        searchInput: action.value,
+      };
+    case DELETE_SEARCH_INPUT:
+      return {
+        ...state,
+        searchInput: '',
+      };
+    case ADD_FILTER_TYPES:
+      return {
+        ...state,
+        filterTypes: [...state.filterTypes, action.value],
+      };
+    case DELETE_FILTER_TYPES:
+      return {
+        ...state,
+        filterTypes: [...state.filterTypes.filter((type) => type !== action.value)],
       };
     default:
       return state;

@@ -1,14 +1,56 @@
-.search-input {
-    margin: 0.5rem 0.5rem 0.5rem 0;
-    border: none;
-    border-radius: 5px;
-    padding: 0.5rem;
-    height: 0.8rem;
-    margin-bottom: 0;
-    width: 50%;
+@use '../../styles/vars';
 
-    @media (min-width: 768px) {
-        width: 70%;
-        height: 1.2rem;
+.search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    &-input {
+        margin: 0.5rem 0.5rem 0.5rem 0;
+        border: none;
+        border-radius: 10px;
+        padding: 0.8rem 0.5rem;
+        height: 0.8rem;
+        margin-bottom: 0;
+        width: 85%;
+
+        @media (min-width: 768px) {
+            width: 90%;
+            height: 1.2rem;
+            padding: 1.2rem 0.5rem;
+        }
+    }
+
+    &-button {
+        // padding: 0.5rem 0.5rem;
+        font-size: 0.65rem;
+        border-radius: 5rem;
+        position: absolute;
+        background-color: vars.$color-background;
+        color: vars.$color-background-scaled;
+        top: 1.6vh;
+        right: 10vw;
+        height: 1rem;
+        border-radius: 10rem;
+        border: none;
+
+        @media (min-width: 768px) {
+            font-size: 0.8rem;
+            height: 2rem;
+            width: 2rem;
+            right: 4vw;
+        }
+
+        @media (min-width: 1400px) {
+            font-size: 1rem;
+            top: 1.25vh;
+            right: 6vh;
+        }
+
+        &:hover {
+            background-color: vars.$color-background-scaled;
+            color: vars.$color-background;
+        }
     }
 }

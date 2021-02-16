@@ -41,3 +41,15 @@ export interface ApiTypes {
   name: string,
   image: string,
 }
+
+export interface SearchInputProps {
+  value: string,
+  inputSearch: Function,
+  deleteInput: Function,
+}
+
+export interface CheckboxesProps {
+  types: Array<string>,
+  addTypesFilter: Function,
+  deleteTypesFilter: Function,
+}

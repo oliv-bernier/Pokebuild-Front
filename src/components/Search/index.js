@@ -1,14 +1,14 @@
 import React from 'react';
 
-import SearchInput from '../SearchInput';
-import SearchSelect from '../SearchSelect';
+import SearchInput from '../../containers/SearchInput';
+import Checkboxes from '../../containers/Checkboxes';
 
 import './style.scss';
 
 const Search = () => (
   <div className="search">
     <SearchInput />
-    <SearchSelect />
+    <Checkboxes />
   </div>
 );
 

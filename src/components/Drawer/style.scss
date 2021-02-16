@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     background-color: vars.$color-background;
-    height: calc(50vh - 3.2rem);
+    height: calc(62vh - 3.2rem);
     position: fixed;
     width: 100%;
     top: calc(100vh - 2.9rem);
@@ -15,7 +15,7 @@
     // z-index: 1;
 
     &--open {
-        transform: translateY(calc(-50vh + 70px));
+        transform: translateY(calc(-62vh + 70px));
         transition: transform 0.5s;
     }
 
@@ -80,11 +80,17 @@
         // adapter la soustraction si besoin pour le nombre de résultats
         height: calc(50vh - 100px);
         position: relative;
+        bottom: -11vh;
         overflow-y: auto;
 
         @media (min-width: 768px) {
             margin-top: 1rem;
             height: calc(100vh - 230px);
+            bottom: -8vh;
+        }
+
+        @media (min-width: 1400px) {
+            bottom: -7vh;
         }
 
         &::-webkit-scrollbar {

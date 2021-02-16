@@ -1,0 +1,39 @@
+.checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90%;
+  margin-top: 0.2rem;
+  position: absolute;
+  bottom: -65px;
+
+  @media (min-width: 768px) {
+    bottom: -80px;
+  }
+
+  @media (min-width: 1400px) {
+    bottom: -65px;
+  }
+
+  &-image {
+    width: 1.5rem;
+    margin: 0.2rem;
+    filter: grayscale(100%);
+
+    @media (min-width: 768px) {
+      width: 1.8rem;
+    }
+
+    @media (min-width: 1400px) {
+      width: 2.2rem;
+    }
+
+    &--selected {
+      filter: none;
+    }
+  }
+
+  &-image:hover {
+    filter: none;
+  }
+}
