@@ -24,7 +24,7 @@ const CheckboxesItem = ({
     <img
       key={name}
       src={image}
-      className={classNames(`checkboxes-image-${name}`, { 'checkboxes-image--selected': isChecked })}
+      className={classNames(`checkboxes-image ${name}`, { 'checkboxes-image--selected': isChecked })}
       alt={name}
       onClick={handleSelect}
     />
