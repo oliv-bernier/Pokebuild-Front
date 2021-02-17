@@ -6,7 +6,7 @@ import TdHead from './TdHead';
 import './style.scss';
 
 const Tab = (
-  { types, resistances },
+  { types, pokemonSelected },
 ) => (
   <div className="tab-container">
     <p className="tab-title"> Forces et faiblesses de votre séléction</p>
@@ -21,180 +21,119 @@ const Tab = (
       </thead>
       <tbody>
         <tr>
-          <td className="tab-head--sprites">P1</td>
-          <td className="tab-head--sprites">P2</td>
-          <td className="tab-head--sprites">P3</td>
-          <td className="tab-head--sprites">P4</td>
-          <td className="tab-head--sprites">P5</td>
-          <td className="tab-head--sprites">P6</td>
+          {pokemonSelected.map((chosenPokemon) => (
+            <td className="tab-head--sprites">
+              <img className="tab-head--sprites_image" src={chosenPokemon.image} alt={chosenPokemon.name} />
+            </td>
+          ))}
           <td className="tab-head--sprites">S</td>
         </tr>
         <tr>
-          { console.log(resistances) }
-          {/* resistances.map((currentResistance) => (
-            <td className="tab-head--def">
-              {currentResistance.damage_multiplier}
-            </td>
-          )) */}
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
+          {pokemonSelected.map((resist) => (
+            <td className="tab-head--def">{resist.resistances.Acier.damage_multiplier}</td>
+          ))}
           <td className="tab-head--def">S</td>
         </tr>
         <tr>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
+          {pokemonSelected.map((resist) => (
+            <td className="tab-head--def">{resist.resistances.Combat.damage_multiplier}</td>
+          ))}
           <td className="tab-head--def">S</td>
         </tr>
         <tr>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
+          {pokemonSelected.map((resist) => (
+            <td className="tab-head--def">{resist.resistances.Dragon.damage_multiplier}</td>
+          ))}
           <td className="tab-head--def">S</td>
         </tr>
         <tr>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
+          {pokemonSelected.map((resist) => (
+            <td className="tab-head--def">{resist.resistances.Eau.damage_multiplier}</td>
+          ))}
           <td className="tab-head--def">S</td>
         </tr>
         <tr>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
+          {pokemonSelected.map((resist) => (
+            <td className="tab-head--def">{resist.resistances.Feu.damage_multiplier}</td>
+          ))}
           <td className="tab-head--def">S</td>
         </tr>
         <tr>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
+          {pokemonSelected.map((resist) => (
+            <td className="tab-head--def">{resist.resistances.Fée.damage_multiplier}</td>
+          ))}
           <td className="tab-head--def">S</td>
         </tr>
         <tr>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
+          {pokemonSelected.map((resist) => (
+            <td className="tab-head--def">{resist.resistances.Glace.damage_multiplier}</td>
+          ))}
           <td className="tab-head--def">S</td>
         </tr>
         <tr>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
+          {pokemonSelected.map((resist) => (
+            <td className="tab-head--def">{resist.resistances.Insecte.damage_multiplier}</td>
+          ))}
           <td className="tab-head--def">S</td>
         </tr>
         <tr>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
+          {pokemonSelected.map((resist) => (
+            <td className="tab-head--def">{resist.resistances.Normal.damage_multiplier}</td>
+          ))}
           <td className="tab-head--def">S</td>
         </tr>
         <tr>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
+          {pokemonSelected.map((resist) => (
+            <td className="tab-head--def">{resist.resistances.Plante.damage_multiplier}</td>
+          ))}
           <td className="tab-head--def">S</td>
         </tr>
         <tr>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
+          {pokemonSelected.map((resist) => (
+            <td className="tab-head--def">{resist.resistances.Poison.damage_multiplier}</td>
+          ))}
           <td className="tab-head--def">S</td>
         </tr>
         <tr>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
+          {pokemonSelected.map((resist) => (
+            <td className="tab-head--def">{resist.resistances.Psy.damage_multiplier}</td>
+          ))}
           <td className="tab-head--def">S</td>
         </tr>
         <tr>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
+          {pokemonSelected.map((resist) => (
+            <td className="tab-head--def">{resist.resistances.Roche.damage_multiplier}</td>
+          ))}
           <td className="tab-head--def">S</td>
         </tr>
         <tr>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
+          {pokemonSelected.map((resist) => (
+            <td className="tab-head--def">{resist.resistances.Sol.damage_multiplier}</td>
+          ))}
           <td className="tab-head--def">S</td>
         </tr>
         <tr>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
+          {pokemonSelected.map((resist) => (
+            <td className="tab-head--def">{resist.resistances.Spectre.damage_multiplier}</td>
+          ))}
           <td className="tab-head--def">S</td>
         </tr>
         <tr>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
+          {pokemonSelected.map((resist) => (
+            <td className="tab-head--def">{resist.resistances.Ténèbres.damage_multiplier}</td>
+          ))}
           <td className="tab-head--def">S</td>
         </tr>
         <tr>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
+          {pokemonSelected.map((resist) => (
+            <td className="tab-head--def">{resist.resistances.Vol.damage_multiplier}</td>
+          ))}
           <td className="tab-head--def">S</td>
         </tr>
         <tr>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
-          <td className="tab-head--def">Test</td>
+          {pokemonSelected.map((resist) => (
+            <td className="tab-head--def">{resist.resistances.Électrik.damage_multiplier}</td>
+          ))}
           <td className="tab-head--def">S</td>
         </tr>
       </tbody>
@@ -207,9 +146,11 @@ Tab.propTypes = {
     image: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
   })).isRequired,
-  resistances: PropTypes.objectOf(PropTypes.shape({
-    damage_multiplier: PropTypes.number.isRequired,
-    damage_relation: PropTypes.string.isRequired,
+  pokemonSelected: PropTypes.arrayOf(PropTypes.shape({
+    resistances: PropTypes.objectOf(PropTypes.shape({
+      damage_multiplier: PropTypes.string.isRequired,
+      damage_relation: PropTypes.string.isRequired,
+    })).isRequired,
   })).isRequired,
 };
 

@@ -1725,6 +1725,7 @@ const initialState = {
       apiGeneration: 1,
       resistances: {
         Normal: {
+          name: '',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },

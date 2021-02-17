@@ -2,12 +2,11 @@
 
 .tab {
 
-    // @media (max-width: 767px) {
-        display: flex;
-        flex-direction: row;
-        max-width: 100%;
-        justify-content: center;
-    // }
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    justify-content: center;
+    margin-bottom: 4rem;
 
     &-container {
         margin: 0;
@@ -42,6 +41,7 @@
             padding: auto;
             height: 3rem;
             position: relative;
+            background-color: vars.$color-background;
 
             &:last-child{
                 border-bottom: 1px solid black;
@@ -55,7 +55,6 @@
 
             &_name {
                 position: absolute;
-                cursor: pointer;
                 background-color: vars.$color-background-pokemon;
                 color: vars.$color-background-scaled;
                 top: 5px;
@@ -65,22 +64,34 @@
         }
 
         &--sprites {
-            text-align: center;
             border-top: 1px solid black;
             border-right: 1px solid black;
-            padding: (vars.$gutter / 2);
+            padding: 0;
             height: 3rem;
+            position: relative;
+            text-align: center;
+            background-color: vars.$color-background-scaled-drop;
+
+            &_image {
+                position: absolute;
+                left: 20%;
+                top: 20%;
+                max-width: 100%;
+                height: auto;
+                margin: 0;
+                padding: 0;
+            }
         }
 
         
 
         &--def {
-
             text-align: center;
             border-top: 1px solid black;
             border-right: 1px solid black;
             padding: (vars.$gutter / 2);
             height: 3rem;
+            background-color: vars.$color-background2;
             
             // @media (max-width: 767px) {
             //     display: flex;
@@ -90,4 +101,9 @@
             // }
         }
     }
+}
+
+.tab td {
+    height: 4rem;
+    width: 3rem;
 }
