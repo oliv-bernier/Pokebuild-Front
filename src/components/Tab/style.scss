@@ -31,21 +31,36 @@
         }
 
         &--type {
-            text-align: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
             border-top: 1px solid black;
             border-right: 1px solid black;
             border-left: 1px solid black;
             padding: (vars.$gutter / 2);
             padding: auto;
+            height: 3rem;
+            position: relative;
 
             &:last-child{
                 border-bottom: 1px solid black;
             }
 
             &_image {
-                width: 1rem;
+                width: 1.5rem;
                 padding: 0;
                 margin: 0;
+            }
+
+            &_name {
+                position: absolute;
+                cursor: pointer;
+                background-color: vars.$color-background-pokemon;
+                color: vars.$color-background-scaled;
+                top: 5px;
+                padding: 0.2rem;
+                border-radius: 5px;
             }
         }
 
@@ -54,6 +69,7 @@
             border-top: 1px solid black;
             border-right: 1px solid black;
             padding: (vars.$gutter / 2);
+            height: 3rem;
         }
 
         
@@ -64,6 +80,7 @@
             border-top: 1px solid black;
             border-right: 1px solid black;
             padding: (vars.$gutter / 2);
+            height: 3rem;
             
             // @media (max-width: 767px) {
             //     display: flex;

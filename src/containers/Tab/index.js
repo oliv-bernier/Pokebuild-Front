@@ -1,9 +1,13 @@
 import { connect } from 'react-redux';
 import Tab from '../../components/Tab/index';
 
-const mapStateToProp = (state) => ({
-  types: state.pokemon.types,
-});
+const mapStateToProp = (state) => {
+  const { resistances } = state.pokemon.pokemonSelected;
+  return ({
+    types: state.pokemon.types,
+    resistances,
+  });
+};
 
 const mapDispatchToProps = () => ({});
 
