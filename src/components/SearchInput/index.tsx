@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// @ts-ignore
-import { SearchInputProps } from '../../type/index.tsx';
 import './style.scss';
 
-const SearchInput = ({ value, inputSearch, deleteInput }: SearchInputProps) => {
+const SearchInput = ({ value, inputSearch, deleteInput }: {
+  value: string,
+  inputSearch: Function,
+  deleteInput: Function,
+}) => {
   const handleChange = (evt: { target: { value: string; }; }) => {
     inputSearch(evt.target.value);
   };

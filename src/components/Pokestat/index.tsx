@@ -3,14 +3,19 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-// @ts-ignore
-import translation from '../../utils/translation.tsx';
-// @ts-ignore
-import { PokestatProps, ApiTypes } from '../../type/index.tsx';
+import translation from '../../utils/translation';
 
 import './style.scss';
 
-const Pokestat = ({ toggleDetails, pokemon }: PokestatProps) => {
+const Pokestat = ({ toggleDetails, pokemon }: {toggleDetails: Function, pokemon: {
+  id: number,
+  name: string,
+  image: string,
+  sprite: string,
+  stats: Array<number>,
+  apiTypes: Array<any>,
+  apiGeneration: number,
+}}) => {
   const {
     id,
     name,
@@ -30,8 +35,13 @@ const Pokestat = ({ toggleDetails, pokemon }: PokestatProps) => {
         <div className="pokestat-container--image">
           <div className="pokestat-container--image_infos">
             <h2 className="pokestat-name">{`#${id} ${name}`}</h2>
-            {apiTypes.map((type: ApiTypes) => (
-              <img className="pokestat-container--image_type" src={type.image} alt={`${type.name}.png`} />
+            {apiTypes.map((type: {name: string, image: string}) => (
+              <img
+                key={type.name}
+                className="pokestat-container--image_type"
+                src={type.image}
+                alt={`${type.name}.png`}
+              />
             ))}
           </div>
           <img className="pokestat-image" src={image} alt={`${name}.png`} />

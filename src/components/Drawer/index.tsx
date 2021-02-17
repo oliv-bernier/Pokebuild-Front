@@ -5,13 +5,16 @@ import classNames from 'classnames';
 import Search from '../Search';
 import PokemonList from '../../containers/PokemonList';
 
-// eslint-disable-next-line import/extensions
-import { Pokemon, DrawerProps } from '../../type';
+import { Pokemon } from '../../type';
 import pokeball from '../../assets/pokeball-big.svg';
 
 import './style.scss';
 
-const Drawer = ({ pokemon, toggleDrawer, isDrawer }: DrawerProps) => {
+const Drawer = ({ pokemon, toggleDrawer, isDrawer }: {
+  pokemon: Array<Pokemon>,
+  toggleDrawer: Function,
+  isDrawer: boolean,
+}) => {
   const handleDrawer = (): void => {
     toggleDrawer();
   };
