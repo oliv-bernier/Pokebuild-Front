@@ -34,23 +34,33 @@
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            border-top: 1px solid black;
-            border-right: 1px solid black;
-            border-left: 1px solid black;
+            border-top: 1px solid vars.$color-background-scaled;
+            border-right: 1px solid vars.$color-background;
+            border-left: 1px solid vars.$color-background;
             padding: (vars.$gutter / 2);
             padding: auto;
             height: 3rem;
             position: relative;
             background-color: vars.$color-background;
 
+            &:first-child {
+                border-top-left-radius: 15px;
+                border: none;
+            }
+
             &:last-child{
-                border-bottom: 1px solid black;
+                border-bottom: 1px solid vars.$color-background;
+                border-bottom-left-radius: 15px;
             }
 
             &_image {
                 width: 1.5rem;
                 padding: 0;
                 margin: 0;
+
+                @media (min-width: 1400px) {
+                    width: 3rem;
+                }
             }
 
             &_name {
@@ -64,22 +74,34 @@
         }
 
         &--sprites {
-            border-top: 1px solid black;
-            border-right: 1px solid black;
+            border-right: 1px solid vars.$color-background;
             padding: 0;
             height: 3rem;
             position: relative;
             text-align: center;
             background-color: vars.$color-background-scaled-drop;
 
+            &:last-child {
+                border-top-right-radius: 15px;
+                border: none;
+                vertical-align: middle;
+                text-align: center;
+            }
+
             &_image {
                 position: absolute;
-                left: 20%;
+                left: 3%;
                 top: 20%;
                 max-width: 100%;
                 height: auto;
                 margin: 0;
                 padding: 0;
+
+                @media (min-width: 1400px) {
+                    width: 3.5rem;
+                    top: 5%;
+                    left: 10%;
+                }
             }
         }
 
@@ -87,18 +109,26 @@
 
         &--def {
             text-align: center;
-            border-top: 1px solid black;
-            border-right: 1px solid black;
+            border-top: 1px solid vars.$color-background;
+            border-right: 1px solid vars.$color-background;
             padding: (vars.$gutter / 2);
             height: 3rem;
             background-color: vars.$color-background2;
-            
-            // @media (max-width: 767px) {
-            //     display: flex;
-            //     flex-direction: row;
-            //     max-width: 100%;
-                // justify-content: center;
-            // }
+            vertical-align: middle;
+
+            &:last-child {
+                border-right: none;
+            }
+
+            &--last {
+                background-color: vars.$color-background2;
+                border-bottom-right-radius: 15px;
+                border-top: 1px solid vars.$color-background;
+                padding: (vars.$gutter / 2);
+                height: 3rem;
+                vertical-align: middle;
+                text-align: center;
+            }
         }
     }
 }
@@ -106,4 +136,12 @@
 .tab td {
     height: 4rem;
     width: 3rem;
+
+    @media (min-width: 768px) {
+
+    }
+
+    @media (min-width: 1400px) {
+        width: 5rem;
+    }
 }

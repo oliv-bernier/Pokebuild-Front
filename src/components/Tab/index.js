@@ -13,7 +13,7 @@ const Tab = (
     <table className="tab">
       <thead className="tab-head">
         <tr className="tab-head--tr">
-          <td className="tab-head--type">-</td>
+          <td className="tab-head--type">Types / Pokemons</td>
           {types.map((currentType) => (
             <TdHead key={currentType.name} {...currentType} />
           ))}
@@ -134,7 +134,7 @@ const Tab = (
           {pokemonSelected.map((resist) => (
             <td className="tab-head--def">{resist.resistances.Électrik.damage_multiplier}</td>
           ))}
-          <td className="tab-head--def">S</td>
+          <td className="tab-head--def--last">S</td>
         </tr>
       </tbody>
     </table>
@@ -148,7 +148,7 @@ Tab.propTypes = {
   })).isRequired,
   pokemonSelected: PropTypes.arrayOf(PropTypes.shape({
     resistances: PropTypes.objectOf(PropTypes.shape({
-      damage_multiplier: PropTypes.string.isRequired,
+      damage_multiplier: PropTypes.number.isRequired,
       damage_relation: PropTypes.string.isRequired,
     })).isRequired,
   })).isRequired,

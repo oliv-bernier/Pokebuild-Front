@@ -1228,80 +1228,98 @@ const initialState = {
         },
       ],
       apiGeneration: 1,
-      resistances: {
-        Normal: {
+      apiResistances: [
+        {
+          name: 'Normal',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Combat: {
+        {
+          name: 'Combat',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Vol: {
+        {
+          name: 'Vol',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Poison: {
+        {
+          name: 'Poison',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Sol: {
+        {
+          name: 'Sol',
           damage_multiplier: 2,
           damage_relation: 'vulnerable',
         },
-        Roche: {
+        {
+          name: 'Roche',
           damage_multiplier: 2,
           damage_relation: 'vulnerable',
         },
-        Insecte: {
+        {
+          name: 'Insecte',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Spectre: {
+        {
+          name: 'Spectre',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Acier: {
+        {
+          name: 'Acier',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Feu: {
+        {
+          name: 'Feu',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Eau: {
+        {
+          name: 'Eau',
           damage_multiplier: 2,
           damage_relation: 'vulnerable',
         },
-        Plante: {
+        {
+          name: 'Plante',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Électrik: {
+        {
+          name: 'Électrik',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Psy: {
+        {
+          name: 'Psy',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Glace: {
+        {
+          name: 'Glace',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Dragon: {
+        {
+          name: 'Dragon',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Ténèbres: {
+        {
+          name: 'Ténèbres',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Fée: {
+        {
+          name: 'Fée',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-      },
+      ],
     },
     {
       id: 2,
@@ -1327,80 +1345,98 @@ const initialState = {
         },
       ],
       apiGeneration: 1,
-      resistances: {
-        Normal: {
+      apiResistances: [
+        {
+          name: 'Normal',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Combat: {
+        {
+          name: 'Combat',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Vol: {
+        {
+          name: 'Vol',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Poison: {
+        {
+          name: 'Poison',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Sol: {
+        {
+          name: 'Sol',
           damage_multiplier: 2,
           damage_relation: 'vulnerable',
         },
-        Roche: {
+        {
+          name: 'Roche',
           damage_multiplier: 2,
           damage_relation: 'vulnerable',
         },
-        Insecte: {
+        {
+          name: 'Insecte',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Spectre: {
+        {
+          name: 'Spectre',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Acier: {
+        {
+          name: 'Acier',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Feu: {
+        {
+          name: 'Feu',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Eau: {
+        {
+          name: 'Eau',
           damage_multiplier: 2,
           damage_relation: 'vulnerable',
         },
-        Plante: {
+        {
+          name: 'Plante',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Électrik: {
+        {
+          name: 'Électrik',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Psy: {
+        {
+          name: 'Psy',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Glace: {
+        {
+          name: 'Glace',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Dragon: {
+        {
+          name: 'Dragon',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Ténèbres: {
+        {
+          name: 'Ténèbres',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Fée: {
+        {
+          name: 'Fée',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-      },
+      ],
     },
     {
       id: 3,
@@ -1426,80 +1462,98 @@ const initialState = {
         },
       ],
       apiGeneration: 1,
-      resistances: {
-        Normal: {
+      apiResistances: [
+        {
+          name: 'Normal',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Combat: {
+        {
+          name: 'Combat',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Vol: {
+        {
+          name: 'Vol',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Poison: {
+        {
+          name: 'Poison',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Sol: {
+        {
+          name: 'Sol',
           damage_multiplier: 2,
           damage_relation: 'vulnerable',
         },
-        Roche: {
+        {
+          name: 'Roche',
           damage_multiplier: 2,
           damage_relation: 'vulnerable',
         },
-        Insecte: {
+        {
+          name: 'Insecte',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Spectre: {
+        {
+          name: 'Spectre',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Acier: {
+        {
+          name: 'Acier',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Feu: {
+        {
+          name: 'Feu',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Eau: {
+        {
+          name: 'Eau',
           damage_multiplier: 2,
           damage_relation: 'vulnerable',
         },
-        Plante: {
+        {
+          name: 'Plante',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Électrik: {
+        {
+          name: 'Électrik',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Psy: {
+        {
+          name: 'Psy',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Glace: {
+        {
+          name: 'Glace',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Dragon: {
+        {
+          name: 'Dragon',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Ténèbres: {
+        {
+          name: 'Ténèbres',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Fée: {
+        {
+          name: 'Fée',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-      },
+      ],
     },
     {
       id: 4,
@@ -1525,80 +1579,98 @@ const initialState = {
         },
       ],
       apiGeneration: 1,
-      resistances: {
-        Normal: {
+      apiResistances: [
+        {
+          name: 'Normal',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Combat: {
+        {
+          name: 'Combat',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Vol: {
+        {
+          name: 'Vol',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Poison: {
+        {
+          name: 'Poison',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Sol: {
+        {
+          name: 'Sol',
           damage_multiplier: 2,
           damage_relation: 'vulnerable',
         },
-        Roche: {
+        {
+          name: 'Roche',
           damage_multiplier: 2,
           damage_relation: 'vulnerable',
         },
-        Insecte: {
+        {
+          name: 'Insecte',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Spectre: {
+        {
+          name: 'Spectre',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Acier: {
+        {
+          name: 'Acier',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Feu: {
+        {
+          name: 'Feu',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Eau: {
+        {
+          name: 'Eau',
           damage_multiplier: 2,
           damage_relation: 'vulnerable',
         },
-        Plante: {
+        {
+          name: 'Plante',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Électrik: {
+        {
+          name: 'Électrik',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Psy: {
+        {
+          name: 'Psy',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Glace: {
+        {
+          name: 'Glace',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Dragon: {
+        {
+          name: 'Dragon',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Ténèbres: {
+        {
+          name: 'Ténèbres',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Fée: {
+        {
+          name: 'Fée',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-      },
+      ],
     },
     {
       id: 5,
@@ -1624,80 +1696,98 @@ const initialState = {
         },
       ],
       apiGeneration: 1,
-      resistances: {
-        Normal: {
+      apiResistances: [
+        {
+          name: 'Normal',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Combat: {
+        {
+          name: 'Combat',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Vol: {
+        {
+          name: 'Vol',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Poison: {
+        {
+          name: 'Poison',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Sol: {
+        {
+          name: 'Sol',
           damage_multiplier: 2,
           damage_relation: 'vulnerable',
         },
-        Roche: {
+        {
+          name: 'Roche',
           damage_multiplier: 2,
           damage_relation: 'vulnerable',
         },
-        Insecte: {
+        {
+          name: 'Insecte',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Spectre: {
+        {
+          name: 'Spectre',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Acier: {
+        {
+          name: 'Acier',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Feu: {
+        {
+          name: 'Feu',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Eau: {
+        {
+          name: 'Eau',
           damage_multiplier: 2,
           damage_relation: 'vulnerable',
         },
-        Plante: {
+        {
+          name: 'Plante',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Électrik: {
+        {
+          name: 'Électrik',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Psy: {
+        {
+          name: 'Psy',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Glace: {
+        {
+          name: 'Glace',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Dragon: {
+        {
+          name: 'Dragon',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Ténèbres: {
+        {
+          name: 'Ténèbres',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Fée: {
+        {
+          name: 'Fée',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-      },
+      ],
     },
     {
       id: 6,
@@ -1723,81 +1813,98 @@ const initialState = {
         },
       ],
       apiGeneration: 1,
-      resistances: {
-        Normal: {
-          name: '',
+      apiResistances: [
+        {
+          name: 'Normal',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Combat: {
+        {
+          name: 'Combat',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Vol: {
+        {
+          name: 'Vol',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Poison: {
+        {
+          name: 'Poison',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Sol: {
+        {
+          name: 'Sol',
           damage_multiplier: 2,
           damage_relation: 'vulnerable',
         },
-        Roche: {
+        {
+          name: 'Roche',
           damage_multiplier: 2,
           damage_relation: 'vulnerable',
         },
-        Insecte: {
+        {
+          name: 'Insecte',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Spectre: {
+        {
+          name: 'Spectre',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Acier: {
+        {
+          name: 'Acier',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Feu: {
+        {
+          name: 'Feu',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Eau: {
+        {
+          name: 'Eau',
           damage_multiplier: 2,
           damage_relation: 'vulnerable',
         },
-        Plante: {
+        {
+          name: 'Plante',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Électrik: {
+        {
+          name: 'Électrik',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Psy: {
+        {
+          name: 'Psy',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Glace: {
+        {
+          name: 'Glace',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-        Dragon: {
+        {
+          name: 'Dragon',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Ténèbres: {
+        {
+          name: 'Ténèbres',
           damage_multiplier: 1,
           damage_relation: 'neutral',
         },
-        Fée: {
+        {
+          name: 'Fée',
           damage_multiplier: 0.5,
           damage_relation: 'resistant',
         },
-      },
+      ],
     },
   ],
   pokedetails: {},
