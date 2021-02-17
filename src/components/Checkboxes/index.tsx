@@ -2,13 +2,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import CheckboxesItem from './CheckboxesItem';
 // @ts-ignore
-import CheckboxesItem from './CheckboxesItem.tsx';
-// @ts-ignore
-import { CheckboxesProps, ApiTypes } from '../../type/index.tsx';
+import { ApiTypes } from '../../type/index.tsx';
 import './style.scss';
 
-const Checkboxes = ({ types, addTypesFilter, deleteTypesFilter }: CheckboxesProps) => (
+const Checkboxes = ({ types, addTypesFilter, deleteTypesFilter }: {
+  types: Array<string>,
+  addTypesFilter: Function,
+  deleteTypesFilter: Function,
+}) => (
   <div className="checkboxes">
     {types.map((currentType: ApiTypes) => (
       <CheckboxesItem

@@ -1,12 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-// @ts-ignore
-import { AppProps } from '../../type/index.tsx';
 import Header from '../Header';
 import Footer from '../Footer';
-// @ts-ignore
-import Home from '../Home/index.tsx';
+import Home from '../Home';
 import Drawer from '../../containers/Drawer';
 import About from '../About';
 import NotFound from '../NotFound';
@@ -15,29 +13,51 @@ import Pokestat from '../../containers/Pokestat';
 
 import './style.scss';
 
-const App = ({ isDetails }: AppProps) => (
-  <div className="app">
-    <Header />
-    <div className="container">
-      <Switch>
-        <Route path="/" exact>
-          <Home isDetails={isDetails} />
-          <Drawer />
-          {isDetails && <Pokestat />}
-        </Route>
-        <Route path="/test" exact>
-          <Pokestat />
-        </Route>
-        <Route path="/about" exact>
-          <About />
-        </Route>
-        <Route path="*">
-          <NotFound />
-        </Route>
-      </Switch>
+const App = ({
+  isDetails,
+  getPokemon,
+  getTypes,
+}: {
+    isDetails: boolean,
+    getPokemon: Function,
+    getTypes:Function,
+  }) => {
+  useEffect(() => {
+    getPokemon();
+  }, []);
+  useEffect(() => {
+    getTypes();
+  }, []);
+  return (
+    <div className="app">
+      <Header />
+      <div className="container">
+        <Switch>
+          <Route path="/" exact>
+            <Home isDetails={isDetails} />
+            <Drawer />
+            {isDetails && <Pokestat />}
+          </Route>
+          <Route path="/test" exact>
+            <Pokestat />
+          </Route>
+          <Route path="/about" exact>
+            <About />
+          </Route>
+          <Route path="*">
+            <NotFound />
+          </Route>
+        </Switch>
+      </div>
+      <Footer />
     </div>
-    <Footer />
-  </div>
-);
+  );
+};
+
+App.propTypes = {
+  isDetails: PropTypes.bool.isRequired,
+  getPokemon: PropTypes.func.isRequired,
+  getTypes: PropTypes.func.isRequired,
+};
 
 export default App;

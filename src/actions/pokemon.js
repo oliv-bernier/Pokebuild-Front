@@ -26,3 +26,25 @@ export const deleteFilterTypes = (value) => ({
   type: DELETE_FILTER_TYPES,
   value,
 });
+
+export const GET_POKEMON = 'GET_POKEMON';
+export const getPokemon = () => ({
+  type: GET_POKEMON,
+});
+
+export const MEMORIZE_POKEMON = 'MEMORIZE_POKEMON';
+export const memorizePokemon = (pokemon) => ({
+  type: MEMORIZE_POKEMON,
+  pokemon,
+});
+
+export const GET_TYPES = 'GET_TYPES';
+export const getTypes = () => ({
+  type: GET_TYPES,
+});
+
+export const MEMORIZE_TYPES = 'MEMORIZE_TYPES';
+export const memorizeTypes = (types) => ({
+  type: MEMORIZE_TYPES,
+  types,
+});
