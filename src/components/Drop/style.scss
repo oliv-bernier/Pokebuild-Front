@@ -1,7 +1,6 @@
 @use '../../styles/vars';
 
-.home--selection {
-
+.home-selection {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,14 +21,52 @@
         flex-wrap: wrap;
         justify-content: center;
         width: 300px;
+
+        @media (min-width: 1400px) {
+            flex-direction: row;
+            width: 800px;
+        }
     }
 
     &-drop {
-        margin: 0.5rem;
-        background-color: vars.$color-background-scaled-drop;
-        height: 60px;
-        width: 60px;
-        // border: 1px solid black;
-        border-radius: 5px;
+        border-right: 2px solid vars.$color-background;
+        border-bottom: 2px solid vars.$color-background;
+
+        &:nth-child(0n+3) {
+            border: none;
+            border-bottom: 2px solid vars.$color-background;
+        }
+
+        &:nth-child(0n+4), &:nth-child(0n+5) {
+            border: none;
+            border-right: 2px solid vars.$color-background;
+        }
+
+        &:last-child {
+            border: none;
+        }
+
+        @media (min-width: 1400px) {
+            border: none;
+            border-right: 2px solid vars.$color-background;
+            &:nth-child(0n+3) {
+                border: none;
+                border-right: 2px solid vars.$color-background;
+            }    
+        }
+
+        &-content {
+            margin: 0.5rem;
+            background-color: vars.$color-background-scaled-drop;
+            height: 60px;
+            width: 60px;
+            // border: 1px solid black;
+            border-radius: 5px;
+
+            @media (min-width: 1400px) {
+                height: 100px;
+                width: 100px;
+            }
+        }
     }
 }
