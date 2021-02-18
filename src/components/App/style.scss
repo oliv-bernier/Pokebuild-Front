@@ -12,9 +12,19 @@
         margin-top: 3rem;
         margin-bottom: 3rem;
         height: calc(100vh - 6rem);
+        width: 100vw;
         // overflow-y: auto;
         display: flex;
         flex-direction: row;
+        justify-content: center;
+    }
+
+    &_drawer-open {
+        justify-content: flex-start;
+
+        @media (min-width: 768px) {
+            width: 50vw;
+        }
     }
 }
 

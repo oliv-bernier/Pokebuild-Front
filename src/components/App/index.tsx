@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import Header from '../Header';
 import Footer from '../Footer';
@@ -17,6 +18,7 @@ const App = ({
   isDetails,
   getPokemon,
   getTypes,
+  isDrawer,
 }: {
     isDetails: boolean,
     getPokemon: Function,
@@ -31,7 +33,7 @@ const App = ({
   return (
     <div className="app">
       <Header />
-      <div className="container">
+      <div className={classNames('container', { 'container_drawer-open': isDrawer })}>
         <Switch>
           <Route path="/" exact>
             <Home isDetails={isDetails} />
@@ -58,6 +60,7 @@ App.propTypes = {
   isDetails: PropTypes.bool.isRequired,
   getPokemon: PropTypes.func.isRequired,
   getTypes: PropTypes.func.isRequired,
+  isDrawer: PropTypes.bool.isRequired,
 };
 
 export default App;
