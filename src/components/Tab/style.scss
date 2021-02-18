@@ -2,12 +2,17 @@
 
 .tab {
 
-    // @media (max-width: 767px) {
-        display: flex;
-        flex-direction: row;
-        max-width: 100%;
-        justify-content: center;
-    // }
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    justify-content: center;
+    margin-bottom: 4rem;
+
+    &-container {
+        margin: 0;
+        padding: 0;
+    }
+
 
     &-title {
         text-align: center;
@@ -18,46 +23,179 @@
     &-head {
 
         &--tr {
-            // @media (max-width: 767px) {
-                display: flex;
-                flex-direction: column;
-            // }
+            display: flex;
+            flex-direction: column;
+        }
+
+        &--corner {
+            width: 100%;
+            height: 100%;
+            border-top-left-radius: 15px;
         }
 
         &--type {
-            text-align: center;
-            border-top: 1px solid black;
-            border-right: 1px solid black;
-            border-left: 1px solid black;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border-top: 1px solid vars.$color-background-scaled;
+            border-right: 1px solid vars.$color-background;
+            border-left: 1px solid vars.$color-background;
             padding: (vars.$gutter / 2);
+            padding: auto;
+            height: 3rem;
+            position: relative;
+            background-color: vars.$color-background;
+
+            &:first-child {
+                border-top-left-radius: 15px;
+                border: none;
+                padding: 0;
+            }
 
             &:last-child{
-                border-bottom: 1px solid black;
+                border-bottom: 1px solid vars.$color-background;
+                border-bottom-left-radius: 15px;
+            }
+
+            &_image {
+                width: 1.5rem;
+                padding: 0;
+                margin: 0;
+
+                @media (min-width: 1400px) {
+                    width: 3rem;
+                }
+            }
+
+            &_name {
+                position: absolute;
+                background-color: vars.$color-background-pokemon;
+                color: vars.$color-background-scaled;
+                top: 5px;
+                padding: 0.2rem;
+                border-radius: 5px;
+            }
+
+            &-def1 {
+                display: none;
+
+                @media (min-width: 1400px) {
+                    display: block;
+                    position: absolute;
+                    bottom: 10px;
+                    left: 2px;
+                    font-size: 0.7rem;
+                    // transform: rotate(35deg);
+                    color: vars.$color-background-scaled;
+                    font-weight: bold;
+                }
+            }
+
+            &-def2 {
+                display: none;
+
+                @media (min-width: 1400px) {
+                    display: block;
+                    position: absolute;
+                    top: 10px;
+                    right: 3px;
+                    font-size: 0.7rem;
+                    color: vars.$color-background;
+                    font-weight: bold;
+                }
             }
         }
 
         &--sprites {
+            border-right: 1px solid vars.$color-background;
+            padding: 0;
+            height: 3rem;
+            position: relative;
             text-align: center;
-            border-top: 1px solid black;
-            border-right: 1px solid black;
-            padding: (vars.$gutter / 2);
+            background-color: vars.$color-background-scaled-drop;
+
+            &:first-child {
+                border-left: 1px solid vars.$color-background;
+            }
+
+            &:last-child {
+                border-top-right-radius: 15px;
+                border: none;
+                vertical-align: middle;
+                text-align: center;
+            }
+
+            &_image {
+                position: absolute;
+                left: 3%;
+                top: 20%;
+                max-width: 100%;
+                height: auto;
+                margin: 0;
+                padding: 0;
+
+                @media (min-width: 1400px) {
+                    width: 3.5rem;
+                    top: 5%;
+                    left: 10%;
+                }
+            }
         }
 
         
 
         &--def {
-
+            position: relative;
             text-align: center;
-            border-top: 1px solid black;
-            border-right: 1px solid black;
+            border-top: 1px solid vars.$color-background;
+            border-right: 1px solid vars.$color-background;
             padding: (vars.$gutter / 2);
-            
-            @media (max-width: 767px) {
-                display: flex;
-                flex-direction: row;
-                max-width: 100%;
-                // justify-content: center;
+            height: 3rem;
+            background-color: vars.$color-background2;
+            vertical-align: middle;
+
+            &:last-child {
+                border-right: none;
+            }
+
+            &--last {
+                background-color: vars.$color-background2;
+                border-bottom-right-radius: 15px;
+                border-top: 1px solid vars.$color-background;
+                padding: (vars.$gutter / 2);
+                height: 3rem;
+                vertical-align: middle;
+                text-align: center;
+            }
+
+            &_name {
+                position: absolute;
+                background-color: vars.$color-background-scaled-drop;
+                color: vars.$color-background-pokemon;
+                top: 4px;
+                left: 10px;
+                padding: 0.2rem;
+                border-radius: 5px;
+                z-index: 999;
             }
         }
     }
+}
+
+.tab td {
+    height: 4rem;
+    width: 3rem;
+
+    @media (min-width: 768px) {
+
+    }
+
+    @media (min-width: 1400px) {
+        width: 5rem;
+    }
+}
+
+tbody tr:last-child .tab-head--def:last-child {
+    border-bottom-right-radius: 15px;
 }

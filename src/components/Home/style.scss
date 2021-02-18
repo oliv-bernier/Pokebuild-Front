@@ -1,6 +1,14 @@
 .home {
-    // height: 100%;
+    height: 100%;
     overflow-y: auto;
+    direction: ltr;
+}
+
+@media (min-width: 768px) {
+    .home::-webkit-scrollbar {
+        // visibility: hidden;
+        direction: ltr;
+    }
 }
 
 .home-blur {

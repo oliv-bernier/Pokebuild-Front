@@ -5,7 +5,7 @@ import classNames from 'classnames';
 // @ts-ignore
 import { HomeProps } from '../../type/index.tsx';
 
-// import Tab from '../Tab';
+import Tab from '../../containers/Tab';
 import Drop from '../Drop';
 
 import './style.scss';
@@ -13,7 +13,7 @@ import './style.scss';
 const Home = ({ isDetails }: HomeProps) => (
   <div className={classNames('home', { 'home-blur': isDetails })}>
     <Drop />
-    {/* <Tab /> */}
+    <Tab />
   </div>
 );
 
