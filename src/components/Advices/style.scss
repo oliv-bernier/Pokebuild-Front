@@ -1,0 +1,19 @@
+@use '../../styles/vars';
+
+.advices {
+  display: flex;
+  justify-content: center;
+  background-color: vars.$color-background-scaled-drop;
+  margin: 1.5rem;
+  padding: 0.5rem;
+  color: vars.$color-background-pokemon;
+  border-radius: 15px;
+  box-shadow: 0 0 5px vars.$color-background;
+
+  &-style {
+    background-color: vars.$color-background-scaled;
+    padding: 1rem;
+    border-radius: 12px;
+    width: 100%;
+  }
+}
