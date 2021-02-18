@@ -10,6 +10,12 @@ const Card = ({
   dev,
   role,
   image,
+}: {
+  name: string,
+  pseudo: string,
+  dev: string,
+  role: string,
+  image: string,
 }) => (
   <div className="card">
     <img className="card-image" src={image} alt="" />

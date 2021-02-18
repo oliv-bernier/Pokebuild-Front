@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable default-case */
 import axios from 'axios';
 
@@ -9,7 +10,7 @@ import {
 } from '../actions/pokemon';
 
 const ajax = (store) => (next) => (action) => {
-  axios.defaults.baseURL = 'http://ec2-18-212-56-201.compute-1.amazonaws.com/api/v1/';
+  axios.defaults.baseURL = 'http://ec2-3-83-51-192.compute-1.amazonaws.com/api/v1/';
   switch (action.type) {
     case GET_POKEMON:
       axios.get('pokemon')
@@ -17,7 +18,6 @@ const ajax = (store) => (next) => (action) => {
           store.dispatch(memorizePokemon(response.data));
         })
         .catch((error) => {
-          // eslint-disable-next-line no-console
           console.error(error);
         });
       break;
@@ -27,7 +27,6 @@ const ajax = (store) => (next) => (action) => {
           store.dispatch(memorizeTypes(response.data));
         })
         .catch((error) => {
-          // eslint-disable-next-line no-console
           console.error(error);
         });
   }

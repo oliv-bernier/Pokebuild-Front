@@ -21,13 +21,12 @@ const Drawer = ({
   pokemon: Array<Pokemon>,
   toggleDrawer: Function,
   isDrawer: boolean,
-  filterTypes: Array<{name: string, image: string}>,
+  filterTypes: Array<string>,
   filterInput: string,
 }) => {
   const handleDrawer = (): void => {
     toggleDrawer();
   };
-  // @ts-ignore
   const filteredPokemon = pokemonFilter(pokemon, filterTypes, filterInput);
   return (
     <section className={classNames('drawer', { 'drawer--open': isDrawer })}>
@@ -52,10 +51,7 @@ Drawer.propTypes = {
   pokemon: PropTypes.arrayOf(PropTypes.object).isRequired,
   toggleDrawer: PropTypes.func.isRequired,
   isDrawer: PropTypes.bool.isRequired,
-  filterTypes: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-  })).isRequired,
+  filterTypes: PropTypes.arrayOf(PropTypes.string).isRequired,
   filterInput: PropTypes.string.isRequired,
 };
 
