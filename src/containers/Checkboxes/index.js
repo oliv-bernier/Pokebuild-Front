@@ -5,6 +5,7 @@ import { addFilterTypes, deleteFilterTypes } from '../../actions/pokemon';
 
 const mapStateToProps = (state) => ({
   types: state.pokemon.types,
+  typesBool: state.types,
 });
 
 const mapDispatchToProps = (dispatch) => ({

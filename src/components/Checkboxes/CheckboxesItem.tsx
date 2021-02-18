@@ -2,16 +2,20 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import { Types } from '../../type/types';
+
 const CheckboxesItem = ({
   name,
   image,
   addTypesFilter,
   deleteTypesFilter,
+  bool,
 }: {
   name: string,
   image: string,
   addTypesFilter: Function,
   deleteTypesFilter: Function,
+  bool: Array<Types>,
 }) => {
   const [isChecked, setIsChecked] = useState(false);
 
@@ -41,6 +45,7 @@ CheckboxesItem.propTypes = {
   image: PropTypes.string.isRequired,
   addTypesFilter: PropTypes.func.isRequired,
   deleteTypesFilter: PropTypes.func.isRequired,
+  bool: PropTypes.arrayOf(PropTypes.bool).isRequired,
 };
 
 export default CheckboxesItem;
