@@ -13,7 +13,6 @@ const TrRows = ({
 
   return (
     <td
-      key={resist.apiResistances[index].name}
       className={`tab-head--def tab-head--def_${resist.apiResistances[index].damage_relation}`}
       onMouseOver={mouseInOut}
       onMouseOut={mouseInOut}
@@ -25,13 +24,7 @@ const TrRows = ({
 };
 
 TrRows.propTypes = {
-  resist: PropTypes.arrayOf(PropTypes.shape({
-    apiResistances: PropTypes.arrayOf(PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      damage_multiplier: PropTypes.number.isRequired,
-      damage_relation: PropTypes.string.isRequired,
-    })).isRequired,
-  })).isRequired,
+  resist: PropTypes.object.isRequired,
   index: PropTypes.number.isRequired,
 };
 

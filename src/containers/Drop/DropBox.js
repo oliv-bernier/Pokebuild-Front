@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Drop from '../../components/Drop/index';
+import DropBox from '../../components/Drop/DropBox';
 
 const mapStateToProps = (state) => ({
   pokemonSelected: state.pokemon.pokemonSelected,
@@ -7,4 +7,4 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispacth) => ({});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Drop);
+export default connect(mapStateToProps, mapDispatchToProps)(DropBox);

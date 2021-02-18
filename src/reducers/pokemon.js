@@ -8,6 +8,7 @@ import {
   MEMORIZE_TYPES,
   ADD_SELECTED_POKEMON,
   REMOVE_SELECTED_POKEMON,
+  REMOVE_ALL_POKEMON,
 } from '../actions/pokemon';
 
 const initialState = {
@@ -78,6 +79,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         pokemonSelected: [...state.pokemonSelected.filter((pokemon) => pokemon.id !== action.id)],
+      };
+    case REMOVE_ALL_POKEMON:
+      return {
+        ...state,
+        pokemonSelected: [],
       };
     default:
       return state;

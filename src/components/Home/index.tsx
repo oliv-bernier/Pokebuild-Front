@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 import Tab from '../../containers/Tab';
 import Advices from '../Advices';
-import Drop from '../../containers/Drop';
+import Drop from '../Drop';
 
 import './style.scss';
 
