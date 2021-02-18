@@ -1,10 +1,14 @@
 @use '../../styles/vars';
 
 .search-container {
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: center;
     position: relative;
+
+    @media (min-width: 768px) {
+        width: 45vw;
+    }
 
     &-input {
         margin: 0.5rem 0.5rem 0.5rem 0;
@@ -14,11 +18,16 @@
         height: 0.8rem;
         margin-bottom: 0;
         width: 85%;
+        position: relative;
 
         @media (min-width: 768px) {
             width: 90%;
             height: 1.2rem;
             padding: 1.2rem 0.5rem;
+        }
+
+        @media (min-width: 1400px) {
+            width: 50vw;
         }
     }
 
@@ -29,7 +38,7 @@
         position: absolute;
         background-color: vars.$color-background;
         color: vars.$color-background-scaled;
-        top: 1.6vh;
+        top: 0.8rem;
         right: 10vw;
         height: 1rem;
         border-radius: 10rem;
@@ -44,8 +53,8 @@
 
         @media (min-width: 1400px) {
             font-size: 1rem;
-            top: 1.25vh;
-            right: 6vh;
+            top: 0.7rem;
+            right: 1.5vh;
         }
 
         &:hover {
