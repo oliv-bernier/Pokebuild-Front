@@ -30,7 +30,7 @@ const about = [
     pseudo: 'Tsoin',
     dev: 'Front End',
     role: 'Lead dev Front',
-    image: 'https://cdn.pixabay.com/photo/2020/12/16/15/24/aang-5836896_960_720.jpg',
+    image: 'https://avatarfiles.alphacoders.com/231/thumb-1920-231616.png',
   },
 ];
 

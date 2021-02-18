@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable arrow-body-style */
 import { Pokemon } from '../type/index';
+import slugifyText from './slugify';
 
 const pokemonFilterByName = (
   pokemons: Array<Pokemon>,
@@ -8,9 +9,9 @@ const pokemonFilterByName = (
   input: string,
 ): Array<Pokemon> => {
   const filtered = pokemons.filter((pokemon) => {
-    const testedName = pokemon.name.toLowerCase();
+    const testedName = pokemon.slug.toLowerCase();
     const trimedInput = input.trim();
-    return testedName.includes(trimedInput.toLowerCase());
+    return testedName.includes(slugifyText(trimedInput));
   });
   return filtered;
 };

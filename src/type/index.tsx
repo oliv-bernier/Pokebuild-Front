@@ -3,6 +3,7 @@ export interface Pokemon {
   name: string,
   image: string,
   sprite: string,
+  slug: string,
   stats: Array<number>,
   apiTypes: Array<{
     name: string,
