@@ -12,7 +12,7 @@ const Tab = (
   { types, pokemonSelected },
 ) => (
   <div className="tab-container">
-    <p className="tab-title"> Forces et faiblesses de votre séléction</p>
+    {/* <p className="tab-title"> Forces et faiblesses de votre séléction</p> */}
     <table className="tab">
       <thead className="tab-head">
         <tr className="tab-head--tr">

@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 1.5rem;
 
     @media (min-width: 768px) {
         // height: 100%;
@@ -66,6 +67,11 @@
             @media (min-width: 1400px) {
                 height: 100px;
                 width: 100px;
+            }
+
+            &-sprite {
+                height: 100%;
+                width: 100%;
             }
         }
     }

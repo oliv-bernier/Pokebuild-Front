@@ -6,38 +6,38 @@ import './style.scss';
 
 const Drop = ({ pokemonSelected }) => (
   <div className="home-selection">
-    <h2 className="home-selection-title">
+    {/* <h2 className="home-selection-title">
       Choisissez 6 pokémons depuis le tiroir
-    </h2>
+    </h2> */}
     <div className="home-selection-drops">
       <div className="home-selection-drop">
         <div className="home-selection-drop-content">
-          <img src={pokemonSelected.sprite} alt={pokemonSelected.name} />
+          <img className="home-selection-drop-content-sprite" src={pokemonSelected[0].sprite} alt={pokemonSelected.name} />
         </div>
       </div>
       <div className="home-selection-drop">
         <div className="home-selection-drop-content">
-          <img src={pokemonSelected.sprite} alt={pokemonSelected.name} />
+          <img className="home-selection-drop-content-sprite" src={pokemonSelected[1].sprite} alt={pokemonSelected.name} />
         </div>
       </div>
       <div className="home-selection-drop">
         <div className="home-selection-drop-content">
-          <img src={pokemonSelected.sprite} alt={pokemonSelected.name} />
+          <img className="home-selection-drop-content-sprite" src={pokemonSelected[2].sprite} alt={pokemonSelected.name} />
         </div>
       </div>
       <div className="home-selection-drop">
         <div className="home-selection-drop-content">
-          <img src={pokemonSelected.sprite} alt={pokemonSelected.name} />
+          <img className="home-selection-drop-content-sprite" src={pokemonSelected[3].sprite} alt={pokemonSelected.name} />
         </div>
       </div>
       <div className="home-selection-drop">
         <div className="home-selection-drop-content">
-          <img src={pokemonSelected.sprite} alt={pokemonSelected.name} />
+          <img className="home-selection-drop-content-sprite" src={pokemonSelected[4].sprite} alt={pokemonSelected.name} />
         </div>
       </div>
       <div className="home-selection-drop">
         <div className="home-selection-drop-content">
-          <img src={pokemonSelected.sprite} alt={pokemonSelected.name} />
+          <img className="home-selection-drop-content-sprite" src={pokemonSelected[5].sprite} alt={pokemonSelected.name} />
         </div>
       </div>
     </div>

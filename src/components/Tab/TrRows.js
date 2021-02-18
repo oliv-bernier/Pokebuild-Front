@@ -14,7 +14,7 @@ const TrRows = ({
   return (
     <td
       key={resist.apiResistances[index].name}
-      className="tab-head--def"
+      className={`tab-head--def tab-head--def_${resist.apiResistances[index].damage_relation}`}
       onMouseOver={mouseInOut}
       onMouseOut={mouseInOut}
     >
