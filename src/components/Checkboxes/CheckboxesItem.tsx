@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { objectOf } from 'prop-types';
 import classNames from 'classnames';
 
 import { Types } from '../../type/types';
@@ -10,30 +10,30 @@ const CheckboxesItem = ({
   addTypesFilter,
   deleteTypesFilter,
   bool,
+  switchFilter,
 }: {
   name: string,
   image: string,
   addTypesFilter: Function,
   deleteTypesFilter: Function,
-  bool: Array<Types>,
+  bool: Types,
+  switchFilter: Function,
 }) => {
-  const [isChecked, setIsChecked] = useState(false);
-
-  const handleSelect = () => {
-    if (!isChecked) {
+  const handleSelect = (): void => {
+    if (!bool[name]) {
       addTypesFilter(name);
     }
     else {
       deleteTypesFilter(name);
     }
-    setIsChecked(!isChecked);
+    switchFilter(!bool[name], name);
   };
 
   return (
     <img
       key={name}
       src={image}
-      className={classNames(`checkboxes-image ${name}`, { 'checkboxes-image--selected': isChecked })}
+      className={classNames(`checkboxes-image ${name}`, { 'checkboxes-image--selected': bool[name] })}
       alt={name}
       onClick={handleSelect}
     />
@@ -45,7 +45,8 @@ CheckboxesItem.propTypes = {
   image: PropTypes.string.isRequired,
   addTypesFilter: PropTypes.func.isRequired,
   deleteTypesFilter: PropTypes.func.isRequired,
-  bool: PropTypes.arrayOf(PropTypes.bool).isRequired,
+  bool: PropTypes.object.isRequired,
+  switchFilter: PropTypes.func.isRequired,
 };
 
 export default CheckboxesItem;

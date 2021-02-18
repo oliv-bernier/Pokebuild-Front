@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 import StatDetails from './StatDetails';
-import TypeDetail from './TypeDetail';
+import TypeDetail from '../../containers/Pokestat/TypeDetail';
 
 import './style.scss';
 
@@ -12,7 +12,6 @@ const Pokestat = ({
   toggleDetails,
   pokemon,
   addPokemon,
-  addFilterTypes,
 }: {toggleDetails: Function,
   pokemon: {
     id: number,
@@ -27,7 +26,6 @@ const Pokestat = ({
     apiGeneration: number,
   },
  addPokemon: Function,
- addFilterTypes: Function,
 }) => {
   const {
     id,
@@ -56,7 +54,6 @@ const Pokestat = ({
               {apiTypes.map((type: {name: string, image: string}) => (
                 <TypeDetail
                   key={type.name}
-                  add={addFilterTypes}
                   close={handleClose}
                   {...type}
                 />
@@ -97,7 +94,6 @@ Pokestat.propTypes = {
   toggleDetails: PropTypes.func.isRequired,
   pokemon: PropTypes.object.isRequired,
   addPokemon: PropTypes.func.isRequired,
-  addFilterTypes: PropTypes.func.isRequired,
 };
 
 export default Pokestat;

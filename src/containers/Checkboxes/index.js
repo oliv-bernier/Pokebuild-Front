@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import Checkboxes from '../../components/Checkboxes/index.tsx';
 
 import { addFilterTypes, deleteFilterTypes } from '../../actions/pokemon';
+import { switchFilter } from '../../actions/types';
 
 const mapStateToProps = (state) => ({
   types: state.pokemon.types,
@@ -14,6 +15,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   deleteTypesFilter: (type) => {
     dispatch(deleteFilterTypes(type));
+  },
+  switchFilter: (value, key) => {
+    dispatch(switchFilter(value, key));
   },
 });
 

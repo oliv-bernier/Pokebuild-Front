@@ -13,6 +13,7 @@ const Checkboxes = ({
   addTypesFilter,
   deleteTypesFilter,
   typesBool,
+  switchFilter,
 }: {
   types: Array<{
     name: string,
@@ -20,7 +21,8 @@ const Checkboxes = ({
   }>,
   addTypesFilter: Function,
   deleteTypesFilter: Function,
-  typesBool: Array<Types>,
+  typesBool: Types,
+  switchFilter: Function,
 }) => (
   <div className="checkboxes">
     {types.map((currentType:{name: string, image: string}) => (
@@ -28,6 +30,8 @@ const Checkboxes = ({
         key={currentType.name}
         addTypesFilter={addTypesFilter}
         deleteTypesFilter={deleteTypesFilter}
+        switchFilter={switchFilter}
+        // @ts-ignore
         bool={typesBool}
         {...currentType}
       />
@@ -42,7 +46,8 @@ Checkboxes.propTypes = {
   })).isRequired,
   addTypesFilter: PropTypes.func.isRequired,
   deleteTypesFilter: PropTypes.func.isRequired,
-  typesBool: PropTypes.arrayOf(PropTypes.bool).isRequired,
+  typesBool: PropTypes.object.isRequired,
+  switchFilter: PropTypes.func.isRequired,
 };
 
 export default Checkboxes;

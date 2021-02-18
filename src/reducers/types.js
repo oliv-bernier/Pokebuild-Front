@@ -1,3 +1,5 @@
+import { SWITCH_FILTER } from '../actions/types';
+
 const initialState = {
   Normal: false,
   Combat: false,
@@ -21,6 +23,11 @@ const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case SWITCH_FILTER:
+      return {
+        ...state,
+        [action.key]: action.value,
+      };
     default:
       return state;
   }
