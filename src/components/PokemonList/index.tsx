@@ -1,13 +1,10 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 
 import './style.scss';
-// @ts-ignore
-import { PokemonListProps } from '../../type/index.tsx';
-// @ts-ignore
-import { findPokemonDetails } from '../../selectors/pokemon.tsx';
+
+import { findPokemonDetails } from '../../selectors/pokemon';
 
 const PokemonList = ({
   name,
@@ -17,7 +14,15 @@ const PokemonList = ({
   toggleDetails,
   state,
   pokemonDetails,
-}: PokemonListProps) => {
+}: {
+  name: string,
+  image: string,
+  id: number,
+  apiTypes: Array<any>,
+  toggleDetails: Function,
+  state: any,
+  pokemonDetails: Function,
+  }) => {
   const handleDetails = (): void => {
     pokemonDetails(findPokemonDetails(state, id));
     toggleDetails();

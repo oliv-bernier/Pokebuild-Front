@@ -34,7 +34,8 @@
       "react/state-in-constructor": "off",
       "linebreak-style": "off",
       "import/extenstions": "off",
-      "no-unused-vars": "off"
+      "no-unused-vars": "off",
+      "import/extensions": "off"
     },
     "settings": {
       "import/resolver": {
