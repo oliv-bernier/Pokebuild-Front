@@ -1,21 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const TrRows = ({
-  pokemonSelected,
+  resist,
   index,
-}) => (
-  <>
-    {pokemonSelected.map((resist) => (
-      <td key={resist.apiResistances[index].name} className="tab-head--def">
-        {resist.apiResistances[index].damage_multiplier}
-      </td>
-    ))}
-  </>
-);
+}) => {
+  const [isTypeOver, setTypeOver] = useState(false);
+
+  const mouseInOut = () => {
+    setTypeOver(!isTypeOver);
+  };
+
+  return (
+    <td
+      key={resist.apiResistances[index].name}
+      className="tab-head--def"
+      onMouseOver={mouseInOut}
+      onMouseOut={mouseInOut}
+    >
+      {resist.apiResistances[index].damage_multiplier}
+      {isTypeOver && <span className="tab-head--def_name">{resist.apiResistances[index].damage_relation}</span>}
+    </td>
+  );
+};
 
 TrRows.propTypes = {
-  pokemonSelected: PropTypes.arrayOf(PropTypes.shape({
+  resist: PropTypes.arrayOf(PropTypes.shape({
     apiResistances: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string.isRequired,
       damage_multiplier: PropTypes.number.isRequired,

@@ -37,8 +37,9 @@ const Tab = (
         </tr>
         {types.map((currentType, index) => (
           <tr key={currentType.name}>
-            {console.log(pokemonSelected)}
-            <TrRows pokemonSelected={pokemonSelected} index={index} />
+            {pokemonSelected.map((resist) => (
+              <TrRows resist={resist} index={index} />
+            ))}
             <td className="tab-head--def">S</td>
           </tr>
         ))}
