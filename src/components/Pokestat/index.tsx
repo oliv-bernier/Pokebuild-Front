@@ -69,6 +69,7 @@ const Pokestat = ({ toggleDetails, pokemon, addPokemon }: {toggleDetails: Functi
               const width = (statValue / 255) * 100;
               return (
                 <StatDetails
+                  key={statName}
                   statName={statName}
                   statValue={statValue}
                   width={width}

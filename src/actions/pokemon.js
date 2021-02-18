@@ -60,3 +60,8 @@ export const removeSelectedPokemon = (id) => ({
   type: REMOVE_SELECTED_POKEMON,
   id,
 });
+
+export const REMOVE_ALL_POKEMON = 'REMOVE_ALL_POKEMON';
+export const removeAllPokemon = () => ({
+  type: REMOVE_ALL_POKEMON,
+});

@@ -18,8 +18,8 @@ const Tab = (
         <tr className="tab-head--tr">
           <td className="tab-head--type">
             <img className="tab-head--corner" src={corner} alt="corner" />
-            <def className="tab-head--type-def1">Types</def>
-            <def className="tab-head--type-def2">Pokémon</def>
+            <div className="tab-head--type-def1">Types</div>
+            <div className="tab-head--type-def2">Pokémon</div>
           </td>
           {types.map((currentType) => (
             <TdHead key={currentType.name} {...currentType} />
@@ -29,8 +29,8 @@ const Tab = (
       <tbody>
         <tr>
           {pokemonSelected.map((chosenPokemon) => (
-            <td className="tab-head--sprites">
-              <img className="tab-head--sprites_image" src={chosenPokemon.image} alt={chosenPokemon.name} />
+            <td key={chosenPokemon.name} className="tab-head--sprites">
+              <img key={chosenPokemon.image} className="tab-head--sprites_image" src={chosenPokemon.image} alt={chosenPokemon.name} />
             </td>
           ))}
           <td className="tab-head--sprites">S</td>
@@ -38,7 +38,7 @@ const Tab = (
         {types.map((currentType, index) => (
           <tr key={currentType.name}>
             {pokemonSelected.map((resist) => (
-              <TrRows resist={resist} index={index} />
+              <TrRows key={currentType.image} resist={resist} index={index} />
             ))}
             <td className="tab-head--def">S</td>
           </tr>
