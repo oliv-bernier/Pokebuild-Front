@@ -1,11 +1,13 @@
 .home {
     height: 100%;
     overflow-y: auto;
+    direction: ltr;
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 768px) {
     .home::-webkit-scrollbar {
-        overflow: hidden;
+        // visibility: hidden;
+        direction: ltr;
     }
 }
 

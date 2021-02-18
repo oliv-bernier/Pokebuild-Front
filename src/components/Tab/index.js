@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import corner from '../../assets/cornertab.png';
+
 import TdHead from './TdHead';
+import TrRows from './TrRows';
 
 import './style.scss';
 
@@ -13,7 +16,11 @@ const Tab = (
     <table className="tab">
       <thead className="tab-head">
         <tr className="tab-head--tr">
-          <td className="tab-head--type">Types / Pokemons</td>
+          <td className="tab-head--type">
+            <img className="tab-head--corner" src={corner} alt="corner" />
+            <def className="tab-head--type-def1">Types</def>
+            <def className="tab-head--type-def2">Pokémon</def>
+          </td>
           {types.map((currentType) => (
             <TdHead key={currentType.name} {...currentType} />
           ))}
@@ -30,9 +37,8 @@ const Tab = (
         </tr>
         {types.map((currentType, index) => (
           <tr key={currentType.name}>
-            {pokemonSelected.map((resist) => (
-              <td key={resist.apiResistances[index].name} className="tab-head--def">{resist.apiResistances[index].damage_multiplier}</td>
-            ))}
+            {console.log(pokemonSelected)}
+            <TrRows pokemonSelected={pokemonSelected} index={index} />
             <td className="tab-head--def">S</td>
           </tr>
         ))}
