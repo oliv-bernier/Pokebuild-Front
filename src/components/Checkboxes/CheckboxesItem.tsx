@@ -1,32 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes, { objectOf } from 'prop-types';
 import classNames from 'classnames';
 
 import { Types } from '../../type/types';
+import filterTypes from '../../utils/filterTypes';
 
 const CheckboxesItem = ({
   name,
   image,
-  addTypesFilter,
-  deleteTypesFilter,
   bool,
-  switchFilter,
 }: {
   name: string,
   image: string,
-  addTypesFilter: Function,
-  deleteTypesFilter: Function,
   bool: Types,
-  switchFilter: Function,
 }) => {
   const handleSelect = (): void => {
-    if (!bool[name]) {
-      addTypesFilter(name);
-    }
-    else {
-      deleteTypesFilter(name);
-    }
-    switchFilter(!bool[name], name);
+    filterTypes(bool, name);
   };
 
   return (
@@ -43,10 +32,7 @@ const CheckboxesItem = ({
 CheckboxesItem.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  addTypesFilter: PropTypes.func.isRequired,
-  deleteTypesFilter: PropTypes.func.isRequired,
   bool: PropTypes.object.isRequired,
-  switchFilter: PropTypes.func.isRequired,
 };
 
 export default CheckboxesItem;
