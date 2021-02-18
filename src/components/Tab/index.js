@@ -6,6 +6,7 @@ import corner from '../../assets/cornertab.png';
 import TdHead from './TdHead';
 import TrRows from './TrRows';
 
+import randomKey from '../../utils/randomizer';
 import './style.scss';
 
 const Tab = (
@@ -29,16 +30,16 @@ const Tab = (
       <tbody>
         <tr>
           {pokemonSelected.map((chosenPokemon) => (
-            <td key={chosenPokemon.name} className="tab-head--sprites">
-              <img key={chosenPokemon.image} className="tab-head--sprites_image" src={chosenPokemon.image} alt={chosenPokemon.name} />
+            <td key={randomKey(0, 10000)} className="tab-head--sprites">
+              <img className="tab-head--sprites_image" src={chosenPokemon.image} alt={chosenPokemon.name} />
             </td>
           ))}
           <td className="tab-head--sprites">S</td>
         </tr>
         {types.map((currentType, index) => (
-          <tr key={currentType.name}>
+          <tr key={randomKey(0, 10000)}>
             {pokemonSelected.map((resist) => (
-              <TrRows key={currentType.image} resist={resist} index={index} />
+              <TrRows key={randomKey(0, 10000)} resist={resist} index={index} />
             ))}
             <td className="tab-head--def">S</td>
           </tr>
