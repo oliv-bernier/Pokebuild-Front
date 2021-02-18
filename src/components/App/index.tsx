@@ -23,6 +23,7 @@ const App = ({
     isDetails: boolean,
     getPokemon: Function,
     getTypes:Function,
+    isDrawer: boolean,
   }) => {
   useEffect(() => {
     getPokemon();

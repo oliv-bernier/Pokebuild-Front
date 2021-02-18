@@ -36,7 +36,7 @@
       "import/extenstions": "off",
       "no-unused-vars": "off",
       "import/extensions": "off",
-      "no-plusplus": "off"
+      "no-plusplus": "off",
     },
     "settings": {
       "import/resolver": {

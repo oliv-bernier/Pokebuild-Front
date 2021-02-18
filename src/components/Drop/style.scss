@@ -5,6 +5,7 @@
     flex-direction: column;
     align-items: center;
     margin-top: 1.5rem;
+    position: relative;
 
     @media (min-width: 768px) {
         width: 100%;
@@ -31,6 +32,7 @@
     &-drop {
         border-right: 2px solid vars.$color-background;
         border-bottom: 2px solid vars.$color-background;
+        position: relative;
 
         &:nth-child(0n+3) {
             border: none;
@@ -72,6 +74,45 @@
                 height: 100%;
                 width: 100%;
             }
+
+            &-button {
+                background-color: vars.$color-background;
+                border-radius: 50%;
+                border: 1px solid vars.$color-background-scaled;
+                text-align: center;
+                vertical-align: center;
+                color: vars.$color-background-scaled;
+                font-size: 0.4rem;
+                width: 17px;
+                height: 17px;
+                position: absolute;
+                top: 5px;
+                right: 5px;
+            }
+
+            &-button:hover {
+                background-color: vars.$color-background-scaled;
+                border: 1px solid vars.$color-background;
+                color: vars.$color-background;
+            }
+        }
+
+        &-button {
+            font-size: 0.6rem;
+            background-color: vars.$color-background;
+            color: vars.$color-background-scaled;
+            border-radius: 5px;
+            border: 1px solid vars.$color-background-scaled;
+            padding: 0.2rem 0.5rem;
+            position: absolute;
+            bottom: -16px;
+            border: 1px solid vars.$color-background;
+        }
+
+        &-button:hover {
+            background-color: vars.$color-background-scaled;
+            border: 1px solid vars.$color-background;
+            color: vars.$color-background;
         }
     }
 }
