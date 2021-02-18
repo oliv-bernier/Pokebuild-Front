@@ -2,13 +2,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 90%;
+  width: 85%;
   margin-top: 0.2rem;
   position: absolute;
   bottom: -65px;
 
   @media (min-width: 768px) {
     bottom: -80px;
+    width: 89%;
   }
 
   @media (min-width: 1400px) {

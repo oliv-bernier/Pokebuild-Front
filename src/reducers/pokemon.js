@@ -6,6 +6,8 @@ import {
   DELETE_FILTER_TYPES,
   MEMORIZE_POKEMON,
   MEMORIZE_TYPES,
+  ADD_SELECTED_POKEMON,
+  REMOVE_SELECTED_POKEMON,
 } from '../actions/pokemon';
 
 const initialState = {
@@ -757,6 +759,28 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         filterTypes: [...state.filterTypes.filter((type) => type !== action.value)],
+      };
+    case ADD_SELECTED_POKEMON:
+      if (state.pokemonSelected.length >= 6) {
+        return {
+          ...state,
+        };
+      }
+      return {
+        ...state,
+        pokemonSelected: [...state.pokemonSelected, state.pokemonList.find((pokemon) => (
+          pokemon.id === action.id
+        ))],
+      };
+    case REMOVE_SELECTED_POKEMON:
+      if (state.pokemonSelected.length <= 0) {
+        return {
+          ...state,
+        };
+      }
+      return {
+        ...state,
+        pokemonSelected: [...state.pokemonSelected.filter((pokemon) => pokemon.id !== action.id)],
       };
     default:
       return state;

@@ -66,6 +66,7 @@
         }
 
         &--image {
+            // margin-top: 0.5rem;
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -154,6 +155,48 @@
         padding: vars.$gutter;
         width: 80%;
         padding: 0.7rem 1rem;
+        position: relative;
+
+        &-addButton {
+            position: absolute;
+            padding: 0.4rem;
+            background-color: vars.$color-background;
+            border-radius: 10px;
+            cursor: pointer;
+            top: -1.7rem;
+            left: 0rem;
+
+            &:hover {
+                background-color: vars.$color-background-scaled;
+                color: vars.$color-background;
+                border: 1px solid vars.$color-background-barre;
+            }
+
+            @media(min-height: 569px) {
+                top: -2rem;
+                left: 4rem;
+    
+                @media (min-width: 375px) {
+                    top: -2rem;
+                    left: 5rem;
+                }
+
+                @media (min-width: 768px) {
+                    top: -2rem;
+                    left: 3rem;
+                }
+
+                @media (min-width: 1000px) {
+                    top: -2.3rem;
+                    left: 15rem;
+                }
+
+                @media (min-width: 2000px) {
+                    top: -2.3rem;
+                    left: 23rem;
+                }
+            }
+        }
 
     }
 

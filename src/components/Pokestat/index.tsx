@@ -8,18 +8,19 @@ import StatDetails from './StatDetails';
 
 import './style.scss';
 
-const Pokestat = ({ toggleDetails, pokemon }: {toggleDetails: Function, pokemon: {
-  id: number,
-  name: string,
-  image: string,
-  sprite: string,
-  stats: Array<number>,
-  apiTypes: Array<{
+const Pokestat = ({ toggleDetails, pokemon, addPokemon }: {toggleDetails: Function, pokemon: {
+    id: number,
     name: string,
     image: string,
-  }>,
-  apiGeneration: number,
-}}) => {
+    sprite: string,
+    stats: Array<number>,
+    apiTypes: Array<{
+      name: string,
+      image: string,
+    }>,
+    apiGeneration: number,
+  },
+ addPokemon: Function}) => {
   const {
     id,
     name,
@@ -32,14 +33,17 @@ const Pokestat = ({ toggleDetails, pokemon }: {toggleDetails: Function, pokemon:
     setIsAnimation(true);
     setTimeout(toggleDetails, 250);
   };
+  const handleAdd = (): void => {
+    addPokemon(id);
+  };
   return (
     <div className={classNames('pokestat', { 'pokestat--animation': isAnimation })}>
       <div className="pokestat-container">
         <button type="button" className="pokestat-container--button" onClick={handleClose}>X</button>
-        <div className="pokestat-container--image">
+        <section className="pokestat-container--image">
           <div className="pokestat-container--image_infos">
             <h2 className="pokestat-name">{`#${id} ${name}`}</h2>
-            <section className="pokestat-container--image_section">
+            <div className="pokestat-container--image_section">
               {apiTypes.map((type: {name: string, image: string}) => (
                 <img
                   key={type.name}
@@ -48,11 +52,17 @@ const Pokestat = ({ toggleDetails, pokemon }: {toggleDetails: Function, pokemon:
                   alt={`${type.name}.png`}
                 />
               ))}
-            </section>
+            </div>
           </div>
           <img className="pokestat-image" src={image} alt={`${name}.png`} />
-        </div>
-        <div className="pokestat-infos">
+        </section>
+        <section className="pokestat-infos">
+          <div
+            className="pokestat-infos-addButton"
+            onClick={handleAdd}
+          >
+            Ajouter à votre équipe
+          </div>
           <div className="pokestat-details">
             {
             Object.entries(stats).map(([statName, statValue]: [string, number]) => {
@@ -67,7 +77,7 @@ const Pokestat = ({ toggleDetails, pokemon }: {toggleDetails: Function, pokemon:
             })
             }
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );
