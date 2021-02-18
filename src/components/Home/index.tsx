@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import Tab from '../../containers/Tab';
-import Drop from '../Drop';
+import Drop from '../../containers/Drop';
 
 import './style.scss';
 
