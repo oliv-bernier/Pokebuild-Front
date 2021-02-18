@@ -6,6 +6,7 @@ import { getPokemon, getTypes } from '../../actions/pokemon';
 
 const mapStateToProps = (state) => ({
   isDetails: state.boolean.isDetails,
+  isDrawer: state.boolean.isDrawer,
 });
 
 const mapDispatchToProps = (dispatch) => ({
