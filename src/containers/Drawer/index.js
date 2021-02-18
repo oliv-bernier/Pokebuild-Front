@@ -5,8 +5,9 @@ import { toggleDrawer, toggleDetails } from '../../actions/boolean';
 
 const mapStateToProps = (state) => ({
   pokemon: state.pokemon.pokemonList,
-  // isDetails: state.boolean.isDetails,
   isDrawer: state.boolean.isDrawer,
+  filterTypes: state.pokemon.filterTypes,
+  filterInput: state.pokemon.searchInput,
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -4,6 +4,9 @@ export interface Pokemon {
   image: string,
   sprite: string,
   stats: Array<number>,
-  apiTypes: Array<any>,
+  apiTypes: Array<{
+    name: string,
+    image: string,
+  }>,
   apiGeneration: number,
 }

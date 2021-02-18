@@ -7,17 +7,27 @@ import PokemonList from '../../containers/PokemonList';
 
 import { Pokemon } from '../../type';
 import pokeball from '../../assets/pokeball-big.svg';
+import pokemonFilter from '../../utils/pokemonFilter';
 
 import './style.scss';
 
-const Drawer = ({ pokemon, toggleDrawer, isDrawer }: {
+const Drawer = ({
+  pokemon,
+  toggleDrawer,
+  isDrawer,
+  filterTypes,
+  filterInput,
+}: {
   pokemon: Array<Pokemon>,
   toggleDrawer: Function,
   isDrawer: boolean,
+  filterTypes: Array<string>,
+  filterInput: string,
 }) => {
   const handleDrawer = (): void => {
     toggleDrawer();
   };
+  const filteredPokemon = pokemonFilter(pokemon, filterTypes, filterInput);
   return (
     <section className={classNames('drawer', { 'drawer--open': isDrawer })}>
       <div className="drawer-button">
@@ -27,7 +37,7 @@ const Drawer = ({ pokemon, toggleDrawer, isDrawer }: {
         <Search />
         <div className="drawer-list">
           <ul className="drawer-list--pokemon">
-            {pokemon.map((currentPokemon: Pokemon) => (
+            {filteredPokemon.map((currentPokemon: Pokemon) => (
               <PokemonList key={currentPokemon.id} {...currentPokemon} />
             ))}
           </ul>
@@ -41,6 +51,8 @@ Drawer.propTypes = {
   pokemon: PropTypes.arrayOf(PropTypes.object).isRequired,
   toggleDrawer: PropTypes.func.isRequired,
   isDrawer: PropTypes.bool.isRequired,
+  filterTypes: PropTypes.arrayOf(PropTypes.string).isRequired,
+  filterInput: PropTypes.string.isRequired,
 };
 
 export default Drawer;

@@ -7,11 +7,16 @@ const CheckboxesItem = ({
   image,
   addTypesFilter,
   deleteTypesFilter,
+}: {
+  name: string,
+  image: string,
+  addTypesFilter: Function,
+  deleteTypesFilter: Function,
 }) => {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleSelect = () => {
-    if (isChecked) {
+    if (!isChecked) {
       addTypesFilter(name);
     }
     else {
