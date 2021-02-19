@@ -3,7 +3,7 @@ import Footer from '../../components/Footer';
 
 import { closeDrawer } from '../../actions/boolean';
 
-const mapStateToProps = () => null;
+const mapStateToProps = null;
 
 const mapDispatchToProps = (dispatch) => ({
   closeDrawer: () => {
