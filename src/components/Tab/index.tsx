@@ -39,16 +39,16 @@ const Tab = (
       <tbody>
         <tr>
           {pokemonSelected.map((chosenPokemon) => (
-            <td key={randomKey(0, 10000)} className="tab-head--sprites">
+            <td key={randomKey(0, 1000000)} className="tab-head--sprites">
               <img className="tab-head--sprites_image" src={chosenPokemon.image} alt={chosenPokemon.name} />
             </td>
           ))}
           <td className="tab-head--sprites">S</td>
         </tr>
         {types.map((currentType: {name: string, image: string}, index: number) => (
-          <tr key={randomKey(0, 10000)}>
+          <tr key={randomKey(1000000, 2000000)}>
             {pokemonSelected.map((pokemon: Pokemon) => (
-              <TrRows key={randomKey(0, 10000)} pokemon={pokemon} index={index} />
+              <TrRows key={randomKey(1000000, 3000000)} pokemon={pokemon} index={index} />
             ))}
             <td className="tab-head--def">S</td>
           </tr>
