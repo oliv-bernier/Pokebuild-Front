@@ -7,7 +7,7 @@ import PokemonList from '../../containers/PokemonList';
 
 import { Pokemon } from '../../type';
 import pokeball from '../../assets/pokeball-big.svg';
-import pokemonFilter from '../../utils/pokemonFilter';
+import pokemonFilter from '../../selectors/pokemonFilter';
 
 import './style.scss';
 

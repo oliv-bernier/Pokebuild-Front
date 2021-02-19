@@ -3,21 +3,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import CheckboxesItem from './CheckboxesItem';
-// @ts-ignore
-import { ApiTypes } from '../../type/index.tsx';
+
+import { Types } from '../../type/types';
+
 import './style.scss';
 
-const Checkboxes = ({ types, addTypesFilter, deleteTypesFilter }: {
-  types: Array<string>,
-  addTypesFilter: Function,
-  deleteTypesFilter: Function,
+const Checkboxes = ({
+  types,
+  typesBool,
+}: {
+  types: Array<{
+    name: string,
+    image: string,
+  }>,
+  typesBool: Types,
 }) => (
   <div className="checkboxes">
-    {types.map((currentType: ApiTypes) => (
+    {types.map((currentType:{name: string, image: string}) => (
       <CheckboxesItem
         key={currentType.name}
-        addTypesFilter={addTypesFilter}
-        deleteTypesFilter={deleteTypesFilter}
+        // @ts-ignore
+        bool={typesBool}
         {...currentType}
       />
     ))}
@@ -29,7 +35,7 @@ Checkboxes.propTypes = {
     name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
   })).isRequired,
-  addTypesFilter: PropTypes.func.isRequired,
+  typesBool: PropTypes.object.isRequired,
 };
 
 export default Checkboxes;

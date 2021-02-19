@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable arrow-body-style */
 import { Pokemon } from '../type/index';
-import slugifyText from './slugify';
+import slugifyText from '../utils/slugify';
 
 const pokemonFilterByName = (
   pokemons: Array<Pokemon>,
@@ -29,7 +29,6 @@ const pokemonFilter = (
       ));
     });
     filtered = pokemonFilterByName(filtered, type, input);
-    console.log(filtered);
     return filtered;
   }
   filtered = pokemonFilterByName(filtered, type, input);
