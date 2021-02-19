@@ -6,11 +6,20 @@ import corner from '../../assets/cornertab.png';
 import TdHead from './TdHead';
 import TrRows from './TrRows';
 
+import { Pokemon } from '../../type/index';
+
 import randomKey from '../../utils/randomizer';
 import './style.scss';
 
 const Tab = (
-  { types, pokemonSelected },
+  {
+    types,
+    pokemonSelected,
+  }: {
+    types: Array<{
+      name: string,
+      image: string,
+   }>, pokemonSelected: Array<Pokemon> },
 ) => (
   <div className="tab-container">
     {/* <p className="tab-title"> Forces et faiblesses de votre séléction</p> */}
@@ -36,10 +45,10 @@ const Tab = (
           ))}
           <td className="tab-head--sprites">S</td>
         </tr>
-        {types.map((currentType, index) => (
+        {types.map((currentType: {name: string, image: string}, index: number) => (
           <tr key={randomKey(0, 10000)}>
-            {pokemonSelected.map((resist) => (
-              <TrRows key={randomKey(0, 10000)} resist={resist} index={index} />
+            {pokemonSelected.map((pokemon: Pokemon) => (
+              <TrRows key={randomKey(0, 10000)} pokemon={pokemon} index={index} />
             ))}
             <td className="tab-head--def">S</td>
           </tr>

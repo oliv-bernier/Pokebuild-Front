@@ -5,8 +5,17 @@ import PropTypes from 'prop-types';
 import DropBox from '../../containers/Drop/DropBox';
 
 import './style.scss';
+import { Pokemon } from '../../type';
 
-const Drop = ({ pokemonSelected, clearPokemons }) => {
+const Drop = (
+  {
+    pokemonSelected,
+    clearPokemons,
+  }: {
+    pokemonSelected: Array<Pokemon>,
+    clearPokemons: Function,
+  },
+) => {
   const boxes = [];
   for (let index = 0; index < 6; index++) {
     boxes.push(<DropBox

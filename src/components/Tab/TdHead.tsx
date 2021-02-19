@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const TdHead = ({ image, name }) => {
+const TdHead = (
+  {
+    image,
+    name,
+  }: {
+    image: string,
+    name: string,
+  },
+) => {
   const [isTypeOver, setTypeOver] = useState(false);
 
   const mouseInOut = () => {

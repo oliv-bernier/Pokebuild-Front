@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Drop from '../../components/Drop/index.js';
+import Drop from '../../components/Drop/index.tsx';
 
 import { removeAllPokemon } from '../../actions/pokemon';
 
