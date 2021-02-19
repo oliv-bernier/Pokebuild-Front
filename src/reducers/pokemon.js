@@ -14,6 +14,7 @@ import {
 const initialState = {
   pokemonList: [],
   pokemonSelected: [],
+  pokemonSelectedIds: [],
   pokedetails: {},
   favorites: [],
   types: [],
@@ -69,6 +70,7 @@ const reducer = (state = initialState, action = {}) => {
         pokemonSelected: [...state.pokemonSelected, state.pokemonList.find((pokemon) => (
           pokemon.id === action.id
         ))],
+        pokemonSelectedIds: [...state.pokemonSelectedIds, action.id],
       };
     case REMOVE_SELECTED_POKEMON: {
       if (state.pokemonSelected.length <= 0) {
@@ -77,16 +79,20 @@ const reducer = (state = initialState, action = {}) => {
         };
       }
       const newArray = [...state.pokemonSelected];
+      const newArrayIds = [...state.pokemonSelectedIds];
       newArray.splice(action.index, 1);
+      newArrayIds.splice(action.index, 1);
       return {
         ...state,
         pokemonSelected: [...newArray],
+        pokemonSelectedIds: [...newArrayIds],
       };
     }
     case REMOVE_ALL_POKEMON:
       return {
         ...state,
         pokemonSelected: [],
+        pokemonSelectedIds: [],
       };
     default:
       return state;
