@@ -8,8 +8,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  clearOnePokemon: (pokemon) => {
-    dispatch(removeSelectedPokemon(pokemon));
+  clearOnePokemon: (index) => {
+    dispatch(removeSelectedPokemon(index));
   },
 });
 

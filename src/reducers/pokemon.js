@@ -77,8 +77,7 @@ const reducer = (state = initialState, action = {}) => {
         };
       }
       const newArray = [...state.pokemonSelected];
-      const index = state.pokemonSelected.indexOf(action.pokemon);
-      newArray.splice(index, 1);
+      newArray.splice(action.index, 1);
       return {
         ...state,
         pokemonSelected: [...newArray],

@@ -13,7 +13,7 @@ const DropBox = ({
   clearOnePokemon: Function
 }) => {
   const handleClearOne = () => {
-    clearOnePokemon(pokemonSelected[index]);
+    clearOnePokemon(index);
   };
 
   if (pokemonSelected[index] !== undefined) {

@@ -56,9 +56,9 @@ export const addSelectedPokemon = (id) => ({
 });
 
 export const REMOVE_SELECTED_POKEMON = 'REMOVE_SELECTED_POKEMON';
-export const removeSelectedPokemon = (pokemon) => ({
+export const removeSelectedPokemon = (index) => ({
   type: REMOVE_SELECTED_POKEMON,
-  pokemon,
+  index,
 });
 
 export const REMOVE_ALL_POKEMON = 'REMOVE_ALL_POKEMON';
