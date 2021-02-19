@@ -1,4 +1,4 @@
-import { TOGGLE_DETAILS, TOGGLE_DRAWER } from '../actions/boolean';
+import { TOGGLE_DETAILS, TOGGLE_DRAWER, CLOSE_DRAWER } from '../actions/boolean';
 
 const initialState = {
   isDrawer: false,
@@ -16,6 +16,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isDrawer: !state.isDrawer,
+      };
+    case CLOSE_DRAWER:
+      return {
+        ...state,
+        isDrawer: false,
       };
     default:
       return state;

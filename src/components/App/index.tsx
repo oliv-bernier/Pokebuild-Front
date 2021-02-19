@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import Header from '../Header';
-import Footer from '../Footer';
+import Footer from '../../containers/Footer';
 import Home from '../Home';
 import Drawer from '../../containers/Drawer';
 import About from '../About';
