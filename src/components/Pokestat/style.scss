@@ -27,6 +27,7 @@
     height: calc(100vh - 3rem);
     position: absolute;
     top: 0;
+    left: 0;
     animation: fadeIn 0.5s 1;
 
     @media (min-width: 1000px) {
@@ -186,7 +187,7 @@
                     left: 3rem;
                 }
 
-                @media (min-width: 1000px) {
+                @media (min-width: 1400px) {
                     top: -2.3rem;
                     left: 15rem;
                 }
@@ -197,7 +198,6 @@
                 }
             }
         }
-
     }
 
     &-details {
@@ -243,6 +243,7 @@
                 @media (min-width:768px) {
                     width: 70%;
                     top: -1px;
+                    height: 0.8rem;
                 }
 
                 @media (min-width: 1400px) {
@@ -261,7 +262,11 @@
                 height: 0.8rem;
                 border-radius: 0.5rem;
 
-                @media (min-width: 1000px) {
+                @media (min-width:768px) {
+                    height: 0.8rem;
+                }
+
+                @media (min-width: 1400px) {
                     height: 1.5rem;
                 }
 
