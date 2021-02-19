@@ -1,3 +1,8 @@
+/**
+ * This function translate the input stat
+ * @param {string} stat - the stat you want to translate
+ * @return {string} - The translated stat
+ */
 const translationStat = (stat: string) => {
   switch (stat) {
     case 'HP':

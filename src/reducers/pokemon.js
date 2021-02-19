@@ -70,16 +70,20 @@ const reducer = (state = initialState, action = {}) => {
           pokemon.id === action.id
         ))],
       };
-    case REMOVE_SELECTED_POKEMON:
+    case REMOVE_SELECTED_POKEMON: {
       if (state.pokemonSelected.length <= 0) {
         return {
           ...state,
         };
       }
+      const newArray = [...state.pokemonSelected];
+      const index = state.pokemonSelected.indexOf(action.pokemon);
+      newArray.splice(index, 1);
       return {
         ...state,
-        pokemonSelected: [...state.pokemonSelected.filter((pokemon) => pokemon.id !== action.id)],
+        pokemonSelected: [...newArray],
       };
+    }
     case REMOVE_ALL_POKEMON:
       return {
         ...state,
