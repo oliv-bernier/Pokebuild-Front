@@ -86,12 +86,13 @@
         position: relative;
         bottom: -11vh;
         overflow-y: auto;
+        overflow-x: hidden;
 
         @media (min-width: 768px) {
             margin-top: 1rem;
             height: calc(100vh - 230px);
             bottom: -8vh;
-            width: 51vw;
+            width: 50vw;
         }
 
         @media (min-width: 1400px) {
@@ -104,6 +105,15 @@
 
         &::-webkit-scrollbar {
             width: 8px;
+
+            @media (min-width: 1400px) {
+                width: 14px;
+            }
+
+            @media (min-width: 2000px) {
+                width: 18px;
+            }
+
         }
 
         &::-webkit-scrollbar-thumb {
