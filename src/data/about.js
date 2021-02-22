@@ -1,6 +1,3 @@
-import github from '../assets/github.svg';
-import linkedin from '../assets/linkedin.svg';
-
 const about = [
   {
     id: 1,
@@ -48,7 +45,7 @@ const about = [
     pseudo: 'Tagada',
     dev: 'Front End',
     role: 'Product Owner',
-    image: 'https://cdn.pixabay.com/photo/2020/12/16/15/24/aang-5836896_960_720.jpg',
+    image: 'https://i.ibb.co/K776zNg/avatar-olivier.jpg',
     social: [
       {
         network: 'github',
