@@ -65,3 +65,9 @@ export const REMOVE_ALL_POKEMON = 'REMOVE_ALL_POKEMON';
 export const removeAllPokemon = () => ({
   type: REMOVE_ALL_POKEMON,
 });
+
+export const SEND_TEAM = 'SEND_TEAM';
+export const sendTeam = (team) => ({
+  type: SEND_TEAM,
+  team,
+});

@@ -7,6 +7,7 @@ import {
   memorizePokemon,
   GET_TYPES,
   memorizeTypes,
+  SEND_TEAM,
 } from '../actions/pokemon';
 
 const ajax = (store) => (next) => (action) => {
@@ -29,6 +30,20 @@ const ajax = (store) => (next) => (action) => {
         .catch((error) => {
           console.error(error);
         });
+      break;
+    case SEND_TEAM: {
+      const { team } = action;
+      const jsoned = JSON.stringify(team);
+      console.log(jsoned);
+      axios.post('team/defensive-coverage', jsoned)
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+      break;
+    }
   }
   next(action);
 };
