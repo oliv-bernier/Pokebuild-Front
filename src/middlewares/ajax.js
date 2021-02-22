@@ -10,6 +10,10 @@ import {
   SEND_TEAM,
 } from '../actions/pokemon';
 
+import {
+  memorizeResitances,
+} from '../actions/teamResistances';
+
 const ajax = (store) => (next) => (action) => {
   axios.defaults.baseURL = 'http://ec2-3-83-51-192.compute-1.amazonaws.com/api/v1/';
   switch (action.type) {
@@ -37,7 +41,10 @@ const ajax = (store) => (next) => (action) => {
       console.log(jsoned);
       axios.post('team/defensive-coverage', jsoned)
         .then((response) => {
-          console.log(response);
+          // console.log(response);
+          response.data.map((currentData) => (
+            store.dispatch(memorizeResitances(currentData, currentData.name))
+          ));
         })
         .catch((error) => {
           console.error(error);

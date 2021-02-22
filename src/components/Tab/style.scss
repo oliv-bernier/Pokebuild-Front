@@ -194,12 +194,24 @@
                 background-color: greenyellow;
             }
 
+            &_slightly-resistant {
+                background-color: lightblue;
+            }
+
             &_resistant {
                 background-color: lightgreen;
             }
 
             &_neutral {
                 background-color: lightgray;
+            }
+
+            &_balanced {
+                background-color: lightgray;
+            }
+            
+            &_slightly-vulnerable {
+                background-color: lightpink;
             }
 
             &_vulnerable {

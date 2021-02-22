@@ -5,8 +5,10 @@ import corner from '../../assets/cornertab.png';
 
 import TdHead from './TdHead';
 import TrRows from './TrRows';
+import TrScore from './TrScore';
 
 import { Pokemon } from '../../type/index';
+import { Resistances } from '../../type/Resistances';
 
 import randomKey from '../../utils/randomizer';
 import './style.scss';
@@ -15,14 +17,17 @@ const Tab = (
   {
     types,
     pokemonSelected,
+    teamResistances,
   }: {
     types: Array<{
       name: string,
       image: string,
-   }>, pokemonSelected: Array<Pokemon> },
+   }>,
+   pokemonSelected: Array<Pokemon>,
+   teamResistances: Resistances,
+   },
 ) => (
   <div className="tab-container">
-    {/* <p className="tab-title"> Forces et faiblesses de votre séléction</p> */}
     <table className="tab">
       <thead className="tab-head">
         <tr className="tab-head--tr">
@@ -50,7 +55,10 @@ const Tab = (
             {pokemonSelected.map((pokemon: Pokemon) => (
               <TrRows key={randomKey(1000000, 3000000)} pokemon={pokemon} index={index} />
             ))}
-            <td className="tab-head--def">S</td>
+            <TrScore
+              key={randomKey(1000000, 3000000)}
+              score={teamResistances[currentType.name]}
+            />
           </tr>
         ))}
       </tbody>
@@ -70,6 +78,7 @@ Tab.propTypes = {
       damage_relation: PropTypes.string.isRequired,
     })).isRequired,
   })).isRequired,
+  teamResistances: PropTypes.object.isRequired,
 };
 
 export default Tab;

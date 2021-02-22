@@ -71,3 +71,9 @@ export const sendTeam = (team) => ({
   type: SEND_TEAM,
   team,
 });
+
+export const MEMORIZE_RESISTANCES = 'MEMORIZE_RESISTANCES';
+export const memorizeResitances = (resistances) => ({
+  type: MEMORIZE_RESISTANCES,
+  resistances,
+});

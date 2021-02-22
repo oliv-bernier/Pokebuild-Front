@@ -15,6 +15,7 @@ const initialState = {
   pokemonList: [],
   pokemonSelected: [],
   pokemonSelectedIds: [],
+  teamResistance: [],
   pokedetails: {},
   favorites: [],
   types: [],

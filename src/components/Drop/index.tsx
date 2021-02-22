@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import PropTypes from 'prop-types';
 
@@ -11,9 +11,13 @@ const Drop = (
   {
     pokemonSelected,
     clearPokemons,
+    pokemonIds,
+    sendTeam,
   }: {
     pokemonSelected: Array<Pokemon>,
     clearPokemons: Function,
+    sendTeam: Function,
+    pokemonIds: Array<number>,
   },
 ) => {
   const boxes = [];
@@ -22,6 +26,12 @@ const Drop = (
       key={index}
       index={index}
     />);
+  }
+
+  if (pokemonIds.length > 0 && pokemonIds.length <= 6) {
+    useEffect(() => {
+      sendTeam(pokemonIds);
+    });
   }
 
   const handleClearAll = () => {
@@ -55,6 +65,8 @@ const Drop = (
 Drop.propTypes = {
   pokemonSelected: PropTypes.arrayOf(PropTypes.object).isRequired,
   clearPokemons: PropTypes.func.isRequired,
+  sendTeam: PropTypes.func.isRequired,
+  pokemonIds: PropTypes.array.isRequired,
 };
 
 export default Drop;

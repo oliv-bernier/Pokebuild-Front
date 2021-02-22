@@ -7,24 +7,23 @@ const DropBox = ({
   pokemonSelected,
   index,
   clearOnePokemon,
+  removeAllPokemon,
   pokemonIds,
-  sendTeam,
 }:
-{pokemonSelected: Array<Pokemon>,
+{
+  pokemonSelected: Array<Pokemon>,
   index: number,
   clearOnePokemon: Function,
-  sendTeam: Function,
+  removeAllPokemon: Function,
   pokemonIds: Array<number>,
 }) => {
   const handleClearOne = () => {
     clearOnePokemon(index);
-  };
 
-  if (pokemonIds.length > 0 && pokemonIds.length < 6) {
-    useEffect(() => {
-      sendTeam(pokemonIds);
-    });
-  }
+    if (pokemonIds.length === 1) {
+      removeAllPokemon();
+    }
+  };
 
   if (pokemonSelected[index] !== undefined) {
     const { sprite, name } = pokemonSelected[index];
@@ -57,7 +56,7 @@ DropBox.propTypes = {
     id: PropTypes.number.isRequired,
   })).isRequired,
   clearOnePokemon: PropTypes.func.isRequired,
-  sendTeam: PropTypes.func.isRequired,
+  removeAllPokemon: PropTypes.func.isRequired,
   pokemonIds: PropTypes.array.isRequired,
 };
 

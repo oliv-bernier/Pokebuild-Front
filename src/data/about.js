@@ -27,7 +27,7 @@ const about = [
   {
     id: 4,
     name: 'François',
-    pseudo: 'Tsoin',
+    pseudo: 'Elasnael',
     dev: 'Front End',
     role: 'Lead dev Front',
     image: 'https://avatarfiles.alphacoders.com/231/thumb-1920-231616.png',

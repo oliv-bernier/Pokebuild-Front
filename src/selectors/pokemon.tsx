@@ -1,5 +1,4 @@
-// @ts-ignore
-import Pokemon from '../type/index.tsx';
+import { Pokemon } from '../type/index';
 
 /**
  * Looking for a specific Pokemon details
