@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import corner from '../../assets/cornertab.png';
+import scoring from '../../assets/satisfaction.svg';
 
 import TdHead from './TdHead';
 import TrRows from './TrRows';
@@ -48,7 +49,7 @@ const Tab = (
               <img className="tab-head--sprites_image" src={chosenPokemon.image} alt={chosenPokemon.name} />
             </td>
           ))}
-          <td className="tab-head--sprites">S</td>
+          <td className="tab-head--sprites"><img className="tab-head--sprites-scoring" src={scoring} alt="score final" /></td>
         </tr>
         {types.map((currentType: {name: string, image: string}, index: number) => (
           <tr key={randomKey(1000000, 2000000)}>

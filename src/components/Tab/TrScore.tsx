@@ -8,7 +8,7 @@ const TrScore = (
     score: { message: string, name: string, result: string },
   },
 ) => (
-  <td className={`tab-head--def tab-head--def_${score.result}`}>{score.result}</td>
+  <td className={`tab-head--def tab-head--def_${score.result}`} />
 );
 
 TrScore.protoTypes = {
