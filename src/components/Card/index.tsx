@@ -2,6 +2,8 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
+import github from '../../assets/github.svg';
+import linkedin from '../../assets/linkedin.svg';
 import './style.scss';
 
 const Card = ({
@@ -10,12 +12,14 @@ const Card = ({
   dev,
   role,
   image,
+  social,
 }: {
   name: string,
   pseudo: string,
   dev: string,
   role: string,
   image: string,
+  social: Array<{network: string, link: string, logo: string}>,
 }) => (
   <div className="card">
     <img className="card-image" src={image} alt="" />
@@ -24,6 +28,13 @@ const Card = ({
       <p>Pseudo: <span className="card-details--info">{pseudo}</span></p>
       <p>Developpement: <span className="card-details--info">{dev}</span></p>
       <p>Rôle: <span className="card-details--info">{role}</span></p>
+      <div className="card-social">
+        {social.map((currentSocial) => (
+          <a key={currentSocial.network} className="card-social_link" href={currentSocial.link}>
+            <i className={currentSocial.logo} />
+          </a>
+        ))}
+      </div>
     </div>
   </div>
 );
@@ -34,6 +45,7 @@ Card.propTypes = {
   dev: PropTypes.string.isRequired,
   role: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  social: PropTypes.array.isRequired,
 };
 
 export default Card;

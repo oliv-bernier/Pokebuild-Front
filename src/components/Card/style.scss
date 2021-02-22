@@ -50,4 +50,44 @@
         font-weight: bold;
         font-style: normal;
     }
+
+    &-social {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        width: 100%;
+
+        &_img {
+            margin-top: 0.2rem;
+            margin-right: 0.3rem;
+            width: 1rem;
+
+            @media(min-width: 768px) {
+                width: 1.6rem;
+            }
+
+            @media(min-width: 1400px) {
+                width: 2rem;
+            }
+        }
+    }
+ }
+
+ .fab {
+     color: vars.$color-background-scaled;
+     font-size: 1rem;
+     margin-left: 0.5rem;
+     margin-top: 0.2rem;
+
+     @media(min-width: 768px) {
+        font-size: 1.5rem;
+        margin-top: 0.3rem;
+     }
+
+     @media(min-width: 1400px) {
+        font-size: 1.8rem;
+        margin-top: 0.5rem;
+        margin-left: 0.7rem;
+     }
  }
