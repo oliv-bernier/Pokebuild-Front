@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import PropTypes from 'prop-types';
 import { Pokemon } from '../../type';
@@ -7,14 +7,24 @@ const DropBox = ({
   pokemonSelected,
   index,
   clearOnePokemon,
+  pokemonIds,
+  sendTeam,
 }:
 {pokemonSelected: Array<Pokemon>,
   index: number,
-  clearOnePokemon: Function
+  clearOnePokemon: Function,
+  sendTeam: Function,
+  pokemonIds: Array<number>,
 }) => {
   const handleClearOne = () => {
     clearOnePokemon(index);
   };
+
+  if (pokemonIds.length > 0 && pokemonIds.length < 6) {
+    useEffect(() => {
+      sendTeam(pokemonIds);
+    });
+  }
 
   if (pokemonSelected[index] !== undefined) {
     const { sprite, name } = pokemonSelected[index];
@@ -47,6 +57,8 @@ DropBox.propTypes = {
     id: PropTypes.number.isRequired,
   })).isRequired,
   clearOnePokemon: PropTypes.func.isRequired,
+  sendTeam: PropTypes.func.isRequired,
+  pokemonIds: PropTypes.array.isRequired,
 };
 
 export default DropBox;

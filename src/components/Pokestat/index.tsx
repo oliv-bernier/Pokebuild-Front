@@ -12,7 +12,6 @@ const Pokestat = ({
   toggleDetails,
   pokemon,
   addPokemon,
-  sendTeam,
   pokemonIds,
 }: {toggleDetails: Function,
   pokemon: {
@@ -28,7 +27,6 @@ const Pokestat = ({
     apiGeneration: number,
   },
  addPokemon: Function,
- sendTeam: Function,
  pokemonIds: Array<number>,
 }) => {
   const {
@@ -45,7 +43,6 @@ const Pokestat = ({
   };
   const handleAdd = (): void => {
     addPokemon(id);
-    sendTeam(pokemonIds);
     handleClose();
   };
   return (
@@ -99,7 +96,6 @@ Pokestat.propTypes = {
   toggleDetails: PropTypes.func.isRequired,
   pokemon: PropTypes.object.isRequired,
   addPokemon: PropTypes.func.isRequired,
-  sendTeam: PropTypes.func.isRequired,
   pokemonIds: PropTypes.array.isRequired,
 };
 

@@ -23,9 +23,6 @@ const mapDispatchToProps = (dispatch) => ({
   switchFilter: (value, key) => {
     dispatch(switchFilter(value, key));
   },
-  sendTeam: (team) => {
-    dispatch(sendTeam(team));
-  },
 });
 
 export default connect(mapStateToProp, mapDispatchToProps)(Pokestat);

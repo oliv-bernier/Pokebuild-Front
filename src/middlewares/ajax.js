@@ -31,8 +31,11 @@ const ajax = (store) => (next) => (action) => {
           console.error(error);
         });
       break;
-    case SEND_TEAM:
-      axios.post('pokemon/team/defensive-coverage', { data: action.team })
+    case SEND_TEAM: {
+      const { team } = action;
+      const jsoned = JSON.stringify(team);
+      console.log(jsoned);
+      axios.post('team/defensive-coverage', jsoned)
         .then((response) => {
           console.log(response);
         })
@@ -40,6 +43,7 @@ const ajax = (store) => (next) => (action) => {
           console.error(error);
         });
       break;
+    }
   }
   next(action);
 };
