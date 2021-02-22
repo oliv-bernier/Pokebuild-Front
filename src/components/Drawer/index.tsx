@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -24,10 +24,19 @@ const Drawer = ({
   filterTypes: Array<string>,
   filterInput: string,
 }) => {
+  const [emptyList, setEmptyList] = useState(false);
   const handleDrawer = (): void => {
     toggleDrawer();
   };
   const filteredPokemon = pokemonFilter(pokemon, filterTypes, filterInput);
+  useEffect(() => {
+    if (filteredPokemon.length === 0) {
+      setEmptyList(true);
+    }
+    else {
+      setEmptyList(false);
+    }
+  });
   return (
     <section className={classNames('drawer', { 'drawer--open': isDrawer })}>
       <div className="drawer-button">
@@ -36,11 +45,16 @@ const Drawer = ({
       <div className="drawer-pokedex">
         <Search />
         <div className="drawer-list">
-          <ul className="drawer-list--pokemon">
-            {filteredPokemon.map((currentPokemon: Pokemon) => (
-              <PokemonList key={currentPokemon.id} {...currentPokemon} />
-            ))}
-          </ul>
+          {!emptyList && (
+            <ul className="drawer-list--pokemon">
+              {filteredPokemon.map((currentPokemon: Pokemon) => (
+                <PokemonList key={currentPokemon.id} {...currentPokemon} />
+              ))}
+            </ul>
+          )}
+          {emptyList && (
+            <p className="drawer-list--nopokemon">Aucun pokemon ne correspond à cette recherche</p>
+          )}
         </div>
       </div>
     </section>
