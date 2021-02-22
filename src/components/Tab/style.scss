@@ -252,6 +252,7 @@ tbody tr:last-child .tab-head--def:last-child {
     background: url('../../assets/secure-shield.svg');
     width: 30px;
     height: 30px;
+    background-size: 30px;
 }
 
 .tab-head--def_twice-resistant:last-child::after {
@@ -260,14 +261,7 @@ tbody tr:last-child .tab-head--def:last-child {
     background: url('../../assets/secure-shield.svg');
     width: 30px;
     height: 30px;
-}
-
-.tab-head--def_slightly-resistant:last-child::after {
-    content: '';
-    display: inline-block;
-    background: url('../../assets/balanced.svg');
-    width: 30px;
-    height: 30px;
+    background-size: 30px;
 }
 
 .tab-head--def_resistant:last-child::after {
@@ -276,12 +270,23 @@ tbody tr:last-child .tab-head--def:last-child {
     background: url('../../assets/secure-shield.svg');
     width: 30px;
     height: 30px;
+    background-size: 30px;
+}
+
+.tab-head--def_slightly-resistant:last-child::after {
+    content: '';
+    display: inline-block;
+    background: url('../../assets/balanced.svg');
+    background-size: 30px;
+    width: 30px;
+    height: 30px;
 }
 
 .tab-head--def_neutral:last-child::after {
     content: '';
     display: inline-block;
     background: url('../../assets/balanced.svg');
+    background-size: 30px;
     width: 30px;
     height: 30px;
 }
@@ -290,6 +295,7 @@ tbody tr:last-child .tab-head--def:last-child {
     content: '';
     display: inline-block;
     background: url('../../assets/balanced.svg');
+    background-size: 30px;
     width: 30px;
     height: 30px;
 }
@@ -300,6 +306,7 @@ tbody tr:last-child .tab-head--def:last-child {
     background: url('../../assets/alert.svg');
     width: 30px;
     height: 30px;
+    background-size: 30px;
 }
 
 .tab-head--def_twice-vulnerable:last-child::after {
@@ -308,6 +315,7 @@ tbody tr:last-child .tab-head--def:last-child {
     background: url('../../assets/alert.svg');
     width: 30px;
     height: 30px;
+    background-size: 30px;
 }
 
 .tab-head--def_vulnerable:last-child::after {
@@ -316,4 +324,5 @@ tbody tr:last-child .tab-head--def:last-child {
     background: url('../../assets/alert.svg');
     width: 30px;
     height: 30px;
+    background-size: 30px;
 }
