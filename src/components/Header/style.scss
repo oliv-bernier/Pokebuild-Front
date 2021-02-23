@@ -9,7 +9,6 @@
         height: 1.2rem;
         display: flex;
         flex-direction: row;
-        // align-items: center;
         justify-content: space-around;
         align-items: center;
         margin-bottom: vars.$gutter;
@@ -25,12 +24,18 @@
             font-family: Pokemon-Hollow;
             font-size: 0.7rem;
             margin: 0;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.3rem;
             font-weight: bold;
             text-align: center;
     
             @media (min-width: 768px) {
                 font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            @media (min-width: 1400px) {
+                font-size: 2rem;
+                margin-bottom: 1rem;
             }
         }
     
