@@ -2,6 +2,7 @@ import {
   MEMORYSE_USER,
   LOGOUT_USER,
   CHANGE_LOGIN_INPUT,
+  CHANGE_CREATE_INPUT,
 } from '../actions/user';
 
 const initialState = {
@@ -31,6 +32,11 @@ const reducer = (state = initialState, action = {}) => {
         pseudo: '',
       };
     case CHANGE_LOGIN_INPUT:
+      return {
+        ...state,
+        [action.key]: action.newValue,
+      };
+    case CHANGE_CREATE_INPUT:
       return {
         ...state,
         [action.key]: action.newValue,

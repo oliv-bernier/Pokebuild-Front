@@ -75,7 +75,7 @@ const LoginForm = ({
             onChange={changeCreate}
           />
           <LoginField
-            name="password-confirm"
+            name="passwordConfirm"
             type="password"
             placeholder="Confirmer votre mot de passe"
             value={passwordConfirm}
