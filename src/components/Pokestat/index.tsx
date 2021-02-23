@@ -42,11 +42,10 @@ const Pokestat = ({
     setTimeout(() => {
       toggleDetails();
     }, 250);
-    setTimeout(() => addPokemon(id), 150);
   };
   const handleAdd = (): void => {
     handleClose();
-    // addPokemon(id);
+    setTimeout(() => addPokemon(id), 150);
   };
   return (
     <div className={classNames('pokestat', { 'pokestat--animation': isAnimation })}>

@@ -28,7 +28,12 @@ const Card = ({
       <p>Rôle: <span className="card-details--info">{role}</span></p>
       <div className="card-social">
         {social.map((currentSocial) => (
-          <a key={currentSocial.network} className="card-social_link" href={currentSocial.link}>
+          <a
+            key={currentSocial.network}
+            className="card-social_link"
+            target="blank"
+            href={currentSocial.link}
+          >
             <i className={currentSocial.logo} />
           </a>
         ))}
