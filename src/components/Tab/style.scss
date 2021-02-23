@@ -303,7 +303,7 @@ tbody tr:last-child .tab-head--def:last-child {
 .tab-head--def_slightly-vulnerable:last-child::after {
     content: '';
     display: inline-block;
-    background: url('../../assets/alert.svg');
+    background: url('../../assets/caution.svg');
     width: 30px;
     height: 30px;
     background-size: 30px;
@@ -312,7 +312,7 @@ tbody tr:last-child .tab-head--def:last-child {
 .tab-head--def_twice-vulnerable:last-child::after {
     content: '';
     display: inline-block;
-    background: url('../../assets/alert.svg');
+    background: url('../../assets/caution.svg');
     width: 30px;
     height: 30px;
     background-size: 30px;
@@ -321,7 +321,7 @@ tbody tr:last-child .tab-head--def:last-child {
 .tab-head--def_vulnerable:last-child::after {
     content: '';
     display: inline-block;
-    background: url('../../assets/alert.svg');
+    background: url('../../assets/caution.svg');
     width: 30px;
     height: 30px;
     background-size: 30px;

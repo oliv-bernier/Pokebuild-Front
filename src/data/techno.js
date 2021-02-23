@@ -16,7 +16,7 @@ const techno = [
   },
   {
     id: 4,
-    name: 'Typescript',
+    name: 'TypeScript',
     image: 'https://seeklogo.com/images/T/typescript-logo-B29A3F462D-seeklogo.com.png',
   },
   {
@@ -26,7 +26,7 @@ const techno = [
   },
   {
     id: 6,
-    name: 'Sass',
+    name: 'Sasss',
     image: 'https://seeklogo.com/images/S/sass-logo-EFE1469B2C-seeklogo.com.png',
   },
   {
