@@ -10,11 +10,9 @@ import {
 
 const mapStateToProps = (state) => ({
   username: state.user.username,
-  pseudo: state.user.pseudo,
   email: state.user.email,
   password: state.user.password,
   passwordConfirm: state.user.passwordConfirm,
-  isLogged: state.boolean.isLogged,
   isDrawer: state.boolean.isDrawer,
   isCreate: state.boolean.isCreate,
 });

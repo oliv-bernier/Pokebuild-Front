@@ -8,11 +8,9 @@ import './style.scss';
 
 const LoginForm = ({
   username,
-  pseudo,
   email,
   password,
   passwordConfirm,
-  isLogged,
   isDrawer,
   isCreate,
   changeField,
@@ -23,11 +21,9 @@ const LoginForm = ({
   toggleLogged,
 }: {
   username: string,
-  pseudo: string,
   email: string,
   password: string,
   passwordConfirm: string,
-  isLogged: boolean,
   isDrawer: boolean,
   isCreate: boolean,
   changeField: Function,
@@ -132,11 +128,9 @@ const LoginForm = ({
 
 LoginForm.propTypes = {
   username: PropTypes.string.isRequired,
-  pseudo: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   passwordConfirm: PropTypes.string.isRequired,
-  isLogged: PropTypes.bool.isRequired,
   isDrawer: PropTypes.bool.isRequired,
   isCreate: PropTypes.bool.isRequired,
   changeField: PropTypes.func.isRequired,
