@@ -7,7 +7,6 @@ import { switchFilter } from '../../actions/types';
 
 const mapStateToProp = (state) => ({
   pokemon: state.pokemon.pokedetails,
-  pokemonIds: state.pokemon.pokemonSelectedIds,
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -1,8 +1,20 @@
-import { TOGGLE_DETAILS, TOGGLE_DRAWER, CLOSE_DRAWER } from '../actions/boolean';
+import {
+  TOGGLE_DETAILS,
+  TOGGLE_DRAWER,
+  CLOSE_DRAWER,
+  TOGGLE_LOGIN,
+  TOGGLE_CREATE,
+  TOGGLE_LOGGED,
+} from '../actions/boolean';
+
+import { GET_USER } from '../actions/user';
 
 const initialState = {
   isDrawer: false,
   isDetails: false,
+  isLogged: false,
+  isLogin: false,
+  isCreate: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -21,6 +33,28 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isDrawer: false,
+      };
+    case TOGGLE_LOGIN:
+      return {
+        ...state,
+        isLogin: !state.isLogin,
+        isCreate: false,
+      };
+    case TOGGLE_CREATE:
+      return {
+        ...state,
+        isLogin: !state.isLogin,
+        isCreate: true,
+      };
+    case TOGGLE_LOGGED:
+      return {
+        ...state,
+        isLogged: !state.isLogged,
+      };
+    case GET_USER:
+      return {
+        ...state,
+        isLogged: true,
       };
     default:
       return state;
