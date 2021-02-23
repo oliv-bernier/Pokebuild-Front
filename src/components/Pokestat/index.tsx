@@ -12,7 +12,6 @@ const Pokestat = ({
   toggleDetails,
   pokemon,
   addPokemon,
-  pokemonIds,
 }: {toggleDetails: Function,
   pokemon: {
     id: number,
@@ -27,7 +26,6 @@ const Pokestat = ({
     apiGeneration: number,
   },
  addPokemon: Function,
- pokemonIds: Array<number>,
 }) => {
   const {
     id,
@@ -98,7 +96,6 @@ Pokestat.propTypes = {
   toggleDetails: PropTypes.func.isRequired,
   pokemon: PropTypes.object.isRequired,
   addPokemon: PropTypes.func.isRequired,
-  pokemonIds: PropTypes.array.isRequired,
 };
 
 export default Pokestat;

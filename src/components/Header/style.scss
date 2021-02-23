@@ -10,7 +10,8 @@
         display: flex;
         flex-direction: row;
         // align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
+        align-items: center;
         margin-bottom: vars.$gutter;
         position: fixed;
         top: 0;
@@ -24,6 +25,7 @@
             font-family: Pokemon-Hollow;
             font-size: 0.7rem;
             margin: 0;
+            margin-bottom: 0.2rem;
             font-weight: bold;
             text-align: center;
     
@@ -34,6 +36,12 @@
     
         &-connexion {
             display: flex;
+            align-items: center;
+            color: vars.$color-light;
+        }
+
+        &-connexion p {
+            margin: 0.5rem;
         }
     }
 }

@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import LoginField from './LoginField';
+
+import './style.scss';
 
 const LoginForm = ({
   username,
@@ -10,10 +13,12 @@ const LoginForm = ({
   password,
   passwordConfirm,
   isLogged,
+  isDrawer,
   isCreate,
   changeField,
   createUser,
   changeCreate,
+  toggleLogin,
 }: {
   username: string,
   pseudo: string,
@@ -21,20 +26,32 @@ const LoginForm = ({
   password: string,
   passwordConfirm: string,
   isLogged: boolean,
+  isDrawer: boolean,
   isCreate: boolean,
   changeField: Function,
   createUser: Function,
   changeCreate: Function,
+  toggleLogin: Function,
 }) => {
-  const handleSend = (evt) => {
+  const handleSend = (evt: any): void => {
     evt.preventDefault();
     createUser(username, email, password);
   };
 
+  const [isAnimation, setIsAnimation] = useState(false);
+
+  const handleClose = () => {
+    setIsAnimation(true);
+    setTimeout(() => {
+      toggleLogin();
+    }, 250);
+  };
+
   return (
-    <div className="login">
+    <div className={classNames('login', { 'login_drawer-open': isDrawer }, { 'login--animation': isAnimation })}>
       {!isCreate && (
         <form className="login-form">
+          <button type="button" className="login-form-close" onClick={handleClose}>X</button>
           <LoginField
             name="username"
             type="text"
@@ -49,10 +66,18 @@ const LoginForm = ({
             value={password}
             onChange={changeField}
           />
+          <button
+            className="login-form-button"
+            type="submit"
+            onClick={handleSend}
+          >
+            Envoyer
+          </button>
         </form>
       )}
       {isCreate && (
-        <form className="login-form">
+        <form className={classNames('login', { 'login_drawer-open': isDrawer })}>
+          <button type="button" className="login-form-close" onClick={handleClose}>X</button>
           <LoginField
             name="username"
             type="text"
@@ -82,7 +107,7 @@ const LoginForm = ({
             onChange={changeCreate}
           />
           <button
-            className="login-form-new-button"
+            className="login-form-button"
             type="submit"
             onClick={handleSend}
           >
@@ -101,10 +126,12 @@ LoginForm.propTypes = {
   password: PropTypes.string.isRequired,
   passwordConfirm: PropTypes.string.isRequired,
   isLogged: PropTypes.bool.isRequired,
+  isDrawer: PropTypes.bool.isRequired,
   isCreate: PropTypes.bool.isRequired,
   changeField: PropTypes.func.isRequired,
   createUser: PropTypes.func.isRequired,
   changeCreate: PropTypes.func.isRequired,
+  toggleLogin: PropTypes.func.isRequired,
 };
 
 export default LoginForm;

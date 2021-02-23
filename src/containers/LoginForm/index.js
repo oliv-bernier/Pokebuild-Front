@@ -9,8 +9,9 @@ const mapStateToProps = (state) => ({
   email: state.user.email,
   password: state.user.password,
   passwordConfirm: state.user.passwordConfirm,
-  isLogged: state.user.isLogged,
-  isCreate: state.user.isCreate,
+  isLogged: state.boolean.isLogged,
+  isDrawer: state.boolean.isDrawer,
+  isCreate: state.boolean.isCreate,
 });
 
 const mapDispatchToProps = (dispatch) => ({

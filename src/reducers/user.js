@@ -11,8 +11,6 @@ const initialState = {
   email: '',
   password: '',
   passwordConfirm: '',
-  isLogged: false,
-  isCreate: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -20,7 +18,6 @@ const reducer = (state = initialState, action = {}) => {
     case MEMORYSE_USER:
       return {
         ...state,
-        logged: true,
         pseudo: action.pseudo,
         username: '',
         password: '',
@@ -28,7 +25,6 @@ const reducer = (state = initialState, action = {}) => {
     case LOGOUT_USER:
       return {
         ...state,
-        logged: false,
         pseudo: '',
       };
     case CHANGE_LOGIN_INPUT:

@@ -20,11 +20,17 @@ const App = ({
   getPokemon,
   getTypes,
   isDrawer,
+  isLogged,
+  isLogin,
+  toggleLogin,
 }: {
     isDetails: boolean,
     getPokemon: Function,
     getTypes:Function,
     isDrawer: boolean,
+    isLogged: boolean,
+    isLogin: boolean,
+    toggleLogin: Function,
   }) => {
   useEffect(() => {
     getPokemon();
@@ -34,8 +40,9 @@ const App = ({
   }, []);
   return (
     <div className="app">
-      <Header />
+      <Header isLogged={isLogged} toggleLogin={toggleLogin} />
       <div className={classNames('container', { 'container_drawer-open': isDrawer })}>
+        {isLogin && <LoginForm toggleLogin={toggleLogin} />}
         <Switch>
           <Route path="/" exact>
             <Home isDetails={isDetails} />
@@ -47,9 +54,6 @@ const App = ({
           </Route>
           <Route path="/about" exact>
             <About />
-          </Route>
-          <Route path="/login" exact>
-            <LoginForm />
           </Route>
           <Route path="*">
             <NotFound />
@@ -63,9 +67,12 @@ const App = ({
 
 App.propTypes = {
   isDetails: PropTypes.bool.isRequired,
+  isLogged: PropTypes.bool.isRequired,
+  isLogin: PropTypes.bool.isRequired,
   getPokemon: PropTypes.func.isRequired,
   getTypes: PropTypes.func.isRequired,
   isDrawer: PropTypes.bool.isRequired,
+  toggleLogin: PropTypes.func.isRequired,
 };
 
 export default App;

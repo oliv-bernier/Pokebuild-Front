@@ -3,7 +3,6 @@
 .container {
     margin-top: 1.2rem;
     margin-bottom: 2rem;
-    // overflow-y: auto;
     background-color: vars.$color-background-scaled;
     position: relative;
     height: calc(100vh - 3.2rem);
@@ -14,14 +13,12 @@
         margin-bottom: 3rem;
         height: calc(100vh - 6rem);
         width: 100vw;
-        // overflow-y: auto;
         display: flex;
         flex-direction: row;
         justify-content: center;
     }
 
     &_drawer-open {
-        // justify-content: flex-start;
         position: relative;
 
         @media (min-width: 768px) {
@@ -29,8 +26,3 @@
         }
     }
 }
-
-// .container::-webkit-scrollbar {
-//     overflow: scroll;
-//     direction: rtl;
-// }

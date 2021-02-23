@@ -12,6 +12,28 @@ $color-background-stat: #AB3838;
 
 $color-background-barre: #632B2B;
 
+$color-background-login: rgba(243, 217, 217, 0.8); 
+
 $color-background2: #FEEAEA;
 $color-background-scaled: color.scale($color-background, $lightness: 80%);
 $color-background-scaled-drop: color.scale($color-background, $lightness: 50%);
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+      opacity: 1;
+  }
+
+  100% {
+      opacity: 0;
+  }
+}
