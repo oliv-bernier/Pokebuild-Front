@@ -43,7 +43,6 @@ const ajaxUser = (store) => (next) => (action) => {
         password,
         passwordConfirm,
       } = store.getState().user;
-      console.log(username, email, password, passwordConfirm);
       axios.post('user/create', {
         username,
         email,
