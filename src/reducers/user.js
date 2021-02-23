@@ -1,8 +1,9 @@
 import {
-  MEMORYSE_USER,
+  MEMORIZE_USER,
   LOGOUT_USER,
   CHANGE_LOGIN_INPUT,
   CHANGE_CREATE_INPUT,
+  GET_USER,
 } from '../actions/user';
 
 const initialState = {
@@ -11,11 +12,12 @@ const initialState = {
   email: '',
   password: '',
   passwordConfirm: '',
+  token: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case MEMORYSE_USER:
+    case MEMORIZE_USER:
       return {
         ...state,
         pseudo: action.pseudo,
@@ -37,6 +39,14 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         [action.key]: action.newValue,
       };
+    case GET_USER: {
+      const user = JSON.parse(localStorage.getItem('user'));
+      return {
+        ...state,
+        pseudo: user.username,
+        token: user.token,
+      };
+    }
     default:
       return state;
   }

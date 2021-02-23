@@ -23,6 +23,11 @@ const App = ({
   isLogged,
   isLogin,
   toggleLogin,
+  toggleCreate,
+  toggleLogged,
+  pseudo,
+  logout,
+  getUser,
 }: {
     isDetails: boolean,
     getPokemon: Function,
@@ -31,18 +36,39 @@ const App = ({
     isLogged: boolean,
     isLogin: boolean,
     toggleLogin: Function,
+    toggleCreate: Function,
+    toggleLogged: Function,
+    pseudo: string,
+    logout: Function,
+    getUser: Function,
   }) => {
   useEffect(() => {
     getPokemon();
+    if (localStorage.getItem('user') !== null) {
+      getUser();
+    }
   }, []);
   useEffect(() => {
     getTypes();
   }, []);
   return (
     <div className="app">
-      <Header isLogged={isLogged} toggleLogin={toggleLogin} />
+      <Header
+        isLogged={isLogged}
+        toggleLogin={toggleLogin}
+        toggleCreate={toggleCreate}
+        pseudo={pseudo}
+        logout={logout}
+        toggleLogged={toggleLogged}
+      />
       <div className={classNames('container', { 'container_drawer-open': isDrawer })}>
-        {isLogin && <LoginForm toggleLogin={toggleLogin} />}
+        {isLogin && (
+          <LoginForm
+            toggleLogin={toggleLogin}
+            toggleCreate={toggleCreate}
+            toggleLogged={toggleLogged}
+          />
+        )}
         <Switch>
           <Route path="/" exact>
             <Home isDetails={isDetails} />
@@ -73,6 +99,11 @@ App.propTypes = {
   getTypes: PropTypes.func.isRequired,
   isDrawer: PropTypes.bool.isRequired,
   toggleLogin: PropTypes.func.isRequired,
+  toggleCreate: PropTypes.func.isRequired,
+  toggleLogged: PropTypes.func.isRequired,
+  pseudo: PropTypes.string.isRequired,
+  logout: PropTypes.func.isRequired,
+  getUser: PropTypes.func.isRequired,
 };
 
 export default App;

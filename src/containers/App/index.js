@@ -1,7 +1,15 @@
 import { connect } from 'react-redux';
 import App from '../../components/App/index.tsx';
 
-import { toggleDetails, toggleLogin } from '../../actions/boolean';
+import {
+  toggleDetails,
+  toggleLogin,
+  toggleCreate,
+  toggleLogged,
+} from '../../actions/boolean';
+
+import { logout, getUser } from '../../actions/user';
+
 import { getPokemon, getTypes } from '../../actions/pokemon';
 
 const mapStateToProps = (state) => ({
@@ -9,6 +17,7 @@ const mapStateToProps = (state) => ({
   isDrawer: state.boolean.isDrawer,
   isLogged: state.boolean.isLogged,
   isLogin: state.boolean.isLogin,
+  pseudo: state.user.pseudo,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -23,6 +32,18 @@ const mapDispatchToProps = (dispatch) => ({
   },
   toggleLogin: () => {
     dispatch(toggleLogin());
+  },
+  toggleCreate: () => {
+    dispatch(toggleCreate());
+  },
+  toggleLogged: () => {
+    dispatch(toggleLogged());
+  },
+  logout: () => {
+    dispatch(logout());
+  },
+  getUser: () => {
+    dispatch(getUser());
   },
 });
 

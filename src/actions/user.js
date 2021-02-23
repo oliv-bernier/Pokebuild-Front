@@ -8,9 +8,9 @@ export const logout = () => ({
   type: LOGOUT_USER,
 });
 
-export const MEMORYSE_USER = 'MEMORYZE_USER';
-export const memoryseUser = (pseudo) => ({
-  type: MEMORYSE_USER,
+export const MEMORIZE_USER = 'MEMORIZE_USER';
+export const memorizeUser = (pseudo) => ({
+  type: MEMORIZE_USER,
   pseudo,
 });
 
@@ -22,11 +22,8 @@ export const changeLoginInput = (newValue, key) => ({
 });
 
 export const CREATE_USER = 'CREATE_USER';
-export const createUser = (username, email, password) => ({
+export const createUser = () => ({
   type: CREATE_USER,
-  username,
-  email,
-  password,
 });
 
 export const CHANGE_CREATE_INPUT = 'CHANGE_CREATE_INPUT';
@@ -34,4 +31,9 @@ export const changeCreateInput = (newValue, key) => ({
   type: CHANGE_CREATE_INPUT,
   newValue,
   key,
+});
+
+export const GET_USER = 'GET_USER';
+export const getUser = () => ({
+  type: GET_USER,
 });

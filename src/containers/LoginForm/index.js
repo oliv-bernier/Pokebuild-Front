@@ -1,7 +1,12 @@
 import { connect } from 'react-redux';
 import LoginForm from '../../components/LoginForm';
 
-import { createUser, changeLoginInput, changeCreateInput } from '../../actions/user';
+import {
+  createUser,
+  changeLoginInput,
+  changeCreateInput,
+  loginUser,
+} from '../../actions/user';
 
 const mapStateToProps = (state) => ({
   username: state.user.username,
@@ -15,14 +20,17 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  createUser: (username, email, password) => {
-    dispatch(createUser(username, email, password));
+  createUser: () => {
+    dispatch(createUser());
   },
   changeField: (newValue, key) => {
     dispatch(changeLoginInput(newValue, key));
   },
   changeCreate: (newValue, key) => {
     dispatch(changeCreateInput(newValue, key));
+  },
+  loginUser: () => {
+    dispatch(loginUser());
   },
 });
 

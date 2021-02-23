@@ -8,12 +8,29 @@ import './style.scss';
 const Header = ({
   isLogged,
   toggleLogin,
+  toggleCreate,
+  pseudo,
+  logout,
+  toggleLogged,
 }: {
   isLogged: boolean,
   toggleLogin: Function,
+  toggleCreate: Function,
+  pseudo: string,
+  logout: Function,
+  toggleLogged: Function,
 }) => {
   const handleClick = () => {
     toggleLogin();
+  };
+
+  const handleClickCreate = () => {
+    toggleCreate();
+  };
+
+  const handleLogout = () => {
+    logout();
+    toggleLogged();
   };
 
   return (
@@ -27,10 +44,10 @@ const Header = ({
           <div className="header-div-connexion">
             {!isLogged && <p onClick={handleClick}>Se connecter</p>}
             {!isLogged && <p>|</p>}
-            {!isLogged && <p onClick={handleClick}>S'inscrire</p>}
-            {isLogged && <p>Bonjour Utilisateur</p>}
+            {!isLogged && <p onClick={handleClickCreate}>S'inscrire</p>}
+            {isLogged && <p>Bonjour {pseudo}</p>}
             {isLogged && <p>|</p>}
-            {isLogged && <p>Déconnexion</p>}
+            {isLogged && <p onClick={handleLogout}>Déconnexion</p>}
           </div>
         </div>
       </NavLink>
@@ -41,6 +58,10 @@ const Header = ({
 Header.propTypes = {
   isLogged: PropTypes.bool.isRequired,
   toggleLogin: PropTypes.func.isRequired,
+  toggleCreate: PropTypes.func.isRequired,
+  pseudo: PropTypes.string.isRequired,
+  logout: PropTypes.func.isRequired,
+  toggleLogged: PropTypes.func.isRequired,
 };
 
 export default Header;

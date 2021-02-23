@@ -17,3 +17,13 @@ export const TOGGLE_LOGIN = 'TOGGLE_LOGIN';
 export const toggleLogin = () => ({
   type: TOGGLE_LOGIN,
 });
+
+export const TOGGLE_CREATE = 'TOGGLE_CREATE';
+export const toggleCreate = () => ({
+  type: TOGGLE_CREATE,
+});
+
+export const TOGGLE_LOGGED = 'TOGGLE_LOGGED';
+export const toggleLogged = () => ({
+  type: TOGGLE_LOGGED,
+});

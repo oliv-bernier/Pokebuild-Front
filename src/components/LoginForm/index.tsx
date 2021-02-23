@@ -19,6 +19,8 @@ const LoginForm = ({
   createUser,
   changeCreate,
   toggleLogin,
+  loginUser,
+  toggleLogged,
 }: {
   username: string,
   pseudo: string,
@@ -32,10 +34,19 @@ const LoginForm = ({
   createUser: Function,
   changeCreate: Function,
   toggleLogin: Function,
+  loginUser: Function,
+  toggleLogged: Function,
 }) => {
   const handleSend = (evt: any): void => {
     evt.preventDefault();
     createUser(username, email, password);
+  };
+
+  const handleLogin = (evt: any): void => {
+    evt.preventDefault();
+    loginUser();
+    toggleLogin();
+    toggleLogged();
   };
 
   const [isAnimation, setIsAnimation] = useState(false);
@@ -69,26 +80,26 @@ const LoginForm = ({
           <button
             className="login-form-button"
             type="submit"
-            onClick={handleSend}
+            onClick={handleLogin}
           >
             Envoyer
           </button>
         </form>
       )}
       {isCreate && (
-        <form className={classNames('login', { 'login_drawer-open': isDrawer })}>
+        <form className="login-form">
           <button type="button" className="login-form-close" onClick={handleClose}>X</button>
           <LoginField
             name="username"
             type="text"
-            placeholder="Votre nom"
+            placeholder="Nom d'utilisateur"
             value={username}
             onChange={changeCreate}
           />
           <LoginField
             name="email"
             type="email"
-            placeholder="Votre email"
+            placeholder="Addresse email"
             value={email}
             onChange={changeCreate}
           />
@@ -132,6 +143,8 @@ LoginForm.propTypes = {
   createUser: PropTypes.func.isRequired,
   changeCreate: PropTypes.func.isRequired,
   toggleLogin: PropTypes.func.isRequired,
+  loginUser: PropTypes.func.isRequired,
+  toggleLogged: PropTypes.func.isRequired,
 };
 
 export default LoginForm;
