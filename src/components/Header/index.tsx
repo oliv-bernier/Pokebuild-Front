@@ -35,22 +35,22 @@ const Header = ({
 
   return (
     <div className="header">
-      <NavLink
-        to="/"
-        exact
-      >
-        <div className="header-div">
+      <div className="header-div">
+        <NavLink
+          to="/"
+          exact
+        >
           <h1 className="header-div-title">Pokébuild</h1>
-          <div className="header-div-connexion">
-            {!isLogged && <p onClick={handleClick}>Se connecter</p>}
-            {!isLogged && <p>|</p>}
-            {!isLogged && <p onClick={handleClickCreate}>S'inscrire</p>}
-            {isLogged && <p>Bonjour {pseudo}</p>}
-            {isLogged && <p>|</p>}
-            {isLogged && <p onClick={handleLogout}>Déconnexion</p>}
-          </div>
+        </NavLink>
+        <div className="header-div-connexion">
+          {!isLogged && <p onClick={handleClick}>Se connecter</p>}
+          {!isLogged && <p>|</p>}
+          {!isLogged && <p onClick={handleClickCreate}>S'inscrire</p>}
+          {isLogged && <p>Bonjour {pseudo}</p>}
+          {isLogged && <p>|</p>}
+          {isLogged && <p onClick={handleLogout}>Déconnexion</p>}
         </div>
-      </NavLink>
+      </div>
     </div>
   );
 };

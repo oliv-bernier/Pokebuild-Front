@@ -47,6 +47,14 @@
 
         &-connexion p {
             margin: 0.5rem;
+
+            &:nth-child(2n+1) {
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
         }
     }
 }
