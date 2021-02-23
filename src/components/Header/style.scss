@@ -2,31 +2,38 @@
 
 .header {
 
-    background-color: vars.$color-header;
-    font-family: Pokemon-Hollow;
-    color: vars.$color-light;
-    width: 100%;
-    height: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: vars.$gutter;
-    position: fixed;
-    top: 0;
-    z-index: 1;
-
-    @media (min-width: 768px) {
-        height: 3rem;
-    }
-
-    &-title {
-        font-size: 0.7rem;
-        margin: 0;
-        font-weight: bold;
-        text-align: center;
+    &-div{
+        background-color: vars.$color-header;
+        color: vars.$color-light;
+        width: 100%;
+        height: 1.2rem;
+        display: flex;
+        flex-direction: row;
+        // align-items: center;
+        justify-content: space-between;
+        margin-bottom: vars.$gutter;
+        position: fixed;
+        top: 0;
+        z-index: 1;
 
         @media (min-width: 768px) {
-            font-size: 1.5rem;
+            height: 3rem;
+        }
+
+        &-title {
+            font-family: Pokemon-Hollow;
+            font-size: 0.7rem;
+            margin: 0;
+            font-weight: bold;
+            text-align: center;
+    
+            @media (min-width: 768px) {
+                font-size: 1.5rem;
+            }
+        }
+    
+        &-connexion {
+            display: flex;
         }
     }
 }

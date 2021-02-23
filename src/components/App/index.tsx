@@ -4,12 +4,13 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import Header from '../Header';
-import Footer from '../../containers/Footer';
 import Home from '../Home';
-import Drawer from '../../containers/Drawer';
 import About from '../About';
 import NotFound from '../NotFound';
 
+import Footer from '../../containers/Footer';
+import Drawer from '../../containers/Drawer';
+import LoginForm from '../../containers/LoginForm';
 import Pokestat from '../../containers/Pokestat';
 
 import './style.scss';
@@ -46,6 +47,9 @@ const App = ({
           </Route>
           <Route path="/about" exact>
             <About />
+          </Route>
+          <Route path="/login" exact>
+            <LoginForm />
           </Route>
           <Route path="*">
             <NotFound />

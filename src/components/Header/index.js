@@ -10,7 +10,15 @@ const Header = () => (
       to="/"
       exact
     >
-      <h1 className="header-title">Pokébuild</h1>
+      <div className="header-div">
+        <h1 className="header-div-title">Pokébuild</h1>
+        <div className="header-div-connexion">
+          <p>Se connecter</p>
+          <p>S'inscrire</p>
+          <p>Bonjour Utilisateur</p>
+          <p>Déconnexion</p>
+        </div>
+      </div>
     </NavLink>
   </div>
 );
