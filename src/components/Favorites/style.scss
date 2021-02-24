@@ -36,6 +36,14 @@
   &-user {
     display: flex;
     flex-direction: column;
+
+    @media (min-width: 1400px) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   &-content {
@@ -55,9 +63,27 @@
     }
 
     @media (min-width:1400px) {
-      width: 80vw;
+      width: 70vw;
       height: 80vh;
       overflow: hidden;
+      overflow-y: scroll;
+
+      &::-webkit-scrollbar {
+        width: 8px;
+
+        @media (min-width: 1400px) {
+            width: 14px;
+        }
+
+        @media (min-width: 2000px) {
+            width: 18px;
+        }
+      }
+
+      &::-webkit-scrollbar-thumb {
+          background-color: vars.$color-background-pokemon;
+          border-radius: 20px;
+      }
     }
 
     &-title {
@@ -81,6 +107,10 @@
       margin: 0.5rem 0;
       padding: 0 0.5rem;
       color: vars.$color-background;
+
+      @media (min-width: 1400px) {
+        margin: 0.5rem;
+      }
 
       &-title {
         font-size: 0.8rem;
@@ -123,6 +153,10 @@
         width: 100%;
 
         &-div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding-bottom: 1rem;
 
           &-sprite {
             width: 45px;
@@ -133,6 +167,14 @@
 
              @media (min-width: 1400px) {
               width: 100%;
+            }
+          }
+
+          &-name {
+            padding: 0 0.5rem;
+
+            @media (max-width: 767px) {
+              display: none;
             }
           }
         }

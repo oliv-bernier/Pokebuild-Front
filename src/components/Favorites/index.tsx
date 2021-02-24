@@ -39,6 +39,7 @@ const Favorites = ({
                 {team.pokemon.map((poke) => (
                   <div className="favorites-content-team-pokemon-div">
                     <img className="favorites-content-team-pokemon-div-sprite" src={poke.sprite} alt={poke.name} />
+                    <p className="favorites-content-team-pokemon-div-name">{poke.name}</p>
                   </div>
                 ))}
               </div>
