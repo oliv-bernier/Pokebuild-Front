@@ -56,6 +56,7 @@ const Drop = (
 
   const handleAddTeam = () => {
     saveTeam();
+    toggleInputFav();
   };
 
   if (pokemonSelected.length > 5) {

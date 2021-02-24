@@ -28,15 +28,11 @@ const ajaxUser = (store) => (next) => (action) => {
       })
         .then((response) => {
           const user = response.data;
-          store.dispatch(memorizeUser(user.username));
-          axios.defaults.headers.common.Authorization = `bearer ${user.token}`;
-          localStorage.setItem('user', JSON.stringify(user));
+          const { username: name, token } = user;
           store.dispatch(toggleLogged());
-          const { username: name, token } = response.data;
-          console.log(token);
           store.dispatch(memorizeUser(name, token));
           axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-          localStorage.setItem('user', JSON.stringify(response.data));
+          localStorage.setItem('user', JSON.stringify(user));
         })
         .catch((error) => {
           console.error(error);

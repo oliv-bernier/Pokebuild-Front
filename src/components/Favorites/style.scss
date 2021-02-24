@@ -11,6 +11,7 @@
   z-index: 1;
   animation: fadeIn 0.5s 1;
 
+
   &--animation {
     animation: fadeOut 0.5s 1;
   }
@@ -22,25 +23,120 @@
       }
   }
 
+  &-user {
+    display: flex;
+    flex-direction: row;
+
+    @media (min-width: 768px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &-user {
+    display: flex;
+    flex-direction: column;
+  }
+
   &-content {
     position: relative;
     background-color: vars.$color-background-stat;
     border-radius: 5px;
-    padding: (vars.$gutter * 2);
-    width: 80vw;
+    padding: 0.5rem;
+    width: 95vw;
+    height: calc(100vh - 5rem);
+    overflow: scroll;
     box-shadow: 1px 1px 4px 0px vars.$color-background-barre;
     color: vars.$color-background-scaled;
 
     @media (min-width:768px) {
-      width: 60vw;
+      width: 80vw;
+      height: 80vh;
     }
 
     @media (min-width:1400px) {
       width: 80vw;
+      height: 80vh;
+      overflow: hidden;
     }
 
     &-title {
-      font-size: 1.5rem;
+      font-size: 1rem;
+      margin: 1rem;
+
+      @media (min-width:768px) {
+        font-size: 1.5rem;
+      }
+  
+      @media (min-width:1400px) {
+        font-size: 1.5rem;
+      }
+    }
+
+    &-team {
+      display: flex;
+      flex-direction: column;
+      background-color: vars.$color-background-scaled;
+      border-radius: 5px;
+      margin: 0.5rem 0;
+      padding: 0 0.5rem;
+      color: vars.$color-background;
+
+      &-title {
+        font-size: 0.8rem;
+        margin-right: 1.5rem;
+
+        @media (min-width:768px) {
+          font-size: 1.5rem;
+        }
+    
+        @media (min-width:1400px) {
+          font-size: 1.5rem;
+        }
+      }
+
+      &-infos {
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+
+        &-button {
+          margin: 0.5rem;
+          padding: 0.3rem;
+          border-radius: 5px;
+          color: vars.$color-background-scaled;
+          background-color: vars.$color-background;
+          border: 1px solid vars.$color-background-scaled;
+        }
+
+        &-button:hover {
+          color: vars.$color-background;
+          background-color: vars.$color-background-scaled;
+          border: 1px solid vars.$color-background;
+        }
+      }
+
+      &-pokemon {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+
+        &-div {
+
+          &-sprite {
+            width: 45px;
+
+             @media (min-width: 768px) {
+              width: 100%;
+             }
+
+             @media (min-width: 1400px) {
+              width: 100%;
+            }
+          }
+        }
+      }
     }
 
     &-close {

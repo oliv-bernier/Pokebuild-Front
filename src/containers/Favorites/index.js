@@ -5,6 +5,7 @@ import { toggleFav } from '../../actions/boolean';
 
 const mapStateToProps = (state) => ({
   isDrawer: state.boolean.isDrawer,
+  teams: state.favorites.teams,
 });
 
 const mapDispatchToProps = (dispatch) => ({
