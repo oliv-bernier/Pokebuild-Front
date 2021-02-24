@@ -26,6 +26,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         pseudo: action.pseudo,
+        token: action.token,
         username: '',
         password: '',
         error: '',

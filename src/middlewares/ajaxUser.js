@@ -7,14 +7,15 @@ import {
   CREATE_USER,
   memorizeUser,
   addErrorLogin,
+  FETCH_FAV,
 } from '../actions/user';
 
 import { toggleLogged } from '../actions/boolean';
 
 const ajaxUser = (store) => (next) => (action) => {
   if (localStorage.getItem('user') !== null) {
-    const user = localStorage.getItem('user');
-    axios.defaults.headers.common.Authorization = `bearer ${user.token}`;
+    const user = JSON.parse(localStorage.getItem('user'));
+    axios.defaults.headers.common.Authorization = `Bearer ${user.token}`;
   }
   axios.default.baseURL = 'http://ec2-3-83-51-192.compute-1.amazonaws.com/api/v1/';
   switch (action.type) {
@@ -30,6 +31,11 @@ const ajaxUser = (store) => (next) => (action) => {
           axios.defaults.headers.common.Authorization = `bearer ${user.token}`;
           localStorage.setItem('user', JSON.stringify(user));
           store.dispatch(toggleLogged());
+          const { username: name, token } = response.data;
+          console.log(token);
+          store.dispatch(memorizeUser(name, token));
+          axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+          localStorage.setItem('user', JSON.stringify(response.data));
         })
         .catch((error) => {
           console.error(error);
@@ -53,6 +59,21 @@ const ajaxUser = (store) => (next) => (action) => {
         email,
         password,
         passwordConfirm,
+      })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+      break;
+    case FETCH_FAV: {
+      const {
+        pseudo,
+      } = store.getState().user;
+      axios.post('admin/user/read', {
+        username: pseudo,
       })
         .then((response) => {
           console.log(response);

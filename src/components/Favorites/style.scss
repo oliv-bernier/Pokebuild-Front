@@ -1,0 +1,67 @@
+@use '../../styles/vars';
+
+.favorites {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: vars.$color-background-login; 
+  position: absolute;
+  z-index: 1;
+  animation: fadeIn 0.5s 1;
+
+  &--animation {
+    animation: fadeOut 0.5s 1;
+  }
+
+  &_drawer-open {
+
+    @media (min-width: 768px) {
+      right: -50vw;
+      }
+  }
+
+  &-content {
+    position: relative;
+    background-color: vars.$color-background-stat;
+    border-radius: 5px;
+    padding: (vars.$gutter * 2);
+    width: 80vw;
+    box-shadow: 1px 1px 4px 0px vars.$color-background-barre;
+    color: vars.$color-background-scaled;
+
+    @media (min-width:768px) {
+      width: 60vw;
+    }
+
+    @media (min-width:1400px) {
+      width: 80vw;
+    }
+
+    &-title {
+      font-size: 2rem;
+    }
+
+    &-close {
+      position: absolute;
+      width: 1.2rem;
+      height: 1.2rem;
+      border-radius: 50%;
+      border: 1px solid vars.$color-background-scaled;
+      background-color: vars.$color-background;
+      color: vars.$color-background-scaled;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      right: 5px;
+      top: 5px;
+    }
+
+    &-close:hover {
+      background-color: vars.$color-background-scaled;
+      color: vars.$color-background;
+      border: 1px solid vars.$color-background;
+    }
+  }
+}

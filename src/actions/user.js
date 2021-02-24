@@ -9,9 +9,10 @@ export const logout = () => ({
 });
 
 export const MEMORIZE_USER = 'MEMORIZE_USER';
-export const memorizeUser = (pseudo) => ({
+export const memorizeUser = (pseudo, token) => ({
   type: MEMORIZE_USER,
   pseudo,
+  token,
 });
 
 export const CHANGE_LOGIN_INPUT = 'CHANGE_LOGIN_INPUT';
@@ -46,4 +47,13 @@ export const addErrorLogin = () => ({
 export const ADD_ERROR_CREATE = 'ADD_ERROR_CREATE';
 export const addErrorCreate = () => ({
   type: ADD_ERROR_CREATE,
+
+export const FETCH_FAV = 'FETCH_FAV';
+export const fetchFav = () => ({
+  type: FETCH_FAV,
+});
+
+export const SAVE_TEAM = 'SAV_TEAM';
+export const saveTeam = () => ({
+  type: SAVE_TEAM,
 });
