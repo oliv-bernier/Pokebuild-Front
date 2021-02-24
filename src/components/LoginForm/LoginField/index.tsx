@@ -29,6 +29,7 @@ const LoginField = ({
         placeholder={placeholder}
         value={value}
         onChange={handleChange}
+        required
       />
     </div>
   );

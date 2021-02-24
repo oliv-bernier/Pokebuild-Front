@@ -6,8 +6,11 @@ import {
   LOGOUT_USER,
   CREATE_USER,
   memorizeUser,
+  addErrorLogin,
   FETCH_FAV,
 } from '../actions/user';
+
+import { toggleLogged } from '../actions/boolean';
 
 const ajaxUser = (store) => (next) => (action) => {
   if (localStorage.getItem('user') !== null) {
@@ -23,6 +26,11 @@ const ajaxUser = (store) => (next) => (action) => {
         password,
       })
         .then((response) => {
+          const user = response.data;
+          store.dispatch(memorizeUser(user.username));
+          axios.defaults.headers.common.Authorization = `bearer ${user.token}`;
+          localStorage.setItem('user', JSON.stringify(user));
+          store.dispatch(toggleLogged());
           const { username: name, token } = response.data;
           console.log(token);
           store.dispatch(memorizeUser(name, token));
@@ -31,6 +39,7 @@ const ajaxUser = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.error(error);
+          store.dispatch(addErrorLogin());
         });
     }
       break;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -11,38 +11,52 @@ const LoginForm = ({
   email,
   password,
   passwordConfirm,
+  error,
   isDrawer,
   isCreate,
+  isLogged,
   changeField,
   createUser,
   changeCreate,
   toggleLogin,
   loginUser,
-  toggleLogged,
+  addErrorLogin,
+  addErrorCreate,
 }: {
   username: string,
   email: string,
   password: string,
   passwordConfirm: string,
+  error: string,
   isDrawer: boolean,
   isCreate: boolean,
+  isLogged: boolean,
   changeField: Function,
   createUser: Function,
   changeCreate: Function,
   toggleLogin: Function,
   loginUser: Function,
-  toggleLogged: Function,
+  addErrorLogin: Function,
+  addErrorCreate: Function,
 }) => {
   const handleSend = (evt: any): void => {
     evt.preventDefault();
-    createUser(username, email, password);
+    if (username === '' || password === '' || email === '' || passwordConfirm === '') {
+      addErrorCreate();
+    }
+    else {
+      createUser();
+    }
   };
 
   const handleLogin = (evt: any): void => {
     evt.preventDefault();
-    loginUser();
-    toggleLogin();
-    toggleLogged();
+    if (username === '' || password === '') {
+      addErrorLogin();
+    }
+    else {
+      loginUser();
+    }
   };
 
   const [isAnimation, setIsAnimation] = useState(false);
@@ -54,6 +68,12 @@ const LoginForm = ({
     }, 250);
   };
 
+  useEffect(() => {
+    if (isLogged) {
+      handleClose();
+    }
+  }, [isLogged]);
+
   return (
     <div className={classNames('login', { 'login_drawer-open': isDrawer }, { 'login--animation': isAnimation })}>
       {!isCreate && (
@@ -62,7 +82,7 @@ const LoginForm = ({
           <LoginField
             name="username"
             type="text"
-            placeholder="Nom d'utilisateur"
+            placeholder="Nom de dresseur"
             value={username}
             onChange={changeField}
           />
@@ -80,6 +100,7 @@ const LoginForm = ({
           >
             Envoyer
           </button>
+          <p className={classNames('login-error', { 'login-error_displayed': error !== '' })}>{error}</p>
         </form>
       )}
       {isCreate && (
@@ -88,7 +109,7 @@ const LoginForm = ({
           <LoginField
             name="username"
             type="text"
-            placeholder="Nom d'utilisateur"
+            placeholder="Nom de dresseur"
             value={username}
             onChange={changeCreate}
           />
@@ -120,6 +141,7 @@ const LoginForm = ({
           >
             Envoyer
           </button>
+          <p className={classNames('login-error', { 'login-error_displayed': error !== '' })}>{error}</p>
         </form>
       )}
     </div>
@@ -131,14 +153,17 @@ LoginForm.propTypes = {
   email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   passwordConfirm: PropTypes.string.isRequired,
+  error: PropTypes.string.isRequired,
   isDrawer: PropTypes.bool.isRequired,
   isCreate: PropTypes.bool.isRequired,
+  isLogged: PropTypes.bool.isRequired,
   changeField: PropTypes.func.isRequired,
   createUser: PropTypes.func.isRequired,
   changeCreate: PropTypes.func.isRequired,
   toggleLogin: PropTypes.func.isRequired,
   loginUser: PropTypes.func.isRequired,
-  toggleLogged: PropTypes.func.isRequired,
+  addErrorLogin: PropTypes.func.isRequired,
+  addErrorCreate: PropTypes.func.isRequired,
 };
 
 export default LoginForm;
