@@ -53,12 +53,6 @@ const App = ({
     getTypes();
   }, []);
 
-  // useEffect(() => {
-  //   if (isLogged) {
-  //     toggleLogin();
-  //   }
-  // }, [LoginForm]);
-
   return (
     <div className="app">
       <Header

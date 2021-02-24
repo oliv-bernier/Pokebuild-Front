@@ -20,7 +20,8 @@ const LoginForm = ({
   changeCreate,
   toggleLogin,
   loginUser,
-  addError,
+  addErrorLogin,
+  addErrorCreate,
 }: {
   username: string,
   email: string,
@@ -35,17 +36,23 @@ const LoginForm = ({
   changeCreate: Function,
   toggleLogin: Function,
   loginUser: Function,
-  addError: Function,
+  addErrorLogin: Function,
+  addErrorCreate: Function,
 }) => {
   const handleSend = (evt: any): void => {
     evt.preventDefault();
-    createUser();
+    if (username === '' || password === '' || email === '' || passwordConfirm === '') {
+      addErrorCreate();
+    }
+    else {
+      createUser();
+    }
   };
 
   const handleLogin = (evt: any): void => {
     evt.preventDefault();
     if (username === '' || password === '') {
-      addError();
+      addErrorLogin();
     }
     else {
       loginUser();
@@ -69,7 +76,6 @@ const LoginForm = ({
 
   return (
     <div className={classNames('login', { 'login_drawer-open': isDrawer }, { 'login--animation': isAnimation })}>
-      <p className="login-error">{error}</p>
       {!isCreate && (
         <form className="login-form">
           <button type="button" className="login-form-close" onClick={handleClose}>X</button>
@@ -94,6 +100,7 @@ const LoginForm = ({
           >
             Envoyer
           </button>
+          <p className={classNames('login-error', { 'login-error_displayed': error !== '' })}>{error}</p>
         </form>
       )}
       {isCreate && (
@@ -134,6 +141,7 @@ const LoginForm = ({
           >
             Envoyer
           </button>
+          <p className={classNames('login-error', { 'login-error_displayed': error !== '' })}>{error}</p>
         </form>
       )}
     </div>
@@ -154,7 +162,8 @@ LoginForm.propTypes = {
   changeCreate: PropTypes.func.isRequired,
   toggleLogin: PropTypes.func.isRequired,
   loginUser: PropTypes.func.isRequired,
-  addError: PropTypes.func.isRequired,
+  addErrorLogin: PropTypes.func.isRequired,
+  addErrorCreate: PropTypes.func.isRequired,
 };
 
 export default LoginForm;

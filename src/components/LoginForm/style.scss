@@ -4,15 +4,48 @@
   width: 100vw;
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: vars.$color-background-login; 
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   animation: fadeIn 0.5s 1;
 
   &--animation {
     animation: fadeOut 0.5s 1;
+  }
+
+  &-error {
+    display: none;
+
+    &_displayed {
+      z-index: 1;
+      position : absolute;
+      top: -70px;
+      right: 0px;
+      display: block;
+      text-align: center;
+      background-color: vars.$color-background-stat;
+      color: vars.$color-background-scaled;
+      border-radius: 5px;
+      padding: vars.$gutter;
+      width: 80vw;
+      box-shadow: 1px 1px 4px 0px vars.$color-background-barre;
+      margin-bottom: vars.$gutter;
+      animation: fadeIn 0.5s 1;
+
+      @media (min-width:768px) {
+        width: 60vw;
+        padding: vars.$gutter;
+        top: -60px;
+      }
+  
+      @media (min-width:1400px) {
+        width: 20vw;
+        top: -80px;
+      }
+    }
   }
 
   &_drawer-open {

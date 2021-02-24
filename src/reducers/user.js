@@ -4,7 +4,8 @@ import {
   CHANGE_LOGIN_INPUT,
   CHANGE_CREATE_INPUT,
   GET_USER,
-  ADD_ERROR,
+  ADD_ERROR_LOGIN,
+  ADD_ERROR_CREATE,
 } from '../actions/user';
 
 import { TOGGLE_LOGIN } from '../actions/boolean';
@@ -61,7 +62,7 @@ const reducer = (state = initialState, action = {}) => {
         passwordConfirm: '',
         error: '',
       };
-    case ADD_ERROR: {
+    case ADD_ERROR_LOGIN: {
       let text;
       if (state.username === '' && state.password === '') {
         text = 'Le nom de dresseur et le mot de passe ne sont pas saisis';
@@ -80,6 +81,11 @@ const reducer = (state = initialState, action = {}) => {
         error: text,
       };
     }
+    case ADD_ERROR_CREATE:
+      return {
+        ...state,
+        error: 'Au moins un champ est manquant, merci de bien tous les remplir',
+      };
     default:
       return state;
   }

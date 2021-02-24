@@ -6,7 +6,8 @@ import {
   changeLoginInput,
   changeCreateInput,
   loginUser,
-  addError,
+  addErrorLogin,
+  addErrorCreate,
 } from '../../actions/user';
 
 const mapStateToProps = (state) => ({
@@ -33,8 +34,11 @@ const mapDispatchToProps = (dispatch) => ({
   loginUser: () => {
     dispatch(loginUser());
   },
-  addError: () => {
-    dispatch(addError());
+  addErrorLogin: () => {
+    dispatch(addErrorLogin());
+  },
+  addErrorCreate: () => {
+    dispatch(addErrorCreate());
   },
 });
 
