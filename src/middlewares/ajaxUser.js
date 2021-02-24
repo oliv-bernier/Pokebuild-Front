@@ -6,8 +6,9 @@ import {
   LOGOUT_USER,
   CREATE_USER,
   memorizeUser,
-  addErrorLogin,
+  addError,
   FETCH_FAV,
+  clearPassword,
 } from '../actions/user';
 
 import { toggleLogged } from '../actions/boolean';
@@ -27,19 +28,17 @@ const ajaxUser = (store) => (next) => (action) => {
       })
         .then((response) => {
           const user = response.data;
-          store.dispatch(memorizeUser(user.username));
-          axios.defaults.headers.common.Authorization = `bearer ${user.token}`;
-          localStorage.setItem('user', JSON.stringify(user));
-          store.dispatch(toggleLogged());
-          const { username: name, token } = response.data;
-          console.log(token);
+          const { username: name, token } = user;
           store.dispatch(memorizeUser(name, token));
           axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-          localStorage.setItem('user', JSON.stringify(response.data));
+          localStorage.setItem('user', JSON.stringify(user));
         })
         .catch((error) => {
           console.error(error);
-          store.dispatch(addErrorLogin());
+          store.dispatch(addError('Nom de dresseur ou mot de passe incorrect'));
+          setTimeout(() => {
+            store.dispatch(clearPassword());
+          }, 500);
         });
     }
       break;
@@ -65,6 +64,10 @@ const ajaxUser = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.error(error);
+          store.dispatch(addError('Les informations saisies sont incorrect. Merci de réessayer'));
+          setTimeout(() => {
+            store.dispatch(clearPassword());
+          }, 500);
         });
     }
       break;

@@ -71,6 +71,20 @@
       width: 20vw;
     }
 
+    &_aside {
+      color: vars.$color-background-scaled;
+      margin-bottom: 15px;
+      font-size: 0.5rem;
+
+      @media (min-width:768px) {
+        font-size: 0.6rem;
+      }
+
+      @media (min-width:1400px) {
+        font-size: 0.7rem;
+      }
+    }
+
     &-field {
       border-radius: 5px;
       width: 100%;

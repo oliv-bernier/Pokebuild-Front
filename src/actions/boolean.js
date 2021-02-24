@@ -32,3 +32,8 @@ export const TOGGLE_FAV = 'TOGGLE_FAV';
 export const toggleFav = () => ({
   type: TOGGLE_FAV,
 });
+
+export const TOGGLE_UPDATE = 'TOGGLE_UPDATE';
+export const toggleUpdate = () => ({
+  type: TOGGLE_UPDATE,
+});

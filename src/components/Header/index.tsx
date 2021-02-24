@@ -13,6 +13,7 @@ const Header = ({
   logout,
   toggleLogged,
   toggleFav,
+  toggleUpdate,
   fetchFav,
 }: {
   isLogged: boolean,
@@ -22,6 +23,7 @@ const Header = ({
   logout: Function,
   toggleLogged: Function,
   toggleFav: Function,
+  toggleUpdate: Function,
   fetchFav: Function,
 }) => {
   const handleClick = () => {
@@ -42,6 +44,10 @@ const Header = ({
     toggleLogged();
   };
 
+  const handleClickUpdate = () => {
+    toggleUpdate();
+  };
+
   return (
     <div className="header">
       <div className="header-div">
@@ -55,7 +61,12 @@ const Header = ({
           {!isLogged && <p onClick={handleClick}>Se connecter</p>}
           {!isLogged && <p>|</p>}
           {!isLogged && <p onClick={handleClickCreate}>S'inscrire</p>}
-          {isLogged && <p>Bonjour {pseudo}</p>}
+          {isLogged && (
+            <div className="trick">
+              <p className="trick-visible">Bonjour {pseudo}</p>
+              <p className="trick-invisible" onClick={handleClickUpdate}>Modifier mes infos</p>
+            </div>
+          )}
           {isLogged && <p>|</p>}
           {isLogged && <p onClick={handleClickFav}>Favoris</p>}
           {isLogged && <p>|</p>}
@@ -74,6 +85,7 @@ Header.propTypes = {
   logout: PropTypes.func.isRequired,
   toggleLogged: PropTypes.func.isRequired,
   toggleFav: PropTypes.func.isRequired,
+  toggleUpdate: PropTypes.func.isRequired,
   fetchFav: PropTypes.func.isRequired,
 };
 

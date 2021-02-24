@@ -58,3 +58,22 @@
         }
     }
 }
+
+.trick {
+    width: 5rem;
+    text-align: right;
+    cursor: pointer;
+
+    @media (min-width: 768px) {
+        width: 10rem;
+    }
+}
+
+.trick .trick-invisible,
+.trick:hover .trick-visible {
+    display: none;
+}
+
+.trick:hover .trick-invisible {
+    display: block;
+}
