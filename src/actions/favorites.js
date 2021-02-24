@@ -9,7 +9,14 @@ export const memorizeTeams = (teams) => ({
   teams,
 });
 
-export const SAVE_TEAM = 'SAV_TEAM';
+export const SAVE_TEAM = 'SAVE_TEAM';
 export const saveTeam = () => ({
   type: SAVE_TEAM,
+});
+
+export const CHANGE_NAME_INPUT = 'CHANGE_NAME_INPUT';
+export const changeNameInput = (newValue, key) => ({
+  type: CHANGE_NAME_INPUT,
+  newValue,
+  key,
 });

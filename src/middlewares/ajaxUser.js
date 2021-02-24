@@ -9,7 +9,7 @@ import {
   addErrorLogin,
 } from '../actions/user';
 
-import { FETCH_FAV, memorizeTeams } from '../actions/favorites';
+import { FETCH_FAV, memorizeTeams, SAVE_TEAM } from '../actions/favorites';
 
 import { toggleLogged } from '../actions/boolean';
 
