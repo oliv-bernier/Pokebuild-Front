@@ -12,6 +12,8 @@ const Header = ({
   pseudo,
   logout,
   toggleLogged,
+  toggleFav,
+  fetchFav,
 }: {
   isLogged: boolean,
   toggleLogin: Function,
@@ -19,6 +21,8 @@ const Header = ({
   pseudo: string,
   logout: Function,
   toggleLogged: Function,
+  toggleFav: Function,
+  fetchFav: Function,
 }) => {
   const handleClick = () => {
     toggleLogin();
@@ -26,6 +30,11 @@ const Header = ({
 
   const handleClickCreate = () => {
     toggleCreate();
+  };
+
+  const handleClickFav = () => {
+    toggleFav();
+    fetchFav();
   };
 
   const handleLogout = () => {
@@ -48,6 +57,8 @@ const Header = ({
           {!isLogged && <p onClick={handleClickCreate}>S'inscrire</p>}
           {isLogged && <p>Bonjour {pseudo}</p>}
           {isLogged && <p>|</p>}
+          {isLogged && <p onClick={handleClickFav}>Favoris</p>}
+          {isLogged && <p>|</p>}
           {isLogged && <p onClick={handleLogout}>Déconnexion</p>}
         </div>
       </div>
@@ -62,6 +73,8 @@ Header.propTypes = {
   pseudo: PropTypes.string.isRequired,
   logout: PropTypes.func.isRequired,
   toggleLogged: PropTypes.func.isRequired,
+  toggleFav: PropTypes.func.isRequired,
+  fetchFav: PropTypes.func.isRequired,
 };
 
 export default Header;

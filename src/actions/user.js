@@ -9,9 +9,10 @@ export const logout = () => ({
 });
 
 export const MEMORIZE_USER = 'MEMORIZE_USER';
-export const memorizeUser = (pseudo) => ({
+export const memorizeUser = (pseudo, token) => ({
   type: MEMORIZE_USER,
   pseudo,
+  token,
 });
 
 export const CHANGE_LOGIN_INPUT = 'CHANGE_LOGIN_INPUT';
@@ -36,4 +37,14 @@ export const changeCreateInput = (newValue, key) => ({
 export const GET_USER = 'GET_USER';
 export const getUser = () => ({
   type: GET_USER,
+});
+
+export const FETCH_FAV = 'FETCH_FAV';
+export const fetchFav = () => ({
+  type: FETCH_FAV,
+});
+
+export const SAVE_TEAM = 'SAV_TEAM';
+export const saveTeam = () => ({
+  type: SAVE_TEAM,
 });

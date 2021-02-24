@@ -12,6 +12,7 @@ import Footer from '../../containers/Footer';
 import Drawer from '../../containers/Drawer';
 import LoginForm from '../../containers/LoginForm';
 import Pokestat from '../../containers/Pokestat';
+import Favorites from '../../containers/Favorites';
 
 import './style.scss';
 
@@ -28,6 +29,9 @@ const App = ({
   pseudo,
   logout,
   getUser,
+  toggleFav,
+  isFav,
+  fetchFav,
 }: {
     isDetails: boolean,
     getPokemon: Function,
@@ -41,6 +45,9 @@ const App = ({
     pseudo: string,
     logout: Function,
     getUser: Function,
+    toggleFav: Function,
+    isFav: Boolean,
+    fetchFav: Function,
   }) => {
   useEffect(() => {
     getPokemon();
@@ -60,6 +67,8 @@ const App = ({
         pseudo={pseudo}
         logout={logout}
         toggleLogged={toggleLogged}
+        toggleFav={toggleFav}
+        fetchFav={fetchFav}
       />
       <div className={classNames('container', { 'container_drawer-open': isDrawer })}>
         {isLogin && (
@@ -69,6 +78,7 @@ const App = ({
             toggleLogged={toggleLogged}
           />
         )}
+        {isFav && <Favorites />}
         <Switch>
           <Route path="/" exact>
             <Home isDetails={isDetails} />
@@ -104,6 +114,9 @@ App.propTypes = {
   pseudo: PropTypes.string.isRequired,
   logout: PropTypes.func.isRequired,
   getUser: PropTypes.func.isRequired,
+  toggleFav: PropTypes.func.isRequired,
+  isFav: PropTypes.bool.isRequired,
+  fetchFav: PropTypes.func.isRequired,
 };
 
 export default App;
