@@ -7,8 +7,9 @@ import {
   CREATE_USER,
   memorizeUser,
   addErrorLogin,
-  FETCH_FAV,
 } from '../actions/user';
+
+import { FETCH_FAV, memorizeTeams } from '../actions/favorites';
 
 import { toggleLogged } from '../actions/boolean';
 
@@ -77,6 +78,7 @@ const ajaxUser = (store) => (next) => (action) => {
       })
         .then((response) => {
           console.log(response);
+          store.dispatch(memorizeTeams(response.data.apiTeams));
         })
         .catch((error) => {
           console.error(error);
