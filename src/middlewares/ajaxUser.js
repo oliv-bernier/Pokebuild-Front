@@ -29,6 +29,7 @@ const ajaxUser = (store) => (next) => (action) => {
         .then((response) => {
           const user = response.data;
           const { username: name, token } = user;
+          store.dispatch(toggleLogged());
           store.dispatch(memorizeUser(name, token));
           axios.defaults.headers.common.Authorization = `Bearer ${token}`;
           localStorage.setItem('user', JSON.stringify(user));
