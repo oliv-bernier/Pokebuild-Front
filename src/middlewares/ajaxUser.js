@@ -84,6 +84,29 @@ const ajaxUser = (store) => (next) => (action) => {
           console.error(error);
         });
     }
+      break;
+    case SAVE_TEAM: {
+      const {
+        name,
+      } = store.getState().favorites;
+      const {
+        pseudo,
+      } = store.getState().user;
+      const {
+        pokemonSelectedIds,
+      } = store.getState().pokemon;
+      axios.post('admin/team/creation', {
+        name,
+        username: pseudo,
+        pokemon: pokemonSelectedIds,
+      })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
   }
   next(action);
 };
