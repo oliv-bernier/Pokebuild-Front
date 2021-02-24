@@ -31,6 +31,7 @@ const App = ({
   getUser,
   toggleFav,
   isFav,
+  fetchFav,
 }: {
     isDetails: boolean,
     getPokemon: Function,
@@ -46,6 +47,7 @@ const App = ({
     getUser: Function,
     toggleFav: Function,
     isFav: Boolean,
+    fetchFav: Function,
   }) => {
   useEffect(() => {
     getPokemon();
@@ -66,6 +68,7 @@ const App = ({
         logout={logout}
         toggleLogged={toggleLogged}
         toggleFav={toggleFav}
+        fetchFav={fetchFav}
       />
       <div className={classNames('container', { 'container_drawer-open': isDrawer })}>
         {isLogin && (
@@ -113,6 +116,7 @@ App.propTypes = {
   getUser: PropTypes.func.isRequired,
   toggleFav: PropTypes.func.isRequired,
   isFav: PropTypes.bool.isRequired,
+  fetchFav: PropTypes.func.isRequired,
 };
 
 export default App;

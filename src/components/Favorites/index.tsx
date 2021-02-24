@@ -25,6 +25,12 @@ const Favorites = ({
       <div className="favorites-content">
         <button type="button" className="favorites-content-close" onClick={handleClose}>X</button>
         <h1 className="favorites-content-title">Équipes favorites</h1>
+        <div className="favorites-content-team">
+          <p className="favorites-content-team-title">Team number</p>
+          <button type="button" className="favorites-content-team-analyse">Analyser</button>
+          <button type="button" className="favorites-content-team-delete">Supprimer</button>
+          <div className="favorites-content-team-pokemon">coucou</div>
+        </div>
       </div>
     </div>
   );

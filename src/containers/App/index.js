@@ -9,7 +9,7 @@ import {
   toggleFav,
 } from '../../actions/boolean';
 
-import { logout, getUser } from '../../actions/user';
+import { logout, getUser, fetchFav } from '../../actions/user';
 
 import { getPokemon, getTypes } from '../../actions/pokemon';
 
@@ -49,6 +49,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   toggleFav: () => {
     dispatch(toggleFav());
+  },
+  fetchFav: () => {
+    dispatch(fetchFav());
   },
 });
 
