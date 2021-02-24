@@ -5,6 +5,7 @@ import {
   TOGGLE_LOGIN,
   TOGGLE_CREATE,
   TOGGLE_LOGGED,
+  TOGGLE_FAV,
 } from '../actions/boolean';
 
 import { GET_USER } from '../actions/user';
@@ -15,6 +16,7 @@ const initialState = {
   isLogged: false,
   isLogin: false,
   isCreate: false,
+  isFav: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -55,6 +57,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isLogged: true,
+      };
+    case TOGGLE_FAV:
+      return {
+        ...state,
+        isFav: !state.isFav,
       };
     default:
       return state;

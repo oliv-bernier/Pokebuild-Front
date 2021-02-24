@@ -27,3 +27,8 @@ export const TOGGLE_LOGGED = 'TOGGLE_LOGGED';
 export const toggleLogged = () => ({
   type: TOGGLE_LOGGED,
 });
+
+export const TOGGLE_FAV = 'TOGGLE_FAV';
+export const toggleFav = () => ({
+  type: TOGGLE_FAV,
+});

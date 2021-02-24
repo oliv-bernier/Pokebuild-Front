@@ -6,6 +6,7 @@ import {
   toggleLogin,
   toggleCreate,
   toggleLogged,
+  toggleFav,
 } from '../../actions/boolean';
 
 import { logout, getUser } from '../../actions/user';
@@ -18,6 +19,7 @@ const mapStateToProps = (state) => ({
   isLogged: state.boolean.isLogged,
   isLogin: state.boolean.isLogin,
   pseudo: state.user.pseudo,
+  isFav: state.boolean.isFav,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -44,6 +46,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   getUser: () => {
     dispatch(getUser());
+  },
+  toggleFav: () => {
+    dispatch(toggleFav());
   },
 });
 
