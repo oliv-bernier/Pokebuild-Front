@@ -37,3 +37,8 @@ export const GET_USER = 'GET_USER';
 export const getUser = () => ({
   type: GET_USER,
 });
+
+export const ADD_ERROR = 'ADD_ERROR';
+export const addError = () => ({
+  type: ADD_ERROR,
+});

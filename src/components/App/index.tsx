@@ -17,30 +17,30 @@ import './style.scss';
 
 const App = ({
   isDetails,
-  getPokemon,
-  getTypes,
   isDrawer,
   isLogged,
   isLogin,
+  getPokemon,
+  getTypes,
+  getUser,
   toggleLogin,
   toggleCreate,
   toggleLogged,
   pseudo,
   logout,
-  getUser,
 }: {
     isDetails: boolean,
-    getPokemon: Function,
-    getTypes:Function,
     isDrawer: boolean,
     isLogged: boolean,
     isLogin: boolean,
+    getPokemon: Function,
+    getTypes:Function,
+    getUser: Function,
     toggleLogin: Function,
     toggleCreate: Function,
     toggleLogged: Function,
     pseudo: string,
     logout: Function,
-    getUser: Function,
   }) => {
   useEffect(() => {
     getPokemon();
@@ -48,9 +48,17 @@ const App = ({
       getUser();
     }
   }, []);
+
   useEffect(() => {
     getTypes();
   }, []);
+
+  // useEffect(() => {
+  //   if (isLogged) {
+  //     toggleLogin();
+  //   }
+  // }, [LoginForm]);
+
   return (
     <div className="app">
       <Header
@@ -95,15 +103,15 @@ App.propTypes = {
   isDetails: PropTypes.bool.isRequired,
   isLogged: PropTypes.bool.isRequired,
   isLogin: PropTypes.bool.isRequired,
+  isDrawer: PropTypes.bool.isRequired,
   getPokemon: PropTypes.func.isRequired,
   getTypes: PropTypes.func.isRequired,
-  isDrawer: PropTypes.bool.isRequired,
+  getUser: PropTypes.func.isRequired,
   toggleLogin: PropTypes.func.isRequired,
   toggleCreate: PropTypes.func.isRequired,
   toggleLogged: PropTypes.func.isRequired,
   pseudo: PropTypes.string.isRequired,
   logout: PropTypes.func.isRequired,
-  getUser: PropTypes.func.isRequired,
 };
 
 export default App;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -11,38 +11,45 @@ const LoginForm = ({
   email,
   password,
   passwordConfirm,
+  error,
   isDrawer,
   isCreate,
+  isLogged,
   changeField,
   createUser,
   changeCreate,
   toggleLogin,
   loginUser,
-  toggleLogged,
+  addError,
 }: {
   username: string,
   email: string,
   password: string,
   passwordConfirm: string,
+  error: string,
   isDrawer: boolean,
   isCreate: boolean,
+  isLogged: boolean,
   changeField: Function,
   createUser: Function,
   changeCreate: Function,
   toggleLogin: Function,
   loginUser: Function,
-  toggleLogged: Function,
+  addError: Function,
 }) => {
   const handleSend = (evt: any): void => {
     evt.preventDefault();
-    createUser(username, email, password);
+    createUser();
   };
 
   const handleLogin = (evt: any): void => {
     evt.preventDefault();
-    loginUser();
-    toggleLogin();
-    toggleLogged();
+    if (username === '' || password === '') {
+      addError();
+    }
+    else {
+      loginUser();
+    }
   };
 
   const [isAnimation, setIsAnimation] = useState(false);
@@ -54,15 +61,22 @@ const LoginForm = ({
     }, 250);
   };
 
+  useEffect(() => {
+    if (isLogged) {
+      handleClose();
+    }
+  }, [isLogged]);
+
   return (
     <div className={classNames('login', { 'login_drawer-open': isDrawer }, { 'login--animation': isAnimation })}>
+      <p className="login-error">{error}</p>
       {!isCreate && (
         <form className="login-form">
           <button type="button" className="login-form-close" onClick={handleClose}>X</button>
           <LoginField
             name="username"
             type="text"
-            placeholder="Nom d'utilisateur"
+            placeholder="Nom de dresseur"
             value={username}
             onChange={changeField}
           />
@@ -88,7 +102,7 @@ const LoginForm = ({
           <LoginField
             name="username"
             type="text"
-            placeholder="Nom d'utilisateur"
+            placeholder="Nom de dresseur"
             value={username}
             onChange={changeCreate}
           />
@@ -131,14 +145,16 @@ LoginForm.propTypes = {
   email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   passwordConfirm: PropTypes.string.isRequired,
+  error: PropTypes.string.isRequired,
   isDrawer: PropTypes.bool.isRequired,
   isCreate: PropTypes.bool.isRequired,
+  isLogged: PropTypes.bool.isRequired,
   changeField: PropTypes.func.isRequired,
   createUser: PropTypes.func.isRequired,
   changeCreate: PropTypes.func.isRequired,
   toggleLogin: PropTypes.func.isRequired,
   loginUser: PropTypes.func.isRequired,
-  toggleLogged: PropTypes.func.isRequired,
+  addError: PropTypes.func.isRequired,
 };
 
 export default LoginForm;
