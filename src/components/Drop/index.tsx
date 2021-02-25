@@ -90,6 +90,13 @@ const Drop = (
         >
           Ajouter la sélection aux favoris
         </button>
+        <button
+          type="button"
+          className="home-selection-drop-button"
+          onClick={() => generateTeam()}
+        >
+          Générer une équipe au hasard
+        </button>
         {isInputFav && (
           <div className="home-selection-drop-add">
             <input
