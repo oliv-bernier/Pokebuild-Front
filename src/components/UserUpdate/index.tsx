@@ -68,6 +68,9 @@ const UserUpdate = ({
     if (passwordUpdate === '' || password === '' || passwordConfirm === '') {
       addError('Au moins un champ est manquant, merci de bien tous les remplir');
     }
+    else if (password.length < 8) {
+      addError('Le mot de passe saisi ne contient pas 8 caractères');
+    }
     else if (passwordUpdate !== passwordConfirm) {
       addError('Les mots de passe ne sont pas identiques');
     }

@@ -18,7 +18,7 @@ import {
   SAVE_TEAM,
 } from '../actions/favorites';
 
-import { toggleLogged, toggleUpdate } from '../actions/boolean';
+import { toggleLogged, toggleUpdate, toggleLogin } from '../actions/boolean';
 
 const ajaxUser = (store) => (next) => (action) => {
   if (localStorage.getItem('user') !== null) {
@@ -40,13 +40,16 @@ const ajaxUser = (store) => (next) => (action) => {
           store.dispatch(memorizeUser(name, token));
           axios.defaults.headers.common.Authorization = `Bearer ${token}`;
           localStorage.setItem('user', JSON.stringify(user));
+          setTimeout(() => {
+            store.dispatch(clearPassword());
+          }, 100);
         })
         .catch((error) => {
           console.error(error);
           store.dispatch(addError('Nom de dresseur ou mot de passe incorrect'));
           setTimeout(() => {
             store.dispatch(clearPassword());
-          }, 10);
+          }, 500);
         });
     }
       break;
@@ -69,6 +72,10 @@ const ajaxUser = (store) => (next) => (action) => {
       })
         .then((response) => {
           console.log(response);
+          store.dispatch(toggleLogin());
+          setTimeout(() => {
+            store.dispatch(clearPassword());
+          }, 100);
         })
         .catch((error) => {
           console.error(error);

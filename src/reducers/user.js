@@ -34,6 +34,8 @@ const reducer = (state = initialState, action = {}) => {
     case CLEAR_PASSWORD:
       return {
         ...state,
+        username: '',
+        email: '',
         password: '',
         passwordConfirm: '',
         passwordUpdate: '',
