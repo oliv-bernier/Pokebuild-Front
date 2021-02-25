@@ -87,7 +87,6 @@ const reducer = (state = initialState, action = {}) => {
         isUpdate: !state.isUpdate,
       };
     case TOGGLE_DELETE:
-      console.log('je suis dans le reducer');
       return {
         ...state,
         isConfirmDelete: !state.isConfirmDelete,

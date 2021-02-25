@@ -191,39 +191,39 @@
             }
 
             &_immune {
-                background-color: green;
+                background-color: vars.$color-imune;
             }
 
-            &_twice-resistant {
-                background-color: greenyellow;
+            &_twice_resistant {
+                background-color: vars.$color-twice-resistant;
             }
 
             &_slightly-resistant {
-                background-color: lightblue;
+                background-color: vars.$color-resistant;
             }
 
             &_resistant {
-                background-color: lightgreen;
+                background-color: vars.$color-resistant;
             }
 
             &_neutral {
-                background-color: lightgray;
+                background-color: vars.$color-balanced-neutral;
             }
 
             &_balanced {
-                background-color: lightgray;
+                background-color: vars.$color-balanced-neutral;
             }
             
             &_slightly-vulnerable {
-                background-color: lightpink;
+                background-color: vars.$color-slightly-vulnerable;
             }
 
             &_vulnerable {
-                background-color: lightsalmon;
+                background-color: vars.$color-vulnerable;
             }
 
-            &_twice-vulnerable {
-                background-color: red;
+            &_twice_vulnerable {
+                background-color: vars.$color-twice-vulnerable;
             }
         }
     }
@@ -276,7 +276,7 @@ tbody tr:last-child .tab-head--def:last-child {
 .tab-head--def_slightly-resistant:last-child::after {
     content: '';
     display: inline-block;
-    background: url('../../assets/balanced.svg');
+    background: url('../../assets/secure-shield.svg');
     background-size: 30px;
     width: 30px;
     height: 30px;

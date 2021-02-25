@@ -77,7 +77,7 @@ const ajaxUser = (store) => (next) => (action) => {
         passwordConfirm,
       })
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           store.dispatch(toggleLogin());
           setTimeout(() => {
             store.dispatch(clearLog());
@@ -108,7 +108,7 @@ const ajaxUser = (store) => (next) => (action) => {
         email,
       })
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           store.dispatch(toggleUpdate());
         })
         .catch((error) => {
@@ -129,7 +129,7 @@ const ajaxUser = (store) => (next) => (action) => {
         username: pseudo,
       })
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           store.dispatch(memorizeTeams(response.data.apiTeams));
         })
         .catch((error) => {
