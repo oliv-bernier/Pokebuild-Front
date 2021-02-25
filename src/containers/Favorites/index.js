@@ -29,8 +29,8 @@ const mapDispatchToProps = (dispatch) => ({
   fetchFav: () => {
     dispatch(fetchFav());
   },
-  analyzeTeam: (team) => {
-    dispatch(analyzeTeam(team));
+  analyzeTeam: (team, ids) => {
+    dispatch(analyzeTeam(team, ids));
   },
 });
 

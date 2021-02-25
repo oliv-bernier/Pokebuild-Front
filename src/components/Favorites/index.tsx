@@ -61,7 +61,16 @@ const Favorites = ({
               <div className="favorites-content-team-infos">
                 <p key={team.name} className="favorites-content-team-title">{team.name}</p>
                 <div className="favories-content-team-infos-buttons">
-                  <button type="button" className="favorites-content-team-infos-button" onClick={() => analyzeTeam(team)}>Analyser</button>
+                  <button
+                    type="button"
+                    className="favorites-content-team-infos-button"
+                    onClick={() => {
+                      analyzeTeam(team.pokemon, team.pokemon.map((each) => (each.id)));
+                      toggleFav();
+                    }}
+                  >
+                    Analyser
+                  </button>
                   <button type="button" className="favorites-content-team-infos-button" onClick={() => toggleConfirmDelete(team.id)}>Supprimer</button>
                 </div>
               </div>

@@ -158,7 +158,7 @@ Drop.propTypes = {
   isInputFav: PropTypes.bool.isRequired,
   changeInputFav: PropTypes.func.isRequired,
   isLogged: PropTypes.bool.isRequired,
-  generateTeam: PropTypes.bool.isRequired,
+  generateTeam: PropTypes.func.isRequired,
 };
 
 export default Drop;

@@ -102,6 +102,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         pokemonSelected: [...action.team],
+        pokemonSelectedIds: [...action.ids],
       };
     case MEMORIZE_RANDOM_TEAM:
       return {
