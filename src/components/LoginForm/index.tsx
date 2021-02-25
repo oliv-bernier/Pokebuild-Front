@@ -17,11 +17,9 @@ const LoginForm = ({
   isLogged,
   changeField,
   createUser,
-  changeCreate,
   toggleLogin,
   loginUser,
-  addErrorLogin,
-  addErrorCreate,
+  addError,
 }: {
   username: string,
   email: string,
@@ -33,16 +31,17 @@ const LoginForm = ({
   isLogged: boolean,
   changeField: Function,
   createUser: Function,
-  changeCreate: Function,
   toggleLogin: Function,
   loginUser: Function,
-  addErrorLogin: Function,
-  addErrorCreate: Function,
+  addError: Function,
 }) => {
   const handleSend = (evt: any): void => {
     evt.preventDefault();
     if (username === '' || password === '' || email === '' || passwordConfirm === '') {
-      addErrorCreate();
+      addError('Au moins un champ est manquant, merci de bien tous les remplir');
+    }
+    else if (password !== passwordConfirm) {
+      addError('Les mots de passe ne sont pas identiques');
     }
     else {
       createUser();
@@ -51,8 +50,14 @@ const LoginForm = ({
 
   const handleLogin = (evt: any): void => {
     evt.preventDefault();
-    if (username === '' || password === '') {
-      addErrorLogin();
+    if (username === '' && password === '') {
+      addError('Le nom de dresseur et le mot de passe ne sont pas saisis');
+    }
+    else if (username === '') {
+      addError('Le nom de dresseur n\'est pas saisi');
+    }
+    else if (password === '') {
+      addError('Le mot de passe n\'est pas saisi');
     }
     else {
       loginUser();
@@ -111,29 +116,33 @@ const LoginForm = ({
             type="text"
             placeholder="Nom de dresseur"
             value={username}
-            onChange={changeCreate}
+            onChange={changeField}
           />
           <LoginField
             name="email"
             type="email"
             placeholder="Addresse email"
             value={email}
-            onChange={changeCreate}
+            onChange={changeField}
           />
           <LoginField
             name="password"
             type="password"
             placeholder="Entrez votre mot de passe"
             value={password}
-            onChange={changeCreate}
+            onChange={changeField}
           />
           <LoginField
             name="passwordConfirm"
             type="password"
             placeholder="Confirmer votre mot de passe"
             value={passwordConfirm}
-            onChange={changeCreate}
+            onChange={changeField}
           />
+          <aside className="login-form_aside">
+            (le mot de passe doit contenir 8 caractères dont 1 majuscule,
+            1 minuscule, un chiffre et un caractère spéciale)
+          </aside>
           <button
             className="login-form-button"
             type="submit"
@@ -159,11 +168,9 @@ LoginForm.propTypes = {
   isLogged: PropTypes.bool.isRequired,
   changeField: PropTypes.func.isRequired,
   createUser: PropTypes.func.isRequired,
-  changeCreate: PropTypes.func.isRequired,
   toggleLogin: PropTypes.func.isRequired,
   loginUser: PropTypes.func.isRequired,
-  addErrorLogin: PropTypes.func.isRequired,
-  addErrorCreate: PropTypes.func.isRequired,
+  addError: PropTypes.func.isRequired,
 };
 
 export default LoginForm;

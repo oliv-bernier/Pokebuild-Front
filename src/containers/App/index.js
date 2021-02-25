@@ -7,11 +7,19 @@ import {
   toggleCreate,
   toggleLogged,
   toggleFav,
+  toggleUpdate,
 } from '../../actions/boolean';
 
-import { logout, getUser, fetchFav } from '../../actions/user';
+import {
+  logout,
+  getUser,
+  fetchFav,
+} from '../../actions/user';
 
-import { getPokemon, getTypes } from '../../actions/pokemon';
+import {
+  getPokemon,
+  getTypes,
+} from '../../actions/pokemon';
 
 const mapStateToProps = (state) => ({
   isDetails: state.boolean.isDetails,
@@ -20,6 +28,7 @@ const mapStateToProps = (state) => ({
   isLogin: state.boolean.isLogin,
   pseudo: state.user.pseudo,
   isFav: state.boolean.isFav,
+  isUpdate: state.boolean.isUpdate,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -52,6 +61,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   fetchFav: () => {
     dispatch(fetchFav());
+  },
+  toggleUpdate: () => {
+    dispatch(toggleUpdate());
   },
 });
 

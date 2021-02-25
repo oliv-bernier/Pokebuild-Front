@@ -15,9 +15,9 @@ export const memorizeUser = (pseudo, token) => ({
   token,
 });
 
-export const CHANGE_LOGIN_INPUT = 'CHANGE_LOGIN_INPUT';
-export const changeLoginInput = (newValue, key) => ({
-  type: CHANGE_LOGIN_INPUT,
+export const CHANGE_INPUT = 'CHANGE_INPUT';
+export const changeInput = (newValue, key) => ({
+  type: CHANGE_INPUT,
   newValue,
   key,
 });
@@ -27,16 +27,20 @@ export const createUser = () => ({
   type: CREATE_USER,
 });
 
-export const CHANGE_CREATE_INPUT = 'CHANGE_CREATE_INPUT';
-export const changeCreateInput = (newValue, key) => ({
-  type: CHANGE_CREATE_INPUT,
-  newValue,
-  key,
+export const UPDATE_USER = 'UPDATE_USER';
+export const updateUser = () => ({
+  type: UPDATE_USER,
 });
 
 export const GET_USER = 'GET_USER';
 export const getUser = () => ({
   type: GET_USER,
+});
+
+export const ADD_ERROR = 'ADD_ERROR';
+export const addError = (error) => ({
+  type: ADD_ERROR,
+  error,
 });
 
 export const ADD_ERROR_LOGIN = 'ADD_ERROR_LOGIN';
@@ -57,4 +61,9 @@ export const fetchFav = () => ({
 export const SAVE_TEAM = 'SAV_TEAM';
 export const saveTeam = () => ({
   type: SAVE_TEAM,
+});
+
+export const CLEAR_PASSWORD = 'CLEAR_PASSWORD';
+export const clearPassword = () => ({
+  type: CLEAR_PASSWORD,
 });

@@ -1,20 +1,20 @@
 import {
   MEMORIZE_USER,
   LOGOUT_USER,
-  CHANGE_LOGIN_INPUT,
-  CHANGE_CREATE_INPUT,
+  CHANGE_INPUT,
   GET_USER,
-  ADD_ERROR_LOGIN,
-  ADD_ERROR_CREATE,
+  ADD_ERROR,
+  CLEAR_PASSWORD,
 } from '../actions/user';
 
-import { TOGGLE_LOGIN } from '../actions/boolean';
+import { TOGGLE_LOGIN, TOGGLE_UPDATE } from '../actions/boolean';
 
 const initialState = {
   username: '',
   pseudo: '',
   email: '',
   password: '',
+  passwordUpdate: '',
   passwordConfirm: '',
   token: '',
   error: '',
@@ -31,17 +31,19 @@ const reducer = (state = initialState, action = {}) => {
         password: '',
         error: '',
       };
+    case CLEAR_PASSWORD:
+      return {
+        ...state,
+        password: '',
+        passwordConfirm: '',
+        passwordUpdate: '',
+      };
     case LOGOUT_USER:
       return {
         ...state,
         pseudo: '',
       };
-    case CHANGE_LOGIN_INPUT:
-      return {
-        ...state,
-        [action.key]: action.newValue,
-      };
-    case CHANGE_CREATE_INPUT:
+    case CHANGE_INPUT:
       return {
         ...state,
         [action.key]: action.newValue,
@@ -60,32 +62,24 @@ const reducer = (state = initialState, action = {}) => {
         username: '',
         password: '',
         email: '',
+        passwordUpdate: '',
         passwordConfirm: '',
         error: '',
       };
-    case ADD_ERROR_LOGIN: {
-      let text;
-      if (state.username === '' && state.password === '') {
-        text = 'Le nom de dresseur et le mot de passe ne sont pas saisis';
-      }
-      else if (state.username === '') {
-        text = 'Le nom de dresseur n\'est pas saisi';
-      }
-      else if (state.password === '') {
-        text = 'Le mot de passe n\'est pas saisi';
-      }
-      else {
-        text = 'Nom de dresseur ou mot de passe incorrect';
-      }
+    case TOGGLE_UPDATE:
       return {
         ...state,
-        error: text,
+        username: '',
+        password: '',
+        email: '',
+        passwordUpdate: '',
+        passwordConfirm: '',
+        error: '',
       };
-    }
-    case ADD_ERROR_CREATE:
+    case ADD_ERROR:
       return {
         ...state,
-        error: 'Au moins un champ est manquant, merci de bien tous les remplir',
+        error: action.error,
       };
     default:
       return state;
