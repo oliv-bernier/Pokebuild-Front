@@ -2,6 +2,7 @@ import {
   MEMORIZE_TEAMS,
   CHANGE_NAME_INPUT,
   TOGGLE_CONFIRM_DELETE,
+  DELETE_TEAM,
 } from '../actions/favorites';
 
 const initialState = {
@@ -28,6 +29,10 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         isConfirmDelete: !state.isConfirmDelete,
         id: action.id,
+      };
+    case DELETE_TEAM:
+      return {
+        ...state,
       };
     default:
       return state;

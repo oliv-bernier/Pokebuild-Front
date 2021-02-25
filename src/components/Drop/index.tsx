@@ -59,6 +59,13 @@ const Drop = (
     toggleInputFav();
   };
 
+  const handleKey = (evt) => {
+    if (evt.key === 'Enter') {
+      saveTeam();
+      toggleInputFav();
+    }
+  };
+
   if (pokemonSelected.length > 5) {
     return (
       <div className="home-selection">
@@ -86,6 +93,7 @@ const Drop = (
               className="home-selection-drop-add-input"
               placeholder="Donnez un nom à l'équipe"
               onChange={handleChange}
+              onKeyDown={handleKey}
             />
             <button
               type="submit"

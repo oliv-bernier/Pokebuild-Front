@@ -31,3 +31,9 @@ export const toggleConfirmDelete = (id) => ({
   type: TOGGLE_CONFIRM_DELETE,
   id,
 });
+
+export const ANALYZE_TEAM = 'ANALYZE_TEAM';
+export const analyzeTeam = (team) => ({
+  type: ANALYZE_TEAM,
+  team,
+});

@@ -3,7 +3,7 @@ import Favorites from '../../components/Favorites/index.tsx';
 
 import { toggleFav } from '../../actions/boolean';
 
-import { toggleConfirmDelete, deleteTeam } from '../../actions/favorites';
+import { toggleConfirmDelete, deleteTeam, fetchFav } from '../../actions/favorites';
 
 const mapStateToProps = (state) => ({
   isDrawer: state.boolean.isDrawer,
@@ -20,6 +20,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   deleteTeam: () => {
     dispatch(deleteTeam());
+  },
+  fetchFav: () => {
+    dispatch(fetchFav());
   },
 });
 

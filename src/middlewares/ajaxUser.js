@@ -120,6 +120,19 @@ const ajaxUser = (store) => (next) => (action) => {
         .catch((error) => {
           console.error(error);
         });
+      const {
+        pseudo,
+      } = store.getState().user;
+      axios.post('admin/user/read', {
+        username: pseudo,
+      })
+        .then((response) => {
+          console.log(response);
+          store.dispatch(memorizeTeams(response.data.apiTeams));
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     }
   }
   next(action);
