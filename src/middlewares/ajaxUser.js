@@ -5,13 +5,14 @@ import {
   LOGIN_USER,
   LOGOUT_USER,
   CREATE_USER,
+  UPDATE_USER,
   memorizeUser,
   addError,
   FETCH_FAV,
   clearPassword,
 } from '../actions/user';
 
-import { toggleLogged } from '../actions/boolean';
+import { toggleLogged, toggleUpdate } from '../actions/boolean';
 
 const ajaxUser = (store) => (next) => (action) => {
   if (localStorage.getItem('user') !== null) {
@@ -39,7 +40,7 @@ const ajaxUser = (store) => (next) => (action) => {
           store.dispatch(addError('Nom de dresseur ou mot de passe incorrect'));
           setTimeout(() => {
             store.dispatch(clearPassword());
-          }, 500);
+          }, 10);
         });
     }
       break;
@@ -69,6 +70,31 @@ const ajaxUser = (store) => (next) => (action) => {
           setTimeout(() => {
             store.dispatch(clearPassword());
           }, 500);
+        });
+    }
+      break;
+    case UPDATE_USER: {
+      const {
+        pseudo: username,
+        password,
+        passwordConfirm,
+        passwordUpdate,
+        email,
+      } = store.getState().user;
+      axios.post('admin/user/edit', {
+        username,
+        password,
+        newPassword: passwordUpdate,
+        newPasswordConfirm: passwordConfirm,
+        email,
+      })
+        .then((response) => {
+          console.log(response);
+          store.dispatch(toggleUpdate());
+        })
+        .catch((error) => {
+          console.error(error);
+          store.dispatch(addError('Les informations saisies sont incorrect. Merci de réessayer'));
         });
     }
       break;

@@ -19,7 +19,6 @@ const LoginForm = ({
   createUser,
   toggleLogin,
   loginUser,
-  addErrorLogin,
   addError,
 }: {
   username: string,
@@ -34,7 +33,6 @@ const LoginForm = ({
   createUser: Function,
   toggleLogin: Function,
   loginUser: Function,
-  addErrorLogin: Function,
   addError: Function,
 }) => {
   const handleSend = (evt: any): void => {
@@ -172,7 +170,6 @@ LoginForm.propTypes = {
   createUser: PropTypes.func.isRequired,
   toggleLogin: PropTypes.func.isRequired,
   loginUser: PropTypes.func.isRequired,
-  addErrorLogin: PropTypes.func.isRequired,
   addError: PropTypes.func.isRequired,
 };
 

@@ -63,8 +63,14 @@ const Header = ({
           {!isLogged && <p onClick={handleClickCreate}>S'inscrire</p>}
           {isLogged && (
             <div className="trick">
-              <p className="trick-visible">Bonjour {pseudo}</p>
-              <p className="trick-invisible" onClick={handleClickUpdate}>Modifier mes infos</p>
+              <div className="trick-box">
+                <div className="trick-visible">
+                  <p>Bonjour {pseudo}</p>
+                </div>
+                <div className="trick-invisible">
+                  <p onClick={handleClickUpdate}>Modifier mes infos</p>
+                </div>
+              </div>
             </div>
           )}
           {isLogged && <p>|</p>}
