@@ -8,6 +8,7 @@ import {
   TOGGLE_FAV,
   TOGGLE_INPUT_FAV,
   TOGGLE_UPDATE,
+  TOGGLE_DELETE,
 } from '../actions/boolean';
 
 import { TOGGLE_CONFIRM_DELETE } from '../actions/favorites';
@@ -84,6 +85,12 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isUpdate: !state.isUpdate,
+      };
+    case TOGGLE_DELETE:
+      console.log('je suis dans le reducer');
+      return {
+        ...state,
+        isConfirmDelete: !state.isConfirmDelete,
       };
     default:
       return state;

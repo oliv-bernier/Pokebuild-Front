@@ -6,9 +6,10 @@ import {
   LOGOUT_USER,
   CREATE_USER,
   UPDATE_USER,
+  DELETE_USER,
   memorizeUser,
   addError,
-  clearPassword,
+  clearLog,
 } from '../actions/user';
 
 import {
@@ -18,7 +19,12 @@ import {
   SAVE_TEAM,
 } from '../actions/favorites';
 
-import { toggleLogged, toggleUpdate, toggleLogin } from '../actions/boolean';
+import {
+  toggleLogged,
+  toggleUpdate,
+  toggleLogin,
+  toggleDelete,
+} from '../actions/boolean';
 
 const ajaxUser = (store) => (next) => (action) => {
   if (localStorage.getItem('user') !== null) {
@@ -41,14 +47,14 @@ const ajaxUser = (store) => (next) => (action) => {
           axios.defaults.headers.common.Authorization = `Bearer ${token}`;
           localStorage.setItem('user', JSON.stringify(user));
           setTimeout(() => {
-            store.dispatch(clearPassword());
+            store.dispatch(clearLog());
           }, 100);
         })
         .catch((error) => {
           console.error(error);
           store.dispatch(addError('Nom de dresseur ou mot de passe incorrect'));
           setTimeout(() => {
-            store.dispatch(clearPassword());
+            store.dispatch(clearLog());
           }, 500);
         });
     }
@@ -74,14 +80,14 @@ const ajaxUser = (store) => (next) => (action) => {
           console.log(response);
           store.dispatch(toggleLogin());
           setTimeout(() => {
-            store.dispatch(clearPassword());
+            store.dispatch(clearLog());
           }, 100);
         })
         .catch((error) => {
           console.error(error);
           store.dispatch(addError('Les informations saisies sont incorrect. Merci de réessayer'));
           setTimeout(() => {
-            store.dispatch(clearPassword());
+            store.dispatch(clearLog());
           }, 500);
         });
     }
@@ -110,6 +116,10 @@ const ajaxUser = (store) => (next) => (action) => {
           store.dispatch(addError('Les informations saisies sont incorrect. Merci de réessayer'));
         });
     }
+      break;
+    case DELETE_USER:
+      console.log('je veux delete mon user');
+      store.dispatch(toggleDelete());
       break;
     case FETCH_FAV: {
       const {

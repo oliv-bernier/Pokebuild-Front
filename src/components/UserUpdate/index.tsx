@@ -13,10 +13,14 @@ const UserUpdate = ({
   passwordConfirm,
   error,
   toggleUpdate,
+  toggleDelete,
   changeInput,
   updateUser,
+  deleteUser,
+  logout,
   addError,
   isDrawer,
+  isDelete,
 }: {
   email: string,
   password: string,
@@ -24,10 +28,14 @@ const UserUpdate = ({
   passwordConfirm: string,
   error: string,
   toggleUpdate: Function,
+  toggleDelete: Function,
   changeInput: Function,
   updateUser: Function,
+  deleteUser: Function,
+  logout: Function,
   addError: Function,
   isDrawer: boolean,
+  isDelete: boolean,
 }) => {
   const [isAnimation, setIsAnimation] = useState(false);
   const [isEmail, setIsEmail] = useState(false);
@@ -79,6 +87,16 @@ const UserUpdate = ({
     }
   };
 
+  const handleDelete = () => {
+    deleteUser();
+    setTimeout(() => {
+      toggleDelete();
+    }, 150);
+    setTimeout(() => {
+      logout();
+    }, 250);
+  };
+
   return (
     <div className={classNames('update', { 'update_drawer-open': isDrawer }, { 'update--animation': isAnimation })}>
       {!isEmail && !isPassword && (
@@ -118,6 +136,15 @@ const UserUpdate = ({
           }}
         >
           Modifier E-mail et mot de passe
+        </button>
+        <button
+          className="login-form-button"
+          type="button"
+          onClick={() => {
+            toggleDelete();
+          }}
+        >
+          Supprimer mon compte
         </button>
       </div>
       )}
@@ -251,6 +278,17 @@ const UserUpdate = ({
         <p className={classNames('login-error', { 'login-error_displayed': error !== '' })}>{error}</p>
       </form>
       )}
+      {isDelete && (
+      <div className="favorites-confirm-delete">
+        <div className="favorites-confirm-delete-content">
+          <p className="favorites-confirm-delete-content-answer">Êtes vous-sûr de supprimer cette équipe ?</p>
+          <div className="favorites-confirm-delete-content-buttons">
+            <button type="button" className="favorites-content-team-infos-button" onClick={handleDelete}>Oui</button>
+            <button type="button" className="favorites-content-team-infos-button" onClick={() => toggleDelete()}>Non</button>
+          </div>
+        </div>
+      </div>
+      )}
     </div>
   );
 };
@@ -262,10 +300,14 @@ UserUpdate.propTypes = {
   passwordConfirm: PropTypes.string.isRequired,
   error: PropTypes.string.isRequired,
   toggleUpdate: PropTypes.func.isRequired,
+  toggleDelete: PropTypes.func.isRequired,
   changeInput: PropTypes.func.isRequired,
   updateUser: PropTypes.func.isRequired,
+  deleteUser: PropTypes.func.isRequired,
+  logout: PropTypes.func.isRequired,
   addError: PropTypes.func.isRequired,
   isDrawer: PropTypes.bool.isRequired,
+  isDelete: PropTypes.bool.isRequired,
 };
 
 export default UserUpdate;
