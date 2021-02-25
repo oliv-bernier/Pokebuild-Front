@@ -88,3 +88,9 @@ export const memorizeRandomTeam = (team) => ({
   type: MEMORIZE_RANDOM_TEAM,
   team,
 });
+
+export const MEMORIZE_RANDOM_TEAM_IDS = 'MEMORIZE_RANDOM_TEAM_IDS';
+export const memorizeRandomTeamIds = (ids) => ({
+  type: MEMORIZE_RANDOM_TEAM_IDS,
+  ids,
+});

@@ -128,7 +128,7 @@ const Drop = (
           className="home-selection-drop-button"
           onClick={() => generateTeam()}
         >
-          Générer une équipe
+          Générer une équipe au hasard
         </button>
       </div>
     );
@@ -142,7 +142,7 @@ const Drop = (
         className="home-selection-drop-button"
         onClick={() => generateTeam()}
       >
-        Générer une équipe
+        Générer une équipe au hasard
       </button>
     </div>
   );
