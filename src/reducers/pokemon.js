@@ -10,6 +10,8 @@ import {
   ADD_SELECTED_POKEMON,
   REMOVE_SELECTED_POKEMON,
   REMOVE_ALL_POKEMON,
+  MEMORIZE_RANDOM_TEAM,
+  MEMORIZE_RANDOM_TEAM_IDS,
 } from '../actions/pokemon';
 
 const initialState = {
@@ -99,7 +101,18 @@ const reducer = (state = initialState, action = {}) => {
     case ANALYZE_TEAM:
       return {
         ...state,
-        pokemonSelected: action.team,
+        pokemonSelected: [...action.team],
+        pokemonSelectedIds: [...action.ids],
+      };
+    case MEMORIZE_RANDOM_TEAM:
+      return {
+        ...state,
+        pokemonSelected: [...action.team],
+      };
+    case MEMORIZE_RANDOM_TEAM_IDS:
+      return {
+        ...state,
+        pokemonSelectedIds: [...action.ids],
       };
     default:
       return state;

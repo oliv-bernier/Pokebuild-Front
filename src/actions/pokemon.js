@@ -77,3 +77,20 @@ export const memorizeResitances = (resistances) => ({
   type: MEMORIZE_RESISTANCES,
   resistances,
 });
+
+export const GENERATE_TEAM = 'GENERATE_TEAM';
+export const generateTeam = () => ({
+  type: GENERATE_TEAM,
+});
+
+export const MEMORIZE_RANDOM_TEAM = 'MEMORIZE_RANDOM_TEAM';
+export const memorizeRandomTeam = (team) => ({
+  type: MEMORIZE_RANDOM_TEAM,
+  team,
+});
+
+export const MEMORIZE_RANDOM_TEAM_IDS = 'MEMORIZE_RANDOM_TEAM_IDS';
+export const memorizeRandomTeamIds = (ids) => ({
+  type: MEMORIZE_RANDOM_TEAM_IDS,
+  ids,
+});

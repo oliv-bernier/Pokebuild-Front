@@ -17,6 +17,8 @@ const Drop = (
     isInputFav,
     changeInputFav,
     saveTeam,
+    isLogged,
+    generateTeam,
   }: {
     pokemonSelected: Array<Pokemon>,
     clearPokemons: Function,
@@ -26,6 +28,8 @@ const Drop = (
     toggleInputFav: Function,
     isInputFav: Boolean,
     changeInputFav: Function,
+    isLogged: Boolean,
+    generateTeam: Function,
   },
 ) => {
   const boxes = [];
@@ -66,7 +70,7 @@ const Drop = (
     }
   };
 
-  if (pokemonSelected.length > 5) {
+  if (pokemonSelected.length > 5 && isLogged) {
     return (
       <div className="home-selection">
         <div className="home-selection-drops">
@@ -85,6 +89,13 @@ const Drop = (
           onClick={handleFav}
         >
           Ajouter la sélection aux favoris
+        </button>
+        <button
+          type="button"
+          className="home-selection-drop-button"
+          onClick={() => generateTeam()}
+        >
+          Générer une équipe au hasard
         </button>
         {isInputFav && (
           <div className="home-selection-drop-add">
@@ -119,6 +130,13 @@ const Drop = (
         >
           Vider la sélection
         </button>
+        <button
+          type="button"
+          className="home-selection-drop-button"
+          onClick={() => generateTeam()}
+        >
+          Générer une équipe au hasard
+        </button>
       </div>
     );
   } return (
@@ -126,6 +144,13 @@ const Drop = (
       <div className="home-selection-drops">
         {boxes}
       </div>
+      <button
+        type="button"
+        className="home-selection-drop-button"
+        onClick={() => generateTeam()}
+      >
+        Générer une équipe au hasard
+      </button>
     </div>
   );
 };
@@ -139,6 +164,8 @@ Drop.propTypes = {
   toggleInputFav: PropTypes.func.isRequired,
   isInputFav: PropTypes.bool.isRequired,
   changeInputFav: PropTypes.func.isRequired,
+  isLogged: PropTypes.bool.isRequired,
+  generateTeam: PropTypes.func.isRequired,
 };
 
 export default Drop;

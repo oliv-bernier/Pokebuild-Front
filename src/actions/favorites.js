@@ -33,7 +33,8 @@ export const toggleConfirmDelete = (id) => ({
 });
 
 export const ANALYZE_TEAM = 'ANALYZE_TEAM';
-export const analyzeTeam = (team) => ({
+export const analyzeTeam = (team, ids) => ({
   type: ANALYZE_TEAM,
   team,
+  ids,
 });

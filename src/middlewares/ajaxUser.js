@@ -9,6 +9,7 @@ import {
   DELETE_USER,
   memorizeUser,
   addError,
+  clearPassword,
   clearLog,
   logout,
 } from '../actions/user';
