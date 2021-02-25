@@ -78,9 +78,11 @@
 
             &_name {
                 position: absolute;
-                background-color: vars.$color-background-pokemon;
-                color: vars.$color-background-scaled;
+                background-color: vars.$color-background-scaled-drop;
+                color: vars.$color-background;
                 top: 5px;
+                left: -22px;
+                font-size: 0.7rem;
                 padding: 0.2rem;
                 border-radius: 5px;
             }
