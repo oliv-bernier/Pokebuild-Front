@@ -9,7 +9,6 @@ import {
   memorizeUser,
   addErrorLogin,
   addError,
-  FETCH_FAV,
   clearPassword,
 } from '../actions/user';
 

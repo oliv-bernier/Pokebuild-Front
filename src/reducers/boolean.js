@@ -79,6 +79,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isConfirmDelete: !state.isConfirmDelete,
+      };
     case TOGGLE_UPDATE:
       return {
         ...state,

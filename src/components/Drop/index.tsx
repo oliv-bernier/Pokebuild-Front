@@ -17,6 +17,7 @@ const Drop = (
     isInputFav,
     changeInputFav,
     saveTeam,
+    isLogged,
   }: {
     pokemonSelected: Array<Pokemon>,
     clearPokemons: Function,
@@ -26,6 +27,7 @@ const Drop = (
     toggleInputFav: Function,
     isInputFav: Boolean,
     changeInputFav: Function,
+    isLogged: Boolean,
   },
 ) => {
   const boxes = [];
@@ -66,7 +68,7 @@ const Drop = (
     }
   };
 
-  if (pokemonSelected.length > 5) {
+  if (pokemonSelected.length > 5 && isLogged) {
     return (
       <div className="home-selection">
         <div className="home-selection-drops">
@@ -139,6 +141,7 @@ Drop.propTypes = {
   toggleInputFav: PropTypes.func.isRequired,
   isInputFav: PropTypes.bool.isRequired,
   changeInputFav: PropTypes.func.isRequired,
+  isLogged: PropTypes.bool.isRequired,
 };
 
 export default Drop;

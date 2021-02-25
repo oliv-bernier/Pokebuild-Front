@@ -47,10 +47,6 @@ const Favorites = ({
     }, 250);
   };
 
-  // useEffect(() => {
-  //   fetchFav();
-  // }, [isConfirmDelete]);
-
   return (
     <div className={classNames('favorites', { 'favorites_drawer-open': isDrawer }, { 'favorites--animation': isAnimation })}>
       <div className="favorites-content">
