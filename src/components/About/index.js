@@ -15,6 +15,13 @@ const About = () => (
         <Card key={card.id} {...card} />
       ))}
     </div>
+    <a
+      className="api-link"
+      href="http://ec2-3-83-51-192.compute-1.amazonaws.com/api/v1"
+      target="blank"
+    >
+      Lien vers notre api custom
+    </a>
     <div className="techno">
       <h2 className="techno-title">Liste des technos utilisées</h2>
       <ul className="techno-list">

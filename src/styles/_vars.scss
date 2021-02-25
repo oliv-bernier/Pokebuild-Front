@@ -18,6 +18,15 @@ $color-background2: #FEEAEA;
 $color-background-scaled: color.scale($color-background, $lightness: 80%);
 $color-background-scaled-drop: color.scale($color-background, $lightness: 50%);
 
+$color-resistant: #90EE90;
+$color-twice-resistant: color.scale($color-resistant, $lightness: -30%);
+$color-imune: color.scale($color-resistant, $lightness: -50%);
+$color-balanced-neutral: lightgray;
+
+$color-slightly-vulnerable: #FFB6C1;
+$color-vulnerable: color.scale($color-slightly-vulnerable, $lightness: -20%);
+$color-twice-vulnerable: color.scale($color-slightly-vulnerable, $lightness: -30%);
+
 @keyframes fadeIn {
   0% {
       opacity: 0;

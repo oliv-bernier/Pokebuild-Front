@@ -6,9 +6,11 @@ import {
   LOGOUT_USER,
   CREATE_USER,
   UPDATE_USER,
+  DELETE_USER,
   memorizeUser,
   addError,
-  clearPassword,
+  clearLog,
+  logout,
 } from '../actions/user';
 
 import {
@@ -18,7 +20,12 @@ import {
   SAVE_TEAM,
 } from '../actions/favorites';
 
-import { toggleLogged, toggleUpdate, toggleLogin } from '../actions/boolean';
+import {
+  toggleLogged,
+  toggleUpdate,
+  toggleLogin,
+  toggleDelete,
+} from '../actions/boolean';
 
 const ajaxUser = (store) => (next) => (action) => {
   if (localStorage.getItem('user') !== null) {
@@ -41,14 +48,14 @@ const ajaxUser = (store) => (next) => (action) => {
           axios.defaults.headers.common.Authorization = `Bearer ${token}`;
           localStorage.setItem('user', JSON.stringify(user));
           setTimeout(() => {
-            store.dispatch(clearPassword());
+            store.dispatch(clearLog());
           }, 100);
         })
         .catch((error) => {
           console.error(error);
           store.dispatch(addError('Nom de dresseur ou mot de passe incorrect'));
           setTimeout(() => {
-            store.dispatch(clearPassword());
+            store.dispatch(clearLog());
           }, 500);
         });
     }
@@ -71,17 +78,17 @@ const ajaxUser = (store) => (next) => (action) => {
         passwordConfirm,
       })
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           store.dispatch(toggleLogin());
           setTimeout(() => {
-            store.dispatch(clearPassword());
+            store.dispatch(clearLog());
           }, 100);
         })
         .catch((error) => {
           console.error(error);
           store.dispatch(addError('Les informations saisies sont incorrect. Merci de réessayer'));
           setTimeout(() => {
-            store.dispatch(clearPassword());
+            store.dispatch(clearLog());
           }, 500);
         });
     }
@@ -102,7 +109,7 @@ const ajaxUser = (store) => (next) => (action) => {
         email,
       })
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           store.dispatch(toggleUpdate());
         })
         .catch((error) => {
@@ -110,6 +117,22 @@ const ajaxUser = (store) => (next) => (action) => {
           store.dispatch(addError('Les informations saisies sont incorrect. Merci de réessayer'));
         });
     }
+      break;
+    case DELETE_USER:
+      axios.post('admin/user/delete', {
+        username: store.getState().user.pseudo,
+      })
+        .then(() => {
+          store.dispatch(toggleDelete());
+          setTimeout(() => {
+            store.dispatch(toggleUpdate());
+            store.dispatch(logout());
+            store.dispatch(toggleLogged());
+          }, 100);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
       break;
     case FETCH_FAV: {
       const {
@@ -119,7 +142,7 @@ const ajaxUser = (store) => (next) => (action) => {
         username: pseudo,
       })
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           store.dispatch(memorizeTeams(response.data.apiTeams));
         })
         .catch((error) => {

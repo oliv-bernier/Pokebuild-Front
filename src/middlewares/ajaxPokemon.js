@@ -38,7 +38,7 @@ const ajaxPokemon = (store) => (next) => (action) => {
     case SEND_TEAM: {
       const { team } = action;
       const jsoned = JSON.stringify(team);
-      console.log(jsoned);
+      // console.log(jsoned);
       axios.post('team/defensive-coverage', jsoned)
         .then((response) => {
           // console.log(response);

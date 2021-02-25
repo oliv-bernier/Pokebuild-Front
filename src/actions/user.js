@@ -32,6 +32,11 @@ export const updateUser = () => ({
   type: UPDATE_USER,
 });
 
+export const DELETE_USER = 'DELETE_USER';
+export const deleteUser = () => ({
+  type: DELETE_USER,
+});
+
 export const GET_USER = 'GET_USER';
 export const getUser = () => ({
   type: GET_USER,
@@ -63,7 +68,7 @@ export const saveTeam = () => ({
   type: SAVE_TEAM,
 });
 
-export const CLEAR_PASSWORD = 'CLEAR_PASSWORD';
-export const clearPassword = () => ({
-  type: CLEAR_PASSWORD,
+export const CLEAR_LOG = 'CLEAR_LOG';
+export const clearLog = () => ({
+  type: CLEAR_LOG,
 });

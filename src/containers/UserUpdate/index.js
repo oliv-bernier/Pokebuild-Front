@@ -1,11 +1,22 @@
 import { connect } from 'react-redux';
 import UserUpdate from '../../components/UserUpdate';
 
-import { toggleUpdate } from '../../actions/boolean';
-import { changeInput, updateUser, addError } from '../../actions/user';
+import {
+  toggleUpdate,
+  toggleDelete,
+} from '../../actions/boolean';
+
+import {
+  changeInput,
+  updateUser,
+  deleteUser,
+  addError,
+  logout,
+} from '../../actions/user';
 
 const mapStateToProps = (state) => ({
   isDrawer: state.boolean.isDrawer,
+  isDelete: state.boolean.isDelete,
   email: state.user.email,
   password: state.user.password,
   passwordUpdate: state.user.passwordUpdate,
@@ -17,11 +28,20 @@ const mapDispatchToProps = (dispatch) => ({
   toggleUpdate: () => {
     dispatch(toggleUpdate());
   },
+  toggleDelete: () => {
+    dispatch(toggleDelete());
+  },
   changeInput: (newValue, key) => {
     dispatch(changeInput(newValue, key));
   },
   updateUser: () => {
     dispatch(updateUser());
+  },
+  deleteUser: () => {
+    dispatch(deleteUser());
+  },
+  logout: () => {
+    dispatch(logout());
   },
   addError: (error) => {
     dispatch(addError(error));
