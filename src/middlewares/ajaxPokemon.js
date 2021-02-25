@@ -8,6 +8,8 @@ import {
   GET_TYPES,
   memorizeTypes,
   SEND_TEAM,
+  GENERATE_TEAM,
+  memorizeRandomTeam,
 } from '../actions/pokemon';
 
 import {
@@ -49,8 +51,18 @@ const ajaxPokemon = (store) => (next) => (action) => {
         .catch((error) => {
           console.error(error);
         });
-      break;
     }
+      break;
+    case GENERATE_TEAM:
+      axios.get('random/team')
+        .then((response) => {
+          console.log(response);
+          store.dispatch(memorizeRandomTeam(response.data));
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+      break;
   }
   next(action);
 };
