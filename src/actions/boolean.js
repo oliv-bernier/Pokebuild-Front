@@ -42,3 +42,8 @@ export const TOGGLE_UPDATE = 'TOGGLE_UPDATE';
 export const toggleUpdate = () => ({
   type: TOGGLE_UPDATE,
 });
+
+export const TOGGLE_DELETE = 'TOGGLE_DELETE';
+export const toggleDelete = () => ({
+  type: TOGGLE_DELETE,
+});

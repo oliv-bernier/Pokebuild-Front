@@ -41,15 +41,7 @@ const Favorites = ({
       fetchFav();
     }, 250);
   };
-
-  // const handleAnalyze = () => {
-  //   analyzeTeam();
-  //   setIsAnimation(true);
-  //   setTimeout(() => {
-  //     toggleFav();
-  //   }, 250);
-  // };
-
+  
   return (
     <div className={classNames('favorites', { 'favorites_drawer-open': isDrawer }, { 'favorites--animation': isAnimation })}>
       <div className="favorites-content">

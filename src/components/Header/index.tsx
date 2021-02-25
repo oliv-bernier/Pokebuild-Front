@@ -26,14 +26,6 @@ const Header = ({
   toggleUpdate: Function,
   fetchFav: Function,
 }) => {
-  const handleClick = () => {
-    toggleLogin();
-  };
-
-  const handleClickCreate = () => {
-    toggleCreate();
-  };
-
   const handleClickFav = () => {
     toggleFav();
     fetchFav();
@@ -42,10 +34,6 @@ const Header = ({
   const handleLogout = () => {
     logout();
     toggleLogged();
-  };
-
-  const handleClickUpdate = () => {
-    toggleUpdate();
   };
 
   return (
@@ -58,9 +46,9 @@ const Header = ({
           <h1 className="header-div-title">Pokébuild</h1>
         </NavLink>
         <div className="header-div-connexion">
-          {!isLogged && <p onClick={handleClick}>Se connecter</p>}
+          {!isLogged && <p onClick={() => toggleLogin()}>Se connecter</p>}
           {!isLogged && <p>|</p>}
-          {!isLogged && <p onClick={handleClickCreate}>S'inscrire</p>}
+          {!isLogged && <p onClick={() => toggleCreate()}>S'inscrire</p>}
           {isLogged && (
             <div className="trick">
               <div className="trick-box">
@@ -68,7 +56,7 @@ const Header = ({
                   <p>Bonjour {pseudo}</p>
                 </div>
                 <div className="trick-invisible">
-                  <p onClick={handleClickUpdate}>Modifier mes infos</p>
+                  <p onClick={() => toggleUpdate()}>Modifier mes infos</p>
                 </div>
               </div>
             </div>

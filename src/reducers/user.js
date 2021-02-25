@@ -4,7 +4,7 @@ import {
   CHANGE_INPUT,
   GET_USER,
   ADD_ERROR,
-  CLEAR_PASSWORD,
+  CLEAR_LOG,
 } from '../actions/user';
 
 import { TOGGLE_LOGIN, TOGGLE_UPDATE } from '../actions/boolean';
@@ -31,9 +31,11 @@ const reducer = (state = initialState, action = {}) => {
         password: '',
         error: '',
       };
-    case CLEAR_PASSWORD:
+    case CLEAR_LOG:
       return {
         ...state,
+        username: '',
+        email: '',
         password: '',
         passwordConfirm: '',
         passwordUpdate: '',
