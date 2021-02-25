@@ -26,7 +26,7 @@ const techno = [
   },
   {
     id: 6,
-    name: 'Sasss',
+    name: 'Sass',
     image: 'https://seeklogo.com/images/S/sass-logo-EFE1469B2C-seeklogo.com.png',
   },
   {

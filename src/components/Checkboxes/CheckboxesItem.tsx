@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes, { objectOf } from 'prop-types';
 import classNames from 'classnames';
 
@@ -18,14 +18,25 @@ const CheckboxesItem = ({
     filterTypes(bool, name);
   };
 
+  const [isTypeOver, setTypeOver] = useState(false);
+
+  const mouseInOut = () => {
+    setTypeOver(!isTypeOver);
+  };
+
   return (
-    <img
-      key={name}
-      src={image}
-      className={classNames(`checkboxes-image ${name}`, { 'checkboxes-image--selected': bool[name] })}
-      alt={name}
-      onClick={handleSelect}
-    />
+    <div className="checkboxes-type">
+      <img
+        key={name}
+        src={image}
+        className={classNames(`checkboxes-image ${name}`, { 'checkboxes-image--selected': bool[name] })}
+        alt={name}
+        onClick={handleSelect}
+        onMouseOver={mouseInOut}
+        onMouseOut={mouseInOut}
+      />
+      {isTypeOver && <span className="checkboxes-type-name">{name}</span>}
+    </div>
   );
 };
 

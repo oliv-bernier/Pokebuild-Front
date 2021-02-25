@@ -99,7 +99,7 @@ const reducer = (state = initialState, action = {}) => {
     case ANALYZE_TEAM:
       return {
         ...state,
-        pokemonSelected: action.team,
+        pokemonSelected: [...action.team],
       };
     default:
       return state;

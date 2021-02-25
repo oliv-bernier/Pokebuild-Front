@@ -12,6 +12,7 @@ const Favorites = ({
   isConfirmDelete,
   deleteTeam,
   fetchFav,
+  analyzeTeam,
 }: {
   isDrawer: Boolean,
   toggleFav: Function,
@@ -20,6 +21,7 @@ const Favorites = ({
   isConfirmDelete: Boolean,
   deleteTeam: Function,
   fetchFav: Function,
+  analyzeTeam: Function,
 }) => {
   const [isAnimation, setIsAnimation] = useState(false);
 
@@ -40,12 +42,13 @@ const Favorites = ({
     }, 250);
   };
 
-  const handleAnalyze = () => {
-    setIsAnimation(true);
-    setTimeout(() => {
-      toggleFav();
-    }, 250);
-  };
+  // const handleAnalyze = () => {
+  //   analyzeTeam();
+  //   setIsAnimation(true);
+  //   setTimeout(() => {
+  //     toggleFav();
+  //   }, 250);
+  // };
 
   return (
     <div className={classNames('favorites', { 'favorites_drawer-open': isDrawer }, { 'favorites--animation': isAnimation })}>
@@ -58,7 +61,7 @@ const Favorites = ({
               <div className="favorites-content-team-infos">
                 <p key={team.name} className="favorites-content-team-title">{team.name}</p>
                 <div className="favories-content-team-infos-buttons">
-                  <button type="button" className="favorites-content-team-infos-button" onClick={handleAnalyze}>Analyser</button>
+                  <button type="button" className="favorites-content-team-infos-button" onClick={() => analyzeTeam(team)}>Analyser</button>
                   <button type="button" className="favorites-content-team-infos-button" onClick={() => toggleConfirmDelete(team.id)}>Supprimer</button>
                 </div>
               </div>
@@ -96,6 +99,7 @@ Favorites.propTypes = {
   isConfirmDelete: PropTypes.bool.isRequired,
   deleteTeam: PropTypes.func.isRequired,
   fetchFav: PropTypes.func.isRequired,
+  analyzeTeam: PropTypes.func.isRequired,
 };
 
 export default Favorites;

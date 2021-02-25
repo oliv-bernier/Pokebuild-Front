@@ -1,3 +1,5 @@
+@use '../../styles/vars';
+
 .checkboxes {
   display: flex;
   flex-wrap: wrap;
@@ -40,5 +42,21 @@
 
   &-image:hover {
     filter: none;
+  }
+
+  &-type {
+    position: relative;
+
+    &-name {
+        position: absolute;
+        background-color: vars.$color-background-scaled;
+        color: vars.$color-background;
+        padding: 0.2rem 0.3rem;
+        font-size: 0.7rem;
+        border-radius: 5px;
+        top: -13px;
+        left: 5px;
+        z-index: 1;
+    }
   }
 }
