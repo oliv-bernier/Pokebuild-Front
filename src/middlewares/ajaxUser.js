@@ -7,9 +7,7 @@ import {
   CREATE_USER,
   UPDATE_USER,
   memorizeUser,
-  addErrorLogin,
   addError,
-  FETCH_FAV,
   clearPassword,
 } from '../actions/user';
 
