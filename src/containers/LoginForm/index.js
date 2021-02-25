@@ -3,11 +3,11 @@ import LoginForm from '../../components/LoginForm';
 
 import {
   createUser,
-  changeLoginInput,
-  changeCreateInput,
+  changeInput,
   loginUser,
   addErrorLogin,
   addErrorCreate,
+  addError,
 } from '../../actions/user';
 
 const mapStateToProps = (state) => ({
@@ -26,10 +26,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(createUser());
   },
   changeField: (newValue, key) => {
-    dispatch(changeLoginInput(newValue, key));
-  },
-  changeCreate: (newValue, key) => {
-    dispatch(changeCreateInput(newValue, key));
+    dispatch(changeInput(newValue, key));
   },
   loginUser: () => {
     dispatch(loginUser());
@@ -39,6 +36,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   addErrorCreate: () => {
     dispatch(addErrorCreate());
+  },
+  addError: (error) => {
+    dispatch(addError(error));
   },
 });
 

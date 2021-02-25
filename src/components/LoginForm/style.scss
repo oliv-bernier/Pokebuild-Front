@@ -38,7 +38,7 @@
       @media (min-width:768px) {
         width: 60vw;
         padding: vars.$gutter;
-        top: -60px;
+        top: -75px;
       }
   
       @media (min-width:1400px) {
@@ -60,6 +60,7 @@
     background-color: vars.$color-background-stat;
     border-radius: 5px;
     padding: (vars.$gutter * 2);
+    padding-bottom: vars.$gutter;
     width: 80vw;
     box-shadow: 1px 1px 4px 0px vars.$color-background-barre;
 
@@ -69,6 +70,20 @@
 
     @media (min-width:1400px) {
       width: 20vw;
+    }
+
+    &_aside {
+      color: vars.$color-background-scaled;
+      margin-bottom: 15px;
+      font-size: 0.5rem;
+
+      @media (min-width:768px) {
+        font-size: 0.6rem;
+      }
+
+      @media (min-width:1400px) {
+        font-size: 0.7rem;
+      }
     }
 
     &-field {
@@ -87,6 +102,7 @@
       color: vars.$color-background-scaled;
       background-color: vars.$color-background;
       border: 1px solid vars.$color-background-scaled;
+      margin-bottom: vars.$gutter;
     }
 
     &-close {

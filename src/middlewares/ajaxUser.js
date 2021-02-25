@@ -5,12 +5,14 @@ import {
   LOGIN_USER,
   LOGOUT_USER,
   CREATE_USER,
+  UPDATE_USER,
   memorizeUser,
-  addErrorLogin,
+  addError,
   FETCH_FAV,
+  clearPassword,
 } from '../actions/user';
 
-import { toggleLogged } from '../actions/boolean';
+import { toggleLogged, toggleUpdate } from '../actions/boolean';
 
 const ajaxUser = (store) => (next) => (action) => {
   if (localStorage.getItem('user') !== null) {
@@ -27,19 +29,18 @@ const ajaxUser = (store) => (next) => (action) => {
       })
         .then((response) => {
           const user = response.data;
-          store.dispatch(memorizeUser(user.username));
-          axios.defaults.headers.common.Authorization = `bearer ${user.token}`;
-          localStorage.setItem('user', JSON.stringify(user));
+          const { username: name, token } = user;
           store.dispatch(toggleLogged());
-          const { username: name, token } = response.data;
-          console.log(token);
           store.dispatch(memorizeUser(name, token));
           axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-          localStorage.setItem('user', JSON.stringify(response.data));
+          localStorage.setItem('user', JSON.stringify(user));
         })
         .catch((error) => {
           console.error(error);
-          store.dispatch(addErrorLogin());
+          store.dispatch(addError('Nom de dresseur ou mot de passe incorrect'));
+          setTimeout(() => {
+            store.dispatch(clearPassword());
+          }, 10);
         });
     }
       break;
@@ -65,6 +66,35 @@ const ajaxUser = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.error(error);
+          store.dispatch(addError('Les informations saisies sont incorrect. Merci de réessayer'));
+          setTimeout(() => {
+            store.dispatch(clearPassword());
+          }, 500);
+        });
+    }
+      break;
+    case UPDATE_USER: {
+      const {
+        pseudo: username,
+        password,
+        passwordConfirm,
+        passwordUpdate,
+        email,
+      } = store.getState().user;
+      axios.post('admin/user/edit', {
+        username,
+        password,
+        newPassword: passwordUpdate,
+        newPasswordConfirm: passwordConfirm,
+        email,
+      })
+        .then((response) => {
+          console.log(response);
+          store.dispatch(toggleUpdate());
+        })
+        .catch((error) => {
+          console.error(error);
+          store.dispatch(addError('Les informations saisies sont incorrect. Merci de réessayer'));
         });
     }
       break;

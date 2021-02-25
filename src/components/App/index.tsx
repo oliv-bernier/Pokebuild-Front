@@ -13,6 +13,7 @@ import Drawer from '../../containers/Drawer';
 import LoginForm from '../../containers/LoginForm';
 import Pokestat from '../../containers/Pokestat';
 import Favorites from '../../containers/Favorites';
+import UserUpdate from '../../containers/UserUpdate';
 
 import './style.scss';
 
@@ -21,12 +22,14 @@ const App = ({
   isDrawer,
   isLogged,
   isLogin,
+  isUpdate,
   getPokemon,
   getTypes,
   getUser,
   toggleLogin,
   toggleCreate,
   toggleLogged,
+  toggleUpdate,
   pseudo,
   logout,
   toggleFav,
@@ -37,17 +40,19 @@ const App = ({
     isDrawer: boolean,
     isLogged: boolean,
     isLogin: boolean,
+    isFav: boolean,
+    isUpdate: boolean,
     getPokemon: Function,
     getTypes:Function,
     getUser: Function,
     toggleLogin: Function,
     toggleCreate: Function,
     toggleLogged: Function,
-    pseudo: string,
+    toggleUpdate: Function,
     logout: Function,
     toggleFav: Function,
-    isFav: Boolean,
     fetchFav: Function,
+    pseudo: string,
   }) => {
   useEffect(() => {
     getPokemon();
@@ -71,6 +76,7 @@ const App = ({
         toggleLogged={toggleLogged}
         toggleFav={toggleFav}
         fetchFav={fetchFav}
+        toggleUpdate={toggleUpdate}
       />
       <div className={classNames('container', { 'container_drawer-open': isDrawer })}>
         {isLogin && (
@@ -80,6 +86,7 @@ const App = ({
             toggleLogged={toggleLogged}
           />
         )}
+        {isUpdate && <UserUpdate />}
         {isFav && <Favorites />}
         <Switch>
           <Route path="/" exact>
@@ -108,17 +115,19 @@ App.propTypes = {
   isLogged: PropTypes.bool.isRequired,
   isLogin: PropTypes.bool.isRequired,
   isDrawer: PropTypes.bool.isRequired,
+  isFav: PropTypes.bool.isRequired,
+  isUpdate: PropTypes.bool.isRequired,
   getPokemon: PropTypes.func.isRequired,
   getTypes: PropTypes.func.isRequired,
   getUser: PropTypes.func.isRequired,
   toggleLogin: PropTypes.func.isRequired,
   toggleCreate: PropTypes.func.isRequired,
   toggleLogged: PropTypes.func.isRequired,
-  pseudo: PropTypes.string.isRequired,
+  toggleUpdate: PropTypes.func.isRequired,
   logout: PropTypes.func.isRequired,
   toggleFav: PropTypes.func.isRequired,
-  isFav: PropTypes.bool.isRequired,
   fetchFav: PropTypes.func.isRequired,
+  pseudo: PropTypes.string.isRequired,
 };
 
 export default App;
