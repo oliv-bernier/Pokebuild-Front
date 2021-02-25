@@ -24,6 +24,7 @@ const initialState = {
   isFav: false,
   isInputFav: false,
   isConfirmDelete: false,
+  isDelete: false,
   isUpdate: false,
 };
 
@@ -89,7 +90,7 @@ const reducer = (state = initialState, action = {}) => {
     case TOGGLE_DELETE:
       return {
         ...state,
-        isConfirmDelete: !state.isConfirmDelete,
+        isDelete: !state.isDelete,
       };
     default:
       return state;

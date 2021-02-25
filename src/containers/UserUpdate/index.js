@@ -16,7 +16,7 @@ import {
 
 const mapStateToProps = (state) => ({
   isDrawer: state.boolean.isDrawer,
-  isDelete: state.boolean.isConfirmDelete,
+  isDelete: state.boolean.isDelete,
   email: state.user.email,
   password: state.user.password,
   passwordUpdate: state.user.passwordUpdate,

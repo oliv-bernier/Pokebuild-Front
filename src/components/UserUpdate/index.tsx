@@ -89,12 +89,12 @@ const UserUpdate = ({
 
   const handleDelete = () => {
     deleteUser();
-    setTimeout(() => {
-      toggleDelete();
-    }, 150);
-    setTimeout(() => {
-      logout();
-    }, 250);
+    // setTimeout(() => {
+    //   toggleDelete();
+    // }, 150);
+    // setTimeout(() => {
+    //   logout();
+    // }, 250);
   };
 
   return (
@@ -281,7 +281,7 @@ const UserUpdate = ({
       {isDelete && (
       <div className="favorites-confirm-delete">
         <div className="favorites-confirm-delete-content">
-          <p className="favorites-confirm-delete-content-answer">Êtes vous-sûr de supprimer cette équipe ?</p>
+          <p className="favorites-confirm-delete-content-answer">Êtes vous-sûr de supprimer votre compte ?</p>
           <div className="favorites-confirm-delete-content-buttons">
             <button type="button" className="favorites-content-team-infos-button" onClick={handleDelete}>Oui</button>
             <button type="button" className="favorites-content-team-infos-button" onClick={() => toggleDelete()}>Non</button>

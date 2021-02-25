@@ -10,6 +10,7 @@ import {
   memorizeUser,
   addError,
   clearLog,
+  logout,
 } from '../actions/user';
 
 import {
@@ -118,8 +119,20 @@ const ajaxUser = (store) => (next) => (action) => {
     }
       break;
     case DELETE_USER:
-      console.log('je veux delete mon user');
-      store.dispatch(toggleDelete());
+      axios.post('admin/user/delete', {
+        username: store.getState().user.pseudo,
+      })
+        .then(() => {
+          store.dispatch(toggleDelete());
+          setTimeout(() => {
+            store.dispatch(toggleUpdate());
+            store.dispatch(logout());
+            store.dispatch(toggleLogged());
+          }, 100);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
       break;
     case FETCH_FAV: {
       const {
