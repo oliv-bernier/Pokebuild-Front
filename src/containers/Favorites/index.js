@@ -8,7 +8,7 @@ import { toggleConfirmDelete, deleteTeam, fetchFav } from '../../actions/favorit
 const mapStateToProps = (state) => ({
   isDrawer: state.boolean.isDrawer,
   teams: state.favorites.teams,
-  isConfirmDelete: state.favorites.isConfirmDelete,
+  isConfirmDelete: state.boolean.isConfirmDelete,
 });
 
 const mapDispatchToProps = (dispatch) => ({

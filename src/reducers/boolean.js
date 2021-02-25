@@ -9,6 +9,8 @@ import {
   TOGGLE_INPUT_FAV,
 } from '../actions/boolean';
 
+import { TOGGLE_CONFIRM_DELETE } from '../actions/favorites';
+
 import { GET_USER } from '../actions/user';
 
 const initialState = {
@@ -70,6 +72,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isInputFav: !state.isInputFav,
+      };
+    case TOGGLE_CONFIRM_DELETE:
+      return {
+        ...state,
+        isConfirmDelete: !state.isConfirmDelete,
       };
     default:
       return state;

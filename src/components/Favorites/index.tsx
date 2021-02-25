@@ -33,9 +33,11 @@ const Favorites = ({
   const handleDelete = () => {
     deleteTeam();
     setTimeout(() => {
-      fetchFav();
       toggleConfirmDelete('');
     }, 150);
+    setTimeout(() => {
+      fetchFav();
+    }, 250);
   };
 
   const handleAnalyze = () => {

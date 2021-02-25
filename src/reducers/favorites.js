@@ -9,7 +9,6 @@ const initialState = {
   name: '',
   teams: [],
   id: '',
-  isConfirmDelete: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -27,7 +26,6 @@ const reducer = (state = initialState, action = {}) => {
     case TOGGLE_CONFIRM_DELETE:
       return {
         ...state,
-        isConfirmDelete: !state.isConfirmDelete,
         id: action.id,
       };
     case DELETE_TEAM:
