@@ -17,7 +17,6 @@ const UserUpdate = ({
   changeInput,
   updateUser,
   deleteUser,
-  logout,
   addError,
   isDrawer,
   isDelete,
@@ -32,7 +31,6 @@ const UserUpdate = ({
   changeInput: Function,
   updateUser: Function,
   deleteUser: Function,
-  logout: Function,
   addError: Function,
   isDrawer: boolean,
   isDelete: boolean,
@@ -89,12 +87,6 @@ const UserUpdate = ({
 
   const handleDelete = () => {
     deleteUser();
-    // setTimeout(() => {
-    //   toggleDelete();
-    // }, 150);
-    // setTimeout(() => {
-    //   logout();
-    // }, 250);
   };
 
   return (
@@ -304,7 +296,6 @@ UserUpdate.propTypes = {
   changeInput: PropTypes.func.isRequired,
   updateUser: PropTypes.func.isRequired,
   deleteUser: PropTypes.func.isRequired,
-  logout: PropTypes.func.isRequired,
   addError: PropTypes.func.isRequired,
   isDrawer: PropTypes.bool.isRequired,
   isDelete: PropTypes.bool.isRequired,
