@@ -1,3 +1,4 @@
+import { ANALYZE_TEAM } from '../actions/favorites';
 import {
   POKEMON_DETAILS,
   INPUT_SEARCH,
@@ -94,6 +95,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         pokemonSelected: [],
         pokemonSelectedIds: [],
+      };
+    case ANALYZE_TEAM:
+      return {
+        ...state,
+        pokemonSelected: action.team,
       };
     default:
       return state;

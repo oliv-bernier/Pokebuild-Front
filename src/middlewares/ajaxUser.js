@@ -7,10 +7,18 @@ import {
   CREATE_USER,
   UPDATE_USER,
   memorizeUser,
+  addErrorLogin,
   addError,
   FETCH_FAV,
   clearPassword,
 } from '../actions/user';
+
+import {
+  DELETE_TEAM,
+  FETCH_FAV,
+  memorizeTeams,
+  SAVE_TEAM,
+} from '../actions/favorites';
 
 import { toggleLogged, toggleUpdate } from '../actions/boolean';
 
@@ -107,6 +115,56 @@ const ajaxUser = (store) => (next) => (action) => {
       })
         .then((response) => {
           console.log(response);
+          store.dispatch(memorizeTeams(response.data.apiTeams));
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+      break;
+    case SAVE_TEAM: {
+      const {
+        name,
+      } = store.getState().favorites;
+      const {
+        pseudo,
+      } = store.getState().user;
+      const {
+        pokemonSelectedIds,
+      } = store.getState().pokemon;
+      axios.post('admin/team/creation', {
+        name,
+        username: pseudo,
+        pokemon: pokemonSelectedIds,
+      })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+      break;
+    case DELETE_TEAM: {
+      const {
+        id,
+      } = store.getState().favorites;
+      axios.post(`admin/team/delete/${id}`)
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+      const {
+        pseudo,
+      } = store.getState().user;
+      axios.post('admin/user/read', {
+        username: pseudo,
+      })
+        .then((response) => {
+          console.log(response);
+          store.dispatch(memorizeTeams(response.data.apiTeams));
         })
         .catch((error) => {
           console.error(error);

@@ -5,6 +5,7 @@ import booleanReducer from './boolean';
 import typesReducer from './types';
 import resistanceReducer from './teamResistances';
 import userReducer from './user';
+import favoritesReducer from './favorites';
 
 const rootReducer = combineReducers({
   pokemon: pokemonReducer,
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   types: typesReducer,
   resistances: resistanceReducer,
   user: userReducer,
+  favorites: favoritesReducer,
 });
 
 export default rootReducer;

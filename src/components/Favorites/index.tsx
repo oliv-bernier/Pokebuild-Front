@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -7,9 +7,19 @@ import './style.scss';
 const Favorites = ({
   isDrawer,
   toggleFav,
+  teams,
+  toggleConfirmDelete,
+  isConfirmDelete,
+  deleteTeam,
+  fetchFav,
 }: {
   isDrawer: Boolean,
   toggleFav: Function,
+  teams: Array<any>,
+  toggleConfirmDelete: Function,
+  isConfirmDelete: Boolean,
+  deleteTeam: Function,
+  fetchFav: Function,
 }) => {
   const [isAnimation, setIsAnimation] = useState(false);
 
@@ -20,16 +30,63 @@ const Favorites = ({
     }, 250);
   };
 
+  const handleDelete = () => {
+    deleteTeam();
+    setTimeout(() => {
+      toggleConfirmDelete('');
+    }, 150);
+    setTimeout(() => {
+      fetchFav();
+    }, 250);
+  };
+
+  const handleAnalyze = () => {
+    setIsAnimation(true);
+    setTimeout(() => {
+      toggleFav();
+    }, 250);
+  };
+
+  // useEffect(() => {
+  //   fetchFav();
+  // }, [isConfirmDelete]);
+
   return (
     <div className={classNames('favorites', { 'favorites_drawer-open': isDrawer }, { 'favorites--animation': isAnimation })}>
       <div className="favorites-content">
         <button type="button" className="favorites-content-close" onClick={handleClose}>X</button>
         <h1 className="favorites-content-title">Équipes favorites</h1>
-        <div className="favorites-content-team">
-          <p className="favorites-content-team-title">Team number</p>
-          <button type="button" className="favorites-content-team-analyse">Analyser</button>
-          <button type="button" className="favorites-content-team-delete">Supprimer</button>
-          <div className="favorites-content-team-pokemon">coucou</div>
+        <div className="favorites-user">
+          {teams.map((team) => (
+            <div className="favorites-content-team">
+              <div className="favorites-content-team-infos">
+                <p key={team.name} className="favorites-content-team-title">{team.name}</p>
+                <div className="favories-content-team-infos-buttons">
+                  <button type="button" className="favorites-content-team-infos-button" onClick={handleAnalyze}>Analyser</button>
+                  <button type="button" className="favorites-content-team-infos-button" onClick={() => toggleConfirmDelete(team.id)}>Supprimer</button>
+                </div>
+              </div>
+              <div className="favorites-content-team-pokemon">
+                {team.pokemon.map((poke) => (
+                  <div className="favorites-content-team-pokemon-div">
+                    <img className="favorites-content-team-pokemon-div-sprite" src={poke.sprite} alt={poke.name} />
+                    <p className="favorites-content-team-pokemon-div-name">{poke.name}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+          {isConfirmDelete && (
+            <div className="favorites-confirm-delete">
+              <div className="favorites-confirm-delete-content">
+                <p className="favorites-confirm-delete-content-answer">Êtes vous-sûr de supprimer cette équipe ?</p>
+                <div className="favorites-confirm-delete-content-buttons">
+                  <button type="button" className="favorites-content-team-infos-button" onClick={handleDelete}>Oui</button>
+                  <button type="button" className="favorites-content-team-infos-button" onClick={() => toggleConfirmDelete('')}>Non</button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -38,6 +95,11 @@ const Favorites = ({
 
 Favorites.propTypes = {
   isDrawer: PropTypes.bool.isRequired,
+  teams: PropTypes.array.isRequired,
+  toggleConfirmDelete: PropTypes.func.isRequired,
+  isConfirmDelete: PropTypes.bool.isRequired,
+  deleteTeam: PropTypes.func.isRequired,
+  fetchFav: PropTypes.func.isRequired,
 };
 
 export default Favorites;
