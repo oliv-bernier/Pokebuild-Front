@@ -1,8 +1,14 @@
-import { MEMORIZE_TEAMS, CHANGE_NAME_INPUT } from '../actions/favorites';
+import {
+  MEMORIZE_TEAMS,
+  CHANGE_NAME_INPUT,
+  TOGGLE_CONFIRM_DELETE,
+} from '../actions/favorites';
 
 const initialState = {
   name: '',
   teams: [],
+  id: '',
+  isConfirmDelete: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -16,6 +22,12 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         [action.key]: action.newValue,
+      };
+    case TOGGLE_CONFIRM_DELETE:
+      return {
+        ...state,
+        isConfirmDelete: !state.isConfirmDelete,
+        id: action.id,
       };
     default:
       return state;

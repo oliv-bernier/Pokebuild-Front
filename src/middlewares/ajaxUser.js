@@ -9,7 +9,12 @@ import {
   addErrorLogin,
 } from '../actions/user';
 
-import { FETCH_FAV, memorizeTeams, SAVE_TEAM } from '../actions/favorites';
+import {
+  DELETE_TEAM,
+  FETCH_FAV,
+  memorizeTeams,
+  SAVE_TEAM,
+} from '../actions/favorites';
 
 import { toggleLogged } from '../actions/boolean';
 
@@ -96,6 +101,19 @@ const ajaxUser = (store) => (next) => (action) => {
         username: pseudo,
         pokemon: pokemonSelectedIds,
       })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+      break;
+    case DELETE_TEAM: {
+      const {
+        id,
+      } = store.getState().favorites;
+      axios.post(`admin/team/delete/${id}`)
         .then((response) => {
           console.log(response);
         })

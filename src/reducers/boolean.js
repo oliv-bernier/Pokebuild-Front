@@ -19,6 +19,7 @@ const initialState = {
   isCreate: false,
   isFav: false,
   isInputFav: false,
+  isConfirmDelete: false,
 };
 
 const reducer = (state = initialState, action = {}) => {

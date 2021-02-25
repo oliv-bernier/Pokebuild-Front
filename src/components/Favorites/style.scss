@@ -202,4 +202,41 @@
       border: 1px solid vars.$color-background;
     }
   }
+
+  &-confirm-delete {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+
+    &-content {
+      position: sticky;
+      width: 80%;
+      padding: 5rem 3rem;
+      border-radius: 5px;
+      box-shadow: 1px 1px 4px 1px vars.$color-background;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: vars.$color-background-scaled;
+
+      &-answer {
+        color: vars.$color-background;
+        font-weight: bold;
+      }
+
+      &-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
 }

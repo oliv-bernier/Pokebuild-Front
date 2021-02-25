@@ -20,3 +20,14 @@ export const changeNameInput = (newValue, key) => ({
   newValue,
   key,
 });
+
+export const DELETE_TEAM = 'DELETE_TEAM';
+export const deleteTeam = () => ({
+  type: DELETE_TEAM,
+});
+
+export const TOGGLE_CONFIRM_DELETE = 'TOGGLE_CONFIRM_DELETE';
+export const toggleConfirmDelete = (id) => ({
+  type: TOGGLE_CONFIRM_DELETE,
+  id,
+});
