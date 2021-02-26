@@ -7,7 +7,12 @@ import {
   CLEAR_LOG,
 } from '../actions/user';
 
-import { TOGGLE_LOGIN, TOGGLE_UPDATE } from '../actions/boolean';
+import {
+  TOGGLE_LOGIN,
+  TOGGLE_UPDATE,
+  TOGGLE_DELETE,
+  TOGGLE_CREATE,
+} from '../actions/boolean';
 
 const initialState = {
   username: '',
@@ -76,6 +81,17 @@ const reducer = (state = initialState, action = {}) => {
         email: '',
         passwordUpdate: '',
         passwordConfirm: '',
+        error: '',
+      };
+    case TOGGLE_DELETE:
+      return {
+        ...state,
+        password: '',
+        error: '',
+      };
+    case TOGGLE_CREATE:
+      return {
+        ...state,
         error: '',
       };
     case ADD_ERROR:

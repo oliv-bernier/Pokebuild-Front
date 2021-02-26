@@ -30,7 +30,6 @@
     padding: vars.$gutter (vars.$gutter * 2);
     width: 80vw;
     box-shadow: 1px 1px 4px 0px vars.$color-background-barre;
-    // animation: fadeIn 0.5s 1;
 
     @media (min-width:768px) {
       width: 60vw;
@@ -80,4 +79,36 @@
     right: 5px;
     top: 5px;
   }
+}
+
+.confirmation {
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  &-answer {
+    margin-top: (vars.$gutter / 2);
+    margin-bottom: vars.$gutter;
+    color: vars.$color-background;
+    font-weight: bold;
+  }
+
+  &-error {
+
+    &_displayed {
+
+      @media (min-width:768px) {
+        right: 80px;
+      }
+  
+      @media (min-width:1400px) {
+        right: 30vw;
+      }
+    }
+  }
+}
+
+.return {
+  left: 5px;
 }

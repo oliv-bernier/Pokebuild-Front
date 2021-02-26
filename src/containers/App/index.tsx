@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import App from '../../components/App/index.tsx';
+import App from '../../components/App';
 
 import {
   toggleDetails,
@@ -21,7 +21,7 @@ import {
   getTypes,
 } from '../../actions/pokemon';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
   isDetails: state.boolean.isDetails,
   isDrawer: state.boolean.isDrawer,
   isLogged: state.boolean.isLogged,
@@ -31,7 +31,7 @@ const mapStateToProps = (state) => ({
   isUpdate: state.boolean.isUpdate,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch: Function) => ({
   toggleDetails: () => {
     dispatch(toggleDetails());
   },

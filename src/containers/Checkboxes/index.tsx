@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import Checkboxes from '../../components/Checkboxes/index.tsx';
+import Checkboxes from '../../components/Checkboxes';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
   types: state.pokemon.types,
   typesBool: state.types,
 });

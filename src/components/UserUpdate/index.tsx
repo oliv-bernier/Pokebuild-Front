@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import LoginField from '../LoginForm/LoginField';
+import ConfirmDelete from './ConfirmDelete';
+import Email from './Email';
+import Password from './Password';
+import Total from './Total';
 
 import './style.scss';
 
@@ -14,12 +18,14 @@ const UserUpdate = ({
   error,
   toggleUpdate,
   toggleDelete,
+  toggleConfirm,
   changeInput,
   updateUser,
   deleteUser,
   addError,
   isDrawer,
   isDelete,
+  isConfirm,
 }: {
   email: string,
   password: string,
@@ -28,12 +34,14 @@ const UserUpdate = ({
   error: string,
   toggleUpdate: Function,
   toggleDelete: Function,
+  toggleConfirm: Function,
   changeInput: Function,
   updateUser: Function,
   deleteUser: Function,
   addError: Function,
   isDrawer: boolean,
   isDelete: boolean,
+  isConfirm: boolean,
 }) => {
   const [isAnimation, setIsAnimation] = useState(false);
   const [isEmail, setIsEmail] = useState(false);
@@ -83,10 +91,6 @@ const UserUpdate = ({
     else {
       updateUser();
     }
-  };
-
-  const handleDelete = () => {
-    deleteUser();
   };
 
   return (
@@ -141,145 +145,52 @@ const UserUpdate = ({
       </div>
       )}
       {isEmail && !isPassword && (
-        <form action="" className="update-form">
-          <h2 className="update-form-title">Modification de mon adresse E-mail</h2>
-          <button
-            type="button"
-            className="update-close"
-            onClick={handleClose}
-          >
-            X
-          </button>
-          <LoginField
-            name="password"
-            type="password"
-            placeholder="Votre mot de passe actuel"
-            value={password}
-            onChange={changeInput}
-          />
-          <LoginField
-            name="email"
-            type="email"
-            placeholder="Nouvelle Email"
-            value={email}
-            onChange={changeInput}
-          />
-          <button
-            className="login-form-button"
-            type="submit"
-            onClick={handleSendMail}
-          >
-            Envoyer
-          </button>
-          <p className={classNames('login-error', { 'login-error_displayed': error !== '' })}>{error}</p>
-        </form>
+        <Email
+          email={email}
+          password={password}
+          error={error}
+          handleClose={handleClose}
+          handleSendMail={handleSendMail}
+          changeInput={changeInput}
+          setIsEmail={setIsEmail}
+        />
       )}
       {isPassword && !isEmail && (
-        <form action="" className="update-form">
-          <h2 className="update-form-title">Modification de mon mot de passe</h2>
-          <button
-            type="button"
-            className="update-close"
-            onClick={handleClose}
-          >
-            X
-          </button>
-          <LoginField
-            name="password"
-            type="password"
-            placeholder="Votre mot de passe actuel"
-            value={password}
-            onChange={changeInput}
-          />
-          <LoginField
-            name="passwordUpdate"
-            type="password"
-            placeholder="Nouveau mot de passe"
-            value={passwordUpdate}
-            onChange={changeInput}
-          />
-          <LoginField
-            name="passwordConfirm"
-            type="password"
-            placeholder="Confirmer mot de passe"
-            value={passwordConfirm}
-            onChange={changeInput}
-          />
-          <aside className="update_aside">
-            (le mot de passe doit contenir 8 caractères dont 1 majuscule,
-            1 minuscule, un chiffre et un caractère spéciale)
-          </aside>
-          <button
-            className="login-form-button"
-            type="submit"
-            onClick={handleSendPassword}
-          >
-            Envoyer
-          </button>
-          <p className={classNames('login-error', { 'login-error_displayed': error !== '' })}>{error}</p>
-        </form>
+        <Password
+          password={password}
+          passwordUpdate={passwordUpdate}
+          passwordConfirm={passwordConfirm}
+          error={error}
+          handleClose={handleClose}
+          handleSendPassword={handleSendPassword}
+          changeInput={changeInput}
+          setIsPassword={setIsPassword}
+        />
       )}
       {(isEmail && isPassword) && (
-      <form action="" className="update-form">
-        <button
-          type="button"
-          className="update-close"
-          onClick={handleClose}
-        >
-          X
-        </button>
-        <LoginField
-          name="password"
-          type="password"
-          placeholder="Votre mot de passe actuel"
-          value={password}
-          onChange={changeInput}
+        <Total
+          email={email}
+          password={password}
+          passwordUpdate={passwordUpdate}
+          passwordConfirm={passwordConfirm}
+          error={error}
+          handleClose={handleClose}
+          handleSend={handleSend}
+          changeInput={changeInput}
+          setIsEmail={setIsEmail}
+          setIsPassword={setIsPassword}
         />
-        <LoginField
-          name="email"
-          type="email"
-          placeholder="Nouvelle Email"
-          value={email}
-          onChange={changeInput}
-        />
-        <LoginField
-          name="passwordUpdate"
-          type="password"
-          placeholder="Nouveau mot de passe"
-          value={passwordUpdate}
-          onChange={changeInput}
-        />
-        <LoginField
-          name="passwordConfirm"
-          type="password"
-          placeholder="Confirmer mot de passe"
-          value={passwordConfirm}
-          onChange={changeInput}
-        />
-        <aside className="update_aside">
-          (le mot de passe doit contenir 8 caractères dont 1 majuscule,
-          1 minuscule, un chiffre et un caractère spéciale)
-        </aside>
-        <button
-          className="login-form-button"
-          type="submit"
-          onClick={handleSend}
-        >
-          Envoyer
-        </button>
-        <p className={classNames('login-error', { 'login-error_displayed': error !== '' })}>{error}</p>
-      </form>
       )}
       {isDelete && (
-      <div className="favorites-confirm-delete">
-        <div className="favorites-confirm-delete-content">
-          <p className="favorites-confirm-delete-content-answer">Êtes vous-sûr de supprimer votre compte ?</p>
-          <div className="favorites-confirm-delete-content-buttons">
-            <button type="button" className="favorites-content-team-infos-button" onClick={handleDelete}>Oui</button>
-            <button type="button" className="favorites-content-team-infos-button" onClick={() => toggleDelete()}>Non</button>
-          </div>
-        </div>
-      </div>
+        <ConfirmDelete
+          password={password}
+          error={error}
+          isConfirm={isConfirm}
+          changeInput={changeInput}
+          toggleConfirm={toggleConfirm}
+          toggleDelete={toggleDelete}
+          deleteUser={deleteUser}
+        />
       )}
     </div>
   );
@@ -293,12 +204,14 @@ UserUpdate.propTypes = {
   error: PropTypes.string.isRequired,
   toggleUpdate: PropTypes.func.isRequired,
   toggleDelete: PropTypes.func.isRequired,
+  toggleConfirm: PropTypes.func.isRequired,
   changeInput: PropTypes.func.isRequired,
   updateUser: PropTypes.func.isRequired,
   deleteUser: PropTypes.func.isRequired,
   addError: PropTypes.func.isRequired,
   isDrawer: PropTypes.bool.isRequired,
   isDelete: PropTypes.bool.isRequired,
+  isConfirm: PropTypes.bool.isRequired,
 };
 
 export default UserUpdate;

@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
-import SearchInput from '../../components/SearchInput/index.tsx';
+import SearchInput from '../../components/SearchInput';
 import { inputSearch, deleteSearchInput } from '../../actions/pokemon';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
   value: state.pokemon.searchInput,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  inputSearch: (value) => {
+const mapDispatchToProps = (dispatch: Function) => ({
+  inputSearch: (value: string) => {
     dispatch(inputSearch(value));
   },
   deleteInput: () => {

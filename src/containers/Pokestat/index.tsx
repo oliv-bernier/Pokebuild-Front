@@ -1,25 +1,25 @@
 import { connect } from 'react-redux';
-import Pokestat from '../../components/Pokestat/index.tsx';
+import Pokestat from '../../components/Pokestat';
 
 import { toggleDetails } from '../../actions/boolean';
-import { addSelectedPokemon, addFilterTypes, sendTeam } from '../../actions/pokemon';
+import { addSelectedPokemon, addFilterTypes } from '../../actions/pokemon';
 import { switchFilter } from '../../actions/types';
 
-const mapStateToProp = (state) => ({
+const mapStateToProp = (state: any) => ({
   pokemon: state.pokemon.pokedetails,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch: Function) => ({
   toggleDetails: () => {
     dispatch(toggleDetails());
   },
-  addPokemon: (id) => {
+  addPokemon: (id: number) => {
     dispatch(addSelectedPokemon(id));
   },
-  addFilterTypes: (type) => {
+  addFilterTypes: (type: string) => {
     dispatch(addFilterTypes(type));
   },
-  switchFilter: (value, key) => {
+  switchFilter: (value: string, key: string) => {
     dispatch(switchFilter(value, key));
   },
 });

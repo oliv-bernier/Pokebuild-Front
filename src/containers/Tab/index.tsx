@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import Tab from '../../components/Tab/index.tsx';
+import Tab from '../../components/Tab';
 
-const mapStateToProp = (state) => ({
+const mapStateToProp = (state: any) => ({
   types: state.pokemon.types,
   pokemonSelected: state.pokemon.pokemonSelected,
   teamResistances: state.resistances,
