@@ -5,7 +5,7 @@ const about = [
     pseudo: 'Patatraque',
     dev: 'Back End',
     role: 'Scrum Master & Git Master',
-    image: 'https://cdn.pixabay.com/photo/2020/12/16/15/24/aang-5836896_960_720.jpg',
+    image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/498.png',
     social: [
       {
         network: 'github',
@@ -25,18 +25,18 @@ const about = [
     pseudo: 'Boom',
     dev: 'Back End',
     role: 'Lead dev Back',
-    image: 'https://cdn.pixabay.com/photo/2020/12/16/15/24/aang-5836896_960_720.jpg',
+    image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/850.png',
     social: [
       {
         network: 'github',
         link: 'https://github.com/Geoffrey-Cauchois',
         logo: 'fab fa-github',
       },
-      // {
-      //   network: 'linkedin',
-      //   link: '',
-      //   logo: 'fab fa-linkedin',
-      // },
+      {
+        network: 'linkedin',
+        link: 'https://www.linkedin.com/in/geoffrey-cauchois/',
+        logo: 'fab fa-linkedin',
+      },
     ],
   },
   {
@@ -45,7 +45,7 @@ const about = [
     pseudo: 'Tagada',
     dev: 'Front End',
     role: 'Product Owner',
-    image: 'https://i.ibb.co/K776zNg/avatar-olivier.jpg',
+    image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png',
     social: [
       {
         network: 'github',
@@ -65,7 +65,7 @@ const about = [
     pseudo: 'Elasnael',
     dev: 'Front End',
     role: 'Lead dev Front',
-    image: 'https://avatarfiles.alphacoders.com/231/thumb-1920-231616.png',
+    image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/197.png',
     social: [
       {
         network: 'github',
