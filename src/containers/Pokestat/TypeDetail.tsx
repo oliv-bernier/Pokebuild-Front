@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import TypeDetail from '../../components/Pokestat/TypeDetail';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
   bool: state.types,
 });
 

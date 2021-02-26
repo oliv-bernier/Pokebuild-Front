@@ -15,7 +15,7 @@ import {
   logout,
 } from '../../actions/user';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
   isDrawer: state.boolean.isDrawer,
   isDelete: state.boolean.isDelete,
   isConfirm: state.boolean.isDeletePassword,
@@ -26,7 +26,7 @@ const mapStateToProps = (state) => ({
   error: state.user.error,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch: Function) => ({
   toggleUpdate: () => {
     dispatch(toggleUpdate());
   },
@@ -36,7 +36,7 @@ const mapDispatchToProps = (dispatch) => ({
   toggleConfirm: () => {
     dispatch(toggleDeletePass());
   },
-  changeInput: (newValue, key) => {
+  changeInput: (newValue: string, key: string) => {
     dispatch(changeInput(newValue, key));
   },
   updateUser: () => {
@@ -48,7 +48,7 @@ const mapDispatchToProps = (dispatch) => ({
   logout: () => {
     dispatch(logout());
   },
-  addError: (error) => {
+  addError: (error: string) => {
     dispatch(addError(error));
   },
 });

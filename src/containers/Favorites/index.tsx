@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Favorites from '../../components/Favorites/index.tsx';
+import Favorites from '../../components/Favorites';
 
 import { toggleFav } from '../../actions/boolean';
 
@@ -10,17 +10,17 @@ import {
   analyzeTeam,
 } from '../../actions/favorites';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
   isDrawer: state.boolean.isDrawer,
   teams: state.favorites.teams,
   isConfirmDelete: state.boolean.isConfirmDelete,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch: Function) => ({
   toggleFav: () => {
     dispatch(toggleFav());
   },
-  toggleConfirmDelete: (id) => {
+  toggleConfirmDelete: (id: number) => {
     dispatch(toggleConfirmDelete(id));
   },
   deleteTeam: () => {
@@ -29,7 +29,7 @@ const mapDispatchToProps = (dispatch) => ({
   fetchFav: () => {
     dispatch(fetchFav());
   },
-  analyzeTeam: (team, ids) => {
+  analyzeTeam: (team: Array<number>, ids: Array<number>) => {
     dispatch(analyzeTeam(team, ids));
   },
 });

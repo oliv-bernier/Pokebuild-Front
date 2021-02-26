@@ -1,16 +1,16 @@
 import { connect } from 'react-redux';
-import Drawer from '../../components/Drawer/index.tsx';
+import Drawer from '../../components/Drawer';
 
 import { toggleDrawer, toggleDetails } from '../../actions/boolean';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
   pokemon: state.pokemon.pokemonList,
   isDrawer: state.boolean.isDrawer,
   filterTypes: state.pokemon.filterTypes,
   filterInput: state.pokemon.searchInput,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch: Function) => ({
   toggleDrawer: () => {
     dispatch(toggleDrawer());
   },
