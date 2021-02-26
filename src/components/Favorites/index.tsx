@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+
+import { Pokemon } from '../../type';
 
 import './style.scss';
 
@@ -25,14 +27,14 @@ const Favorites = ({
 }) => {
   const [isAnimation, setIsAnimation] = useState(false);
 
-  const handleClose = () => {
+  const handleClose = (): void => {
     setIsAnimation(true);
     setTimeout(() => {
       toggleFav();
     }, 250);
   };
 
-  const handleDelete = () => {
+  const handleDelete = (): void => {
     deleteTeam();
     setTimeout(() => {
       toggleConfirmDelete('');
@@ -41,11 +43,17 @@ const Favorites = ({
       fetchFav();
     }, 250);
   };
-  
+
   return (
     <div className={classNames('favorites', { 'favorites_drawer-open': isDrawer }, { 'favorites--animation': isAnimation })}>
       <div className="favorites-content">
-        <button type="button" className="favorites-content-close" onClick={handleClose}>X</button>
+        <button
+          type="button"
+          className="favorites-content-close"
+          onClick={handleClose}
+        >
+          X
+        </button>
         <h1 className="favorites-content-title">Équipes favorites</h1>
         <div className="favorites-user">
           {teams.map((team) => (
@@ -57,17 +65,23 @@ const Favorites = ({
                     type="button"
                     className="favorites-content-team-infos-button"
                     onClick={() => {
-                      analyzeTeam(team.pokemon, team.pokemon.map((each) => (each.id)));
+                      analyzeTeam(team.pokemon, team.pokemon.map((each: Pokemon) => (each.id)));
                       toggleFav();
                     }}
                   >
                     Analyser
                   </button>
-                  <button type="button" className="favorites-content-team-infos-button" onClick={() => toggleConfirmDelete(team.id)}>Supprimer</button>
+                  <button
+                    type="button"
+                    className="favorites-content-team-infos-button"
+                    onClick={() => toggleConfirmDelete(team.id)}
+                  >
+                    Supprimer
+                  </button>
                 </div>
               </div>
               <div className="favorites-content-team-pokemon">
-                {team.pokemon.map((poke) => (
+                {team.pokemon.map((poke: Pokemon) => (
                   <div className="favorites-content-team-pokemon-div">
                     <img className="favorites-content-team-pokemon-div-sprite" src={poke.sprite} alt={poke.name} />
                     <p className="favorites-content-team-pokemon-div-name">{poke.name}</p>
@@ -79,10 +93,26 @@ const Favorites = ({
           {isConfirmDelete && (
             <div className="favorites-confirm-delete">
               <div className="favorites-confirm-delete-content">
-                <p className="favorites-confirm-delete-content-answer">Êtes vous-sûr de supprimer cette équipe ?</p>
+                <p
+                  className="favorites-confirm-delete-content-answer"
+                >
+                  Êtes vous-sûr de supprimer cette équipe ?
+                </p>
                 <div className="favorites-confirm-delete-content-buttons">
-                  <button type="button" className="favorites-content-team-infos-button" onClick={handleDelete}>Oui</button>
-                  <button type="button" className="favorites-content-team-infos-button" onClick={() => toggleConfirmDelete('')}>Non</button>
+                  <button
+                    type="button"
+                    className="favorites-content-team-infos-button"
+                    onClick={handleDelete}
+                  >
+                    Oui
+                  </button>
+                  <button
+                    type="button"
+                    className="favorites-content-team-infos-button"
+                    onClick={() => toggleConfirmDelete('')}
+                  >
+                    Non
+                  </button>
                 </div>
               </div>
             </div>

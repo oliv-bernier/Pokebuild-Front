@@ -46,3 +46,13 @@ $color-twice-vulnerable: color.scale($color-slightly-vulnerable, $lightness: -30
       opacity: 0;
   }
 }
+
+@keyframes fill {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}

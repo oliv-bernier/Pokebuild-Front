@@ -10,7 +10,7 @@ import {
   addError,
 } from '../../actions/user';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
   username: state.user.username,
   email: state.user.email,
   password: state.user.password,
@@ -21,11 +21,11 @@ const mapStateToProps = (state) => ({
   isLogged: state.boolean.isLogged,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch: Function) => ({
   createUser: () => {
     dispatch(createUser());
   },
-  changeField: (newValue, key) => {
+  changeField: (newValue: string, key: string) => {
     dispatch(changeInput(newValue, key));
   },
   loginUser: () => {
@@ -37,7 +37,7 @@ const mapDispatchToProps = (dispatch) => ({
   addErrorCreate: () => {
     dispatch(addErrorCreate());
   },
-  addError: (error) => {
+  addError: (error: string) => {
     dispatch(addError(error));
   },
 });

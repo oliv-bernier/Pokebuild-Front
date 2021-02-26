@@ -5,7 +5,7 @@ import { closeDrawer } from '../../actions/boolean';
 
 const mapStateToProps = null;
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch: Function) => ({
   closeDrawer: () => {
     dispatch(closeDrawer());
   },

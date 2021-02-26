@@ -1,0 +1,76 @@
+@use '../../styles/vars';
+
+.advertise {
+  position: absolute;
+  left: 0;
+  transform: translateY(-100%);
+  transition: transform .5s;
+  z-index: 2;
+  text-align: center;
+  color: vars.$color-background-scaled;
+  background-color: vars.$color-background-stat;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: (vars.$gutter / 2);
+  width: 100vw;
+  height: fit-content;
+
+  @media (min-width: 768px) {
+    transform: translateX(-100%);
+    border-bottom-left-radius: 0px;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  &-display {
+    box-shadow: 1px 1px 4px 0px vars.$color-background-barre;
+    transform: translateY(0);
+
+    @media (min-width: 768px) {
+      transform: translateX(0);
+    }
+  }
+
+  &-text {
+    margin-bottom: (vars.$gutter / 2);
+  }
+
+  &-close {
+    position: absolute;
+    font-size: 0.6rem;
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 50%;
+    border: 1px solid vars.$color-background-scaled;
+    background-color: vars.$color-background;
+    color: vars.$color-background-scaled;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 5px;
+    top: 5px;
+
+    @media (min-width: 768px) {
+      width: 1.2rem;
+      height: 1.2rem;
+      font-size: 0.8rem;
+    }
+
+    &:hover {
+      background-color: vars.$color-background-scaled;
+      color: vars.$color-background;
+      border: 1px solid vars.$color-background;
+    }
+  }
+
+  &-barre {
+    height: (vars.$gutter / 2);
+    width: 100%;
+
+    &_fill {
+      height: (vars.$gutter / 2);
+      animation: fill 10s 1;
+      background-color: vars.$color-background-pokemon;
+    }
+  }
+}

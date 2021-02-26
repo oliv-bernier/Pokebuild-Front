@@ -3,13 +3,13 @@ import DropBox from '../../components/Drop/DropBox';
 
 import { removeSelectedPokemon, removeAllPokemon } from '../../actions/pokemon';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
   pokemonSelected: state.pokemon.pokemonSelected,
   pokemonIds: state.pokemon.pokemonSelectedIds,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  clearOnePokemon: (index) => {
+const mapDispatchToProps = (dispatch: Function) => ({
+  clearOnePokemon: (index: number) => {
     dispatch(removeSelectedPokemon(index));
   },
   removeAllPokemon: () => {
