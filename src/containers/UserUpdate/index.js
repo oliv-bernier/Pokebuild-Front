@@ -4,6 +4,7 @@ import UserUpdate from '../../components/UserUpdate';
 import {
   toggleUpdate,
   toggleDelete,
+  toggleDeletePass,
 } from '../../actions/boolean';
 
 import {
@@ -17,6 +18,7 @@ import {
 const mapStateToProps = (state) => ({
   isDrawer: state.boolean.isDrawer,
   isDelete: state.boolean.isDelete,
+  isConfirm: state.boolean.isDeletePassword,
   email: state.user.email,
   password: state.user.password,
   passwordUpdate: state.user.passwordUpdate,
@@ -30,6 +32,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   toggleDelete: () => {
     dispatch(toggleDelete());
+  },
+  toggleConfirm: () => {
+    dispatch(toggleDeletePass());
   },
   changeInput: (newValue, key) => {
     dispatch(changeInput(newValue, key));

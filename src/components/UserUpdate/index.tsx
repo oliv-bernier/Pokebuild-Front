@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import LoginField from '../LoginForm/LoginField';
+import ConfirmDelete from './ConfirmDelete';
 
 import './style.scss';
 
@@ -14,12 +15,14 @@ const UserUpdate = ({
   error,
   toggleUpdate,
   toggleDelete,
+  toggleConfirm,
   changeInput,
   updateUser,
   deleteUser,
   addError,
   isDrawer,
   isDelete,
+  isConfirm,
 }: {
   email: string,
   password: string,
@@ -28,12 +31,14 @@ const UserUpdate = ({
   error: string,
   toggleUpdate: Function,
   toggleDelete: Function,
+  toggleConfirm: Function,
   changeInput: Function,
   updateUser: Function,
   deleteUser: Function,
   addError: Function,
   isDrawer: boolean,
   isDelete: boolean,
+  isConfirm: boolean,
 }) => {
   const [isAnimation, setIsAnimation] = useState(false);
   const [isEmail, setIsEmail] = useState(false);
@@ -83,10 +88,6 @@ const UserUpdate = ({
     else {
       updateUser();
     }
-  };
-
-  const handleDelete = () => {
-    deleteUser();
   };
 
   return (
@@ -141,7 +142,7 @@ const UserUpdate = ({
       </div>
       )}
       {isEmail && !isPassword && (
-        <form action="" className="update-form">
+        <form className="update-form">
           <h2 className="update-form-title">Modification de mon adresse E-mail</h2>
           <button
             type="button"
@@ -175,7 +176,7 @@ const UserUpdate = ({
         </form>
       )}
       {isPassword && !isEmail && (
-        <form action="" className="update-form">
+        <form className="update-form">
           <h2 className="update-form-title">Modification de mon mot de passe</h2>
           <button
             type="button"
@@ -220,7 +221,7 @@ const UserUpdate = ({
         </form>
       )}
       {(isEmail && isPassword) && (
-      <form action="" className="update-form">
+      <form className="update-form">
         <button
           type="button"
           className="update-close"
@@ -271,15 +272,15 @@ const UserUpdate = ({
       </form>
       )}
       {isDelete && (
-      <div className="favorites-confirm-delete">
-        <div className="favorites-confirm-delete-content">
-          <p className="favorites-confirm-delete-content-answer">Êtes vous-sûr de supprimer votre compte ?</p>
-          <div className="favorites-confirm-delete-content-buttons">
-            <button type="button" className="favorites-content-team-infos-button" onClick={handleDelete}>Oui</button>
-            <button type="button" className="favorites-content-team-infos-button" onClick={() => toggleDelete()}>Non</button>
-          </div>
-        </div>
-      </div>
+        <ConfirmDelete
+          password={password}
+          error={error}
+          isConfirm={isConfirm}
+          changeInput={changeInput}
+          toggleConfirm={toggleConfirm}
+          toggleDelete={toggleDelete}
+          deleteUser={deleteUser}
+        />
       )}
     </div>
   );
@@ -293,12 +294,14 @@ UserUpdate.propTypes = {
   error: PropTypes.string.isRequired,
   toggleUpdate: PropTypes.func.isRequired,
   toggleDelete: PropTypes.func.isRequired,
+  toggleConfirm: PropTypes.func.isRequired,
   changeInput: PropTypes.func.isRequired,
   updateUser: PropTypes.func.isRequired,
   deleteUser: PropTypes.func.isRequired,
   addError: PropTypes.func.isRequired,
   isDrawer: PropTypes.bool.isRequired,
   isDelete: PropTypes.bool.isRequired,
+  isConfirm: PropTypes.bool.isRequired,
 };
 
 export default UserUpdate;

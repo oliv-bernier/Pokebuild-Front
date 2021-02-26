@@ -25,6 +25,7 @@ import {
   toggleUpdate,
   toggleLogin,
   toggleDelete,
+  toggleDeletePass,
 } from '../actions/boolean';
 
 const ajaxUser = (store) => (next) => (action) => {
@@ -116,12 +117,15 @@ const ajaxUser = (store) => (next) => (action) => {
         });
     }
       break;
-    case DELETE_USER:
+    case DELETE_USER: {
+      const { pseudo: username, password } = store.getState().user;
       axios.post('admin/user/delete', {
-        username: store.getState().user.pseudo,
+        username,
+        password,
       })
         .then(() => {
           store.dispatch(toggleDelete());
+          store.dispatch(toggleDeletePass());
           setTimeout(() => {
             store.dispatch(toggleUpdate());
             store.dispatch(logout());
@@ -130,7 +134,9 @@ const ajaxUser = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.error(error);
+          store.dispatch(addError('Le mot de passe saisi est invalide'));
         });
+    }
       break;
     case FETCH_FAV: {
       const {
