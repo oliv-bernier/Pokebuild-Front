@@ -57,8 +57,6 @@ const ajaxPokemon = (store) => (next) => (action) => {
     case GENERATE_TEAM:
       axios.get('random/team')
         .then((response) => {
-          // console.log(response);
-          // console.log(response.data.map((each) => (each.id)));
           const randomIds = response.data.map((each) => (each.id));
           store.dispatch(memorizeRandomTeam(response.data));
           store.dispatch(memorizeRandomTeamIds(randomIds));

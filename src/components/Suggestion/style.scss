@@ -33,7 +33,6 @@
 
     @media (min-width:1400px) {
       width: 70vw;
-      height: 80vh;
       overflow: hidden;
       overflow-y: scroll;
 
@@ -61,12 +60,19 @@
       justify-content: center;
       align-content: center;
       width: 100%;
+      margin-top: 1rem;
 
       &-div {
         border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.2rem;
 
         &:hover {
           background-color: vars.$color-background-scaled;
+          color: vars.$color-background;
+          cursor: pointer;
         }
       }
 
@@ -76,6 +82,11 @@
         @media (min-width:768px) {
           width: 100%;
         }
+      }
+
+      &-name {
+        color: vars.$color-background;
+        padding-bottom: 0.5rem;
       }
     }
 

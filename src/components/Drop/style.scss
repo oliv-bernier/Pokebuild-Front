@@ -116,10 +116,18 @@
                 border: 1px solid vars.$color-background-scaled;
                 padding: 0.2rem 0.5rem;
                 position: absolute;
-                bottom: 120px;
+                bottom: 60px;
                 border: 1px solid vars.$color-background;
                 margin: 0.5rem;
                 animation: signal 2s infinite;
+
+                @media (min-width: 768px) {
+                    bottom: 60px;
+                }
+
+                @media (min-width: 1400px) {
+                    bottom: 70px;
+                }
 
                 &:hover {
                     background-color: vars.$color-background-scaled;
