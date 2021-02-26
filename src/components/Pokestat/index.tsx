@@ -12,6 +12,8 @@ const Pokestat = ({
   toggleDetails,
   pokemon,
   addPokemon,
+  toggleSuggestion,
+  isSuggestion,
 }: {toggleDetails: Function,
   pokemon: {
     id: number,
@@ -26,6 +28,8 @@ const Pokestat = ({
     apiGeneration: number,
   },
  addPokemon: Function,
+ toggleSuggestion: Function,
+ isSuggestion: Boolean,
 }) => {
   const {
     id,
@@ -43,6 +47,9 @@ const Pokestat = ({
   };
   const handleAdd = (): void => {
     handleClose();
+    if (isSuggestion) {
+      toggleSuggestion();
+    }
     setTimeout(() => addPokemon(id), 150);
   };
   return (
@@ -96,6 +103,8 @@ Pokestat.propTypes = {
   toggleDetails: PropTypes.func.isRequired,
   pokemon: PropTypes.object.isRequired,
   addPokemon: PropTypes.func.isRequired,
+  toggleSuggestion: PropTypes.func.isRequired,
+  isSuggestion: PropTypes.bool.isRequired,
 };
 
 export default Pokestat;

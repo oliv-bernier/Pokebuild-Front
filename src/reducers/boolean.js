@@ -9,6 +9,7 @@ import {
   TOGGLE_INPUT_FAV,
   TOGGLE_UPDATE,
   TOGGLE_DELETE,
+  TOGGLE_SUGGESTION,
   TOGGLE_DELETE_PASS,
   TOGGLE_FINAL_DELETE,
   TOGGLE_ADVERTISE,
@@ -30,6 +31,7 @@ const initialState = {
   isDelete: false,
   isDeletePassword: false,
   isUpdate: false,
+  isSuggestion: false,
   isAdvertise: false,
 };
 
@@ -96,6 +98,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isDelete: !state.isDelete,
+      };
+    case TOGGLE_SUGGESTION:
+      return {
+        ...state,
+        isSuggestion: !state.isSuggestion,
       };
     case TOGGLE_DELETE_PASS:
       return {

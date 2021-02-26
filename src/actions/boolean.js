@@ -48,6 +48,11 @@ export const toggleDelete = () => ({
   type: TOGGLE_DELETE,
 });
 
+export const TOGGLE_SUGGESTION = 'TOGGLE_SUGGESTION';
+export const toggleSuggestion = () => ({
+  type: TOGGLE_SUGGESTION,
+});
+
 export const TOGGLE_DELETE_PASS = 'TOGGLE_DELETE_PASS';
 export const toggleDeletePass = () => ({
   type: TOGGLE_DELETE_PASS,

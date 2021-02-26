@@ -47,7 +47,13 @@ const Favorites = ({
   return (
     <div className={classNames('favorites', { 'favorites_drawer-open': isDrawer }, { 'favorites--animation': isAnimation })}>
       <div className="favorites-content">
-        <button type="button" className="favorites-content-close" onClick={handleClose}>X</button>
+        <button
+          type="button"
+          className="favorites-content-close"
+          onClick={handleClose}
+        >
+          X
+        </button>
         <h1 className="favorites-content-title">Équipes favorites</h1>
         <div className="favorites-user">
           {teams.map((team) => (
@@ -65,7 +71,13 @@ const Favorites = ({
                   >
                     Analyser
                   </button>
-                  <button type="button" className="favorites-content-team-infos-button" onClick={() => toggleConfirmDelete(team.id)}>Supprimer</button>
+                  <button
+                    type="button"
+                    className="favorites-content-team-infos-button"
+                    onClick={() => toggleConfirmDelete(team.id)}
+                  >
+                    Supprimer
+                  </button>
                 </div>
               </div>
               <div className="favorites-content-team-pokemon">
@@ -81,10 +93,26 @@ const Favorites = ({
           {isConfirmDelete && (
             <div className="favorites-confirm-delete">
               <div className="favorites-confirm-delete-content">
-                <p className="favorites-confirm-delete-content-answer">Êtes vous-sûr de supprimer cette équipe ?</p>
+                <p
+                  className="favorites-confirm-delete-content-answer"
+                >
+                  Êtes vous-sûr de supprimer cette équipe ?
+                </p>
                 <div className="favorites-confirm-delete-content-buttons">
-                  <button type="button" className="favorites-content-team-infos-button" onClick={handleDelete}>Oui</button>
-                  <button type="button" className="favorites-content-team-infos-button" onClick={() => toggleConfirmDelete('')}>Non</button>
+                  <button
+                    type="button"
+                    className="favorites-content-team-infos-button"
+                    onClick={handleDelete}
+                  >
+                    Oui
+                  </button>
+                  <button
+                    type="button"
+                    className="favorites-content-team-infos-button"
+                    onClick={() => toggleConfirmDelete('')}
+                  >
+                    Non
+                  </button>
                 </div>
               </div>
             </div>

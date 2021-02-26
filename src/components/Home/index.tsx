@@ -6,12 +6,14 @@ import classNames from 'classnames';
 import Tab from '../../containers/Tab';
 import Advices from '../Advices';
 import Drop from '../../containers/Drop/index';
+import Suggestion from '../../containers/Suggestion/index';
 
 import './style.scss';
 
-const Home = ({ isDetails }: {isDetails: boolean}) => (
+const Home = ({ isDetails, isSuggestion }: {isDetails: boolean, isSuggestion: boolean, }) => (
   <div className={classNames('home', { 'home-blur': isDetails })}>
     <Drop />
+    {isSuggestion && <Suggestion />}
     <Advices />
     <Tab />
   </div>
@@ -19,6 +21,7 @@ const Home = ({ isDetails }: {isDetails: boolean}) => (
 
 Home.propTypes = {
   isDetails: PropTypes.bool.isRequired,
+  isSuggestion: PropTypes.bool.isRequired,
 };
 
 export default Home;

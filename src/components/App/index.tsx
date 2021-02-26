@@ -36,6 +36,7 @@ const App = ({
   toggleFav,
   isFav,
   fetchFav,
+  isSuggestion,
 }: {
     isDetails: boolean,
     isDrawer: boolean,
@@ -54,6 +55,7 @@ const App = ({
     toggleFav: Function,
     fetchFav: Function,
     pseudo: string,
+    isSuggestion: boolean,
   }) => {
   useEffect(() => {
     getPokemon();
@@ -92,7 +94,7 @@ const App = ({
         <Advertise />
         <Switch>
           <Route path="/" exact>
-            <Home isDetails={isDetails} />
+            <Home isDetails={isDetails} isSuggestion={isSuggestion} />
             <Drawer />
             {isDetails && <Pokestat />}
           </Route>
@@ -130,6 +132,7 @@ App.propTypes = {
   toggleFav: PropTypes.func.isRequired,
   fetchFav: PropTypes.func.isRequired,
   pseudo: PropTypes.string.isRequired,
+  isSuggestion: PropTypes.bool.isRequired,
 };
 
 export default App;

@@ -1,26 +1,30 @@
 import { connect } from 'react-redux';
-import Pokestat from '../../components/Pokestat';
+import Pokestat from '../../components/Pokestat/index.tsx';
 
 import { toggleDetails, toggleSuggestion } from '../../actions/boolean';
 import { addSelectedPokemon, addFilterTypes } from '../../actions/pokemon';
 import { switchFilter } from '../../actions/types';
 
-const mapStateToProp = (state: any) => ({
+const mapStateToProp = (state) => ({
   pokemon: state.pokemon.pokedetails,
+  isSuggestion: state.boolean.isSuggestion,
 });
 
-const mapDispatchToProps = (dispatch: Function) => ({
+const mapDispatchToProps = (dispatch) => ({
   toggleDetails: () => {
     dispatch(toggleDetails());
   },
-  addPokemon: (id: number) => {
+  addPokemon: (id) => {
     dispatch(addSelectedPokemon(id));
   },
-  addFilterTypes: (type: string) => {
+  addFilterTypes: (type) => {
     dispatch(addFilterTypes(type));
   },
-  switchFilter: (value: string, key: string) => {
+  switchFilter: (value, key) => {
     dispatch(switchFilter(value, key));
+  },
+  toggleSuggestion: () => {
+    dispatch(toggleSuggestion());
   },
 });
 

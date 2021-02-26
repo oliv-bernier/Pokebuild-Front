@@ -12,6 +12,7 @@ import {
   REMOVE_ALL_POKEMON,
   MEMORIZE_RANDOM_TEAM,
   MEMORIZE_RANDOM_TEAM_IDS,
+  MEMORIZE_SUGGEST,
 } from '../actions/pokemon';
 
 const initialState = {
@@ -24,6 +25,7 @@ const initialState = {
   types: [],
   searchInput: '',
   filterTypes: [],
+  pokeSuggest: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -113,6 +115,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         pokemonSelectedIds: [...action.ids],
+      };
+    case MEMORIZE_SUGGEST:
+      return {
+        ...state,
+        pokeSuggest: [...action.suggested],
       };
     default:
       return state;

@@ -1,0 +1,124 @@
+@use '../../styles/vars';
+
+.suggestion {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+
+  @media (min-width:768px) {
+    padding: 1rem;
+  }
+
+  @media (min-width:1400px) {
+    padding: 2rem;
+  }
+
+  &-content {
+    position: relative;
+    background-color: vars.$color-background;
+    padding: 1rem;
+    max-height: 80vh;
+    width: 100%;
+    border-radius: 5px;
+    overflow-y: scroll;
+    box-shadow: 1px 1px 4px 0px vars.$color-background-barre;
+
+    @media (min-width:1400px) {
+      width: 70vw;
+      overflow: hidden;
+      overflow-y: scroll;
+
+      &::-webkit-scrollbar {
+        width: 8px;
+
+        @media (min-width: 1400px) {
+            width: 14px;
+        }
+
+        @media (min-width: 2000px) {
+            width: 18px;
+        }
+      }
+
+      &::-webkit-scrollbar-thumb {
+          background-color: vars.$color-background-pokemon;
+          border-radius: 20px;
+      }
+    }
+
+    &-pokemon {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center;
+      width: 100%;
+      margin-top: 1rem;
+
+      &-div {
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.2rem;
+
+        &:hover {
+          background-color: vars.$color-background-scaled;
+          color: vars.$color-background;
+          cursor: pointer;
+        }
+      }
+
+      &-image {
+        width: 60px;
+
+        @media (min-width:768px) {
+          width: 100%;
+        }
+      }
+
+      &-name {
+        color: vars.$color-background;
+        padding-bottom: 0.5rem;
+      }
+    }
+
+    & h2 {
+
+      font-style: italic;
+      color: vars.$color-background-scaled;
+
+      @media (min-width: 768px) {
+        font-size: 1.2rem;
+      }
+    }
+
+    &-close {
+      position: absolute;
+      width: 1.2rem;
+      height: 1.2rem;
+      border-radius: 50%;
+      border: 1px solid vars.$color-background-scaled;
+      background-color: vars.$color-background;
+      color: vars.$color-background-scaled;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      right: 5px;
+      top: 5px;
+
+      &:hover {
+        background-color: vars.$color-background-scaled;
+        color: vars.$color-background;
+        border: 1px solid vars.$color-background;
+      }
+    }
+  }
+}

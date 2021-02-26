@@ -19,6 +19,8 @@ const Drop = (
     saveTeam,
     isLogged,
     generateTeam,
+    toggleSuggestion,
+    suggestPokemon,
   }: {
     pokemonSelected: Array<Pokemon>,
     clearPokemons: Function,
@@ -30,6 +32,8 @@ const Drop = (
     changeInputFav: Function,
     isLogged: Boolean,
     generateTeam: Function,
+    toggleSuggestion: Function,
+    suggestPokemon: Function,
   },
 ) => {
   const boxes = [];
@@ -137,6 +141,16 @@ const Drop = (
         >
           Générer une équipe au hasard
         </button>
+        <button
+          type="button"
+          className="home-selection-drop-button-suggestion"
+          onClick={() => {
+            toggleSuggestion();
+            suggestPokemon();
+          }}
+        >
+          Suggestion
+        </button>
       </div>
     );
   } return (
@@ -166,6 +180,8 @@ Drop.propTypes = {
   changeInputFav: PropTypes.func.isRequired,
   isLogged: PropTypes.bool.isRequired,
   generateTeam: PropTypes.func.isRequired,
+  toggleSuggestion: PropTypes.func.isRequired,
+  suggestPokemon: PropTypes.func.isRequired,
 };
 
 export default Drop;
