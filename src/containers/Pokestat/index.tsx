@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Pokestat from '../../components/Pokestat';
 
-import { toggleDetails } from '../../actions/boolean';
+import { toggleDetails, toggleSuggestion } from '../../actions/boolean';
 import { addSelectedPokemon, addFilterTypes } from '../../actions/pokemon';
 import { switchFilter } from '../../actions/types';
 

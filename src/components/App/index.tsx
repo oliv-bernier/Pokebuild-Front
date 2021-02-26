@@ -92,7 +92,7 @@ const App = ({
         <Advertise />
         <Switch>
           <Route path="/" exact>
-            <Home isDetails={isDetails} />
+            <Home isDetails={isDetails} isSuggestion={isSuggestion}/>
             <Drawer />
             {isDetails && <Pokestat />}
           </Route>

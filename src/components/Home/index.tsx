@@ -9,7 +9,7 @@ import Drop from '../../containers/Drop/index';
 
 import './style.scss';
 
-const Home = ({ isDetails }: {isDetails: boolean}) => (
+const Home = ({ isDetails, isSuggestion }: {isDetails: boolean, isSuggestion: boolean, }) => (
   <div className={classNames('home', { 'home-blur': isDetails })}>
     <Drop />
     <Advices />

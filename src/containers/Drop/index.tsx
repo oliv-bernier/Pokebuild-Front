@@ -1,11 +1,16 @@
 import { connect } from 'react-redux';
 import Drop from '../../components/Drop/index';
 
-import { removeAllPokemon, sendTeam, generateTeam } from '../../actions/pokemon';
+import {
+  removeAllPokemon,
+  sendTeam,
+  generateTeam,
+  suggestPokemon,
+} from '../../actions/pokemon';
 
 import { saveTeam, changeNameInput } from '../../actions/favorites';
 
-import { toggleInputFav } from '../../actions/boolean';
+import { toggleInputFav, toggleSuggestion } from '../../actions/boolean';
 
 const mapStateToProps = (state: any) => ({
   pokemonSelected: state.pokemon.pokemonSelected,
