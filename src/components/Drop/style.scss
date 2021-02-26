@@ -107,6 +107,26 @@
             // bottom: -16px;
             border: 1px solid vars.$color-background;
             margin: 0.5rem;
+
+            &-suggestion {
+                font-size: 0.6rem;
+                background-color: vars.$color-background;
+                color: vars.$color-background-scaled;
+                border-radius: 5px;
+                border: 1px solid vars.$color-background-scaled;
+                padding: 0.2rem 0.5rem;
+                position: absolute;
+                bottom: 120px;
+                border: 1px solid vars.$color-background;
+                margin: 0.5rem;
+                animation: signal 2s infinite;
+
+                &:hover {
+                    background-color: vars.$color-background-scaled;
+                    border: 1px solid vars.$color-background;
+                    color: vars.$color-background;
+                }
+            }
         }
 
         &-button:hover {
@@ -161,4 +181,10 @@
             }
         }
     }
+}
+
+@keyframes signal {
+    0% { background-color: vars.$color-background; color: vars.$color-background-scaled; }
+    50% { background-color: vars.$color-background-scaled; color: vars.$color-background; }
+    0% { background-color: vars.$color-background; color: vars.$color-background-scaled; }
 }

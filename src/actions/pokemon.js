@@ -94,3 +94,8 @@ export const memorizeRandomTeamIds = (ids) => ({
   type: MEMORIZE_RANDOM_TEAM_IDS,
   ids,
 });
+
+export const SUGGEST_POKEMON = 'SUGGEST_POKEMON';
+export const suggestPokemon = () => ({
+  type: SUGGEST_POKEMON,
+});

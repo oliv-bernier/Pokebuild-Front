@@ -29,6 +29,7 @@ const mapStateToProps = (state) => ({
   pseudo: state.user.pseudo,
   isFav: state.boolean.isFav,
   isUpdate: state.boolean.isUpdate,
+  isSuggestion: state.boolean.isSuggestion,
 });
 
 const mapDispatchToProps = (dispatch) => ({

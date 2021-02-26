@@ -47,3 +47,8 @@ export const TOGGLE_DELETE = 'TOGGLE_DELETE';
 export const toggleDelete = () => ({
   type: TOGGLE_DELETE,
 });
+
+export const TOGGLE_SUGGESTION = 'TOGGLE_SUGGESTION';
+export const toggleSuggestion = () => ({
+  type: TOGGLE_SUGGESTION,
+});

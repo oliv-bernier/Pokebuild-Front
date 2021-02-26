@@ -11,6 +11,7 @@ import {
   GENERATE_TEAM,
   memorizeRandomTeam,
   memorizeRandomTeamIds,
+  SUGGEST_POKEMON,
 } from '../actions/pokemon';
 
 import {
@@ -64,6 +65,21 @@ const ajaxPokemon = (store) => (next) => (action) => {
         .catch((error) => {
           console.error(error);
         });
+      break;
+    case SUGGEST_POKEMON: {
+      const {
+        pokemonSelectedIds,
+      } = store.getState().pokemon;
+      const jsoned = JSON.stringify(pokemonSelectedIds);
+      console.log(jsoned);
+      axios.post('team/suggestion', jsoned)
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
       break;
   }
   next(action);
