@@ -11,6 +11,7 @@ import {
   TOGGLE_LOGIN,
   TOGGLE_UPDATE,
   TOGGLE_DELETE,
+  TOGGLE_CREATE,
 } from '../actions/boolean';
 
 const initialState = {
@@ -86,6 +87,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         password: '',
+        error: '',
+      };
+    case TOGGLE_CREATE:
+      return {
+        ...state,
         error: '',
       };
     case ADD_ERROR:

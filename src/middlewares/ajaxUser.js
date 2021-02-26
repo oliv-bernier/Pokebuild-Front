@@ -26,6 +26,7 @@ import {
   toggleLogin,
   toggleDelete,
   toggleDeletePass,
+  toggleAdvertise,
 } from '../actions/boolean';
 
 const ajaxUser = (store) => (next) => (action) => {
@@ -82,7 +83,11 @@ const ajaxUser = (store) => (next) => (action) => {
           store.dispatch(toggleLogin());
           setTimeout(() => {
             store.dispatch(clearLog());
+            store.dispatch(toggleAdvertise());
           }, 100);
+          setTimeout(() => {
+            store.dispatch(toggleAdvertise());
+          }, 10000);
         })
         .catch((error) => {
           console.error(error);

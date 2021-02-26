@@ -14,6 +14,7 @@ import LoginForm from '../../containers/LoginForm';
 import Pokestat from '../../containers/Pokestat';
 import Favorites from '../../containers/Favorites';
 import UserUpdate from '../../containers/UserUpdate';
+import Advertise from '../../containers/Advertise';
 
 import './style.scss';
 
@@ -88,6 +89,7 @@ const App = ({
         )}
         {isUpdate && <UserUpdate />}
         {isFav && <Favorites />}
+        <Advertise />
         <Switch>
           <Route path="/" exact>
             <Home isDetails={isDetails} />
