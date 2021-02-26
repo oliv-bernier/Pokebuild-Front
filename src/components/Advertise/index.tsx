@@ -26,6 +26,9 @@ const Advertise = ({
       Tu vas recevoir un mail d'ici quelques minutes dans lequel
       tu trouveras un lien pour activer ton compte.
     </h3>
+    <div className="advertise-barre">
+      <div className="advertise-barre_fill" />
+    </div>
   </div>
 );
 

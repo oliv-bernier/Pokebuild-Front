@@ -24,9 +24,8 @@ import {
   toggleLogged,
   toggleUpdate,
   toggleLogin,
-  toggleDelete,
-  toggleDeletePass,
   toggleAdvertise,
+  toggleFinalDelete,
 } from '../actions/boolean';
 
 const ajaxUser = (store) => (next) => (action) => {
@@ -129,12 +128,9 @@ const ajaxUser = (store) => (next) => (action) => {
         password,
       })
         .then(() => {
-          store.dispatch(toggleDelete());
-          store.dispatch(toggleDeletePass());
+          store.dispatch(toggleFinalDelete());
           setTimeout(() => {
-            store.dispatch(toggleUpdate());
             store.dispatch(logout());
-            store.dispatch(toggleLogged());
           }, 100);
         })
         .catch((error) => {

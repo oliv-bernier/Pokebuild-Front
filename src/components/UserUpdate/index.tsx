@@ -152,6 +152,7 @@ const UserUpdate = ({
           handleClose={handleClose}
           handleSendMail={handleSendMail}
           changeInput={changeInput}
+          setIsEmail={setIsEmail}
         />
       )}
       {isPassword && !isEmail && (
@@ -163,6 +164,7 @@ const UserUpdate = ({
           handleClose={handleClose}
           handleSendPassword={handleSendPassword}
           changeInput={changeInput}
+          setIsPassword={setIsPassword}
         />
       )}
       {(isEmail && isPassword) && (
@@ -175,6 +177,8 @@ const UserUpdate = ({
           handleClose={handleClose}
           handleSend={handleSend}
           changeInput={changeInput}
+          setIsEmail={setIsEmail}
+          setIsPassword={setIsPassword}
         />
       )}
       {isDelete && (

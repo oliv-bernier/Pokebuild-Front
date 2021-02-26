@@ -10,6 +10,7 @@ import {
   TOGGLE_UPDATE,
   TOGGLE_DELETE,
   TOGGLE_DELETE_PASS,
+  TOGGLE_FINAL_DELETE,
   TOGGLE_ADVERTISE,
 } from '../actions/boolean';
 
@@ -29,7 +30,7 @@ const initialState = {
   isDelete: false,
   isDeletePassword: false,
   isUpdate: false,
-  isAdvertise: true,
+  isAdvertise: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -99,6 +100,14 @@ const reducer = (state = initialState, action = {}) => {
     case TOGGLE_DELETE_PASS:
       return {
         ...state,
+        isDeletePassword: !state.isDeletePassword,
+      };
+    case TOGGLE_FINAL_DELETE:
+      return {
+        ...state,
+        isUpdate: !state.isUpdate,
+        isLogged: !state.isLogged,
+        isDelete: !state.isDelete,
         isDeletePassword: !state.isDeletePassword,
       };
     case TOGGLE_ADVERTISE:

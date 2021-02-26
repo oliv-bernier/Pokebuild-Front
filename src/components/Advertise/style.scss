@@ -62,4 +62,15 @@
       border: 1px solid vars.$color-background;
     }
   }
+
+  &-barre {
+    height: (vars.$gutter / 2);
+    width: 100%;
+
+    &_fill {
+      height: (vars.$gutter / 2);
+      animation: fill 10s 1;
+      background-color: vars.$color-background-pokemon;
+    }
+  }
 }

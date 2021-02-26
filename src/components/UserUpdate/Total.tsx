@@ -13,6 +13,8 @@ const Total = ({
   handleClose,
   handleSend,
   changeInput,
+  setIsEmail,
+  setIsPassword,
 }: {
   email: string,
   password: string,
@@ -22,8 +24,20 @@ const Total = ({
   handleClose: Function,
   handleSend: Function,
   changeInput: Function,
+  setIsEmail: Function,
+  setIsPassword: Function,
 }) => (
   <form className="update-form">
+    <button
+      type="button"
+      className="update-close return"
+      onClick={() => {
+        setIsEmail();
+        setIsPassword();
+      }}
+    >
+      {'<'}
+    </button>
     <button
       type="button"
       className="update-close"
@@ -83,6 +97,8 @@ Total.propTypes = {
   handleClose: PropTypes.func.isRequired,
   handleSend: PropTypes.func.isRequired,
   changeInput: PropTypes.func.isRequired,
+  setIsEmail: PropTypes.func.isRequired,
+  setIsPassword: PropTypes.func.isRequired,
 };
 
 export default Total;

@@ -11,6 +11,7 @@ const Email = ({
   handleClose,
   handleSendMail,
   changeInput,
+  setIsEmail,
 }: {
   email: string,
   password: string,
@@ -18,8 +19,16 @@ const Email = ({
   handleClose: Function,
   handleSendMail: Function,
   changeInput: Function,
+  setIsEmail: Function,
 }) => (
   <form className="update-form">
+    <button
+      type="button"
+      className="update-close return"
+      onClick={() => setIsEmail()}
+    >
+      {'<'}
+    </button>
     <h2 className="update-form-title">Modification de mon adresse E-mail</h2>
     <button
       type="button"
@@ -60,6 +69,7 @@ Email.propTypes = {
   handleClose: PropTypes.func.isRequired,
   handleSendMail: PropTypes.func.isRequired,
   changeInput: PropTypes.func.isRequired,
+  setIsEmail: PropTypes.func.isRequired,
 };
 
 export default Email;

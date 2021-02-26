@@ -12,6 +12,7 @@ const Password = ({
   handleClose,
   handleSendPassword,
   changeInput,
+  setIsPassword,
 }: {
   password: string,
   passwordUpdate: string,
@@ -20,8 +21,16 @@ const Password = ({
   handleClose: Function,
   handleSendPassword: Function,
   changeInput: Function,
+  setIsPassword: Function,
 }) => (
   <form className="update-form">
+    <button
+      type="button"
+      className="update-close return"
+      onClick={() => setIsPassword()}
+    >
+      {'<'}
+    </button>
     <h2 className="update-form-title">Modification de mon mot de passe</h2>
     <button
       type="button"
@@ -74,6 +83,7 @@ Password.propTypes = {
   handleClose: PropTypes.func.isRequired,
   handleSendPassword: PropTypes.func.isRequired,
   changeInput: PropTypes.func.isRequired,
+  setIsPassword: PropTypes.func.isRequired,
 };
 
 export default Password;
