@@ -42,7 +42,7 @@ const about = [
   {
     id: 3,
     name: 'Olivier',
-    pseudo: 'Tagada',
+    pseudo: 'Oliv',
     dev: 'Front End',
     role: 'Product Owner',
     image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png',
