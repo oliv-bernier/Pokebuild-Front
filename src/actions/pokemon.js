@@ -99,3 +99,9 @@ export const SUGGEST_POKEMON = 'SUGGEST_POKEMON';
 export const suggestPokemon = () => ({
   type: SUGGEST_POKEMON,
 });
+
+export const MEMORIZE_SUGGEST = 'MEMORIZE_SUGGEST';
+export const memorizeSuggest = (suggested) => ({
+  type: MEMORIZE_SUGGEST,
+  suggested,
+});

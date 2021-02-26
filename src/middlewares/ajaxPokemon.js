@@ -12,6 +12,7 @@ import {
   memorizeRandomTeam,
   memorizeRandomTeamIds,
   SUGGEST_POKEMON,
+  memorizeSuggest,
 } from '../actions/pokemon';
 
 import {
@@ -75,6 +76,7 @@ const ajaxPokemon = (store) => (next) => (action) => {
       axios.post('team/suggestion', jsoned)
         .then((response) => {
           console.log(response);
+          store.dispatch(memorizeSuggest(response.data));
         })
         .catch((error) => {
           console.error(error);
