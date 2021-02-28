@@ -1,5 +1,15 @@
 @use '../../styles/vars';
 
+@keyframes fill {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
 .advertise {
   position: absolute;
   left: 0;
@@ -33,6 +43,7 @@
 
   &-text {
     margin-bottom: (vars.$gutter / 2);
+    white-space: pre-wrap;
   }
 
   &-close {

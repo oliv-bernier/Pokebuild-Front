@@ -4,6 +4,7 @@ import {
   CHANGE_INPUT,
   GET_USER,
   ADD_ERROR,
+  ADD_ADVERTISE,
   CLEAR_LOG,
 } from '../actions/user';
 
@@ -23,6 +24,7 @@ const initialState = {
   passwordConfirm: '',
   token: '',
   error: '',
+  advertise: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -82,6 +84,7 @@ const reducer = (state = initialState, action = {}) => {
         passwordUpdate: '',
         passwordConfirm: '',
         error: '',
+        advertise: '',
       };
     case TOGGLE_DELETE:
       return {
@@ -98,6 +101,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         error: action.error,
+      };
+    case ADD_ADVERTISE:
+      return {
+        ...state,
+        advertise: action.advertise,
       };
     default:
       return state;
