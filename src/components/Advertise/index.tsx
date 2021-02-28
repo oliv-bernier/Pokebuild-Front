@@ -25,7 +25,7 @@ const Advertise = ({
     </button>
     <h3 className="advertise-text">{advertise}</h3>
     <div className="advertise-barre">
-      <div className="advertise-barre_fill" />
+      <div className={classNames('advertise-barre_empty', { 'advertise-barre_fill': isAdvertise })} />
     </div>
   </div>
 );

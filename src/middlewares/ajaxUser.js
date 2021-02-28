@@ -144,9 +144,6 @@ const ajaxUser = (store) => (next) => (action) => {
               store.dispatch(toggleAdvertise());
             }
           }, 10000);
-          // setTimeout(() => {
-          //   store.dispatch(logout());
-          // }, 100);
         })
         .catch((error) => {
           console.error(error);

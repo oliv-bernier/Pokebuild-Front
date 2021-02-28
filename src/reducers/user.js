@@ -24,7 +24,7 @@ const initialState = {
   passwordConfirm: '',
   token: '',
   error: '',
-  advertise: '',
+  advertise: 'testetettetetetetteztetzetztetzetze',
 };
 
 const reducer = (state = initialState, action = {}) => {
