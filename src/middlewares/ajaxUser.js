@@ -9,6 +9,7 @@ import {
   DELETE_USER,
   memorizeUser,
   addError,
+  addAdvertise,
   clearLog,
   logout,
 } from '../actions/user';
@@ -80,12 +81,15 @@ const ajaxUser = (store) => (next) => (action) => {
       })
         .then(() => {
           store.dispatch(toggleLogin());
+          store.dispatch(addAdvertise('Ton compte a été créé ! \n Tu vas recevoir un mail d\'ici quelques minutes dans lequel tu trouveras un lien pour activer ton compte.'));
           setTimeout(() => {
             store.dispatch(clearLog());
             store.dispatch(toggleAdvertise());
           }, 100);
           setTimeout(() => {
-            store.dispatch(toggleAdvertise());
+            if (store.getState().boolean.isAdvertise) {
+              store.dispatch(toggleAdvertise());
+            }
           }, 10000);
         })
         .catch((error) => {
@@ -129,9 +133,17 @@ const ajaxUser = (store) => (next) => (action) => {
       })
         .then(() => {
           store.dispatch(toggleFinalDelete());
+          store.dispatch(addAdvertise('Ton compte est bien supprimé ! \n N\'hésites pas à revenir si on te manque ;)'));
           setTimeout(() => {
+            store.dispatch(clearLog());
             store.dispatch(logout());
+            store.dispatch(toggleAdvertise());
           }, 100);
+          setTimeout(() => {
+            if (store.getState().boolean.isAdvertise) {
+              store.dispatch(toggleAdvertise());
+            }
+          }, 10000);
         })
         .catch((error) => {
           console.error(error);

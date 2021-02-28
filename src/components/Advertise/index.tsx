@@ -7,9 +7,11 @@ import './style.scss';
 const Advertise = ({
   toggleAdvertise,
   isAdvertise,
+  advertise,
 }: {
   toggleAdvertise: Function,
   isAdvertise: boolean,
+  advertise: string,
 }) => (
   <div className={classNames('advertise', { 'advertise-display': isAdvertise })}>
     <button
@@ -21,13 +23,9 @@ const Advertise = ({
     >
       X
     </button>
-    <h3 className="advertise-text">Ton compte a été créé !</h3>
-    <h3 className="advertise-text">
-      Tu vas recevoir un mail d'ici quelques minutes dans lequel
-      tu trouveras un lien pour activer ton compte.
-    </h3>
+    <h3 className="advertise-text">{advertise}</h3>
     <div className="advertise-barre">
-      <div className="advertise-barre_fill" />
+      <div className={classNames('advertise-barre_empty', { 'advertise-barre_fill': isAdvertise })} />
     </div>
   </div>
 );
@@ -35,6 +33,7 @@ const Advertise = ({
 Advertise.propTypes = {
   toggleAdvertise: PropTypes.func.isRequired,
   isAdvertise: PropTypes.bool.isRequired,
+  advertise: PropTypes.string.isRequired,
 };
 
 export default Advertise;
