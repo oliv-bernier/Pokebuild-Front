@@ -121,7 +121,7 @@ const Drop = (
         )}
       </div>
     );
-  } if (pokemonSelected.length > 1) {
+  } if (pokemonSelected.length > 1 && pokemonSelected.length < 6) {
     return (
       <div className="home-selection">
         <div className="home-selection-drops">
