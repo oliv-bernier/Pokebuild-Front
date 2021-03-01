@@ -3,10 +3,11 @@
 .header {
 
     &-div{
+        position: relative;
         background-color: vars.$color-header;
         color: vars.$color-light;
         width: 100%;
-        height: 1.2rem;
+        height: 2rem;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -18,6 +19,7 @@
 
         @media (min-width: 768px) {
             height: 3rem;
+            justify-content: space-around;
         }
 
         &-title {
@@ -40,9 +42,33 @@
         }
     
         &-connexion {
-            display: flex;
-            align-items: center;
-            color: vars.$color-light;
+            display: none;
+
+            @media (min-width: 768px) {
+                display: flex;
+                align-items: center;
+                color: vars.$color-light;
+            }
+        }
+
+        &-mobile {
+            position:absolute;
+            right: 15px;
+
+            @media (min-width: 768px) {
+                display: none;
+            }
+
+            &-open {
+                position: absolute;
+                top: 2rem;
+                left: 0;
+                height: fit-content;
+                width: 100%;
+                padding: 1rem;
+                background-color: vars.$color-header;
+                font-size: 1rem;
+            }
         }
 
         &-connexion p {
@@ -60,7 +86,6 @@
 }
 
 .trick {
-    width: 3.6rem;
     text-align: right;
     cursor: pointer;
 
@@ -72,38 +97,44 @@
         position: relative;
         width: 100%;
         height: 100%;
-        text-align: right;
+        text-align: left;
         transition: transform 0.5s;
         transform-style: preserve-3d;
+
+        @media(min-width: 768px) {
+            text-align: right;
+        }
     }
 
     &:hover &-box {
-        transform: rotateX(180deg);
+
+        @media (min-width: 768px) {
+            transform: rotateX(180deg);
+        }
     }
 
     &-visible {
-        position: absolute;
-        top: -18px;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
 
         @media (min-width: 768px) {
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            position: absolute;
             top: -14px;
         }
 
         @media (min-width: 1400px) {
+            position: absolute;
             top: -16px;
         }
     }
     &-invisible {
-        position: absolute;
-        top: 18px;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
 
         @media (min-width: 768px) {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
             top: 14px;
         }
 
@@ -113,6 +144,32 @@
     }
 
     &-invisible {
-        transform: rotateX(180deg);
+
+        @media (min-width: 768px) {
+            transform: rotateX(180deg);
+        }
+    }
+}
+
+.fa-bars {
+    font-size: 1.2rem;
+}
+
+.light-dark {
+    position: absolute;
+    left: 15px;
+    cursor: pointer;
+
+    @media (min-width: 768px) {
+        left: auto;
+        right: 20px;
+    }
+
+    & img {
+        width: 20px;
+
+        @media (min-width: 768px) {
+            width: 25px;
+        }
     }
 }

@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { NavLink } from 'react-router-dom';
+
+import dark from '../../assets/moon.svg';
+import light from '../../assets/sun.svg';
 
 import './style.scss';
 
@@ -26,14 +29,26 @@ const Header = ({
   toggleUpdate: Function,
   fetchFav: Function,
 }) => {
+  const [burger, setBurger] = useState(false);
+
+  const [isDark, setDark] = useState(true);
+
+  const [isLight, setLight] = useState(false);
+
   const handleClickFav = () => {
     toggleFav();
     fetchFav();
+    setBurger(!burger);
   };
 
   const handleLogout = () => {
     logout();
     toggleLogged();
+    setBurger(!burger);
+  };
+
+  const handleBurger = () => {
+    setBurger(!burger);
   };
 
   return (
@@ -66,6 +81,76 @@ const Header = ({
           {isLogged && <p>|</p>}
           {isLogged && <p onClick={handleLogout}>Déconnexion</p>}
         </div>
+        <div className="light-dark">
+          {isDark && (
+            <img
+              className="darkmode"
+              src={dark}
+              alt="dark mode"
+              onClick={() => {
+                setLight(!isLight);
+                setDark(!isDark);
+              }}
+            />
+          )}
+          {isLight && (
+            <img
+              className="lightmode"
+              src={light}
+              alt="dark mode"
+              onClick={() => {
+                setDark(!isDark);
+                setLight(!isLight);
+              }}
+            />
+          )}
+        </div>
+        <div className="header-div-mobile" onClick={handleBurger}>
+          <i className="fas fa-bars" />
+        </div>
+        {burger
+        && (
+          <div className="header-div-mobile-open">
+            {!isLogged && (
+            <p onClick={() => {
+              toggleLogin();
+              setBurger(!burger);
+            }}
+            >
+              Se connecter
+            </p>
+            )}
+            {!isLogged && (
+            <p onClick={() => {
+              toggleCreate();
+              setBurger(!burger);
+            }}
+            >
+              S'inscrire
+            </p>
+            )}
+            {isLogged && (
+              <div className="trick">
+                <div className="trick-box">
+                  <div className="trick-visible">
+                    <p>Bonjour {pseudo}</p>
+                  </div>
+                  <div className="trick-invisible">
+                    <p onClick={() => {
+                      toggleUpdate();
+                      setBurger(!burger);
+                    }}
+                    >
+                      Modifier mes infos
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+            {isLogged && <p onClick={handleClickFav}>Favoris</p>}
+            {isLogged && <p onClick={handleLogout}>Déconnexion</p>}
+          </div>
+        )}
       </div>
     </div>
   );
