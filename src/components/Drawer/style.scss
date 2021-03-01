@@ -45,6 +45,7 @@
             width: 25px;
             transition-duration: 0.5s;
             z-index: 1;
+            cursor: pointer;
 
             &:hover {
                 transform: rotate(45deg);
@@ -67,12 +68,6 @@
                 width: 50px;
                 top: 50%;
                 left: -24px;
-                transform: rotate(-90deg);
-
-                &:hover {
-                    transform: rotate(-45deg);
-                    transition-duration: 0.5s;
-                }
             }
         }
     }
