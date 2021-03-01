@@ -37,11 +37,6 @@ const Drawer = ({
       setEmptyList(false);
     }
   });
-
-  let style: string;
-  if (window.innerHeight <= 850) {
-    style = 'style="top: calc(100% - 2.9rem"';
-  }
   return (
     <section
       className={classNames('drawer', { 'drawer--open': isDrawer })}
