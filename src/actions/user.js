@@ -48,6 +48,12 @@ export const addError = (error) => ({
   error,
 });
 
+export const ADD_ADVERTISE = 'ADD_ADVERTISE';
+export const addAdvertise = (advertise) => ({
+  type: ADD_ADVERTISE,
+  advertise,
+});
+
 export const ADD_ERROR_LOGIN = 'ADD_ERROR_LOGIN';
 export const addErrorLogin = () => ({
   type: ADD_ERROR_LOGIN,

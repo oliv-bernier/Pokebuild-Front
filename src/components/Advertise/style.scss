@@ -33,6 +33,7 @@
 
   &-text {
     margin-bottom: (vars.$gutter / 2);
+    white-space: pre-wrap;
   }
 
   &-close {
@@ -66,6 +67,10 @@
   &-barre {
     height: (vars.$gutter / 2);
     width: 100%;
+
+    &-empty {
+      width: 0%;
+    }
 
     &_fill {
       height: (vars.$gutter / 2);

@@ -5,6 +5,7 @@ import { toggleAdvertise } from '../../actions/boolean';
 
 const mapStateToProps = (state: any) => ({
   isAdvertise: state.boolean.isAdvertise,
+  advertise: state.user.advertise,
 });
 
 const mapDispatchToProps = (dispatch: Function) => ({
