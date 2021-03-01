@@ -8,7 +8,7 @@ const Advices = () => (
   <div className="advices">
     <div className="advices-style">
       Coucou, je suis un algorythme qui va te conseiller sur la composition de ton équipe.
-      Compose la avec le tiroir !!
+      Composes la avec le tiroir en cliquant sur la pokeball !!
     </div>
   </div>
 );

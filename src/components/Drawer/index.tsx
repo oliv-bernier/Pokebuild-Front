@@ -25,6 +25,7 @@ const Drawer = ({
   filterInput: string,
 }) => {
   const [emptyList, setEmptyList] = useState(false);
+
   const handleDrawer = (): void => {
     toggleDrawer();
   };
@@ -37,12 +38,18 @@ const Drawer = ({
       setEmptyList(false);
     }
   });
+
   return (
     <section
       className={classNames('drawer', { 'drawer--open': isDrawer })}
     >
       <div className="drawer-button">
-        <img onClick={handleDrawer} className="drawer-button-image" src={pokeball} alt="bouton tiroir" />
+        <img
+          onClick={handleDrawer}
+          className="drawer-button-image "
+          src={pokeball}
+          alt="bouton tiroir"
+        />
       </div>
       <div className="drawer-pokedex">
         <Search />
