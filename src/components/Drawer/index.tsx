@@ -37,8 +37,15 @@ const Drawer = ({
       setEmptyList(false);
     }
   });
+
+  let style: string;
+  if (window.innerHeight <= 850) {
+    style = 'style="top: calc(100% - 2.9rem"';
+  }
   return (
-    <section className={classNames('drawer', { 'drawer--open': isDrawer })}>
+    <section
+      className={classNames('drawer', { 'drawer--open': isDrawer })}
+    >
       <div className="drawer-button">
         <img onClick={handleDrawer} className="drawer-button-image" src={pokeball} alt="bouton tiroir" />
       </div>
