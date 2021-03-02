@@ -47,6 +47,14 @@
             z-index: 1;
             cursor: pointer;
 
+            &_roll {
+                animation: roll 0.5s 1;
+
+                @media (min-width: 768px) {
+                    animation: roll768 0.5s 1;
+                }
+            }
+
             &:hover {
                 transform: rotate(45deg);
                 transition-duration: 0.5s;

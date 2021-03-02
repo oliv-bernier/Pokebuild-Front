@@ -8,6 +8,7 @@ import {
   toggleLogged,
   toggleFav,
   toggleUpdate,
+  toggleRoll,
 } from '../../actions/boolean';
 
 import {
@@ -65,6 +66,9 @@ const mapDispatchToProps = (dispatch: Function) => ({
   },
   toggleUpdate: () => {
     dispatch(toggleUpdate());
+  },
+  toggleRoll: () => {
+    dispatch(toggleRoll());
   },
 });
 
