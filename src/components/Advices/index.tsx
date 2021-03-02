@@ -18,9 +18,11 @@ const Advices = ({
 }) => {
   if (pokemonSelected.length > 5) {
     return (
-      <div className={`advices ${summary.class}`}>
+      <div className="advices">
         <div className="advices-style">
-          {summary.summary}
+          <p className={`advices-style-${summary.class}`}>
+            {summary.summary}
+          </p>
         </div>
       </div>
     );
@@ -28,15 +30,19 @@ const Advices = ({
     return (
       <div className="advices">
         <div className="advices-style">
-          Encore 1 pokémon pour finir l'équipe :)
+          <p className="advice-style-message">
+            Encore 1 pokémon pour finir l'équipe :)
+          </p>
         </div>
       </div>
     );
   } return (
     <div className="advices">
       <div className="advices-style">
-        Coucou, je suis un algorythme qui va te conseiller sur la composition de ton équipe.
-        Composes-la avec le tiroir en cliquant sur la pokeball !!
+        <p className="advice-style-message">
+          Coucou, je suis un algorythme qui va te conseiller sur la composition de ton équipe.
+          Composes-la avec le tiroir en cliquant sur la pokeball !!
+        </p>
       </div>
     </div>
   );
