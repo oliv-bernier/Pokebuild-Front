@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import Tab from '../../containers/Tab';
-import Advices from '../Advices';
+import Advices from '../../containers/Advices/index';
 import Drop from '../../containers/Drop/index';
 import Suggestion from '../../containers/Suggestion/index';
 
