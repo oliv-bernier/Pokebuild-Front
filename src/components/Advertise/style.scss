@@ -7,8 +7,8 @@
   transition: transform .5s;
   z-index: 2;
   text-align: center;
-  color: vars.$color-background-scaled;
-  background-color: vars.$color-background-stat;
+  color: var(--scaled);
+  background-color: var(--stat);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   padding: (vars.$gutter / 2);
@@ -23,7 +23,7 @@
   }
 
   &-display {
-    box-shadow: 1px 1px 4px 0px vars.$color-background-barre;
+    box-shadow: 1px 1px 4px 0px var(--barre);
     transform: translateY(0);
 
     @media (min-width: 768px) {
@@ -42,9 +42,9 @@
     width: 0.9rem;
     height: 0.9rem;
     border-radius: 50%;
-    border: 1px solid vars.$color-background-scaled;
-    background-color: vars.$color-background;
-    color: vars.$color-background-scaled;
+    border: 1px solid var(--scaled);
+    background-color: var(--background);
+    color: var(--scaled);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,9 +58,9 @@
     }
 
     &:hover {
-      background-color: vars.$color-background-scaled;
-      color: vars.$color-background;
-      border: 1px solid vars.$color-background;
+      background-color: var(--scaled);
+      color: var(--background);
+      border: 1px solid var(--background);
     }
   }
 
@@ -75,7 +75,7 @@
     &_fill {
       height: (vars.$gutter / 2);
       animation: fill 10s 1;
-      background-color: vars.$color-background-pokemon;
+      background-color: var(--pokemon);
     }
   }
 }

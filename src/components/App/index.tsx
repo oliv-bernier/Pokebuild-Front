@@ -71,7 +71,7 @@ const App = ({
   }, []);
 
   return (
-    <div className={classNames('app', { 'app--dm': isDarkMode })}>
+    <div className="app">
       <Header
         isLogged={isLogged}
         toggleLogin={toggleLogin}

@@ -28,8 +28,8 @@
     align-items: center;
     margin: auto;
     margin-top: 0.5rem;
-    color: vars.$color-background-scaled;
-    background-color: vars.$color-background;
+    color: var(--scaled);
+    background-color: var(--background);
     border-radius: 5px;
     padding: vars.$gutter;
     width: 100%;
@@ -53,8 +53,8 @@
 }
 
 .api-link {
-    color: vars.$color-background-scaled;
-    background-color: vars.$color-background;
+    color: var(--scaled);
+    background-color: var(--background);
     border-radius: 5px;
     padding: (vars.$gutter / 2);
     margin-bottom: vars.$gutter 0;

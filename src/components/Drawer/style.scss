@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: vars.$color-background;
+    background-color: var(--background);
     height: calc(62vh - 3.3rem);
     position: fixed;
     width: 100%;
@@ -36,7 +36,7 @@
     }
 
     &-button {
-        background-color: vars.$color-background-scaled;
+        background-color: var(--scaled);
 
         &-image {
             position: absolute;
@@ -109,7 +109,7 @@
         }
 
         &::-webkit-scrollbar-thumb {
-            background-color: vars.$color-background-pokemon;
+            background-color: var(--pokemon);
             border-radius: 20px;
         }
 
@@ -125,7 +125,7 @@
         }
 
         &--nopokemon {
-            color: vars.$color-background-scaled;
+            color: var(--scaled);
             text-align: center;
             margin-top: 25%;
         }

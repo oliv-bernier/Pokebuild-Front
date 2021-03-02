@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: vars.$color-background-login; 
+  background-color: var(--login); 
   position: absolute;
   z-index: 2;
   animation: fadeIn 0.5s 1;
@@ -26,12 +26,12 @@
       right: 0px;
       display: block;
       text-align: center;
-      background-color: vars.$color-background-stat;
-      color: vars.$color-background-scaled;
+      background-color: var(--stat);
+      color: var(--scaled);
       border-radius: 5px;
       padding: vars.$gutter;
       width: 80vw;
-      box-shadow: 1px 1px 4px 0px vars.$color-background-barre;
+      box-shadow: 1px 1px 4px 0px var(--barre);
       margin-bottom: vars.$gutter;
       animation: fadeIn 0.5s 1;
 
@@ -57,12 +57,12 @@
 
   &-form {
     position: relative;
-    background-color: vars.$color-background-stat;
+    background-color: var(--stat);
     border-radius: 5px;
     padding: (vars.$gutter * 2);
     padding-bottom: vars.$gutter;
     width: 80vw;
-    box-shadow: 1px 1px 4px 0px vars.$color-background-barre;
+    box-shadow: 1px 1px 4px 0px var(--barre);
 
     @media (min-width:768px) {
       width: 60vw;
@@ -73,7 +73,7 @@
     }
 
     &_aside {
-      color: vars.$color-background-scaled;
+      color: var(--scaled);
       margin-bottom: 15px;
       font-size: 0.5rem;
 
@@ -99,9 +99,9 @@
       border: none;
       width: 100%;
       padding: .5rem;
-      color: vars.$color-background-scaled;
-      background-color: vars.$color-background;
-      border: 1px solid vars.$color-background-scaled;
+      color: var(--scaled);
+      background-color: var(--background);
+      border: 1px solid var(--scaled);
       margin-bottom: vars.$gutter;
     }
 
@@ -110,9 +110,9 @@
       width: 1.2rem;
       height: 1.2rem;
       border-radius: 50%;
-      border: 1px solid vars.$color-background-scaled;
-      background-color: vars.$color-background;
-      color: vars.$color-background-scaled;
+      border: 1px solid var(--scaled);
+      background-color: var(--background);
+      color: var(--scaled);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -121,9 +121,9 @@
     }
 
     &-close:hover {
-      background-color: vars.$color-background-scaled;
-      color: vars.$color-background;
-      border: 1px solid vars.$color-background;
+      background-color: var(--scaled);
+      color: var(--background);
+      border: 1px solid var(--background);
     }
   }
 }

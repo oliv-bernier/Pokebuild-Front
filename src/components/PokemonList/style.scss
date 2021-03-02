@@ -6,11 +6,11 @@
     flex-direction: column;
     align-items: center;
     width: 25%;
-    background-color: vars.$color-background-pokemon;
+    background-color: var(--pokemon);
     margin: 0.5rem;
     padding: 0.5rem;
     border-radius: 5px;
-    color: vars.$color-background-scaled;
+    color: var(--scaled);
 
     &-text {
         font-weight: bold;
@@ -31,6 +31,6 @@
 }
 
 .pokemonlist:hover {
-    background-color: vars.$color-background-scaled;
-    color: vars.$color-background-pokemon;
+    background-color: var(--scaled);
+    color: var(--pokemon);
 }

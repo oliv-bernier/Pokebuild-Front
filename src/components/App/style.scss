@@ -1,20 +1,12 @@
 @use '../../styles/vars';
-@use 'sass:map';
 
 .container {
     margin-top: 1.2rem;
     margin-bottom: 2rem;
-    // background-color: vars.$color-background-scaled;
+    background-color: var(--scaled);
     position: relative;
     height: calc(100vh - 3.2rem);
     transition: 0.5s;
-    @include vars.themes($dark: false);
-        background-color: map.get($theme, "scaled");
-            app--dm & {
-                @include vars.themes($dark: true);
-                background-color: map.get($theme, "scaled");
-            }
-
 
     @media (min-width: 768px) {
         margin-top: 3rem;
