@@ -14,6 +14,7 @@ import {
   TOGGLE_FINAL_DELETE,
   TOGGLE_ADVERTISE,
   TOGGLE_DARKMODE,
+  SET_DARK,
 } from '../actions/boolean';
 
 import { TOGGLE_CONFIRM_DELETE } from '../actions/favorites';
@@ -128,6 +129,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isDarkMode: !state.isDarkMode,
+      };
+    case SET_DARK:
+      return {
+        ...state,
+        isDarkMode: true,
       };
     default:
       return state;

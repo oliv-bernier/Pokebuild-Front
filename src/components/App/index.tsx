@@ -16,6 +16,9 @@ import Favorites from '../../containers/Favorites';
 import UserUpdate from '../../containers/UserUpdate';
 import Advertise from '../../containers/Advertise';
 
+// @ts-ignore
+import darkMode from '../../utils/darkMode';
+
 import './style.scss';
 
 const App = ({
@@ -29,10 +32,12 @@ const App = ({
   getPokemon,
   getTypes,
   getUser,
+  setDark,
   toggleLogin,
   toggleCreate,
   toggleLogged,
   toggleUpdate,
+  toggleDark,
   pseudo,
   logout,
   toggleFav,
@@ -50,10 +55,12 @@ const App = ({
     getPokemon: Function,
     getTypes:Function,
     getUser: Function,
+    setDark: Function,
     toggleLogin: Function,
     toggleCreate: Function,
     toggleLogged: Function,
     toggleUpdate: Function,
+    toggleDark: Function,
     logout: Function,
     toggleFav: Function,
     fetchFav: Function,
@@ -61,17 +68,21 @@ const App = ({
   }) => {
   useEffect(() => {
     getPokemon();
+    getTypes();
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      setDark();
+    }
     if (localStorage.getItem('user') !== null) {
       getUser();
     }
   }, []);
 
   useEffect(() => {
-    getTypes();
-  }, []);
+    darkMode(isDarkMode);
+  }, [isDarkMode]);
 
   return (
-    <div className="app">
+    <div className={classNames('app', { 'app--dark': isDarkMode })}>
       <Header
         isLogged={isLogged}
         toggleLogin={toggleLogin}
@@ -82,6 +93,8 @@ const App = ({
         toggleFav={toggleFav}
         fetchFav={fetchFav}
         toggleUpdate={toggleUpdate}
+        toggleDark={toggleDark}
+        isDarkMode={isDarkMode}
       />
       <div className={classNames('container', { 'container_drawer-open': isDrawer })}>
         {isLogin && (
@@ -128,10 +141,12 @@ App.propTypes = {
   getPokemon: PropTypes.func.isRequired,
   getTypes: PropTypes.func.isRequired,
   getUser: PropTypes.func.isRequired,
+  setDark: PropTypes.func.isRequired,
   toggleLogin: PropTypes.func.isRequired,
   toggleCreate: PropTypes.func.isRequired,
   toggleLogged: PropTypes.func.isRequired,
   toggleUpdate: PropTypes.func.isRequired,
+  toggleDark: PropTypes.func.isRequired,
   logout: PropTypes.func.isRequired,
   toggleFav: PropTypes.func.isRequired,
   fetchFav: PropTypes.func.isRequired,

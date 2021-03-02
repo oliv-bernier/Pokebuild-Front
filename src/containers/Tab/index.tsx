@@ -5,6 +5,7 @@ const mapStateToProp = (state: any) => ({
   types: state.pokemon.types,
   pokemonSelected: state.pokemon.pokemonSelected,
   teamResistances: state.resistances,
+  isDarkMode: state.boolean.isDarkMode,
 });
 
 const mapDispatchToProps = () => ({});

@@ -17,16 +17,6 @@ $color-light: white;
 // $color-background-login: rgba(243, 217, 217, 0.8); 
 // $color-background2: #FEEAEA;
 
-//dark theme
-// $color-background-dm: #C14040;
-// $color-background-scaled-dm: color.scale($color-background, $lightness: 80%);
-// $color-background-scaled-drop-dm: color.scale($color-background, $lightness: 50%);
-// $color-background-pokemon-dm: color.scale($color-background, $lightness: -15%);
-// $color-background-stat-dm: color.scale($color-background, $lightness: -5%);
-// $color-background-barre-dm: color.scale($color-background, $lightness: -40%);
-// $color-background-login-dm: rgba(243, 217, 217, 0.8); 
-// $color-background2-dm: #FEEAEA;
-
 :root {
   --background: #C14040;
   --scaled: #F3D9D9;
@@ -38,24 +28,13 @@ $color-light: white;
   --bg2: #FEEAEA;
 }
 
-// html {
-//   --background: #C14040;
-//   --scaled: #F3D9D9;
-//   --drop: #E9A3A3;
-//   --pokemon: #982C2C;
-//   --stat: #AB3838;
-//   --barre: #632B2B;
-//   --login: rgba(243, 217, 217, 0.8); 
-//   --bg2: #FEEAEA;
-// }
-
-.dark {
-  --background: #C14040;
-  --scaled: #F3D9D9;
-  --drop: #E9A3A3;
-  --pokemon: #982C2C;
-  --stat: #AB3838;
-  --barre: #632B2B;
+.app--dark {
+  --background: #110B11;
+  --scaled: #7C7A7E;
+  --drop: #8E8D90;
+  --pokemon: #0D080B;
+  --stat: #302B31;
+  --barre: #0B0708;
   --login: rgba(243, 217, 217, 0.8); 
   --bg2: #FEEAEA;
 }

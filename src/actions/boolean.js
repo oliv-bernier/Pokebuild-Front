@@ -72,3 +72,8 @@ export const TOGGLE_DARKMODE = 'TOGGLE_DARKMODE';
 export const toggleDark = () => ({
   type: TOGGLE_DARKMODE,
 });
+
+export const SET_DARK = 'SET_DARK';
+export const setDark = () => ({
+  type: SET_DARK,
+});
