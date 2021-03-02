@@ -77,3 +77,13 @@ export const SET_DARK = 'SET_DARK';
 export const setDark = () => ({
   type: SET_DARK,
 });
+
+export const TOGGLE_ROLL = 'TOGGLE_ROLL';
+export const toggleRoll = () => ({
+  type: TOGGLE_ROLL,
+});
+
+export const STOP_ROLL = 'STOP_ROLL';
+export const stopRoll = () => ({
+  type: STOP_ROLL,
+});

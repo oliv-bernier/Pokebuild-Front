@@ -7,6 +7,7 @@ import Header from '../Header';
 import Home from '../Home';
 import About from '../About';
 import NotFound from '../NotFound';
+import Legal from '../Legal';
 
 import Footer from '../../containers/Footer';
 import Drawer from '../../containers/Drawer';
@@ -38,6 +39,7 @@ const App = ({
   toggleLogged,
   toggleUpdate,
   toggleDark,
+  toggleRoll,
   pseudo,
   logout,
   toggleFav,
@@ -61,6 +63,7 @@ const App = ({
     toggleLogged: Function,
     toggleUpdate: Function,
     toggleDark: Function,
+    toggleRoll: Function,
     logout: Function,
     toggleFav: Function,
     fetchFav: Function,
@@ -80,6 +83,9 @@ const App = ({
   useEffect(() => {
     darkMode(isDarkMode);
   }, [isDarkMode]);
+    getTypes();
+    setInterval(toggleRoll, 2500);
+  }, []);
 
   return (
     <div className={classNames('app', { 'app--dark': isDarkMode })}>
@@ -119,6 +125,9 @@ const App = ({
           <Route path="/about" exact>
             <About />
           </Route>
+          <Route path="/legal" exact>
+            <Legal />
+          </Route>
           <Route path="*">
             <NotFound />
           </Route>
@@ -147,6 +156,7 @@ App.propTypes = {
   toggleLogged: PropTypes.func.isRequired,
   toggleUpdate: PropTypes.func.isRequired,
   toggleDark: PropTypes.func.isRequired,
+  toggleRoll: PropTypes.func.isRequired,
   logout: PropTypes.func.isRequired,
   toggleFav: PropTypes.func.isRequired,
   fetchFav: PropTypes.func.isRequired,

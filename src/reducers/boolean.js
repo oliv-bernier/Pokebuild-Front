@@ -1,7 +1,8 @@
 import {
+  CLOSE_DRAWER,
+  STOP_ROLL,
   TOGGLE_DETAILS,
   TOGGLE_DRAWER,
-  CLOSE_DRAWER,
   TOGGLE_LOGIN,
   TOGGLE_CREATE,
   TOGGLE_LOGGED,
@@ -15,6 +16,7 @@ import {
   TOGGLE_ADVERTISE,
   TOGGLE_DARKMODE,
   SET_DARK,
+  TOGGLE_ROLL,
 } from '../actions/boolean';
 
 import { TOGGLE_CONFIRM_DELETE } from '../actions/favorites';
@@ -36,6 +38,8 @@ const initialState = {
   isSuggestion: false,
   isAdvertise: false,
   isDarkMode: false,
+  isRoll: false,
+  isConfirmedRoll: true,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -134,6 +138,16 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isDarkMode: true,
+      };
+    case TOGGLE_ROLL:
+      return {
+        ...state,
+        isRoll: !state.isRoll,
+      };
+    case STOP_ROLL:
+      return {
+        ...state,
+        isConfirmedRoll: false,
       };
     default:
       return state;

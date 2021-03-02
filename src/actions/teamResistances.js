@@ -4,3 +4,9 @@ export const memorizeResitances = (value, key) => ({
   value,
   key,
 });
+
+export const MEMORIZE_SUMMARY = 'MEMORIZE_SUMMARY';
+export const memorizeSummary = (summary) => ({
+  type: MEMORIZE_SUMMARY,
+  summary,
+});

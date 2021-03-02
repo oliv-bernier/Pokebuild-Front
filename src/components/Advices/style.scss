@@ -15,5 +15,38 @@
     padding: 1rem;
     border-radius: 12px;
     width: 100%;
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 0.7rem;
+
+    @media (min-width: 1400px) {
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    &-message {
+      animation: appearence 3s;
+    }
+
+    &-more-resistances {
+      animation: appearence 3s;
+    }
+
+    &-ore-vulnerabilities {
+      animation: appearence 3s;
+    }
+
+    &-equal-resistances {
+      animation: appearence 3s;
+    }
+
+    &-low-vulnerabilities {
+      animation: appearence 3s;
+    }
   }
+}
+
+@keyframes appearence {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }

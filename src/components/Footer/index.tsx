@@ -28,6 +28,15 @@ const Footer = ({ closeDrawer }: {closeDrawer: Function}) => {
         >
           About
         </NavLink>
+        <NavLink
+          className="footer-navlink"
+          activeClassName="footer-navlink--active"
+          to="/legal"
+          onClick={handleClick}
+          exact
+        >
+          Mentions légales
+        </NavLink>
       </div>
       <p className="footer--copyright">
         Copyright © Pokébuild 2021

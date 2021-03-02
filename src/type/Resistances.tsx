@@ -3,6 +3,7 @@ export interface Resistances {
     message: string,
     name: string,
     result: string,
+    summary: string,
   },
   Combat: {
     message: string,

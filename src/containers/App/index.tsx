@@ -10,6 +10,7 @@ import {
   toggleUpdate,
   toggleDark,
   setDark,
+  toggleRoll,
 } from '../../actions/boolean';
 
 import {
@@ -74,6 +75,8 @@ const mapDispatchToProps = (dispatch: Function) => ({
   },
   setDark: () => {
     dispatch(setDark());
+  toggleRoll: () => {
+    dispatch(toggleRoll());
   },
 });
 

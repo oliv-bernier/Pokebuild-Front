@@ -30,6 +30,8 @@
     &-navlink {
         padding: 0 2rem 0 0.2rem;
         position: relative;
+        display: flex;
+        justify-content: center;
 
         @media (min-width: 1400px) {
             padding: 0 2rem 0 0.2rem;
