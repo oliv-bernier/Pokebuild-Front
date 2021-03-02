@@ -1,4 +1,4 @@
-import { MEMORIZE_RESISTANCES } from '../actions/teamResistances';
+import { MEMORIZE_RESISTANCES, MEMORIZE_SUMMARY } from '../actions/teamResistances';
 import { REMOVE_ALL_POKEMON } from '../actions/pokemon';
 
 const initialState = {
@@ -20,6 +20,7 @@ const initialState = {
   Dragon: {},
   Ténèbres: {},
   Fée: {},
+  summary: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -50,6 +51,11 @@ const reducer = (state = initialState, action = {}) => {
         Dragon: {},
         Ténèbres: {},
         Fée: {},
+      };
+    case MEMORIZE_SUMMARY:
+      return {
+        ...state,
+        summary: action.summary,
       };
     default:
       return state;

@@ -17,6 +17,7 @@ import {
 
 import {
   memorizeResitances,
+  memorizeSummary,
 } from '../actions/teamResistances';
 
 const ajaxPokemon = (store) => (next) => (action) => {
@@ -45,6 +46,7 @@ const ajaxPokemon = (store) => (next) => (action) => {
       const jsoned = JSON.stringify(team);
       axios.post('team/defensive-coverage', jsoned)
         .then((response) => {
+          store.dispatch(memorizeSummary(response.data[0].summary));
           response.data.map((currentData) => (
             store.dispatch(memorizeResitances(currentData, currentData.name))
           ));
