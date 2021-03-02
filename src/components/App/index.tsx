@@ -69,7 +69,7 @@ const App = ({
 
   useEffect(() => {
     getTypes();
-    setInterval(toggleRoll, 5000);
+    setInterval(toggleRoll, 2500);
   }, []);
 
   return (
