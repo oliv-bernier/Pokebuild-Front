@@ -10,8 +10,8 @@
   &-container {
     width: 80%;
     height:fit-content;
-    background-color: vars.$color-background;
-    color: vars.$color-background-scaled;
+    background-color: var(--background);
+    color: var(--scaled);
     padding: vars.$gutter (vars.$gutter * 2);
     border-radius: 5px;
     text-align: justify;
