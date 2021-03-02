@@ -10,6 +10,26 @@
   border-radius: 15px;
   box-shadow: 0 0 5px vars.$color-background;
 
+    &.more-resistances {
+      background-color: vars.$color-resistant;
+      color: black;
+    }
+
+    &.more-vulnerabilities {
+      background-color: vars.$color-vulnerable;
+      color: black;
+    }
+
+    &.equal-resistances {
+      background-color: vars.$color-balanced-neutral;
+      color: black;
+    }
+
+    &.low-vulnerabilities {
+      background-color: vars.$color-twice-resistant;
+      color: black;
+    }
+
   &-style {
     background-color: vars.$color-background-scaled;
     padding: 1rem;

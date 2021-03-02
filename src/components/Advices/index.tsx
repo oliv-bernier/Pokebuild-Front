@@ -1,26 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Resistances } from '../../type/Resistances';
-
 import './style.scss';
 
 const Advices = ({
-  advice,
-  teamResistance,
   pokemonSelected,
+  summary,
 }: {
-  advice: string,
   pokemonSelected: Array<any>,
-  teamResistance: Resistances,
+  summary: {
+    name: string,
+    message: string,
+    result: string,
+    summary: string,
+    class: string,
+  },
 }) => {
-  console.log(teamResistance);
-
   if (pokemonSelected.length > 5) {
+    return (
+      <div className={`advices ${summary.class}`}>
+        <div className="advices-style">
+          {summary.summary}
+        </div>
+      </div>
+    );
+  } if (pokemonSelected.length > 4) {
     return (
       <div className="advices">
         <div className="advices-style">
-          {advice}
+          Encore 1 pokémon pour finir l'équipe :)
         </div>
       </div>
     );
@@ -35,9 +43,8 @@ const Advices = ({
 };
 
 Advices.propTypes = {
-  advice: PropTypes.string.isRequired,
   pokemonSelected: PropTypes.array.isRequired,
-  teamResistance: PropTypes.object.isRequired,
+  summary: PropTypes.object.isRequired,
 };
 
 export default Advices;
