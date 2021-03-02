@@ -15,7 +15,14 @@
     padding: 1rem;
     border-radius: 12px;
     width: 100%;
-    text-align: center;
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 0.7rem;
+
+    @media (min-width: 1400px) {
+      text-align: center;
+      font-size: 1rem;
+    }
 
     &-message {
       animation: appearence 3s;
