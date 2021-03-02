@@ -30,6 +30,7 @@ const mapStateToProps = (state: any) => ({
   isFav: state.boolean.isFav,
   isUpdate: state.boolean.isUpdate,
   isSuggestion: state.boolean.isSuggestion,
+  isDarkMode: state.boolean.isDarkMode,
 });
 
 const mapDispatchToProps = (dispatch: Function) => ({

@@ -24,6 +24,8 @@ const App = ({
   isLogged,
   isLogin,
   isUpdate,
+  isSuggestion,
+  isDarkMode,
   getPokemon,
   getTypes,
   getUser,
@@ -36,7 +38,6 @@ const App = ({
   toggleFav,
   isFav,
   fetchFav,
-  isSuggestion,
 }: {
     isDetails: boolean,
     isDrawer: boolean,
@@ -44,6 +45,8 @@ const App = ({
     isLogin: boolean,
     isFav: boolean,
     isUpdate: boolean,
+    isSuggestion: boolean,
+    isDarkMode: boolean,
     getPokemon: Function,
     getTypes:Function,
     getUser: Function,
@@ -55,7 +58,6 @@ const App = ({
     toggleFav: Function,
     fetchFav: Function,
     pseudo: string,
-    isSuggestion: boolean,
   }) => {
   useEffect(() => {
     getPokemon();
@@ -69,7 +71,7 @@ const App = ({
   }, []);
 
   return (
-    <div className="app">
+    <div className={classNames('app', { 'app--dm': isDarkMode })}>
       <Header
         isLogged={isLogged}
         toggleLogin={toggleLogin}
@@ -121,6 +123,8 @@ App.propTypes = {
   isDrawer: PropTypes.bool.isRequired,
   isFav: PropTypes.bool.isRequired,
   isUpdate: PropTypes.bool.isRequired,
+  isSuggestion: PropTypes.bool.isRequired,
+  isDarkMode: PropTypes.bool.isRequired,
   getPokemon: PropTypes.func.isRequired,
   getTypes: PropTypes.func.isRequired,
   getUser: PropTypes.func.isRequired,
@@ -132,7 +136,6 @@ App.propTypes = {
   toggleFav: PropTypes.func.isRequired,
   fetchFav: PropTypes.func.isRequired,
   pseudo: PropTypes.string.isRequired,
-  isSuggestion: PropTypes.bool.isRequired,
 };
 
 export default App;

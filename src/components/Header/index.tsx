@@ -10,9 +10,9 @@ import './style.scss';
 
 const Header = ({
   isLogged,
+  pseudo,
   toggleLogin,
   toggleCreate,
-  pseudo,
   logout,
   toggleLogged,
   toggleFav,
@@ -20,9 +20,9 @@ const Header = ({
   fetchFav,
 }: {
   isLogged: boolean,
+  pseudo: string,
   toggleLogin: Function,
   toggleCreate: Function,
-  pseudo: string,
   logout: Function,
   toggleLogged: Function,
   toggleFav: Function,
@@ -158,9 +158,9 @@ const Header = ({
 
 Header.propTypes = {
   isLogged: PropTypes.bool.isRequired,
+  pseudo: PropTypes.string.isRequired,
   toggleLogin: PropTypes.func.isRequired,
   toggleCreate: PropTypes.func.isRequired,
-  pseudo: PropTypes.string.isRequired,
   logout: PropTypes.func.isRequired,
   toggleLogged: PropTypes.func.isRequired,
   toggleFav: PropTypes.func.isRequired,
