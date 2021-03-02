@@ -13,21 +13,28 @@ import './style.scss';
 
 const Drawer = ({
   pokemon,
-  toggleDrawer,
-  isDrawer,
   filterTypes,
+  toggleDrawer,
+  stopRoll,
+  isDrawer,
+  isRoll,
+  isConfirmedRoll,
   filterInput,
 }: {
   pokemon: Array<Pokemon>,
-  toggleDrawer: Function,
-  isDrawer: boolean,
   filterTypes: Array<string>,
+  toggleDrawer: Function,
+  stopRoll: Function,
+  isDrawer: boolean,
+  isRoll: boolean,
+  isConfirmedRoll: boolean,
   filterInput: string,
 }) => {
   const [emptyList, setEmptyList] = useState(false);
 
   const handleDrawer = (): void => {
     toggleDrawer();
+    stopRoll();
   };
   const filteredPokemon = pokemonFilter(pokemon, filterTypes, filterInput);
   useEffect(() => {
@@ -41,12 +48,14 @@ const Drawer = ({
 
   return (
     <section
-      className={classNames('drawer', { 'drawer--open': isDrawer })}
+      className={classNames('drawer',
+        { 'drawer--open': isDrawer })}
     >
       <div className="drawer-button">
         <img
           onClick={handleDrawer}
-          className="drawer-button-image "
+          className={classNames('drawer-button-image',
+            { 'drawer-button-image_roll': isRoll && isConfirmedRoll })}
           src={pokeball}
           alt="bouton tiroir"
         />
@@ -72,9 +81,12 @@ const Drawer = ({
 
 Drawer.propTypes = {
   pokemon: PropTypes.arrayOf(PropTypes.object).isRequired,
-  toggleDrawer: PropTypes.func.isRequired,
-  isDrawer: PropTypes.bool.isRequired,
   filterTypes: PropTypes.arrayOf(PropTypes.string).isRequired,
+  toggleDrawer: PropTypes.func.isRequired,
+  stopRoll: PropTypes.func.isRequired,
+  isDrawer: PropTypes.bool.isRequired,
+  isRoll: PropTypes.bool.isRequired,
+  isConfirmedRoll: PropTypes.bool.isRequired,
   filterInput: PropTypes.string.isRequired,
 };
 

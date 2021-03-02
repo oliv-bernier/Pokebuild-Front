@@ -31,6 +31,7 @@ const App = ({
   toggleCreate,
   toggleLogged,
   toggleUpdate,
+  toggleRoll,
   pseudo,
   logout,
   toggleFav,
@@ -51,6 +52,7 @@ const App = ({
     toggleCreate: Function,
     toggleLogged: Function,
     toggleUpdate: Function,
+    toggleRoll: Function,
     logout: Function,
     toggleFav: Function,
     fetchFav: Function,
@@ -66,6 +68,7 @@ const App = ({
 
   useEffect(() => {
     getTypes();
+    setInterval(toggleRoll, 5000);
   }, []);
 
   return (
@@ -128,6 +131,7 @@ App.propTypes = {
   toggleCreate: PropTypes.func.isRequired,
   toggleLogged: PropTypes.func.isRequired,
   toggleUpdate: PropTypes.func.isRequired,
+  toggleRoll: PropTypes.func.isRequired,
   logout: PropTypes.func.isRequired,
   toggleFav: PropTypes.func.isRequired,
   fetchFav: PropTypes.func.isRequired,

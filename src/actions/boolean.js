@@ -67,3 +67,13 @@ export const TOGGLE_ADVERTISE = 'TOGGLE_ADVERTISE';
 export const toggleAdvertise = () => ({
   type: TOGGLE_ADVERTISE,
 });
+
+export const TOGGLE_ROLL = 'TOGGLE_ROLL';
+export const toggleRoll = () => ({
+  type: TOGGLE_ROLL,
+});
+
+export const STOP_ROLL = 'STOP_ROLL';
+export const stopRoll = () => ({
+  type: STOP_ROLL,
+});

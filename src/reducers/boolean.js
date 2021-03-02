@@ -1,7 +1,8 @@
 import {
+  CLOSE_DRAWER,
+  STOP_ROLL,
   TOGGLE_DETAILS,
   TOGGLE_DRAWER,
-  CLOSE_DRAWER,
   TOGGLE_LOGIN,
   TOGGLE_CREATE,
   TOGGLE_LOGGED,
@@ -13,6 +14,7 @@ import {
   TOGGLE_DELETE_PASS,
   TOGGLE_FINAL_DELETE,
   TOGGLE_ADVERTISE,
+  TOGGLE_ROLL,
 } from '../actions/boolean';
 
 import { TOGGLE_CONFIRM_DELETE } from '../actions/favorites';
@@ -33,6 +35,8 @@ const initialState = {
   isUpdate: false,
   isSuggestion: false,
   isAdvertise: false,
+  isRoll: false,
+  isConfirmedRoll: true,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -121,6 +125,16 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isAdvertise: !state.isAdvertise,
+      };
+    case TOGGLE_ROLL:
+      return {
+        ...state,
+        isRoll: !state.isRoll,
+      };
+    case STOP_ROLL:
+      return {
+        ...state,
+        isConfirmedRoll: false,
       };
     default:
       return state;

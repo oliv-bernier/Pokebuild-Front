@@ -56,3 +56,39 @@ $color-twice-vulnerable: color.scale($color-slightly-vulnerable, $lightness: -30
     width: 100%;
   }
 }
+
+@keyframes roll {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  33% {
+    transform: rotate(45deg)
+  }
+
+  66% {
+    transform: rotate(-45deg)
+  }
+
+  100% {
+    transform: rotate(0deg)
+  }
+}
+
+@keyframes roll768 {
+  0% {
+    transform: rotate(-90deg);
+  }
+
+  33% {
+    transform: rotate(-45deg)
+  }
+
+  66% {
+    transform: rotate(-135deg)
+  }
+
+  100% {
+    transform: rotate(-90deg)
+  }
+}
