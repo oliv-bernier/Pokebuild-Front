@@ -72,6 +72,7 @@ const App = ({
   useEffect(() => {
     getPokemon();
     getTypes();
+    setInterval(toggleRoll, 2500);
     if (localStorage.getItem('darkMode') === 'enabled') {
       setDark();
     }
@@ -83,9 +84,6 @@ const App = ({
   useEffect(() => {
     darkMode(isDarkMode);
   }, [isDarkMode]);
-    getTypes();
-    setInterval(toggleRoll, 2500);
-  }, []);
 
   return (
     <div className={classNames('app', { 'app--dark': isDarkMode })}>
