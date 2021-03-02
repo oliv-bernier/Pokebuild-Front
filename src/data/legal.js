@@ -1,6 +1,6 @@
 const legal = [
   {
-    title: 'Limitation contractuelles sur les données : ',
+    title: 'Limitations contractuelles sur les données : ',
     text: 'Les informations contenues sur ce site sont aussi précises que possible et le site remis à jour à différentes périodes de l’année, mais peut toutefois contenir des inexactitudes ou des omissions. Si vous constatez une lacune, erreur ou ce qui parait être un dysfonctionnement, merci de bien vouloir le signaler par email en décrivant le problème de la manière la plus précise possible (page posant problème, type d’ordinateur et de navigateur utilisé, …).',
   },
   {

@@ -40,8 +40,10 @@ const Advices = ({
     <div className="advices">
       <div className="advices-style">
         <p className="advice-style-message">
-          Coucou, je suis un algorythme qui va te conseiller sur la composition de ton équipe.
-          Composes-la avec le tiroir en cliquant sur la pokeball !!
+          Hello,
+          Je suis un algorythme qui va vous conseiller sur la composition d'une équipe Pokémon.
+          <br />
+          Composez-la avec le pokédex en cliquant sur la pokéball !!
         </p>
       </div>
     </div>

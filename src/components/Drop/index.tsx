@@ -153,6 +153,28 @@ const Drop = (
         </button>
       </div>
     );
+  } if (pokemonSelected.length > 1 && pokemonSelected.length < 7) {
+    return (
+      <div className="home-selection">
+        <div className="home-selection-drops">
+          {boxes}
+        </div>
+        <button
+          type="button"
+          className="home-selection-drop-button"
+          onClick={handleClearAll}
+        >
+          Vider la sélection
+        </button>
+        <button
+          type="button"
+          className="home-selection-drop-button"
+          onClick={() => generateTeam()}
+        >
+          Générer une équipe au hasard
+        </button>
+      </div>
+    );
   } return (
     <div className="home-selection">
       <div className="home-selection-drops">

@@ -38,13 +38,13 @@ const Header = ({
   const handleClickFav = () => {
     toggleFav();
     fetchFav();
-    setBurger(!burger);
+    setBurger(false);
   };
 
   const handleLogout = () => {
     logout();
     toggleLogged();
-    setBurger(!burger);
+    setBurger(false);
   };
 
   const handleBurger = () => {
