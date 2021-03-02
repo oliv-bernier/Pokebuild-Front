@@ -8,14 +8,19 @@
   white-space: pre-wrap;
 
   &-container {
-    width: 80%;
+    width: 90%;
     height:fit-content;
     background-color: var(--background);
     color: var(--scaled);
-    padding: vars.$gutter (vars.$gutter * 2);
+    padding: (vars.$gutter / 2) vars.$gutter;
     border-radius: 5px;
     text-align: justify;
     line-height: 1.3em;
+
+    @media (min-width:375px) {
+      width: 80%;
+      padding: vars.$gutter (vars.$gutter * 2);
+    }
 
     @media (min-width: 768px) {
       width: 60%;
