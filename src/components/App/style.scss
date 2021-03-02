@@ -1,11 +1,11 @@
 @use '../../styles/vars';
 
 .container {
-    margin-top: 1.2rem;
+    margin-top: 2rem;
     margin-bottom: 2rem;
     background-color: vars.$color-background-scaled;
     position: relative;
-    height: calc(100vh - 3.2rem);
+    height: calc(100vh - 4rem);
     transition: 0.5s;
 
     @media (min-width: 768px) {
