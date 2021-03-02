@@ -3,7 +3,7 @@
 .container {
     margin-top: 2rem;
     margin-bottom: 2rem;
-    background-color: vars.$color-background-scaled;
+    background-color: var(--scaled);
     position: relative;
     height: calc(100vh - 4rem);
     transition: 0.5s;

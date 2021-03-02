@@ -166,6 +166,11 @@
         right: 20px;
     }
 
+    @media (min-width: 1400px) {
+        left: auto;
+        right: 150px;
+    }
+
     & img {
         width: 20px;
 

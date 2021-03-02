@@ -13,7 +13,6 @@
 
     &-title {
         margin-top: 1rem;
-        // font-size: 1rem;
     }
 
     &-drops {
@@ -30,18 +29,18 @@
     }
 
     &-drop {
-        border-right: 2px solid vars.$color-background;
-        border-bottom: 2px solid vars.$color-background;
+        border-right: 2px solid var(--background);
+        border-bottom: 2px solid var(--background);
         position: relative;
 
         &:nth-child(0n+3) {
             border: none;
-            border-bottom: 2px solid vars.$color-background;
+            border-bottom: 2px solid var(--background);
         }
 
         &:nth-child(0n+4), &:nth-child(0n+5) {
             border: none;
-            border-right: 2px solid vars.$color-background;
+            border-right: 2px solid var(--background);
         }
 
         &:last-child {
@@ -50,16 +49,16 @@
 
         @media (min-width: 1400px) {
             border: none;
-            border-right: 2px solid vars.$color-background;
+            border-right: 2px solid var(--background);
             &:nth-child(0n+3) {
                 border: none;
-                border-right: 2px solid vars.$color-background;
+                border-right: 2px solid var(--background);
             }    
         }
 
         &-content {
             margin: 0.5rem;
-            background-color: vars.$color-background-scaled-drop;
+            background-color: var(--drop);
             height: 60px;
             width: 60px;
             border-radius: 5px;
@@ -75,12 +74,12 @@
             }
 
             &-button {
-                background-color: vars.$color-background;
+                background-color: var(--background);
                 border-radius: 50%;
-                border: 1px solid vars.$color-background-scaled;
+                border: 1px solid var(--scaled);
                 text-align: center;
                 vertical-align: center;
-                color: vars.$color-background-scaled;
+                color: var(--scaled);
                 font-size: 0.4rem;
                 width: 17px;
                 height: 17px;
@@ -90,34 +89,34 @@
             }
 
             &-button:hover {
-                background-color: vars.$color-background-scaled;
-                border: 1px solid vars.$color-background;
-                color: vars.$color-background;
+                background-color: var(--scaled);
+                border: 1px solid var(--background);
+                color: var(--background);
             }
         }
 
         &-button {
             font-size: 0.6rem;
-            background-color: vars.$color-background;
-            color: vars.$color-background-scaled;
+            background-color: var(--background);
+            color: var(--scaled);
             border-radius: 5px;
-            border: 1px solid vars.$color-background-scaled;
+            border: 1px solid var(--scaled);
             padding: 0.2rem 0.5rem;
             // position: absolute;
             // bottom: -16px;
-            border: 1px solid vars.$color-background;
+            border: 1px solid var(--background);
             margin: 0.5rem;
 
             &-suggestion {
                 font-size: 0.6rem;
-                background-color: vars.$color-background;
-                color: vars.$color-background-scaled;
+                background-color: var(--background);
+                color: var(--scaled);
                 border-radius: 5px;
-                border: 1px solid vars.$color-background-scaled;
+                border: 1px solid var(--scaled);
                 padding: 0.2rem 0.5rem;
                 position: absolute;
                 bottom: 60px;
-                border: 1px solid vars.$color-background;
+                border: 1px solid var(--background);
                 margin: 0.5rem;
                 animation: signal 2s infinite;
 
@@ -130,36 +129,36 @@
                 }
 
                 &:hover {
-                    background-color: vars.$color-background-scaled;
-                    border: 1px solid vars.$color-background;
-                    color: vars.$color-background;
+                    background-color: var(--scaled);
+                    border: 1px solid var(--background);
+                    color: var(--background);
                 }
             }
         }
 
         &-button:hover {
-            background-color: vars.$color-background-scaled;
-            border: 1px solid vars.$color-background;
-            color: vars.$color-background;
+            background-color: var(--scaled);
+            border: 1px solid var(--background);
+            color: var(--background);
         }
 
         &-fav {
             font-size: 0.6rem;
-            background-color: vars.$color-background;
-            color: vars.$color-background-scaled;
+            background-color: var(--background);
+            color: var(--scaled);
             border-radius: 5px;
-            border: 1px solid vars.$color-background-scaled;
+            border: 1px solid var(--scaled);
             padding: 0.2rem 0.5rem;
             // position: absolute;
             // bottom: -16px;
             // right: 150px;
-            border: 1px solid vars.$color-background;
+            border: 1px solid var(--background);
         }
 
         &-fav:hover {
-            background-color: vars.$color-background-scaled;
-            border: 1px solid vars.$color-background;
-            color: vars.$color-background;
+            background-color: var(--scaled);
+            border: 1px solid var(--background);
+            color: var(--background);
         }
 
         &-add {
@@ -180,8 +179,8 @@
             &-submit {
                 position: absolute;
                 border: none;
-                background-color: vars.$color-background;
-                color: vars.$color-background-scaled;
+                background-color: var(--background);
+                color: var(--scaled);
                 border-radius: 5px;
                 padding: 0.3rem 0.2rem;
                 right: 15px;
@@ -192,7 +191,7 @@
 }
 
 @keyframes signal {
-    0% { background-color: vars.$color-background; color: vars.$color-background-scaled; }
-    50% { background-color: vars.$color-background-scaled; color: vars.$color-background; }
-    0% { background-color: vars.$color-background; color: vars.$color-background-scaled; }
+    0% { background-color: var(--background); color: var(--scaled); }
+    50% { background-color: var(--scaled); color: var(--background); }
+    0% { background-color: var(--background); color: var(--scaled); }
 }

@@ -39,7 +39,7 @@
 
         &--active {
             font-weight: bold;
-            color: vars.$color-background-scaled;
+            color: var(--scaled);
             display: flex;
             flex-direction: row;
 

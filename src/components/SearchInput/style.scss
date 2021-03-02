@@ -36,8 +36,8 @@
         font-size: 0.65rem;
         border-radius: 5rem;
         position: absolute;
-        background-color: vars.$color-background;
-        color: vars.$color-background-scaled;
+        background-color: var(--background);
+        color: var(--scaled);
         top: 0.8rem;
         right: 10vw;
         height: 1rem;
@@ -58,8 +58,8 @@
         }
 
         &:hover {
-            background-color: vars.$color-background-scaled;
-            color: vars.$color-background;
+            background-color: var(--scaled);
+            color: var(--background);
         }
     }
 }

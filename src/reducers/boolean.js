@@ -14,6 +14,8 @@ import {
   TOGGLE_DELETE_PASS,
   TOGGLE_FINAL_DELETE,
   TOGGLE_ADVERTISE,
+  TOGGLE_DARKMODE,
+  SET_DARK,
   TOGGLE_ROLL,
 } from '../actions/boolean';
 
@@ -35,6 +37,7 @@ const initialState = {
   isUpdate: false,
   isSuggestion: false,
   isAdvertise: false,
+  isDarkMode: false,
   isRoll: false,
   isConfirmedRoll: true,
 };
@@ -125,6 +128,16 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isAdvertise: !state.isAdvertise,
+      };
+    case TOGGLE_DARKMODE:
+      return {
+        ...state,
+        isDarkMode: !state.isDarkMode,
+      };
+    case SET_DARK:
+      return {
+        ...state,
+        isDarkMode: true,
       };
     case TOGGLE_ROLL:
       return {

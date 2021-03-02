@@ -5,9 +5,9 @@
     display: flex;
     flex-direction: row;
     margin: 0.5rem 0;
-    background-color: vars.$color-background;
+    background-color: var(--background);
     border-radius: 5px;
-    color: vars.$color-background-scaled;
+    color: var(--scaled);
     width: 100%;
 
     @media (min-width: 1400px) {
@@ -75,7 +75,7 @@
  }
 
  .fab {
-     color: vars.$color-background-scaled;
+     color: var(--scaled);
      font-size: 1rem;
      margin-left: 0.5rem;
      margin-top: 0.2rem;

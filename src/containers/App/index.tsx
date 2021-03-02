@@ -8,6 +8,8 @@ import {
   toggleLogged,
   toggleFav,
   toggleUpdate,
+  toggleDark,
+  setDark,
   toggleRoll,
 } from '../../actions/boolean';
 
@@ -31,6 +33,7 @@ const mapStateToProps = (state: any) => ({
   isFav: state.boolean.isFav,
   isUpdate: state.boolean.isUpdate,
   isSuggestion: state.boolean.isSuggestion,
+  isDarkMode: state.boolean.isDarkMode,
 });
 
 const mapDispatchToProps = (dispatch: Function) => ({
@@ -67,6 +70,11 @@ const mapDispatchToProps = (dispatch: Function) => ({
   toggleUpdate: () => {
     dispatch(toggleUpdate());
   },
+  toggleDark: () => {
+    dispatch(toggleDark());
+  },
+  setDark: () => {
+    dispatch(setDark());
   toggleRoll: () => {
     dispatch(toggleRoll());
   },

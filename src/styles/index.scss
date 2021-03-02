@@ -22,7 +22,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   max-width: 100%;
   font-size: 0.6rem;
-  background-color: vars.$color-background-scaled;
+  background-color: var(--scaled);
 
 
   @media (min-width: 400px) {

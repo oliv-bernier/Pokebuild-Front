@@ -19,10 +19,10 @@
     }
 
     &-container {
-        color: vars.$color-background-scaled;
+        color: var(--scaled);
         display: flex;
         flex-direction: column;
-        background-color: vars.$color-background-pokemon;
+        background-color: var(--pokemon);
         height: 45vh;
         width: 90vw;
         align-items: center;
@@ -61,6 +61,7 @@
             &_type {
                 margin: 0.3rem 0.2rem 0 0.2rem;
                 width: 1.5rem;
+                cursor: pointer;
 
                 @media (min-width: 768px) {
                     width: 2rem;
@@ -83,18 +84,18 @@
             height: 1.5rem;
             width: 1.5rem;
             border-radius: 10rem;
-            background-color: vars.$color-background;
-            color: vars.$color-background-scaled;
-            border: 1px solid vars.$color-background-scaled;
+            background-color: var(--background);
+            color: var(--scaled);
+            border: 1px solid var(--scaled);
         }
 
         &--button:hover {
             height: 1.5rem;
             width: 1.5rem;
             border-radius: 50%;
-            background-color: vars.$color-background-scaled;
-            border: 1px solid vars.$color-background;
-            color: vars.$color-background-pokemon;
+            background-color: var(--scaled);
+            border: 1px solid var(--background);
+            color: var(--pokemon);
         }
     }
 
@@ -130,7 +131,7 @@
     }
 
     &-infos {
-        background-color: vars.$color-background-stat;
+        background-color: var(--stat);
         height: fit-content;
         border-radius: 10px;
         padding: vars.$gutter;
@@ -141,16 +142,16 @@
         &-addButton {
             position: absolute;
             padding: 0.4rem;
-            background-color: vars.$color-background;
+            background-color: var(--background);
             border-radius: 10px;
             cursor: pointer;
             top: -1.7rem;
             left: 0rem;
 
             &:hover {
-                background-color: vars.$color-background-scaled;
-                color: vars.$color-background;
-                border: 1px solid vars.$color-background-barre;
+                background-color: var(--scaled);
+                color: var(--background);
+                border: 1px solid var(--barre);
             }
 
             @media(min-height: 569px) {
@@ -217,7 +218,7 @@
                 margin-left: 0.5rem;
                 position: relative;
                 top: -2px;
-                background-color: vars.$color-background-barre;
+                background-color: var(--barre);
 
                 @media (min-width:768px) {
                     width: 70%;
@@ -237,7 +238,7 @@
             }
 
             &--barre__progress {
-                background-color: vars.$color-background-scaled;
+                background-color: var(--scaled);
                 height: 0.8rem;
                 border-radius: 0.5rem;
 

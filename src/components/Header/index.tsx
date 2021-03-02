@@ -3,37 +3,37 @@ import PropTypes from 'prop-types';
 
 import { NavLink } from 'react-router-dom';
 
-import dark from '../../assets/moon.svg';
-import light from '../../assets/sun.svg';
+import dark from '../../assets/seleroc.png';
+import light from '../../assets/solaroc.png';
 
 import './style.scss';
 
 const Header = ({
   isLogged,
+  isDarkMode,
+  pseudo,
   toggleLogin,
   toggleCreate,
-  pseudo,
   logout,
   toggleLogged,
   toggleFav,
   toggleUpdate,
+  toggleDark,
   fetchFav,
 }: {
   isLogged: boolean,
+  isDarkMode: boolean,
+  pseudo: string,
   toggleLogin: Function,
   toggleCreate: Function,
-  pseudo: string,
   logout: Function,
   toggleLogged: Function,
   toggleFav: Function,
   toggleUpdate: Function,
+  toggleDark: Function,
   fetchFav: Function,
 }) => {
   const [burger, setBurger] = useState(false);
-
-  const [isDark, setDark] = useState(true);
-
-  const [isLight, setLight] = useState(false);
 
   const handleClickFav = () => {
     toggleFav();
@@ -82,25 +82,23 @@ const Header = ({
           {isLogged && <p onClick={handleLogout}>Déconnexion</p>}
         </div>
         <div className="light-dark">
-          {isDark && (
+          {isDarkMode && (
             <img
               className="darkmode"
               src={dark}
               alt="dark mode"
               onClick={() => {
-                setLight(!isLight);
-                setDark(!isDark);
+                toggleDark();
               }}
             />
           )}
-          {isLight && (
+          {!isDarkMode && (
             <img
               className="lightmode"
               src={light}
               alt="dark mode"
               onClick={() => {
-                setDark(!isDark);
-                setLight(!isLight);
+                toggleDark();
               }}
             />
           )}
@@ -158,13 +156,15 @@ const Header = ({
 
 Header.propTypes = {
   isLogged: PropTypes.bool.isRequired,
+  isDarkMode: PropTypes.bool.isRequired,
+  pseudo: PropTypes.string.isRequired,
   toggleLogin: PropTypes.func.isRequired,
   toggleCreate: PropTypes.func.isRequired,
-  pseudo: PropTypes.string.isRequired,
   logout: PropTypes.func.isRequired,
   toggleLogged: PropTypes.func.isRequired,
   toggleFav: PropTypes.func.isRequired,
   toggleUpdate: PropTypes.func.isRequired,
+  toggleDark: PropTypes.func.isRequired,
   fetchFav: PropTypes.func.isRequired,
 };
 

@@ -13,7 +13,7 @@
     justify-content: center;
     margin-bottom: 4rem;
     width: fit-content;
-    box-shadow: 0 0 5px #c14040;
+    box-shadow: 0 0 5px var(--background);
     border-radius: 15px;
 
     &-container {
@@ -44,14 +44,14 @@
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            border-top: 1px solid vars.$color-background-scaled;
-            border-right: 1px solid vars.$color-background;
-            border-left: 1px solid vars.$color-background;
+            border-top: 1px solid var(--scaled);
+            border-right: 1px solid var(--background);
+            border-left: 1px solid var(--background);
             padding: (vars.$gutter / 2);
             padding: auto;
             height: 3rem;
             position: relative;
-            background-color: vars.$color-background;
+            background-color: var(--background);
 
             &:first-child {
                 border-top-left-radius: 15px;
@@ -60,7 +60,7 @@
             }
 
             &:last-child{
-                border-bottom: 1px solid vars.$color-background;
+                border-bottom: 1px solid var(--background);
                 border-bottom-left-radius: 15px;
             }
 
@@ -76,8 +76,8 @@
 
             &_name {
                 position: absolute;
-                background-color: vars.$color-background-scaled-drop;
-                color: vars.$color-background;
+                background-color: var(--drop);
+                color: var(--background);
                 top: 5px;
                 left: 5px;
                 font-size: 0.7rem;
@@ -100,7 +100,7 @@
                     left: 2px;
                     font-size: 0.7rem;
                     // transform: rotate(35deg);
-                    color: vars.$color-background-scaled;
+                    color: var(--scaled);
                     font-weight: bold;
                 }
             }
@@ -114,22 +114,22 @@
                     top: 10px;
                     right: 3px;
                     font-size: 0.7rem;
-                    color: vars.$color-background;
+                    color: var(--background);
                     font-weight: bold;
                 }
             }
         }
 
         &--sprites {
-            border-right: 1px solid vars.$color-background;
+            border-right: 1px solid var(--background);
             padding: 0;
             height: 3rem;
             position: relative;
             text-align: center;
-            background-color: vars.$color-background-scaled-drop;
+            background-color: var(--drop);
 
             &:first-child {
-                border-left: 1px solid vars.$color-background;
+                border-left: 1px solid var(--background);
             }
 
             &:last-child {
@@ -163,11 +163,11 @@
         &--def {
             position: relative;
             text-align: center;
-            border-top: 1px solid vars.$color-background;
-            border-right: 1px solid vars.$color-background;
+            border-top: 1px solid var(--background);
+            border-right: 1px solid var(--background);
             padding: (vars.$gutter / 2);
             height: 3rem;
-            background-color: vars.$color-background2;
+            background-color: var(--bg2);
             vertical-align: middle;
 
             &:last-child {
@@ -175,9 +175,9 @@
             }
 
             &--last {
-                background-color: vars.$color-background2;
+                background-color: var(--bg2);
                 border-bottom-right-radius: 15px;
-                border-top: 1px solid vars.$color-background;
+                border-top: 1px solid var(--background);
                 padding: (vars.$gutter / 2);
                 height: 3rem;
                 vertical-align: middle;
@@ -186,8 +186,8 @@
 
             &_name {
                 position: absolute;
-                background-color: vars.$color-background-scaled-drop;
-                color: vars.$color-background-pokemon;
+                background-color: var(--drop);
+                color: var(--pokemon);
                 top: 4px;
                 left: 10px;
                 padding: 0.2rem;

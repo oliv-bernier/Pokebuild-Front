@@ -6,7 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: vars.$color-background-login; 
+  background-color: var(--login); 
   position: absolute;
   z-index: 1;
   animation: fadeIn 0.5s 1;
@@ -48,14 +48,14 @@
 
   &-content {
     position: relative;
-    background-color: vars.$color-background-stat;
+    background-color: var(--stat);
     border-radius: 5px;
     padding: 0.5rem;
     width: 95vw;
     height: calc(100vh - 5rem);
     overflow: scroll;
-    box-shadow: 1px 1px 4px 0px vars.$color-background-barre;
-    color: vars.$color-background-scaled;
+    box-shadow: 1px 1px 4px 0px var(--barre);
+    color: var(--scaled);
 
     @media (min-width:768px) {
       width: 80vw;
@@ -81,7 +81,7 @@
       }
 
       &::-webkit-scrollbar-thumb {
-          background-color: vars.$color-background-pokemon;
+          background-color: var(--pokemon);
           border-radius: 20px;
       }
     }
@@ -102,11 +102,11 @@
     &-team {
       display: flex;
       flex-direction: column;
-      background-color: vars.$color-background-scaled;
+      background-color: var(--scaled);
       border-radius: 5px;
       margin: 0.5rem 0;
       padding: 0 0.5rem;
-      color: vars.$color-background;
+      color: var(--background);
 
       @media (min-width: 1400px) {
         margin: 0.5rem;
@@ -135,15 +135,15 @@
           margin: 0.5rem;
           padding: 0.3rem;
           border-radius: 5px;
-          color: vars.$color-background-scaled;
-          background-color: vars.$color-background;
-          border: 1px solid vars.$color-background-scaled;
+          color: var(--scaled);
+          background-color: var(--background);
+          border: 1px solid var(--scaled);
         }
 
         &-button:hover {
-          color: vars.$color-background;
-          background-color: vars.$color-background-scaled;
-          border: 1px solid vars.$color-background;
+          color: var(--background);
+          background-color: var(--scaled);
+          border: 1px solid var(--background);
         }
       }
 
@@ -187,9 +187,9 @@
       width: 1.2rem;
       height: 1.2rem;
       border-radius: 50%;
-      border: 1px solid vars.$color-background-scaled;
-      background-color: vars.$color-background;
-      color: vars.$color-background-scaled;
+      border: 1px solid var(--scaled);
+      background-color: var(--background);
+      color: var(--scaled);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -198,9 +198,9 @@
     }
 
     &-close:hover {
-      background-color: vars.$color-background-scaled;
-      color: vars.$color-background;
-      border: 1px solid vars.$color-background;
+      background-color: var(--scaled);
+      color: var(--background);
+      border: 1px solid var(--background);
     }
   }
 
@@ -221,15 +221,15 @@
       width: 80%;
       padding: 5rem 3rem;
       border-radius: 5px;
-      box-shadow: 1px 1px 4px 1px vars.$color-background;
+      box-shadow: 1px 1px 4px 1px var(--background);
       display: flex;
       flex-direction: column;
       align-items: center;
-      background-color: vars.$color-background-scaled;
+      background-color: var(--scaled);
       text-align: center;
 
       &-answer {
-        color: vars.$color-background;
+        color: var(--background);
         font-weight: bold;
       }
 

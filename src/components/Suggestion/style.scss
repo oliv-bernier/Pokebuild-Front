@@ -23,13 +23,13 @@
 
   &-content {
     position: relative;
-    background-color: vars.$color-background;
+    background-color: var(--background);
     padding: 1rem;
     max-height: 80vh;
     width: 100%;
     border-radius: 5px;
     overflow-y: scroll;
-    box-shadow: 1px 1px 4px 0px vars.$color-background-barre;
+    box-shadow: 1px 1px 4px 0px var(--barre);
 
     @media (min-width:1400px) {
       width: 70vw;
@@ -49,7 +49,7 @@
       }
 
       &::-webkit-scrollbar-thumb {
-          background-color: vars.$color-background-pokemon;
+          background-color: var(--pokemon);
           border-radius: 20px;
       }
     }
@@ -70,8 +70,8 @@
         padding: 0.2rem;
 
         &:hover {
-          background-color: vars.$color-background-scaled;
-          color: vars.$color-background;
+          background-color: var(--scaled);
+          color: var(--background);
           cursor: pointer;
         }
       }
@@ -85,7 +85,7 @@
       }
 
       &-name {
-        color: vars.$color-background;
+        color: var(--background);
         padding-bottom: 0.5rem;
       }
     }
@@ -93,7 +93,7 @@
     & h2 {
 
       font-style: italic;
-      color: vars.$color-background-scaled;
+      color: var(--scaled);
 
       @media (min-width: 768px) {
         font-size: 1.2rem;
@@ -105,9 +105,9 @@
       width: 1.2rem;
       height: 1.2rem;
       border-radius: 50%;
-      border: 1px solid vars.$color-background-scaled;
-      background-color: vars.$color-background;
-      color: vars.$color-background-scaled;
+      border: 1px solid var(--scaled);
+      background-color: var(--background);
+      color: var(--scaled);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -115,9 +115,9 @@
       top: 5px;
 
       &:hover {
-        background-color: vars.$color-background-scaled;
-        color: vars.$color-background;
-        border: 1px solid vars.$color-background;
+        background-color: var(--scaled);
+        color: var(--background);
+        border: 1px solid var(--background);
       }
     }
   }

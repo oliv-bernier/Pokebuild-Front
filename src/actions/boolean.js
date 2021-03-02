@@ -68,6 +68,16 @@ export const toggleAdvertise = () => ({
   type: TOGGLE_ADVERTISE,
 });
 
+export const TOGGLE_DARKMODE = 'TOGGLE_DARKMODE';
+export const toggleDark = () => ({
+  type: TOGGLE_DARKMODE,
+});
+
+export const SET_DARK = 'SET_DARK';
+export const setDark = () => ({
+  type: SET_DARK,
+});
+
 export const TOGGLE_ROLL = 'TOGGLE_ROLL';
 export const toggleRoll = () => ({
   type: TOGGLE_ROLL,

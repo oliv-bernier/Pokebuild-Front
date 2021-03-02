@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: vars.$color-background-login; 
+  background-color: var(--login); 
   position: absolute;
   z-index: 2;
   animation: fadeIn 0.5s 1;
@@ -25,11 +25,11 @@
   
   &-form {
     position: relative;
-    background-color: vars.$color-background-stat;
+    background-color: var(--stat);
     border-radius: 5px;
     padding: vars.$gutter (vars.$gutter * 2);
     width: 80vw;
-    box-shadow: 1px 1px 4px 0px vars.$color-background-barre;
+    box-shadow: 1px 1px 4px 0px var(--barre);
 
     @media (min-width:768px) {
       width: 60vw;
@@ -40,7 +40,7 @@
     }
 
     &-title {
-      color: vars.$color-background-scaled;
+      color: var(--scaled);
       text-align: center;
       margin-bottom: vars.$gutter;
       font-size: .6rem;
@@ -52,7 +52,7 @@
   }
 
   &_aside {
-    color: vars.$color-background-scaled;
+    color: var(--scaled);
     margin-bottom: 15px;
     font-size: 0.5rem;
 
@@ -70,14 +70,20 @@
     width: 1.2rem;
     height: 1.2rem;
     border-radius: 50%;
-    border: 1px solid vars.$color-background-scaled;
-    background-color: vars.$color-background;
-    color: vars.$color-background-scaled;
+    border: 1px solid var(--scaled);
+    background-color: var(--background);
+    color: var(--scaled);
     display: flex;
     justify-content: center;
     align-items: center;
     right: 5px;
     top: 5px;
+
+    &:hover {
+      background-color: var(--scaled);
+      color: var(--background);
+      border: 1px solid var(--background);
+    }
   }
 }
 
@@ -90,7 +96,7 @@
   &-answer {
     margin-top: (vars.$gutter / 2);
     margin-bottom: vars.$gutter;
-    color: vars.$color-background;
+    color: var(--scaled);
     font-weight: bold;
   }
 
