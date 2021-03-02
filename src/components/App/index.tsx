@@ -7,6 +7,7 @@ import Header from '../Header';
 import Home from '../Home';
 import About from '../About';
 import NotFound from '../NotFound';
+import Legal from '../Legal';
 
 import Footer from '../../containers/Footer';
 import Drawer from '../../containers/Drawer';
@@ -106,6 +107,9 @@ const App = ({
           </Route>
           <Route path="/about" exact>
             <About />
+          </Route>
+          <Route path="/legal" exact>
+            <Legal />
           </Route>
           <Route path="*">
             <NotFound />
