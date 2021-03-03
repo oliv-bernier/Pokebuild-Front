@@ -73,13 +73,6 @@ const Drop = (
     }
   };
 
-  const handleKey = (evt) => {
-    if (evt.key === 'Enter' && nameTeam.length > 0) {
-      saveTeam();
-      toggleInputFav();
-    }
-  };
-
   if (pokemonSelected.length > 5 && isLogged) {
     return (
       <div className="home-selection">
@@ -109,20 +102,20 @@ const Drop = (
         </button>
         {isInputFav && (
           <div className="home-selection-drop-add">
-            <input
-              type="name"
-              className="home-selection-drop-add-input"
-              placeholder="Donnez un nom à l'équipe"
-              onChange={handleChange}
-              onKeyDown={handleKey}
-            />
-            <button
-              type="submit"
-              className="home-selection-drop-add-submit"
-              onClick={handleAddTeam}
-            >
-              OK
-            </button>
+            <form onSubmit={handleAddTeam}>
+              <input
+                type="name"
+                className="home-selection-drop-add-input"
+                placeholder="Donnez un nom à l'équipe"
+                onChange={handleChange}
+              />
+              <button
+                type="submit"
+                className="home-selection-drop-add-submit"
+              >
+                OK
+              </button>
+            </form>
           </div>
         )}
       </div>

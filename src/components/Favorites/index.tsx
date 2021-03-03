@@ -54,7 +54,7 @@ const Favorites = ({
         >
           X
         </button>
-        <h1 className="favorites-content-title">Équipes favorites</h1>
+        <h1 className="favorites-content-title">Mes équipes sauvegardées</h1>
         <div className="favorites-user">
           {teams.map((team) => (
             <div className="favorites-content-team">

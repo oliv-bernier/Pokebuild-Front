@@ -50,7 +50,7 @@
     position: relative;
     background-color: var(--stat);
     border-radius: 5px;
-    padding: 0.5rem;
+    padding: 0 0.5rem;
     width: 95vw;
     height: calc(100vh - 5rem);
     overflow: scroll;
@@ -173,6 +173,7 @@
 
           &-name {
             padding: 0 0.5rem;
+            font-size: 0.8rem;
 
             @media (max-width: 767px) {
               display: none;
