@@ -65,8 +65,11 @@ const Favorites = ({
                     type="button"
                     className="favorites-content-team-infos-button"
                     onClick={() => {
-                      analyzeTeam(team.pokemon, team.pokemon.map((each: Pokemon) => (each.id)));
-                      toggleFav();
+                      setIsAnimation(true);
+                      setTimeout(() => {
+                        toggleFav();
+                        analyzeTeam(team.pokemon, team.pokemon.map((each: Pokemon) => (each.id)));
+                      }, 250);
                     }}
                   >
                     Analyser

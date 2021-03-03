@@ -5,7 +5,7 @@ const legal = [
   },
   {
     title: 'Propriété intellectuelle : ',
-    text: 'Tout le contenu du présent site, incluant, de façon non limitative, les graphismes, textes et animations ainsi que leur mise en forme sont la propriété exclusive de Pokebuild à l’exception des marques, logos ou contenus appartenant à d’autres sociétés ou auteurs.',
+    text: 'Tout le contenu du présent site, incluant, de façon non limitative, les graphismes, textes et animations ainsi que leur mise en forme sont la propriété exclusive de Pokébuild à l’exception des marques, logos ou contenus appartenant à d’autres sociétés ou auteurs.',
   },
   {
     title: 'Données personnelles : ',
