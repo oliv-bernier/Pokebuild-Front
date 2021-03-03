@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import LoginField from '../LoginForm/LoginField';
 import ConfirmDelete from './ConfirmDelete';
 import Email from './Email';
 import Password from './Password';
@@ -67,32 +66,6 @@ const UserUpdate = ({
     }
   };
 
-  const handleSendMail = (evt: any): void => {
-    evt.preventDefault();
-    if (email === '' || password === '') {
-      addError('Au moins un champ est manquant, merci de bien tous les remplir');
-    }
-    else {
-      updateUser();
-    }
-  };
-
-  const handleSendPassword = (evt: any): void => {
-    evt.preventDefault();
-    if (passwordUpdate === '' || password === '' || passwordConfirm === '') {
-      addError('Au moins un champ est manquant, merci de bien tous les remplir');
-    }
-    else if (password.length < 8) {
-      addError('Le mot de passe saisi ne contient pas 8 caractères');
-    }
-    else if (passwordUpdate !== passwordConfirm) {
-      addError('Les mots de passe ne sont pas identiques');
-    }
-    else {
-      updateUser();
-    }
-  };
-
   return (
     <div className={classNames('update', { 'update_drawer-open': isDrawer }, { 'update--animation': isAnimation })}>
       {!isEmail && !isPassword && (
@@ -150,7 +123,8 @@ const UserUpdate = ({
           password={password}
           error={error}
           handleClose={handleClose}
-          handleSendMail={handleSendMail}
+          addError={addError}
+          updateUser={updateUser}
           changeInput={changeInput}
           setIsEmail={setIsEmail}
         />
@@ -162,7 +136,8 @@ const UserUpdate = ({
           passwordConfirm={passwordConfirm}
           error={error}
           handleClose={handleClose}
-          handleSendPassword={handleSendPassword}
+          addError={addError}
+          updateUser={updateUser}
           changeInput={changeInput}
           setIsPassword={setIsPassword}
         />
@@ -175,7 +150,8 @@ const UserUpdate = ({
           passwordConfirm={passwordConfirm}
           error={error}
           handleClose={handleClose}
-          handleSend={handleSend}
+          addError={addError}
+          updateUser={updateUser}
           changeInput={changeInput}
           setIsEmail={setIsEmail}
           setIsPassword={setIsPassword}
