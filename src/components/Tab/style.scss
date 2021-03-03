@@ -127,6 +127,7 @@
             position: relative;
             text-align: center;
             background-color: var(--drop);
+            cursor: pointer;
 
             &:first-child {
                 border-left: 1px solid var(--background);
@@ -137,6 +138,7 @@
                 border: none;
                 vertical-align: middle;
                 text-align: center;
+                cursor: default;
             }
 
             &_image {

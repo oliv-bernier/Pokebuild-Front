@@ -14,6 +14,7 @@ const Pokestat = ({
   addPokemon,
   toggleSuggestion,
   isSuggestion,
+  isDrawer,
 }: {toggleDetails: Function,
   pokemon: {
     id: number,
@@ -29,7 +30,8 @@ const Pokestat = ({
   },
  addPokemon: Function,
  toggleSuggestion: Function,
- isSuggestion: Boolean,
+ isSuggestion: boolean,
+ isDrawer: boolean,
 }) => {
   const {
     id,
@@ -54,7 +56,7 @@ const Pokestat = ({
   };
   return (
     <div className={classNames('pokestat', { 'pokestat--animation': isAnimation })}>
-      <div className="pokestat-container">
+      <div className={classNames('pokestat-container', { 'pokestat-container--drawer': isDrawer })}>
         <button type="button" className="pokestat-container--button" onClick={handleClose}>X</button>
         <section className="pokestat-container--image">
           <div className="pokestat-container--image_infos">
@@ -105,6 +107,7 @@ Pokestat.propTypes = {
   addPokemon: PropTypes.func.isRequired,
   toggleSuggestion: PropTypes.func.isRequired,
   isSuggestion: PropTypes.bool.isRequired,
+  isDrawer: PropTypes.bool.isRequired,
 };
 
 export default Pokestat;

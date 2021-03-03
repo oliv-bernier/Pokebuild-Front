@@ -13,6 +13,7 @@ import { Pokemon } from '../../type/index';
 import { Resistances } from '../../type/Resistances';
 
 import randomKey from '../../utils/randomizer';
+import { findPokemonDetails } from '../../selectors/pokemon';
 import './style.scss';
 
 const Tab = (
@@ -21,6 +22,9 @@ const Tab = (
     pokemonSelected,
     teamResistances,
     isDarkMode,
+    pokemonDetails,
+    toggleDetails,
+    state,
   }: {
     types: Array<{
       name: string,
@@ -29,6 +33,9 @@ const Tab = (
    pokemonSelected: Array<Pokemon>,
    teamResistances: Resistances,
    isDarkMode: boolean,
+   pokemonDetails: Function,
+   toggleDetails: Function,
+   state: any,
    },
 ) => {
   let corner: string;
@@ -56,11 +63,21 @@ const Tab = (
         </thead>
         <tbody>
           <tr>
-            {pokemonSelected.map((chosenPokemon) => (
-              <td key={randomKey(0, 1000000)} className="tab-head--sprites">
-                <img className="tab-head--sprites_image" src={chosenPokemon.image} alt={chosenPokemon.name} />
-              </td>
-            ))}
+            {pokemonSelected.map((chosenPokemon) => {
+              const handleDetails = (): void => {
+                pokemonDetails(findPokemonDetails(state, chosenPokemon.id));
+                toggleDetails();
+              };
+              return (
+                <td
+                  key={randomKey(0, 1000000)}
+                  className="tab-head--sprites"
+                  onClick={handleDetails}
+                >
+                  <img className="tab-head--sprites_image" src={chosenPokemon.image} alt={chosenPokemon.name} />
+                </td>
+              );
+            })}
             <td className="tab-head--sprites"><img className="tab-head--sprites-scoring" src={scoring} alt="score final" /></td>
           </tr>
           {types.map((currentType: {name: string, image: string}, index: number) => (
@@ -94,6 +111,9 @@ Tab.propTypes = {
   })).isRequired,
   teamResistances: PropTypes.object.isRequired,
   isDarkmode: PropTypes.bool.isRequired,
+  pokemonDetails: PropTypes.func.isRequired,
+  toggleDetails: PropTypes.func.isRequired,
+  state: PropTypes.object.isRequired,
 };
 
 export default Tab;
