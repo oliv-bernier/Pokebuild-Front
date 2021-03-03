@@ -32,6 +32,7 @@
         border-right: 2px solid var(--background);
         border-bottom: 2px solid var(--background);
         position: relative;
+        cursor: pointer;
 
         &:nth-child(0n+3) {
             border: none;

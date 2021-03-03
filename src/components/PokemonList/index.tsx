@@ -18,8 +18,8 @@ const PokemonList = ({
   image: string,
   id: number,
   toggleDetails: Function,
-  state: any,
   pokemonDetails: Function,
+  state: any,
   }) => {
   const handleDetails = (): void => {
     pokemonDetails(findPokemonDetails(state, id));
@@ -39,8 +39,8 @@ PokemonList.propTypes = {
   image: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
   toggleDetails: PropTypes.func.isRequired,
-  state: PropTypes.object.isRequired,
   pokemonDetails: PropTypes.func.isRequired,
+  state: PropTypes.object.isRequired,
 };
 
 export default PokemonList;

@@ -1,20 +1,28 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import PropTypes from 'prop-types';
 import { Pokemon } from '../../type';
 
+import { findPokemonDetails } from '../../selectors/pokemon';
+
 const DropBox = ({
+  state,
   pokemonSelected,
   index,
   clearOnePokemon,
   removeAllPokemon,
+  pokemonDetails,
+  toggleDetails,
   pokemonIds,
 }:
 {
+  state: any,
   pokemonSelected: Array<Pokemon>,
   index: number,
   clearOnePokemon: Function,
   removeAllPokemon: Function,
+  pokemonDetails: Function,
+  toggleDetails: Function,
   pokemonIds: Array<number>,
 }) => {
   const handleClearOne = () => {
@@ -26,9 +34,13 @@ const DropBox = ({
   };
 
   if (pokemonSelected[index] !== undefined) {
+    const handleDetails = (): void => {
+      pokemonDetails(findPokemonDetails(state, pokemonSelected[index].id));
+      toggleDetails();
+    };
     const { sprite, name } = pokemonSelected[index];
     return (
-      <div className="home-selection-drop">
+      <div className="home-selection-drop" onClick={handleDetails}>
         <div className="home-selection-drop-content">
           <img className="home-selection-drop-content-sprite" src={sprite} alt={name} />
           <button
@@ -50,6 +62,7 @@ const DropBox = ({
 };
 
 DropBox.propTypes = {
+  state: PropTypes.object.isRequired,
   pokemonSelected: PropTypes.arrayOf(PropTypes.shape({
     sprite: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
@@ -57,6 +70,8 @@ DropBox.propTypes = {
   })).isRequired,
   clearOnePokemon: PropTypes.func.isRequired,
   removeAllPokemon: PropTypes.func.isRequired,
+  pokemonDetails: PropTypes.func.isRequired,
+  toggleDetails: PropTypes.func.isRequired,
   pokemonIds: PropTypes.array.isRequired,
 };
 
