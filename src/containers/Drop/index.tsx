@@ -17,6 +17,7 @@ const mapStateToProps = (state: any) => ({
   pokemonIds: state.pokemon.pokemonSelectedIds,
   isInputFav: state.boolean.isInputFav,
   isLogged: state.boolean.isLogged,
+  nameTeam: state.favorites.name,
 });
 
 const mapDispatchToProps = (dispatch: Function) => ({

@@ -3,6 +3,7 @@ import {
   CHANGE_NAME_INPUT,
   TOGGLE_CONFIRM_DELETE,
   DELETE_TEAM,
+  SAVE_TEAM,
 } from '../actions/favorites';
 
 const initialState = {
@@ -31,6 +32,11 @@ const reducer = (state = initialState, action = {}) => {
     case DELETE_TEAM:
       return {
         ...state,
+      };
+    case SAVE_TEAM:
+      return {
+        ...state,
+        name: '',
       };
     default:
       return state;

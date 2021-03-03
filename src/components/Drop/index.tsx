@@ -21,6 +21,7 @@ const Drop = (
     generateTeam,
     toggleSuggestion,
     suggestPokemon,
+    nameTeam,
   }: {
     pokemonSelected: Array<Pokemon>,
     clearPokemons: Function,
@@ -34,6 +35,7 @@ const Drop = (
     generateTeam: Function,
     toggleSuggestion: Function,
     suggestPokemon: Function,
+    nameTeam: any,
   },
 ) => {
   const boxes = [];
@@ -62,13 +64,17 @@ const Drop = (
     changeInputFav(evt.target.value, 'name');
   };
 
-  const handleAddTeam = () => {
-    saveTeam();
-    toggleInputFav();
+  const handleAddTeam = (evt: any) => {
+    evt.preventDefault();
+
+    if (nameTeam.length > 0) {
+      saveTeam();
+      toggleInputFav();
+    }
   };
 
   const handleKey = (evt) => {
-    if (evt.key === 'Enter') {
+    if (evt.key === 'Enter' && nameTeam.length > 0) {
       saveTeam();
       toggleInputFav();
     }
@@ -204,6 +210,7 @@ Drop.propTypes = {
   generateTeam: PropTypes.func.isRequired,
   toggleSuggestion: PropTypes.func.isRequired,
   suggestPokemon: PropTypes.func.isRequired,
+  nameTeam: PropTypes.any.isRequired,
 };
 
 export default Drop;
