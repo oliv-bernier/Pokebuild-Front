@@ -40,16 +40,16 @@ const DropBox = ({
     };
     const { sprite, name } = pokemonSelected[index];
     return (
-      <div className="home-selection-drop" onClick={handleDetails}>
-        <div className="home-selection-drop-content">
+      <div className="home-selection-drop">
+        <button
+          type="button"
+          className="home-selection-drop-content-button"
+          onClick={handleClearOne}
+        >
+          X
+        </button>
+        <div className="home-selection-drop-content" onClick={handleDetails}>
           <img className="home-selection-drop-content-sprite" src={sprite} alt={name} />
-          <button
-            type="button"
-            className="home-selection-drop-content-button"
-            onClick={handleClearOne}
-          >
-            X
-          </button>
         </div>
       </div>
     );
