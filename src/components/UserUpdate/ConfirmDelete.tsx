@@ -45,7 +45,7 @@ const ConfirmDelete = ({
               <button
                 type="button"
                 className="favorites-content-team-infos-button"
-                onClick={() => deleteUser()}
+                onSubmit={() => deleteUser()}
               >
                 Confirmer la suppression de mon compte
               </button>
