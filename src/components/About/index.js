@@ -17,7 +17,7 @@ const About = () => (
     </div>
     <a
       className="api-link"
-      href="http://ec2-3-83-51-192.compute-1.amazonaws.com/api/v1"
+      href="http://ec2-54-209-63-59.compute-1.amazonaws.com/api/v1"
       target="blank"
     >
       Lien vers notre api custom
