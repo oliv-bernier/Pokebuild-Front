@@ -7,6 +7,7 @@ import './style.scss';
 const Card = ({
   name,
   pseudo,
+  moto,
   dev,
   role,
   image,
@@ -14,6 +15,7 @@ const Card = ({
 }: {
   name: string,
   pseudo: string,
+  moto: string,
   dev: string,
   role: string,
   image: string,
@@ -26,6 +28,7 @@ const Card = ({
       <p>Pseudo: <span className="card-details--info">{pseudo}</span></p>
       <p>Développement: <span className="card-details--info">{dev}</span></p>
       <p>Rôle: <span className="card-details--info">{role}</span></p>
+      <p>Phrase culte: <span className="card-details--info">{moto}</span></p>
       <div className="card-social">
         {social.map((currentSocial) => (
           <a
@@ -45,6 +48,7 @@ const Card = ({
 Card.propTypes = {
   name: PropTypes.string.isRequired,
   pseudo: PropTypes.string.isRequired,
+  moto: PropTypes.string.isRequired,
   dev: PropTypes.string.isRequired,
   role: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
