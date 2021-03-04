@@ -12,6 +12,7 @@ const ConfirmDelete = ({
   toggleConfirm,
   toggleDelete,
   deleteUser,
+  handleClose,
 }: {
   password: string,
   error: string,
@@ -20,58 +21,66 @@ const ConfirmDelete = ({
   toggleConfirm: Function,
   toggleDelete: Function,
   deleteUser: Function,
-}) => (
-  <div className="favorites-confirm-delete">
-    <div className="favorites-confirm-delete-content">
-      <p className="favorites-confirm-delete-content-answer">Êtes vous-sûr de supprimer votre compte ?</p>
-      <div className="favorites-confirm-delete-content-buttons">
-        {!isConfirm && (
-          <div>
-            <button type="button" className="favorites-content-team-infos-button" onClick={() => toggleConfirm()}>Oui</button>
-            <button type="button" className="favorites-content-team-infos-button" onClick={() => toggleDelete()}>Non</button>
-          </div>
-        )}
-        {isConfirm && (
-          <div className="confirmation">
-            <p className="confirmation-answer">Merci de saisir ton e-mail pour confirmer la suppression</p>
-            <form className="confirmation">
-              <LoginField
-                name="password"
-                type="password"
-                placeholder="Mot de passe"
-                value={password}
-                onChange={changeInput}
-              />
+  handleClose: Function,
+}) => {
+  const handleDelete = (evt: any): void => {
+    evt.preventDefault();
+    deleteUser();
+  };
+  return (
+    <div className="favorites-confirm-delete">
+      <div className="favorites-confirm-delete-content">
+        <p className="favorites-confirm-delete-content-answer">Êtes vous-sûr de supprimer votre compte ?</p>
+        <div className="favorites-confirm-delete-content-buttons">
+          {!isConfirm && (
+            <div>
+              <button type="button" className="favorites-content-team-infos-button" onClick={() => toggleConfirm()}>Oui</button>
+              <button type="button" className="favorites-content-team-infos-button" onClick={() => toggleDelete()}>Non</button>
+            </div>
+          )}
+          {isConfirm && (
+            <div className="confirmation">
+              <p className="confirmation-answer">Merci de saisir ton e-mail pour confirmer la suppression</p>
+              <form
+                className="confirmation"
+                onSubmit={handleDelete}
+              >
+                <LoginField
+                  name="password"
+                  type="password"
+                  placeholder="Mot de passe"
+                  value={password}
+                  onChange={changeInput}
+                />
+                <button
+                  type="button"
+                  className="favorites-content-team-infos-button"
+                >
+                  Confirmer la suppression de mon compte
+                </button>
+              </form>
               <button
                 type="button"
                 className="favorites-content-team-infos-button"
-                onSubmit={() => deleteUser()}
+                onClick={() => toggleDelete()}
               >
-                Confirmer la suppression de mon compte
+                Non je le garde !
               </button>
-            </form>
-            <button
-              type="button"
-              className="favorites-content-team-infos-button"
-              onClick={() => toggleDelete()}
-            >
-              Non je le garde !
-            </button>
-            <p className={
-              classNames('login-error confirmation-error',
-                { 'login-error_displayed': error !== '' },
-                { 'confirmation-error_displayed': error !== '' })
-              }
-            >
-              {error}
-            </p>
-          </div>
-        )}
+              <p className={
+                classNames('login-error confirmation-error',
+                  { 'login-error_displayed': error !== '' },
+                  { 'confirmation-error_displayed': error !== '' })
+                }
+              >
+                {error}
+              </p>
+            </div>
+          )}
+        </div>
       </div>
     </div>
-  </div>
-);
-
+  );
+};
 ConfirmDelete.propTypes = {
   password: PropTypes.string.isRequired,
   error: PropTypes.string.isRequired,
@@ -80,6 +89,7 @@ ConfirmDelete.propTypes = {
   toggleConfirm: PropTypes.func.isRequired,
   toggleDelete: PropTypes.func.isRequired,
   deleteUser: PropTypes.func.isRequired,
+  handleClose: PropTypes.func.isRequired,
 };
 
 export default ConfirmDelete;

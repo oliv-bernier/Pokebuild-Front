@@ -118,12 +118,12 @@
       align-items: center;
       right: 5px;
       top: 5px;
-    }
 
-    &:hover {
-      background-color: var(--scaled);
-      color: var(--background);
-      border: 1px solid var(--background);
+      &:hover {
+        background-color: var(--scaled);
+        color: var(--background);
+        border: 1px solid var(--background);
+      }
     }
   }
 }

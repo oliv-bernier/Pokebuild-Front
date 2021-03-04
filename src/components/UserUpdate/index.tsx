@@ -53,19 +53,6 @@ const UserUpdate = ({
     }, 250);
   };
 
-  const handleSend = (evt: any): void => {
-    evt.preventDefault();
-    if (passwordUpdate === '' || password === '' || email === '' || passwordConfirm === '') {
-      addError('Au moins un champ est manquant, merci de bien tous les remplir');
-    }
-    else if (password !== passwordConfirm) {
-      addError('Les mots de passe ne sont pas identiques');
-    }
-    else {
-      updateUser();
-    }
-  };
-
   return (
     <div className={classNames('update', { 'update_drawer-open': isDrawer }, { 'update--animation': isAnimation })}>
       {!isEmail && !isPassword && (
@@ -166,6 +153,7 @@ const UserUpdate = ({
           toggleConfirm={toggleConfirm}
           toggleDelete={toggleDelete}
           deleteUser={deleteUser}
+          handleClose={handleClose}
         />
       )}
     </div>
