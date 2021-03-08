@@ -1,6 +1,10 @@
 import { connect } from 'react-redux';
 import SearchInput from '../../components/SearchInput';
-import { inputSearch, deleteSearchInput } from '../../actions/pokemon';
+import {
+  inputSearch,
+  deleteSearchInput,
+  setGenValue,
+} from '../../actions/pokemon';
 
 const mapStateToProps = (state: any) => ({
   value: state.pokemon.searchInput,
@@ -12,6 +16,9 @@ const mapDispatchToProps = (dispatch: Function) => ({
   },
   deleteInput: () => {
     dispatch(deleteSearchInput());
+  },
+  setGenValue: (value: number) => {
+    dispatch(setGenValue(value));
   },
 });
 

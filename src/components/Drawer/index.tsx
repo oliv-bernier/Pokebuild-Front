@@ -20,6 +20,7 @@ const Drawer = ({
   isRoll,
   isConfirmedRoll,
   filterInput,
+  genValue,
 }: {
   pokemon: Array<Pokemon>,
   filterTypes: Array<string>,
@@ -29,6 +30,7 @@ const Drawer = ({
   isRoll: boolean,
   isConfirmedRoll: boolean,
   filterInput: string,
+  genValue: number,
 }) => {
   const [emptyList, setEmptyList] = useState(false);
 
@@ -36,7 +38,7 @@ const Drawer = ({
     toggleDrawer();
     stopRoll();
   };
-  const filteredPokemon = pokemonFilter(pokemon, filterTypes, filterInput);
+  const filteredPokemon = pokemonFilter(pokemon, filterTypes, filterInput, genValue);
   useEffect(() => {
     if (filteredPokemon.length === 0) {
       setEmptyList(true);
@@ -88,6 +90,7 @@ Drawer.propTypes = {
   isRoll: PropTypes.bool.isRequired,
   isConfirmedRoll: PropTypes.bool.isRequired,
   filterInput: PropTypes.string.isRequired,
+  genValue: PropTypes.number.isRequired,
 };
 
 export default Drawer;

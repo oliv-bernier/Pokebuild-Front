@@ -10,6 +10,12 @@ export const inputSearch = (value) => ({
   value,
 });
 
+export const SET_GEN_VALUE = 'SET_GEN_VALUE';
+export const setGenValue = (value) => ({
+  type: SET_GEN_VALUE,
+  value,
+});
+
 export const DELETE_SEARCH_INPUT = 'DELETE_SEARCH_INPUT';
 export const deleteSearchInput = () => ({
   type: DELETE_SEARCH_INPUT,
