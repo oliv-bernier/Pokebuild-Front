@@ -20,7 +20,7 @@ import {
 } from '../actions/teamResistances';
 
 const ajaxPokemon = (store) => (next) => (action) => {
-  axios.defaults.baseURL = 'http://ec2-54-209-63-59.compute-1.amazonaws.com/api/v1/';
+  axios.defaults.baseURL = 'https://pokebuildapi.fr/api/v1/';
   switch (action.type) {
     case GET_POKEMON:
       axios.get('pokemon')

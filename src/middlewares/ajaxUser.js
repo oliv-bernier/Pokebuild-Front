@@ -34,7 +34,7 @@ const ajaxUser = (store) => (next) => (action) => {
     const user = JSON.parse(localStorage.getItem('user'));
     axios.defaults.headers.common.Authorization = `Bearer ${user.token}`;
   }
-  axios.default.baseURL = 'http://ec2-54-209-63-59.compute-1.amazonaws.com/api/v1/';
+  axios.default.baseURL = 'https://pokebuildapi.fr/api/v1/';
   switch (action.type) {
     case LOGIN_USER: {
       const { username, password } = store.getState().user;
