@@ -10,6 +10,7 @@ const mapStateToProps = (state: any) => ({
   isConfirmedRoll: state.boolean.isConfirmedRoll,
   filterTypes: state.pokemon.filterTypes,
   filterInput: state.pokemon.searchInput,
+  genValue: state.pokemon.genValue,
 });
 
 const mapDispatchToProps = (dispatch: Function) => ({

@@ -13,6 +13,7 @@ import {
   MEMORIZE_RANDOM_TEAM,
   MEMORIZE_RANDOM_TEAM_IDS,
   MEMORIZE_SUGGEST,
+  SET_GEN_VALUE,
 } from '../actions/pokemon';
 
 const initialState = {
@@ -23,6 +24,7 @@ const initialState = {
   pokedetails: {},
   favorites: [],
   types: [],
+  genValue: 0,
   searchInput: '',
   filterTypes: [],
   pokeSuggest: [],
@@ -54,6 +56,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         searchInput: '',
+      };
+    case SET_GEN_VALUE:
+      return {
+        ...state,
+        genValue: action.value,
       };
     case ADD_FILTER_TYPES:
       return {

@@ -10,8 +10,8 @@ export interface Pokemon {
     image: string,
   }>,
   apiGeneration: number,
-  apiResistances: { 
-    damage_relation: string, 
-    damage_multiplier: number 
+  apiResistances: {
+    damage_relation: string,
+    damage_multiplier: number
   },
 }
