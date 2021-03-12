@@ -1,3 +1,12 @@
+# Pokébuild
+
+School project, here's the Front-End part. We relied on an API made in Symfony by two Back-End developers who were part of our group.
+You can find the Backend Repos here: https://github.com/Geoffrey-Cauchois/pokebuild-back
+
+The online website will soon be available again.
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
