@@ -3,6 +3,9 @@
 School project, here's the Front-End part. We relied on an API made in Symfony by two Back-End developers who were part of our group.
 You can find the Backend Repos here: https://github.com/Geoffrey-Cauchois/pokebuild-back
 
+We took great pleasure in developing the features to be intuitive to the user.
+The understanding of the project was so good between us that we also peer-programmed several times, we notified it on the branches when it was the case.
+
 The site : http://pokebuild.xyz (https will be available soon, we have test a server that load the site realy faster especialy on mobile)
 
 ---
